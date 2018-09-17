@@ -1,0 +1,142 @@
+Row - r
+Column - c
+
+r- header
+    r- nav
+        c- log up/in
+            c- Avatar
+            c- log up
+            c- log in
+        c- logo
+            r- logo
+            r- slogan
+        c- position
+            c- icon
+            c- city
+        c- nav-link
+            r- nav group
+                c- link * nav
+    
+    r- search
+        r- top
+            r- title
+            r- new
+        r- search 
+            r- link group
+                c- link * n
+            r- search bar
+                c- search bar 
+                    r- text
+                c- btn
+
+    r- header-bottom
+        c- item * 3
+            c- icon
+            c- text
+
+
+r- main
+
+    r-features
+        c- item * 3
+            r- icon
+            r- title
+            r- introduction
+
+    r- app download
+        r- background img
+        r- content
+            r- text * 3
+            r- download
+                c- left app Store
+                    r- iPhone
+                    r- Android
+                c- right QR code
+
+    r- Second-hand house
+        r- title
+            c- left
+                c- title1
+                c- title2
+                r- introduction
+            c- right
+                r- more
+        r- content
+            c- item * 4
+                r- main
+                    r- img
+                    c- price
+                    r- text
+                        r- title
+                        c- address
+                        c- house structure
+                        c- area
+                r- secondary
+                    r- text
+    
+    r- community
+        r- title1
+            c- left
+                c- titlt1
+                c- title2
+                c- introduction
+            c- right
+                r- more
+        r- content
+            c- item * 3
+                r- img
+                r- text
+                    r- title
+                    c- price
+                    c- time
+    r- new house
+        r- title
+            c- left
+                c- title1
+                c- title2
+                c- introduction
+            c- right
+                r- more
+        r- content
+            c- item * 3
+                r- img
+                r- text
+                    r- title
+                    r- price
+                    r- offer
+
+    r- query authenticity
+        c- left
+            r- text01
+            r- text02
+        c- right
+            r- text01
+            r- text02
+            r- search bar
+                c- text
+                c- icon
+    
+    c- right nav
+        c- link group
+            c- link * n
+     
+r- footer
+
+    r- about
+        c- left
+            r- link group
+                c- link * 8
+        c- right
+            phone
+
+    r- city - house
+        c- item * 10
+            c- secondary option
+                c- link * n
+
+    r- filing
+        r- text
+            c- item * 3
+        r- filing
+            c- icon
+            c- text
