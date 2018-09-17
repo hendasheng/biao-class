@@ -1,0 +1,110 @@
+导航栏 全局
+    登录/注册
+    logo
+    链接组
+        链接 * n
+    搜索
+        title
+            slogan
+            实时更新的信息
+        搜索
+            链接 * n
+            搜索框
+                搜索框内默认提示文字
+                “开始找房”按钮
+    声明/保证书 ...
+        链接 * 3
+            icon
+            title
+    背景图
+
+
+主体
+    功能
+        链接 * 3
+            icon
+            title
+            功能简介
+    app 下载
+        文字内容
+            title-1
+            title-2
+            简介
+            下载 app
+                iphone
+                Android
+                二维码
+        背景图片
+    二手房展示
+        title
+            left
+                title-1
+                title-2
+            right
+                更多
+        二手房列表
+            item * 4
+                img
+                    悬浮在图片上的价格标签
+                title
+                简介
+                    地址
+                    房屋结构
+                    房屋面积
+                近期关注度比较高的房源
+    小区推荐
+        title
+            left
+                title-1
+                title-2
+            right
+                更多
+        小区列表
+            item * 3
+                img
+                文字内容
+                    title
+                    价格
+                    修建时间
+    新房展示
+        title
+            left
+                title-1
+                title-2
+            right
+                更多
+        新房列表
+            item * 3
+                img
+                内容（悬浮在图片上）
+                    title
+                    价格
+
+    不是嘴上说说就可以
+        left
+            链家是干什么的
+            链家希望大家以为他们是干什么的
+        right
+            承诺 * 2
+            查询真伪
+    
+    右侧边栏
+        功能组 * n
+    在线咨询（右下角）
+        icon
+        text
+    
+页脚
+    第一行
+        left
+            链接组 * n
+        right    
+            客服电话
+
+    第二行
+        链接组 * n
+    第三行
+        城市二手房信息
+    第四行
+        元信息 * n
+        备案信息
