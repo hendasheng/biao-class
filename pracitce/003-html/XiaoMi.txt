@@ -1,0 +1,188 @@
+Row - r
+Column - c
+
+r- header
+    r- top
+    r- nav
+    
+r- banner
+
+r- main
+
+    r- item-小米闪购
+        r- top
+            c- title
+            c- more
+        r- content
+            c- item * 1
+                r- title
+                r- icon
+                r- introduction
+                r- countdown
+            c- item * 4
+                r- img
+                c- tag
+                r- title
+                r- introduction
+                r- pirce
+        r- ad
+
+    r- item-手机
+        r- top
+            c- title
+            c- more
+        r-content
+            c- left
+                r- img
+            c- right  
+                c- item * 8
+                      r- img
+                      c- tag
+                      r- title
+                      r- introduction
+                      r- pirce
+        r- ad
+
+    r- item-家电
+        r- top
+            c- title
+            c- nav
+        r- item_1
+            c- item * 1
+                r- title
+                r- introduction
+                r- pirce
+            c- item * 4
+                r- img
+                c- tag
+                r- title
+                r- introduction
+                r- pirce
+        r- item_2
+            c- item * 1
+                r- title
+                r- introduction
+                r- pirce
+            c- item * 3
+                r- img
+                c- tag
+                r- title
+                r- introduction
+                r- pirce
+            c- item * 1
+                r- item * 2
+                    c- left
+                        r- title/more
+                        r- pirce/hot
+                    c- right
+                        r- img/icon
+        r- ad
+
+    r- item-智能/搭配/配件/周边
+        r- top
+            c- title
+            c- nav
+        r- item_1
+            c- item * 1
+                r- title
+                r- introduction
+                r- pirece
+            c- item * 4
+                r- img
+                r- title
+                r- introduction
+                r- pirce
+
+        r- item_2
+            c- item * 1
+                r- title
+                r- introduction
+                r- pirce
+            c- item * 3
+                r- img
+                r- title
+                r- introduction
+                r- pirece
+            c- item * 1
+                r- item * 2
+                    c- left
+                        r- title/more
+                        r- pirece/hot
+                    c- right
+                        r- img/icon
+        r- ad
+    
+    r- item-为你推荐
+        r- top
+            c- title
+            c- more
+        c- item * 5
+            r- img
+            r- title
+            r- pirce
+            r- evaluation
+
+    r- item-热门产品
+        r- top
+            r- title
+        c- item * 4
+            r- img
+            r- introduction
+            r- from
+            r- title/pirce
+                c- title
+                c- pirce
+    
+    r- item-内容
+        r- top
+            r- title
+        c- item * 4
+            r- class
+            r- title
+            r- introduction
+            r- pirce/more
+            r- img
+            r- page
+
+    r- item-视频
+        r- top
+            c- title
+            c- more
+                c- text
+                c- icon
+        r- item * 4
+            r- img
+            c- play_btn
+            r- title
+            r- introduction
+
+r- footer
+    r- item_1
+        c- item * 5
+            c- icon
+            c- link
+    r- item_2
+        c- left
+            c- item * 6
+                r- title
+                r- content * 3
+        c- right
+            r- phone
+            r- introduction
+            r- contact
+    r- item_3
+        c- left
+            c- left
+                r- icon
+            c- right
+                r- linkGroup
+                    c- link * n
+                r- filing
+                r- text
+        c- right
+            r- linkGroup
+                c- link * 5
+                    c- icon
+                    c- link
+    r- item_4
+        r- slogan
