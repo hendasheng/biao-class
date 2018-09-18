@@ -1,0 +1,50 @@
+Row - r
+Column - c
+
+r- header
+    r- nav_global
+        c- nav_group
+            c- nav_link * n
+        c- sign up/in
+            c- download
+            c- sign up
+            c- sign in
+
+r- main
+    r- sub_nav
+        c- sub_nav_list
+            c- sub_nav_link * 6
+        c- search
+            r- text
+
+    r- content
+        r- con_title
+        c- con_main
+            r- con_list * n
+                c- like
+                    r- digital
+                    r- like
+                c- text
+                    r- title
+                    r- description
+                    r- from
+                        c- from
+                        c- time
+            r- page
+            
+        c- con_recommend
+            r- con_recommend_title
+            r- con_recommend_list * n
+                c- avatar
+                    r- img
+                c- text
+                    r- title
+                    r- digital
+                        c- digital
+                        c- join_link
+
+r- footer
+    c- filing
+        r- filing_text
+    c- about
+        c- about_link * 7
