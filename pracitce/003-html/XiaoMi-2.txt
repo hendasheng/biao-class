@@ -1,0 +1,206 @@
+Row - r
+Column - c
+
+r- header
+    t- top
+        c- left
+            r- linkGroup
+                c- link * n
+        c- right
+            c- sign up
+            c- sign in
+            c- notice
+            c- cart
+    r- nav
+        c- left
+            c- logo
+            c- ad
+            c- linkGroup
+                c- link * 10
+        r- right
+            r- search
+                c- text
+                c- search_btn
+
+r- banner + promo
+    r- banner
+        c- left
+            r- banner_nav
+                r- link * n
+                    c- link
+                    c- icon
+        c- right
+            r- banner
+            r- page
+    r- promo
+        c- left
+            r- promo_nav
+                c- link * n
+                    r- icon
+                    r- link
+        c- right
+            r- promo * 3
+                r- title
+                r- introduction
+
+    
+r- main
+
+    r- promo_wrap
+        r- wrap_top
+            c- title
+            c- more
+        r- promo_content
+            c- countdown * 1
+                r- title
+                r- icon
+                r- introduction
+                r- countdown
+            c- promo_card * 4
+                r- img
+                r- tag
+                r- title
+                r- introduction
+                r- pirce
+        r- ad
+    
+    r- phone_wrap
+        r- wrap_top
+            c- title
+            c- more
+                c- link
+                c- icon
+        r- phone_content
+            c- left
+                r- img
+            c- right
+                c- promo_phone * 8
+                    r- img
+                    r- tag
+                    r- title
+                    r- introduction
+                    r- pirce
+        r- ad
+    
+    r- Home Appliances / Smart / Match / Accessories / Peripherals _ wrap
+        r- plate_top
+            c- title
+            c- nav
+
+        r- plate_content_1
+            c- left
+                r- title
+                r- introduction
+                r- pirce
+            c- right
+                c- plate_card * 4
+                    r- img
+                    c- tag
+                    r- title
+                    r- introduction
+                    r- pirce
+        
+        r- plate_content_2
+            c- left
+                r- title
+                r- introduction
+                r- pirce
+            c- right
+                c- plate_card * 3
+                    r- img
+                    c- tag
+                    r- title
+                    r- introduction
+                    r- pirce
+                c- plate_more
+                    r- plate_more_card_1
+                        c- left
+                            r- title
+                            r- pirce
+                        c- right
+                            r- img
+                    r- plate_more_card_2
+                        c- left
+                            r- title
+                            r- introduction
+                        c- right
+                            r- icon
+
+
+        r- ad
+
+    r- recommend_wrap
+        r- wrap_top
+            c- title
+            c- more
+        c- recommend_card * 5
+            r- img
+            r- title
+            r- pirce
+            r- evaluation
+        
+    r- hot_wrap
+        r- wrap_top
+            r- title
+        r- hot_card * 4
+            r- img
+            r- evaluation
+            r- evaluation_from
+            r- title_pirce
+                c- title
+                c- pirce
+
+    r- content_wrap
+        r- wrap_top
+            r- title
+        r- content_card * 4
+            r- class
+            r- title
+            r- introduction
+            r- pirce
+            r- img
+            r- page
+    
+    r- video_wrap
+        r- wrap_top
+            c- title
+            c- more
+                c- link
+                c- icon
+        r- video_card * 4
+            r- img
+            c- play_btn
+            c- title
+            r- introduction
+
+
+r- footer
+    r- service_wrap
+        c- service * 5
+            c- icon
+            c- links
+    r- help_wrap
+        c- help_left
+            c- help_list * 6
+                r- title
+                r- list * 3
+        c- help_right
+            r- help_phone
+            r- introduction
+            r- contact_btn
+    r- filing_wrap
+        c- left
+            c- left
+                r- logo
+            c- right
+                r- linkGroup
+                    c- link * nav
+                r- filing_text
+                r- report
+        c- right
+            r- linkGroup
+                c- link * 5
+                    c- icon
+                    c- link
+    r- slogan_wrap
+        r- slogan
