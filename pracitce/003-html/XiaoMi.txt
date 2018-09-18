@@ -3,9 +3,45 @@ Column - c
 
 r- header
     r- top
+        c- left
+            r- linkGroup
+                c- link * 9
+        c- right
+            c- sign_in
+            c- sign_up
+            c- notice
+            c-cart
     r- nav
+        c- left
+            c- logo
+            c- ad
+            c- linkGroup
+                c- link * 10
+        c- right
+            r- search
+                c- text
+                c- seatch_btn
     
-r- banner
+r- banner_nav
+    r- item_1
+        c- left
+            r- navGroup
+                r- navlist * n
+                    c- link
+                    c- icon
+        c- right
+            r- img
+            c- page
+    r- item_2
+        c- left
+            r- navGroup
+                c- link * 6
+                    r- icon
+                    r- link
+        c- right
+            c- item * 3
+                r- title
+                r- introduction
 
 r- main
 
