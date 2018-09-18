@@ -1,0 +1,126 @@
+Row - r
+Column - c
+
+
+r- header
+
+    r- nav_gloabl
+        r- sign in/up
+            c- avatar
+            c- sign in
+            c- sign up
+        r- nav_link_group
+            c- logo
+                r- logo
+                r- slogan
+            c- position
+                c- icon
+                c- city
+            c- nav_links
+                c- link * n
+    
+    r- search_wrap
+        r- title_group
+            r- title
+            r- depiction
+        r- search_group
+            r- search_nav
+                c- link * 5
+        r- search_main
+            c- depiction
+            c- btn
+        r- declare_wrap
+            c- declare_list * 3
+                c- icon
+                c- links
+
+r- main
+
+    r- featurse_wrap
+        r- f_list * 3
+            r- icon
+            r- title
+            r- depiction
+
+    r- app_download
+        r- title_group
+            r- title_fine
+            r- title_bold
+            r- depiction
+            r- download_group
+                c- appStore
+                    r- iPhone
+                    r- Android
+                c- QR code
+
+    r- house_wrap
+        r- house_title_wrap
+            r- title
+            c- depiction
+            c- more
+        r- house_content
+            c- house_card * 4
+                r- house_card_main
+                    r- img
+                    c- price
+                    r- title
+                    r- depiction
+                        c- position
+                        c- structure
+                        c- area
+                r- house_card_depiction
+        
+    r- community_wrap
+        r- com_title_wrap
+            r- title
+            c- depiction
+            c- more
+        r- com_content
+            c- com_card * 3
+                r- img
+                r- title
+                c- price
+                c- time
+    
+    r- newHouse_wrap
+        r- newHouse_title_wrap
+            r- title
+            c- depiction
+            c- more
+        r- newHouse_content
+            c- newHouse_card * 3
+                r- img
+                r- title
+                r- price
+
+    r- guarantee_wrap
+        c- left
+            r- title
+            r- depiction
+        c- right
+            r- text_1
+            r- text_2
+            r- guarantee_search
+                c- text
+                c- search_btn
+
+                
+r- footer
+
+    r- about_wrap
+        c- about_group
+            c- link * 8
+        c- phone
+    
+    r- city_wrap
+        c- city_list * 10
+            r- title
+            c- list
+    
+    r- filing_wrap
+        c- copyright
+            c- copyright_list * 3
+        c-filing——content
+            c- icon
+            c- text
+            
