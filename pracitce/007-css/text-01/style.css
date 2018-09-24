@@ -7,9 +7,30 @@ button {
     background: black;
     color:white;
 }
+
+p {
+    background-color: #eee;
+}
 .solid {
     border: 2px solid black;
 }
 .dashed {
     border: 2px dashed black;
 }
+
+.bold {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+#logo {
+    width: 60px;
+    border-radius: 50%;
+}
+nav {
+    background: #eee;
+    padding: 10px;
+}
+
+
