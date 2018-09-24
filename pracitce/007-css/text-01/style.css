@@ -34,3 +34,18 @@ nav {
 }
 
 
+[href] {
+    border: 2px solid #000;
+}
+[href="http://biaoyansu.com"] {
+    background: pink;
+}
+[href*="wiki"] {
+    border: 2px dashed blue;
+}
+[href^="http://www."] {
+    border: 2px solid red;
+}
+[href$="su.com"] {
+    border: 2px solid orange;
+}
