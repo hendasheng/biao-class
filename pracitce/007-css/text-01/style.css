@@ -1,0 +1,15 @@
+body {
+    width: 800px;
+    margin: 200px auto;
+}
+
+button {
+    background: black;
+    color:white;
+}
+.solid {
+    border: 2px solid black;
+}
+.dashed {
+    border: 2px dashed black;
+}
