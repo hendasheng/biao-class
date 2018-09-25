@@ -44,3 +44,11 @@ a, span {
 #parent > .elder {
     border: 1px solid orange;
 }
+
+#header li {
+    list-style-type: none;
+}
+
+[href*=www]::before {
+    content:'哇哦';
+}
