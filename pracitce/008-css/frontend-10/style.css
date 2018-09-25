@@ -1,3 +1,8 @@
+body {
+    width: 800px;
+    margin: 80px auto;
+}
+
 a, span {
     font-size: 11px;
     color: #000;
@@ -5,4 +10,37 @@ a, span {
     border: 1px solid rgb(163, 163, 163);
     padding: 2px 4px;
     background: rgb(243, 243, 243);
+}
+
+
+.a, .c {
+    border: 1px solid black;
+}
+.b, .c {
+    color: tomato;
+}
+
+
+.bordered {
+    border: 1px solid black;
+}
+.highlight {
+    background: pink;
+}
+
+.highlight.bordered {
+    font-size: 200%;
+}
+
+
+#grandpa > div {
+    border: 1px solid red;
+}
+
+#me ~ span {
+    border: 1px solid tomato;
+}
+
+#parent > .elder {
+    border: 1px solid orange;
 }
