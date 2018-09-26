@@ -1,0 +1,96 @@
+/* p {
+    font-size: 200%;
+    color: tomato;
+} */
+
+* {
+    padding: 0;
+}
+/* ul li {
+    margin: 20px 10px;
+    list-style: none;
+    background: #eee;
+}
+ul .solid {
+    border: 1px solid red;
+}
+ul .dashed {
+    border: 1px dashed blue;
+} */
+
+#one {
+    font-size: 400%;
+    color: orange;
+}
+
+
+.attributes a {
+    text-decoration: none;
+}
+
+/* 作用于含有 href 属性的元素 */
+.attributes [href] {
+    background: rgb(132, 243, 105);
+}
+
+/* 作用于 href="https://www.google.com" 的元素 */
+.attributes [href="https://www.google.com"] {
+    color: red;
+}
+
+/* 作用于 href 中包含 "biao" 的元素 */
+.attributes [href*="biao"] {
+    color: pink;
+    font-size: 200%;
+}
+
+/* 作用于以 "#https" 开头的元素 */
+.attributes [href^="#https"] {
+    color: orange;
+}
+
+/* 作用于以 "u" 结尾的元素 */
+.attributes [href$="u"] {
+    color: rgb(210, 44, 252)
+}
+
+
+
+.a .c {
+    color: tomato;
+}
+.bordered {
+    border: 1px solid black;
+}
+.a .c.bordered {
+    border: 1px solid tomato;
+}
+
+
+#grandpa > div {
+    border: 1px solid black;
+}
+
+
+ul > li {
+    color: royalblue;
+}
+ol > li {
+    color: hotpink;
+}
+
+#adjacent span + p {
+    color: rgb(113, 191, 255);
+}
+
+#current span ~ p {
+    color: rgb(255, 192, 55);
+}
+
+td:last-of-type::before {
+    content: "¥";
+}
+
+#text span > a {
+    font-size: 200%;
+}

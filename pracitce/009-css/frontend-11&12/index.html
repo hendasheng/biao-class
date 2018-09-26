@@ -1,0 +1,137 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <p>试试元素选择器</p>
+    <span>通过元素名称选择</span>
+
+    <ul>
+        <li class="solid">01</li>
+        <li class="solid">02</li>
+        <li class="dashed">一</li>
+        <li class="dashed">二</li>
+    </ul>
+
+    <div id="one">one</div>
+
+    <ul class="attributes">
+        <li><a href="https://www.google.com">Google</a></li>
+        <li><a href="https://www.biaoyansu.com">表严肃</a></li>
+        <li><a href="http://biaoyansu.com/live">表直播</a></li>
+        <li><a href="https://dribbble.com/n1u">N1U</a></li>
+        <li><a href="#https://zh.wikipedia.org">维基百科</a></li>
+    </ul>
+
+    <div class="a bordered">A
+        <div class="b">B
+            <div class="c bordered">C</div>
+            <div class="c">C</div>
+            <div class="c">C</div>
+        </div>
+    </div>
+
+    <div id="grandpa">
+        我是爷爷
+        <div>
+            我是爸爸
+            <div>
+                我是儿子
+            </div>
+        </div>
+        <div>
+            我是爸爸
+            <div>
+                我是儿子
+            </div>
+        </div>
+    </div>
+
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <ol>
+            <li>C1</li>
+            <li>C2</li>
+            <li>C3</li>
+        </ol>
+    </ul>
+    
+    <ol>
+        <li>A</li>
+        <li>B</li>
+        <ul>
+            <li>C1</li>
+            <li>C2</li>
+            <li>C3</li>
+        </ul>
+    </ol>
+
+    <div id="adjacent">
+        <span>相邻选择器</span>
+        <p>前方元素 + 目标元素 {样式声明}</p>
+        <p>这个不会被选中</p>
+    </div>
+
+    <div id="current">
+        <span>通用选择器</span>
+        <p>元素 ～ 元素 {样式声明}</p>
+        <p>和上一行同时被选中</p>
+    </div>
+    
+    <table>
+        <thead>
+        <th>菜名</th>
+        <th>价格</th>
+        </thead>
+        <tbody>
+        <tr>
+          <td>回锅肉</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>酸菜鱼</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>扬州炒饭</td>
+          <td>18</td>
+        </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <div id="text"> 01
+          <p  class="aiyou">02</p>
+          <span>
+              <a href="#">03</a>
+              <div>
+                  <a href="#">04</a>
+              </div>
+          </span>
+      </div>
+    
+    a                       0, 0, 0, 1
+    .active                 0, 0, 1, 0
+    #yo                     0, 1, 0, 0
+    a.active                0, 0, 1, 1
+    .box .active            0, 0, 2, 0
+    body a.active           0, 0, 1, 2
+    .box a.red span         0, 0, 2, 2
+    .box a.red .item        0, 0, 3, 1
+    #yo .box a.hide         0, 1, 2, 1
+    #yo > a.active:hover    0, 1, 2, 1
+    :root .box:hover        0, 0, 3, 1
+    style="..."             1, 0, 0, 0
+    
+    
+    
+</body>
+</html>
