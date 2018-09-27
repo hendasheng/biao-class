@@ -1,0 +1,53 @@
+/* .box {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #333;
+    background-color: cadetblue;
+}
+
+.parent {
+    border: 2px dashed #aaa;
+}
+
+.fl {
+    float: left;
+}
+
+.clear {
+    clear: both;
+} */
+
+
+body {
+    margin: 0;
+}
+
+.parent {
+    border: 2px solid #eee;
+}
+.left, .middle, .right {
+    border: 2px solid #333;
+    min-height: 40px;
+    float: left;
+    box-sizing: border-box;
+}
+.left {
+    width: 30%;
+}
+.right {
+    width: 70%;
+}
+.clear {
+    clear: both;
+}
+
+.parent2 .left {
+    width: 30%;
+}
+.parent2 .middle {
+    width: 30%;
+}
+.parent2 .right {
+    width: 40%;
+}
