@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.row::before,
+.row::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.col {
+    display: inline-block;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+
+.nav {
+    background-color: #333;
+}
+.nav a {
+    color: #fff;
+    padding: 4px 8px;
+}
+
+
+.wrapper {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.content {
+    background-color: #eee;
+    padding: 20px;
+}
+
+.content span {
+    line-height: 1.6em;
+    display: inline-block;
+}
+span:first-letter {
+    font-size: 120%;
+    font-weight: bold;
+}
