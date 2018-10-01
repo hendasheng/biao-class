@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>行内块布局</title>
+
+    <style>
+        
+        .wrapper {
+            font-size: 0;
+        }
+        
+        .inline-block {
+            font-size: 14px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .red {
+            width: 20%;
+            /* padding: 10px; */
+            background-color: #fd7c7c;
+        }
+        .blue {
+            width: 30%;
+            /* padding: 20px; */
+            background-color: #7ca9fd;
+        }
+        .yellow {
+            width: 50%;
+            /* padding: 15px; */
+            background-color: #fddc7c;
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="inline-block red">1</div>
+        <div class="inline-block blue">2</div>
+        <div class="inline-block yellow">3</div>
+    </div>    
+    
+</body>
+</html>
