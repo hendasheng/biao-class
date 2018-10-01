@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.row::before,
+.row::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.col {
+    float: left;
+}
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+
+
+.nav {
+    background-color: #333;
+}
+.nav a {
+    color: #fff;
+}
+
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
