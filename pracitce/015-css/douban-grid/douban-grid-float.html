@@ -1,0 +1,457 @@
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+    
+    
+    .row::before,
+    .row::after {
+        content: '';
+        display: block;
+        clear: both;        
+    }
+    
+    .col,
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-5,
+    .col-6,
+    .col-7,
+    .col-8,
+    .col-9,
+    .col-10,
+    .col-11,
+    .col-12 {
+        float: left;
+    }
+
+    .col-1 {width: 8.333333333333333%;}
+    .col-2 {width: 16.66666666666666%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33333333333333%;}
+    .col-5 {width: 41.66666666666666%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33333333333333%;}
+    .col-8 {width: 66.66666666666666%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33333333333333%;}
+    .col-11 {width: 91.66666666666666%;}
+    .col-12 {width: 100%;}
+
+    .fl {
+        float: left;
+    }
+    .fr {
+        float: right;
+    }
+
+
+
+    .nav {
+        background: #545652;
+        font-size: 12px;
+    }
+    .nav a {
+        color: #d5d5d5;
+        font-weight: 500;
+    }
+    .nav a:hover {
+        color: #fff;
+    }
+    .nav ul li {
+        padding: 6px 12px;
+    }
+
+
+    .main {
+     
+    }
+
+    .title-group {
+        background: #f0f6f3;
+        height: 74px;
+    }
+    .title-wrap {
+        width: 70%;
+        margin: 0 auto;
+        /* background: pink; */
+        line-height: 74px;
+    }
+    .title-wrap .title a {
+        font-size: 30px;
+        font-weight: 600;
+        color: #037b82;
+    }
+    .title-wrap .title-nav a {
+        color: #037b82;
+        margin: 0 10px;
+        font-size: 15px;
+    }
+    .title-wrap .title-nav a:hover {
+        background: #037b82;
+        color: #fff;
+    }
+
+    .search {
+        /* background: pink; */
+        height: 74px;
+    }
+    .search input {
+        border: 1px solid rgba(0, 0, 0, .1);
+        height: 28px;
+        width: 242px;
+        margin-top: 22px;
+        padding: 4px 6px;
+        outline: none;
+    }
+    input::placeholder {
+        color: #ccc;
+    }
+
+    .search .search-btn {
+        width: 30px;
+        background: transparent url(https://img3.doubanio.com/f/shire/f71f15922ebd7c0ff0ea0e7a25577529efd8981a/pics/icon/bn_srh_1.png)no-repeat 50% 50%;
+    }
+
+
+    .main {
+        width: 70%; 
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    .main .main-title span {
+        font-size: 25px;
+        font-weight: 500;
+        color: #494949;
+    }
+    .main .main-wrapper {
+        margin-top: 40px;
+    }
+   
+    .main .main-group {
+        margin-top: 20px;
+    }
+    .main .main-group:nth-child(1) {
+        margin-top: 0px;
+    }
+
+    .main .like {
+        width: 48px;
+        height: 48px;
+        background: #fae9da;
+        text-align: center;
+        font-size: 13px;
+        line-height: 18px;
+        padding: 6px;
+        color: #ca6445;
+    }
+    
+    .main .content{
+        padding: 0 20px;;
+    }
+    .main .content-title a {
+        font-size: 16px;
+        color: #259;
+        letter-spacing: .8px;
+    }
+    .main .desc-wrapper {
+        margin-top: 10px;
+        background: #f9f9f9;
+        padding: 10px;
+    }
+    .main .desc-wrapper .desc {
+        padding-left: 20px;
+        color: #666;
+        font-size: 14px;
+    }
+    .main .more {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    .main .more span:nth-child(1),
+    .main .more span a  {
+        color: #494949;
+    }
+    .main .more span:nth-child(2) {
+        margin-left: 10px;
+        color: #999;
+    }
+    
+    .main .spline {
+        margin-top: 10px;
+        border: .5px solid rgba(0, 0, 0, .1);
+    }
+
+    .main .side-con-group {
+        margin-top: 10px;
+    }
+    .main .sidebar .dep-title {
+        font-size: 14px;
+        color: #666;
+    }
+    .main .sidebar .spline {
+        border: .5px solid rgba(0, 0, 0, .1);
+    }
+    .main .sidebar .side-title a {
+        color: #259;
+        font-size: 15px;
+    }
+    .main .sidebar .side-desc-group {
+        font-size: 14px;
+        margin-top: 10px;
+        color: #444;
+    }
+    .main .sidebar .side-desc-group a {
+        color: #259;
+        margin-left: 10px;
+    }
+    .main .side-con-group .spline {
+        margin-top: 10px;
+        border: .5px solid rgba(0, 0, 0, .1);
+    }
+
+    
+</style>
+
+<div class="row nav">
+    <div class="col col-8">
+        <ul>
+            <li class="fl"><a href="#">豆瓣</a></li>
+            <li class="fl"><a href="#">读书</a></li>
+            <li class="fl"><a href="#">电影</a></li>
+            <li class="fl"><a href="#">音乐</a></li>
+            <li class="fl"><a href="#">同城</a></li>
+            <li class="fl"><a href="#">小组</a></li>
+            <li class="fl"><a href="#">阅读</a></li>
+            <li class="fl"><a href="#">FM</a></li>
+            <li class="fl"><a href="#">时间</a></li>
+            <li class="fl"><a href="#">豆品</a></li>
+            <li class="fl"><a href="#">更多</a></li>
+        </ul>
+    </div>
+    <div class="col col-4">
+        <ul class="fr">
+            <li class="fl"><a href="#">提醒</a></li>
+            <li class="fl"><a href="#">下载豆瓣客户端</a></li>
+            <li class="fl"><a href="#">豆邮(10)</a></li>
+            <li class="fl"><a href="#">我的账号</a></li>
+        </ul>
+    </div>
+</div>
+<div class="row title-group">
+    <div class="row title-wrap">
+        <div class="col col-8">
+            <div class="col col-3 title"><a href="#">豆瓣小组</a></div>
+            <div class="col col-9 title-nav">
+                <ul>
+                    <li class="fl"><a href="#">我的小组</a></li>
+                    <li class="fl"><a href="#">精选</a></li>
+                    <li class="fl"><a href="#">文化</a></li>
+                    <li class="fl"><a href="#">行摄</a></li>
+                    <li class="fl"><a href="#">娱乐</a></li>
+                    <li class="fl"><a href="#">时尚</a></li>
+                    <li class="fl"><a href="#">生活</a></li>
+                    <li class="fl"><a href="#">科技</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col col-4 search">
+            <input class="fr" type="text" placeholder="小组、话题">
+            <div class="search-btn"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row main">
+     <div class="col col-12 main-title">
+        <span>讨论精选</span>
+    </div>
+    <div class="col col-12 main-wrapper">
+        <div class="col col-9">
+            <div class="col col-12 main-group">
+                <div class="col col-1 like">
+                    <div>1</div>
+                    <span>喜欢</span>
+                </div>
+                <div class="col col-11 content">
+                    <div class="col col-12 content-title">
+                        <a href="#">标题题题题题题题题题题题</a>
+                    </div>
+                    <div class="col col-12 desc-wrapper">
+                        <div class="col col-1 img">
+                            <img src="https://dummyimage.com/60x60/ff5792/000000" alt="">
+                        </div>
+                        <div class="col col-11 desc">
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, pariatur dignissimos excepturi esse odio, aliquid velit, suscipit culpa unde nobis quam aspernatur eos et quibusdam explicabo.</span>
+                        </div>
+                    </div>
+                    <div class="col col-12 more">
+                        <span>来自 <a href="#">什么什么小组</a></span>
+                        <span> 10-02</span>
+                    </div>
+                    <span class="col col-12 spline"></span>
+                </div>
+            </div>
+            <div class="col col-12 main-group">
+                    <div class="col col-1 like">
+                        <div>1</div>
+                        <span>喜欢</span>
+                    </div>
+                    <div class="col col-11 content">
+                        <div class="col col-12 content-title">
+                            <a href="#">标题题题题题题题题题题题</a>
+                        </div>
+                        <div class="col col-12 desc-wrapper">
+                            <div class="col col-1 img">
+                                <img src="https://dummyimage.com/60x60/ff5792/000000" alt="">
+                            </div>
+                            <div class="col col-11 desc">
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, pariatur dignissimos excepturi esse odio, aliquid velit, suscipit culpa unde nobis quam aspernatur eos et quibusdam explicabo.</span>
+                            </div>
+                        </div>
+                        <div class="col col-12 more">
+                            <span>来自 <a href="#">什么什么小组</a></span>
+                            <span> 10-02</span>
+                        </div>
+                        <span class="col col-12 spline"></span>
+                    </div>
+            </div>
+            <div class="col col-12 main-group">
+                    <div class="col col-1 like">
+                        <div>1</div>
+                        <span>喜欢</span>
+                    </div>
+                    <div class="col col-11 content">
+                        <div class="col col-12 content-title">
+                            <a href="#">标题题题题题题题题题题题</a>
+                        </div>
+                        <div class="col col-12 desc-wrapper">
+                            <div class="col col-1 img">
+                                <img src="https://dummyimage.com/60x60/ff5792/000000" alt="">
+                            </div>
+                            <div class="col col-11 desc">
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, pariatur dignissimos excepturi esse odio, aliquid velit, suscipit culpa unde nobis quam aspernatur eos et quibusdam explicabo.</span>
+                            </div>
+                        </div>
+                        <div class="col col-12 more">
+                            <span>来自 <a href="#">什么什么小组</a></span>
+                            <span> 10-02</span>
+                        </div>
+                        <span class="col col-12 spline"></span>
+                    </div>
+            </div>     
+            <div class="col col-12 main-group">
+                    <div class="col col-1 like">
+                        <div>1</div>
+                        <span>喜欢</span>
+                    </div>
+                    <div class="col col-11 content">
+                        <div class="col col-12 content-title">
+                            <a href="#">标题题题题题题题题题题题</a>
+                        </div>
+                        <div class="col col-12 desc-wrapper">
+                            <div class="col col-1 img">
+                                <img src="https://dummyimage.com/60x60/ff5792/000000" alt="">
+                            </div>
+                            <div class="col col-11 desc">
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, pariatur dignissimos excepturi esse odio, aliquid velit, suscipit culpa unde nobis quam aspernatur eos et quibusdam explicabo.</span>
+                            </div>
+                        </div>
+                        <div class="col col-12 more">
+                            <span>来自 <a href="#">什么什么小组</a></span>
+                            <span> 10-02</span>
+                        </div>
+                        <span class="col col-12 spline"></span>
+                    </div>
+            </div>                   
+         </div>
+         
+        <div class="col col-3 sidebar">
+            <div class="col col-12 dep-title">值得加入的小组</div>
+            <span class="col col-12 spline"></span>
+
+            <div class="col col-12 side-con-group">
+                <div class="col col-3">
+                    <img src="https://dummyimage.com/48x48/5993ff/000000" alt="">
+                </div>
+                <div class="col col-9">
+                    <div class="side-title">
+                        <a href="#">小组的名字</a>
+                    </div>
+                    <div class="side-desc-group">
+                        <span>多少个选手</span>
+                        <a href="#">+加入小组</a>
+                    </div>
+                </div>
+                <div class="col col-12 spline"></div>
+            </div>
+
+            <div class="col col-12 side-con-group">
+                    <div class="col col-3">
+                        <img src="https://dummyimage.com/48x48/5993ff/000000" alt="">
+                    </div>
+                    <div class="col col-9">
+                        <div class="side-title">
+                            <a href="#">小组的名字</a>
+                        </div>
+                        <div class="side-desc-group">
+                            <span>多少个选手</span>
+                            <a href="#">+加入小组</a>
+                        </div>
+                    </div>
+                    <div class="col col-12 spline"></div>
+            </div>
+
+            <div class="col col-12 side-con-group">
+                    <div class="col col-3">
+                        <img src="https://dummyimage.com/48x48/5993ff/000000" alt="">
+                    </div>
+                    <div class="col col-9">
+                        <div class="side-title">
+                            <a href="#">小组的名字</a>
+                        </div>
+                        <div class="side-desc-group">
+                            <span>多少个选手</span>
+                            <a href="#">+加入小组</a>
+                        </div>
+                    </div>
+                    <div class="col col-12 spline"></div>
+            </div>
+
+            <div class="col col-12 side-con-group">
+                    <div class="col col-3">
+                        <img src="https://dummyimage.com/48x48/5993ff/000000" alt="">
+                    </div>
+                    <div class="col col-9">
+                        <div class="side-title">
+                            <a href="#">小组的名字</a>
+                        </div>
+                        <div class="side-desc-group">
+                            <span>多少个选手</span>
+                            <a href="#">+加入小组</a>
+                        </div>
+                    </div>
+                    <div class="col col-12 spline"></div>
+            </div>
+            
+        </div>
+    </div>
+   
+   
+</div>
+
+
