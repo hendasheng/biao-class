@@ -1,0 +1,36 @@
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .row::before,
+    .row::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .col {
+        float: left;
+        width: 50%;
+        background: rgba(253, 163, 178, .4);
+        padding: 40px;
+        border: solid rgba(253, 163, 178, .4);
+        text-align: center;
+    }
+
+    
+</style>
+
+<div class="row">
+    <div class="col">
+        <div class="col">AA</div>
+        <div class="col">BB</div>
+    </div>
+    <div class="col">
+        <div class="col">AA</div>
+        <div class="col">BB</div>
+    </div>
+</div>
