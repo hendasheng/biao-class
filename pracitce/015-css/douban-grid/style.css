@@ -1,0 +1,224 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.row::before,
+.row::after {
+    content: '';
+    display: block;
+    clear: both;        
+}
+
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    float: left;
+}
+
+.col-1 {width: 8.333333333333333%;}
+.col-2 {width: 16.66666666666666%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33333333333333%;}
+.col-5 {width: 41.66666666666666%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33333333333333%;}
+.col-8 {width: 66.66666666666666%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33333333333333%;}
+.col-11 {width: 91.66666666666666%;}
+.col-12 {width: 100%;}
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+
+/* 主导航 */
+
+.nav {
+    background: #545652;
+    font-size: 12px;
+}
+.nav a {
+    color: #d5d5d5;
+    font-weight: 500;
+}
+.nav a:hover {
+    color: #fff;
+}
+.nav ul li {
+    padding: 6px 12px;
+}
+
+
+/* 页面导航 */
+
+.title-group {
+    background: #f0f6f3;
+    height: 74px;
+}
+.title-wrap {
+    width: 70%;
+    margin: 0 auto;
+    /* background: pink; */
+    line-height: 74px;
+}
+.title-wrap .title a {
+    font-size: 30px;
+    font-weight: 600;
+    color: #037b82;
+}
+.title-wrap .title-nav a {
+    color: #037b82;
+    margin: 0 10px;
+    font-size: 15px;
+}
+.title-wrap .title-nav a:hover {
+    background: #037b82;
+    color: #fff;
+}
+
+.search {
+    /* background: pink; */
+    height: 74px;
+}
+.search input {
+    border: 1px solid rgba(0, 0, 0, .1);
+    height: 28px;
+    width: 242px;
+    margin-top: 22px;
+    padding: 4px 6px;
+    outline: none;
+}
+input::placeholder {
+    color: #ccc;
+}
+
+.search .search-btn {
+    width: 30px;
+    background: transparent url(https://img3.doubanio.com/f/shire/f71f15922ebd7c0ff0ea0e7a25577529efd8981a/pics/icon/bn_srh_1.png)no-repeat 50% 50%;
+}
+
+/* 内容区域 */
+
+.main {
+    width: 70%; 
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.main .main-title span {
+    font-size: 25px;
+    font-weight: 500;
+    color: #494949;
+}
+.main .main-wrapper {
+    margin-top: 40px;
+}
+
+.main .main-group {
+    margin-top: 20px;
+}
+.main .main-group:nth-child(1) {
+    margin-top: 0px;
+}
+
+.main .like {
+    width: 48px;
+    height: 48px;
+    background: #fae9da;
+    text-align: center;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 6px;
+    color: #ca6445;
+}
+
+.main .content{
+    padding: 0 20px;;
+}
+.main .content-title a {
+    font-size: 16px;
+    color: #259;
+    letter-spacing: .8px;
+}
+.main .desc-wrapper {
+    margin-top: 10px;
+    background: #f9f9f9;
+    padding: 10px;
+}
+.main .desc-wrapper .desc {
+    padding-left: 20px;
+    color: #666;
+    font-size: 14px;
+}
+.main .more {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.main .more span:nth-child(1),
+.main .more span a  {
+    color: #494949;
+}
+.main .more span:nth-child(2) {
+    margin-left: 10px;
+    color: #999;
+}
+
+.main .spline {
+    margin-top: 10px;
+    border: .5px solid rgba(0, 0, 0, .1);
+}
+
+.main .side-con-group {
+    margin-top: 10px;
+}
+.main .sidebar .dep-title {
+    font-size: 14px;
+    color: #666;
+}
+.main .sidebar .spline {
+    border: .5px solid rgba(0, 0, 0, .1);
+}
+.main .sidebar .side-title a {
+    color: #259;
+    font-size: 15px;
+}
+.main .sidebar .side-desc-group {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #444;
+}
+.main .sidebar .side-desc-group a {
+    color: #259;
+    margin-left: 10px;
+}
+.main .side-con-group .spline {
+    margin-top: 10px;
+    border: .5px solid rgba(0, 0, 0, .1);
+}
+
