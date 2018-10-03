@@ -1,0 +1,257 @@
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .row {
+        border: .5px solid blue;
+        padding: 10px;
+    }
+    
+    .row::before,
+    .row::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .col {
+        float: left;
+        
+        border: 2px solid orange;
+    }
+
+   
+    .col-1 {width: 8.333333333333333%;}
+    .col-2 {width: 16.66666666666666%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33333333333333%;}
+    .col-5 {width: 41.66666666666666%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33333333333333%;}
+    .col-8 {width: 66.66666666666666%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33333333333333%;}
+    .col-11 {width: 91.66666666666666%;}
+    .col-12 {width: 100%;}
+
+    .fl {
+        float: left;
+    }
+    .fr {
+        float: right;
+    }
+
+
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .search-wrap {
+        width: 60%;
+        margin: 0 auto;
+    }
+    
+</style>
+
+<div class="row nav wrapper">
+    <div class="col col-2">
+        logo
+    </div>
+    <div class="col col-1">
+        所在城市
+    </div>
+    <div class="col col-9">
+        <div class="row sign">
+            <div class="fr">登录/注册</div>
+        </div>
+        <div class="row nav-group">
+            链接组
+        </div>
+    </div>
+</div>
+
+<div class="row search wrapper">
+    <div class="row  search-wrap">
+        <div class="row title">标题题题题题题</div>
+        <div class="row search-group">
+            <div class="row search-nav">
+                <div>链接们</div>
+                <input type="text">
+                <span class="btn">开始找房</span>
+            </div>
+        </div>
+        <div class="row more">关于/保证书/致广大用户</div>
+    </div>
+</div>
+ 
+<div class="row features wrapper">
+    <div class="col col-4">找二手房</div>
+    <div class="col col-4">地图找房</div>
+    <div class="col col-4">房屋股价</div>
+</div>
+
+<div class="row download wrapper">
+    <div class="col col-5">
+        <div class="row title">标题题题题题题题题题</div>
+        <div class="row desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur error ducimus beatae commodi cum ex. Minima sunt quisquam sed impedit rem, quasi adipisci blanditiis natus quos necessitatibus, obcaecati quis?</div>
+        <div class="row download-group">
+            <div class="col col-4 store">
+                <div class="iphone">iPhone</div>
+                <div class="android">Android</div>
+            </div>
+            <div class="col col-8 QRcode">二维码</div>
+        </div>
+    </div>
+    <div class="col col-7"></div>
+</div>
+
+<div class="row two-house wrapper">
+    <div class="row title-wrap">
+        <div class="title">标题题题题题题题题</div>
+        <div class="desc">
+            <div class="fl">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="fr">more</div>
+        </div>
+    </div>
+    <div class="row card-group">
+        <div class="col col-3 card-list">
+            <div class="row card-wrap">
+                <div class="img">
+                    <img src="https://dummyimage.com/250x192/ffd736/fff&text=img" alt="">
+                </div>
+                <div class="title">这个卡片的标题</div>
+                <div class="desc">这个卡片的简介</div>
+            </div>
+            <div class="other">近期关注度较高的房源</div>
+        </div>
+         <div class="col col-3 card-list">
+            <div class="row card-wrap">
+                <div class="img">
+                    <img src="https://dummyimage.com/250x192/ffd736/fff&text=img" alt="">
+                </div>
+                <div class="title">这个卡片的标题</div>
+                <div class="desc">这个卡片的简介</div>
+            </div>
+            <div class="other">近期关注度较高的房源</div>
+        </div>     
+        <div class="col col-3 card-list">
+            <div class="row card-wrap">
+                <div class="img">
+                    <img src="https://dummyimage.com/250x192/ffd736/fff&text=img" alt="">
+                </div>
+                <div class="title">这个卡片的标题</div>
+                <div class="desc">这个卡片的简介</div>
+            </div>
+            <div class="other">近期关注度较高的房源</div>
+        </div>
+        <div class="col col-3 card-list">
+            <div class="row card-wrap">
+                <div class="img">
+                    <img src="https://dummyimage.com/250x192/ffd736/fff&text=img" alt="">
+                </div>
+                <div class="title">这个卡片的标题</div>
+                <div class="desc">这个卡片的简介</div>
+            </div>
+            <div class="other">近期关注度较高的房源</div>
+        </div>             
+    </div>
+</div>
+
+<div class="row community wrapper">
+    <div class="row title-wrap">
+        <div class="title">标题题题题题题题题题</div>
+        <div class="desc">
+            <div class="fl">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="fr">more</div>
+        </div>
+    </div>
+    <div class="row card-group">
+        <div class="col col-4 card-list">
+            <div class="img">
+                <img src="https://dummyimage.com/400x240/ff4f14/fff&text=img" alt="">
+            </div>
+            <div class="title">这个卡片的标题</div>
+            <div class="desc-wrap">
+                <div class="fl">多少钱</div>
+                <div class="fr">2018.10.03</div>
+            </div>
+        </div>
+        <div class="col col-4 card-list">
+            <div class="img">
+                <img src="https://dummyimage.com/400x240/ff4f14/fff&text=img" alt="">
+            </div>
+            <div class="title">这个卡片的标题</div>
+            <div class="desc-wrap">
+                <div class="fl">多少钱</div>
+                <div class="fr">2018.10.03</div>
+            </div>
+        </div>
+        <div class="col col-4 card-list">
+            <div class="img">
+                <img src="https://dummyimage.com/400x240/ff4f14/fff&text=img" alt="">
+            </div>
+            <div class="title">这个卡片的标题</div>
+            <div class="desc-wrap">
+                <div class="fl">多少钱</div>
+                <div class="fr">2018.10.03</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row new-house wrapper">
+    <div class="row title-wrap">
+        <div class="title">标题题题题题题题题</div>
+        <div class="fl">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+        <div class="fr">more</div>
+    </div>
+    <div class="row card-group">
+        <div class="col col-4 card-list">
+            <img src="https://dummyimage.com/400x240/1472ff/fff&text=img" alt="">
+            <div>在哪里</div>
+            <div>多少钱</div>
+        </div>
+         <div class="col col-4 card-list">
+            <img src="https://dummyimage.com/400x240/1472ff/fff&text=img" alt="">
+            <div>在哪里</div>
+            <div>多少钱</div>
+        </div>
+        <div class="col col-4 card-list">
+            <img src="https://dummyimage.com/400x240/1472ff/fff&text=img" alt="">
+            <div>在哪里</div>
+            <div>多少钱</div>
+        </div>
+    </div>
+</div>
+
+<div class="row authenticity wrapper">
+    <div class="col col-6 title-group">
+        <div class="title">标题题题题题题题题题</div>
+        <div class="desc">副标题题题题</div>
+    </div>
+    <div class="col col-6 search">
+        <div class="item">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            <br>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </div>
+        <input type="text" placeholder="输入查询真伪">
+    </div>
+</div>
+
+<div class="row footer wrapper">
+    <div class="row about">
+        <div class="fl">链接组</div>
+        <div class="fr">客服电话</div>
+    </div>
+    <div class="row city">
+        城市组
+    </div>
+    <div class="row filing">
+        备案信息
+    </div>
+</div>
