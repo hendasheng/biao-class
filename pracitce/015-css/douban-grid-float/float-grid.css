@@ -13,6 +13,10 @@ ul {
     list-style: none;
 }
 
+input {
+    outline: none;
+}
+
 
 .row::before,
 .row::after {
