@@ -1,8 +1,13 @@
 
 <style>
 
+    * {
+        box-sizing: border-box;
+    }
+    
     .row {
-        border: 1px solid pink
+        border: 1px solid pink;
+        padding: 4px;
     }
 
     .row::before,
@@ -19,6 +24,8 @@
     
     .col {
         float: left;
+
+        border: 1px solid blue;
     }
     
     .col-1 {width: 4.1666666667%;}
@@ -50,6 +57,88 @@
 </style>
 
 
-<div class="row nav-global wrapper">
+<div class="row nav-global">
+    <div class="row wrapper">
+        <div class="col col-8">链接组</div>
+        <div class="col col-16">链接组</div>
+    </div>
+</div>
 
+<div class="row search-wrap wrapper">
+    <div class="col col-4">Logo</div>
+    <div class="col col-14">
+        <div class="search-nav">链接组</div>
+        <div class="input">输入框</div>
+        <div class="tag">标签组</div>
+    </div>
+    <div class="col col-6">二维码</div>
+</div>
+
+<div class="row page-nav wrapper">
+    <div class="col col-4">主题市场</div>
+    <div class="col col-20">链接组</div>
+</div>
+
+<div class="row banner-wrap wrapper">
+    <div class="col col-4">导航链接</div>
+    <div class="col col-14">
+        <div class="row">
+            <div class="col col-18">轮播广告</div>
+            <div class="col col-6">海报广告</div>
+        </div>
+        <div class="row">
+            <div class="col col-18">副轮播广告</div>
+            <div class="col col-6">副海报广告</div>
+        </div>
+    </div>
+    <div class="col col-6">功能块</div>
+</div>
+
+<div class="row headline wrapper">
+    <div class="col col-4">淘宝头条 logo</div>
+    <div class="col col-14">内容</div>
+    <div class="col col-6">阿里 App</div>
+</div>
+
+<div class="row life wrapper">
+    <div class="title">生活研究所</div>
+    <div class="col col-4">01</div>
+    <div class="col col-4">02</div>
+    <div class="col col-4">03</div>
+    <div class="col col-4">04</div>
+    <div class="col col-4">05</div>
+    <div class="col col-4">06</div>
+</div>
+
+<div class="row promotion wrapper">
+    <div class="col col-12">
+        <div class="title">有好货</div>
+        <div class="col col-8">01</div>
+        <div class="col col-8">02</div>
+        <div class="col col-8">03</div>
+    </div>
+    <div class="col col-12">
+        <div class="title">爱逛街</div>
+        <div class="col col-8">01</div>
+        <div class="col col-8">02</div>
+        <div class="col col-8">03</div>
+    </div>
+</div>
+
+<div class="row service">
+    <div class="row wrapper">
+        <div class="title">END</div>
+        <div class="col col-6">01</div>
+        <div class="col col-6">02</div>
+        <div class="col col-6">03</div>
+        <div class="col col-6">04</div>
+    </div>
+</div>
+
+<div class="row footer">
+    <div class="wrapper">
+        <div class="Cooperation">合作链接组</div>
+        <div class="abou">关于链接组</div>
+        <div class="filing">备案链接组</div>
+    </div>
 </div>
