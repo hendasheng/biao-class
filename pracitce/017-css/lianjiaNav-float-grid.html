@@ -1,0 +1,134 @@
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #333;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .row::before,
+    .row::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .col {
+        float: left;
+    }
+    .col-6 {
+        width: 25%;
+    }
+    .col-18 {
+        width: 75%;
+    }
+
+    .right {
+        text-align: right;
+    }
+    
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .nav {
+        padding-top: 30px;
+    }
+    
+    .nav a {
+        color: #fff;
+    }
+
+    #logo {
+        width: 137px;
+        height: 66px;
+        display: inline-block;
+        background-image: url(./img/spriteV2_new.png);
+        background-position: 10px -366px;
+        /* background: #333; */
+    }
+    .location {
+        position: absolute;
+        background: rgba(0, 0, 0, .3);
+        display: inline-block;
+        border-radius: 16px;
+        font-size: 12px;
+        padding: 4px 10px;
+        margin-top: 26px;
+        margin-left: 10px;
+    }
+    .location .icon-location {
+        width: 10px;
+        height: 12px;
+        display: inline-block;
+        background: pink;
+    }
+
+    .auth {
+        margin-bottom: 10px;
+    }
+    .auth a {
+        font-size: 12px;
+    }
+
+    .nav .nav-group a {
+        font-weight: 600;
+        padding-left: 10px;
+    }
+
+    .nav .nav-icon {
+        width: 19px;
+        height: 22px;
+        background-color: pink;
+        display: inline-block;
+    }
+
+
+    
+</style>
+
+<div class="row nav">
+    <div class="row wrapper">
+        <div class="col col-6">
+            <a href="#" id="logo"></a>
+            <a href="#" class="location">
+                <span class="icon-location"></span>
+                北京
+            </a>
+        </div>
+        <div class="col col-18 right">
+            <div class="row auth">
+                <a href="#"></a>
+                <a href="#">登录</a>
+                <a href="#">立即注册</a>
+            </div>
+            <div class="row nav-group">
+                <a href="#">二手房</a>
+                <a href="#">新房</a>
+                <a href="#">租房</a>
+                <a href="#">
+                    <span class="nav-icon"></span>
+                    旅居
+                </a>
+                <a href="#">海外</a>
+                <a href="#">小区</a>
+                <a href="#">经纪人</a>
+                <a href="#">指南</a>
+                <a href="#">房价</a>
+                <a href="#">工具</a>
+                <a href="#">经验</a>
+                <a href="#">发布房源</a>
+                <a href="#">企业汇合</a>
+            </div>
+        </div>
+    </div>
+</div>
