@@ -1,0 +1,213 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: #eee;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    form {
+        margin: 0;
+        padding: 0;
+    }
+    input,
+    button {
+        outline: none;
+    }
+
+    .row::before,
+    .row::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .col {
+        float: left;
+
+        /* border: 1px solid pink; */
+    }
+
+    .col-1 {
+        width: 8.333333333333333%;
+    }
+
+    .col-2 {
+        width: 16.66666666666666%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33333333333333%;
+    }
+
+    .col-5 {
+        width: 41.66666666666666%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33333333333333%;
+    }
+
+    .col-8 {
+        width: 66.66666666666666%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33333333333333%;
+    }
+
+    .col-11 {
+        width: 91.66666666666666%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+
+    .right {
+        float: right;
+    }
+
+    .container {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .nav {
+        background: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, .1);
+        padding: .6em 0;
+    }
+    .nav a {
+        display: inline-block;
+    }
+
+/* logo */
+    .nav .logo {
+        vertical-align: middle;
+        padding: .25em;
+    }
+    
+/* nav-group */
+    .nav .nav-group a {
+        padding: .49em 1em;
+        font-size: 15px;
+    }
+    .nav .nav-group a:nth-child(1) {
+        color: #444;
+        margin-left: 1em;
+    }
+    .nav .nav-group a:nth-child(2),
+    .nav .nav-group a:nth-child(3) {
+        color: #8590a6;
+    }
+    .nav .nav-group a:nth-child(2):hover,
+    .nav .nav-group a:nth-child(3):hover {
+        color: #175199;
+    }
+
+/* search-wrap */
+    .nav .search-wrap input,
+    .nav .search-wrap button {
+        border-radius: 4px;
+    }
+
+    .nav .search-wrap input {
+        padding: .75em 1em;
+        width: 80%;
+        border: 1px solid rgb(187, 187, 187);
+        background: rgb(247, 247, 247);
+    }
+    .nav .search-wrap input:focus {
+        border: 1px solid #8590a6;
+    }
+    .nav .search-wrap button {
+        padding: .5em 1em;
+        font-size: 14px;
+        width: 18%;
+        background: #0084ff;
+        color: rgba(255, 255, 255, .95);
+        border: 1px solid #007cf0;
+    }
+    .nav .search-wrap button:hover {
+        background: #007aec;
+    }
+
+ /* nav-right */
+    .nav .nav-right img {
+        vertical-align: middle;
+    }
+    .nav .nav-right a {
+        padding: .2em;
+    }
+    .nav .nav-right .notice span,
+    .nav .nav-right .news span {
+        position: relative;
+        background: #f1403c;
+        left: -18px;
+        top: -8px;
+        font-size: 12px;
+        padding: 0 .5em;
+        border-radius: 1em;
+        color: #fff;
+        border: 2px solid #fff;
+    }
+    
+    
+</style>
+
+<div class="row nav">
+    <div class="container">
+        <div class="col col-8 nav-left">
+            <div class="row">
+                <div class="col col-1 logo">
+                    <a href="#">
+                        <img src="https://dummyimage.com/60x28/2e5fff/2e5fff" alt="">
+                    </a>
+                </div>
+                <div class="col col-4 nav-group">
+                    <a href="#">首页</a>
+                    <a href="#">发现</a>
+                    <a href="#">话题</a>
+                </div>
+                <form class="col col-7 search-wrap">
+                    <input type="text">
+                    <button>提问</button>
+                </form>
+            </div>
+        </div>
+        <div class="col col-4 nav-right">
+            <div class="right">
+                <a class="notice" href="#">
+                    <img src="https://dummyimage.com/20x20/2e5fff/2e5fff" alt="">
+                    <span>10</span>
+                </a>
+                <a class="news" href="#">
+                    <img src="https://dummyimage.com/20x20/2e5fff/2e5fff" alt="">
+                    <span>14</span>
+                </a>
+                <a href="#" class="avatar">
+                    <img src="https://dummyimage.com/30x30/2e5fff/2e5fff" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
