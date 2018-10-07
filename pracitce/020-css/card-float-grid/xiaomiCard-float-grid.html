@@ -1,0 +1,181 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .row::before,
+    .row::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .col {
+        float: left;
+        padding-left: .4em;
+        padding-right: .4em;
+    }
+
+    .col-5 {
+        width: 25%;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+    .muted {
+        opacity: .5;
+    }
+
+    .card-wrap {
+        text-align: center;
+    }
+
+    .card {
+        background: #fff;
+        /* border: 1px solid #eee; */
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+        box-shadow:
+    }
+
+    .card a {
+        display: inline-block;
+    }
+
+    .card-wrap .text {
+        padding-left: .3em;
+        padding-right: .3em;
+    }
+
+    .card-wrap .text .title {
+        font-size: 16px;
+        font-weight: 600;
+        padding: .4em 0;
+        margin-top: .6em;
+    }
+
+    .card-wrap .text .muted {
+        font-size: 13px;
+    }
+
+    .card-wrap .text .price {
+        margin: 1em 0;
+        display: inline-block;
+    }
+
+    .card-wrap .text .price .hot {
+        color: #ff6700;
+        font-weight: 500;
+    }
+
+    .card-wrap .text .price .deleted {
+        text-decoration: line-through;
+    }
+
+    .card-wrap .thumbnail {
+        position: relative;
+    }
+
+    .card-wrap .flag {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        background: rgb(255, 60, 60);
+        color: #fff;
+        padding: 2px 6px;
+        font-size: 14px;
+        width: 80px;
+        margin-left: -40px;
+    }
+
+    .card:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+    }
+</style>
+
+<div class="row card-wrap container">
+    <div class="col col-5">
+        <div class="card">
+            <div class="thumbnail">
+                <img src="https://dummyimage.com/600x600/ff6700/ff6700" alt="">
+                <span class="flag">减 200 元</span>
+            </div>
+            <div class="text">
+                <div class="title">
+                    <a href="#">标题题题题</a>
+                </div>
+                <div class="muted">Lorem ipsum dolor</div>
+                <div class="price">
+                    <span class="hot">2611 元</span>
+                    <span class="muted deleted">3029 元</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-5">
+        <div class="card">
+            <div class="thumbnail">
+                <img src="https://dummyimage.com/600x600/ff6700/ff6700" alt="">
+                <span class="flag">减 200 元</span>
+            </div>
+            <div class="text">
+                <div class="title">
+                    <a href="#">标题题题题</a>
+                </div>
+                <div class="muted">Lorem ipsum dolor</div>
+                <div class="price">
+                    <span class="hot">2611 元</span>
+                    <span class="muted deleted">3029 元</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-5">
+        <div class="card">
+            <div class="thumbnail">
+                <img src="https://dummyimage.com/600x600/ff6700/ff6700" alt="">
+                <span class="flag">减 200 元</span>
+            </div>
+            <div class="text">
+                <div class="title">
+                    <a href="#">标题题题题</a>
+                </div>
+                <div class="muted">Lorem ipsum dolor</div>
+                <div class="price">
+                    <span class="hot">2611 元</span>
+                    <span class="muted deleted">3029 元</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-5">
+        <div class="card">
+            <div class="thumbnail">
+                <img src="https://dummyimage.com/600x600/ff6700/ff6700" alt="">
+                <span class="flag">减 200 元</span>
+            </div>
+            <div class="text">
+                <div class="title">
+                    <a href="#">标题题题题</a>
+                </div>
+                <div class="muted">Lorem ipsum dolor</div>
+                <div class="price">
+                    <span class="hot">2611 元</span>
+                    <span class="muted deleted">3029 元</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
