@@ -1,0 +1,196 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+
+        background: #eee;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    input {
+        outline: none;
+        box-shadow: none;
+        border: none;
+    }
+    
+    .row::before,
+    .row::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .col {
+        float: left;
+
+        /* border: 1px solid rgba(0, 0, 0, .2); */
+    }
+    .col-1 {
+        width: 8.333333333333333%;
+    }
+
+    .col-2 {
+        width: 16.66666666666666%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33333333333333%;
+    }
+
+    .col-5 {
+        width: 41.66666666666666%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33333333333333%;
+    }
+
+    .col-8 {
+        width: 66.66666666666666%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33333333333333%;
+    }
+
+    .col-11 {
+        width: 91.66666666666666%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+
+    .fr {
+        float: right;
+    }
+    
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .nav {
+        padding: .6em 0;
+        background: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, .1);
+    }
+    
+/* search-wrap */
+    .nav .search-wrap {
+        position: relative;
+    }
+    .nav .search-wrap input {
+        border: 1px solid #eee;
+        width: 95%;
+        padding: .5em;
+    }
+    .nav .search-wrap img {
+        position: absolute;
+        right: 2.5em;
+        top: .2em;
+    }
+    .nav .search-wrap input:focus {
+        border: 1px solid #fa7d3c;
+    }
+
+/* nav-group */
+    .nav .nav-group img {
+        vertical-align: middle;
+    }
+    .nav .nav-group a {
+        display: inline-block;
+        padding: .34em 1em;
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .nav .nav-group a:hover {
+        color: #fa7d3c;
+    }
+    .nav .nav-group span {
+        color: #ccc;
+        font-size: 12px;
+    }
+
+/* uesr-wrap */
+    .nav .user-wrap img {
+        vertical-align: middle;
+    }
+    .nav .user-wrap a {
+        display: inline-block;
+        padding: .35em;
+    }
+    
+</style>
+
+<div class="row nav">
+    <div class="container">
+        <div class="col col-6 nav-left">
+            <div class="col col-2 logo">
+                <a href="#">
+                    <img src="https://dummyimage.com/80x30/fa7d3c/fa7d3c" alt="">
+                </a>
+            </div>
+            <div class="col col-10 search-wrap">
+                <input type="text" placeholder="大家正在搜索：王花花 李栓蛋">
+                <a href="#">
+                    <img src="https://dummyimage.com/18x23/fa7d3c/fa7d3c" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="col col-6 nav-right">
+            <div class="fr nav-group">
+                <a href="#">
+                    <img src="https://dummyimage.com/22x22/fa7d3c/fa7d3c" alt="">
+                    首页
+                </a>
+                <a href="#">
+                    <img src="https://dummyimage.com/22x22/fa7d3c/fa7d3c" alt="">
+                    视频
+                </a>
+                <a href="#">
+                    <img src="https://dummyimage.com/22x22/fa7d3c/fa7d3c" alt="">
+                    发现
+                </a>
+                <a href="#">
+                    <img src="https://dummyimage.com/22x22/fa7d3c/fa7d3c" alt="">
+                    游戏
+                </a>
+                <a href="#">
+                    <img src="https://dummyimage.com/22x22/fa7d3c/fa7d3c" alt="">
+                    niuuuuuuu
+                </a>
+                <span>|</span>
+                <a href="#">
+                    <img src="https://dummyimage.com/20x20/fa7d3c/fa7d3c" alt="">
+                </a>
+                <a href="#">
+                    <img src="https://dummyimage.com/20x20/fa7d3c/fa7d3c" alt="">
+                </a>
+                <a href="#">
+                    <img src="https://dummyimage.com/20x20/fa7d3c/fa7d3c" alt="">
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
