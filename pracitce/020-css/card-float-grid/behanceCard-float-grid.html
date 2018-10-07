@@ -1,0 +1,172 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        /* margin: 0; */
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .row::before,
+    .row::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .col {
+        float: left;
+    }
+
+    .col-4 {
+        width: 16.6666666667%;
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .fl {
+        float: left;
+    }
+
+    .fr {
+        float: right;
+    }
+
+    .card {
+        box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .card .thumbnail img {
+        height: 160px;
+        width: 100%;
+    }
+
+
+    .card .text-wrap {
+        padding: .6em .6em .6em .6em;
+    }
+
+    .card .text-wrap .title {
+        font-weight: 600;
+        margin-bottom: 1.5em;
+    }
+    
+    .card .text-wrap .user .name {
+    }
+
+    .card .text-wrap .user span {
+        display: block;
+        width: 10px;
+        height: 1px;
+        border: .01em solid #ccc;
+        margin-top: 1em;
+        margin-bottom: .4em;    
+    }
+    
+    .card .text-wrap .user .sort {
+        font-size: 14px;
+        color: #444;
+    }
+
+    .card .text-wrap .title:hover,
+    .card .text-wrap .user .name:hover,
+    .card .text-wrap .user .sort:hover {
+        text-decoration: underline;
+    }
+
+    .card .text-wrap .card-bottom span:nth-child(1) {
+        display: block;
+        height: 1px;
+        border: .01em solid #ccc;
+        margin-top: .4em;
+        margin-bottom: .8em;
+    }
+
+    .card .text-wrap .card-bottom {
+        font-size: 13px;
+        font-weight: 500;
+        vertical-align: middle;
+    }
+
+    .card .text-wrap .card-bottom a {
+        padding: 0 .4em;
+        line-height: 1.4em;
+    }
+
+    .card .text-wrap .card-bottom {
+        position: relative;
+    }
+    
+    .card .text-wrap .card-bottom a img:nth-child(1),
+    .card .text-wrap .card-bottom a img:nth-child(2) {
+        /* float: left; */
+        position: absolute;
+        top: 14px;
+        margin-left: -4px;
+        /* left: 0; */
+        border-radius: 50%;
+    }
+    .card .text-wrap .card-bottom a img:nth-last-child(1){
+        right: 0;
+    }
+    .card .text-wrap .card-bottom a span {
+        margin-left: 14px;
+    }
+
+    
+</style>
+
+<div class="row card-group container">
+    <div class="col col-4">
+        <div class="card">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="https://dummyimage.com/600x600/0004ec/0004ec" alt="">
+                </a>
+            </div>
+            <div class="text-wrap">
+                <div class="title">
+                    <a href="#">作品名名名名名名</a>
+                </div>
+                <div class="user">
+                    <a class="name" href="#">niuuuuuu</a>
+                    <span></span>
+                    <!-- <br> -->
+                    <a class="sort" href="#">Graphics</a>
+                </div>
+                <div class="row card-bottom">
+                    <span></span>
+                    <div class="fl">
+                        <a class="like" href="#">
+                            <img src="https://dummyimage.com/14x14/0004ec/0004ec" alt="">
+                            <span>1221</span>
+                        </a>
+                        <a class="look" href="#">
+                            <img src="https://dummyimage.com/14x14/0004ec/0004ec" alt="">
+                            <span>6562</span>
+                        </a>
+                    </div>
+                    <div class="fr">
+                        <a href="#">
+                            <img src="https://dummyimage.com/14x14/0004ec/0004ec" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
