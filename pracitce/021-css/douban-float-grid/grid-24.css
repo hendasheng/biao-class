@@ -1,3 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+.row::before,
+.row::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.col-24,
+.col-23,
+.col-22,
+.col-21,
+.col-20,
+.col-19,
+.col-18,
+.col-17,
+.col-16,
+.col-15,
+.col-14,
+.col-13,
+.col-12,
+.col-11,
+.col-10,
+.col-9,
+.col-8,
+.col-7,
+.col-6,
+.col-5,
+.col-4,
+.col-3,
+.col-2,
+.col-1,
+.col {
+    float: left;
+
+    border: 1px solid;
+}
+
 .col-1 {width: 4.1666666667%;}
 .col-2 {width: 8.3333333333%;}
 .col-3 {width: 12.5%;}
@@ -24,3 +65,17 @@
 .col-24 {
     width: 100%;
 }
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+

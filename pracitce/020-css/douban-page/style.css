@@ -56,7 +56,7 @@ input {
     .nav-page .nav-page-right input {
         width: 100%;
         padding: .7em;
-        margin: 1.9em 0;
+        margin: 1.5em 0;
         border: 1px solid #e1ebe6;
     }
     .nav-page .nav-page-right input::-webkit-input-placeholder {
@@ -64,7 +64,7 @@ input {
     }
     .nav-page .nav-page-right span {
         position: absolute;
-        top: 1.9em;
+        top: 1.6em;
         right: .4em;
     }
 

@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    background: #eee;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* nav */
+    .nav {
+        background: #545652;
+        padding: 0 1em;
+    }
+
+    .nav a {
+        display: inline-block;
+        color: #d5d5d5;
+        font-size: 12px;
+        padding: .4em .8em;
+    }
+
+    .nav a:hover {
+        color: #fff;
+    }
+
+/* page-nav */
+    .page-nav {
+        background: #f0f6f3;
+    }
+
+    .page-nav .logo img {
+
+    }
+
