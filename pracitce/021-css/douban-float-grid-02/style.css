@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+
+/* img {
+    width: 100%;
+} */
+
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+/* 主要链接样式 */
+.link-main a {
+    color: #259;
+}
+.link-main a:hover {
+    background: #37a;
+    color: #fff;
+}
+
+
+/* nav */
+    .nav {
+        background: #545652;
+        color: #d5d5d5;
+        font-size: 12px;
+        padding: 0 1em;
+    }
+
+    .nav a {
+        display: inline-block;
+        padding: .4em .8em;
+    }
+    .nav a:hover {
+        color: #fff;
+    }
+
+/* page-nav */
+    .page-nav {
+        background: #f0f6f3;
+        padding: 1em 0;
+    }
+
+    .page-nav .logo {
+        display: inline-block;
+    }
+    .page-nav .logo img {
+        display: block;
+    }
+
+    .page-nav .nav-group a {
+        display: inline-block;
+        color: #037b82;
+        font-size: 15px;
+        margin: .65em;
+    }
+    .page-nav .nav-group a:hover {
+        background: #037b82;
+        color: #fff;
+    }
+
+    .page-nav .search {
+        position: relative;
+        padding: .2em 0;
+    }
+    .page-nav .search input {
+        width: 100%;
+        padding: .8em;
+    }
+
+    .page-nav .search button {
+        position: absolute;
+        top: 1em;
+        right: .4em;
+        background: transparent;
+    }
+
+/* content */
+    .content .title-main {
+        font-size: 26px;
+        color: #494949;
+        margin: 1.5em 0;
+    }
+
+    .content .card-wrap .like {
+        background: #fae9da;
+        color: #ca6445;
+        width: 48px;
+        text-align: center;
+        font-size: 13px;
+        padding: .4em 0;
+    }
+
+    .content .card-main {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .content .card-main .card-title {
+        font-size: 15px;
+    }
+
+    .content .card-main .desc {
+        background: #f9f9f9;
+        color: #999;
+        padding: 1em;
+        font-size: 13px;
+        margin: 1em 0;
+    }
+    .content .card-main .desc .card-text {
+        padding-left: 2em;
+    }
+
+    .content .card-main .info {
+        font-size: 13px;
+        color: #666;
+    }
+    .content .card-main .info a {
+        color: #666;
+    }
+    .content .card-main .info a:hover {
+        background: #37a;
+        color: #fff;
+    }
+    .content .card-main .info .time {
+        color: #999;
+        margin-left: 1em;
+    }
+    .content .card-main .spline { */
+        height: 1px;
+        border: .5px solid rgba(0, 0, 0, .1);
+        margin: 1em 0;
+    }
+
+/* paginator */
+    .paginator {
+        text-align: center;
+        font-size: 14px;
+        color: #259;
+        margin: 1.6em 0;
+    }
+    .paginator a {
+        /* display: inline-block; */
+        margin: 0 .2em;
+        padding: 0 .4em
+    }
+    .paginator a:hover {
+        background: #37a;
+        color: #fff;
+    }
+
+    .paginator .link-selected {
+        background: #6ebfc3;
+        color: #fff;
+    }
+    .paginator .link-selected:hover {
+        background: #6ebfc3;
+    }
+
+    .paginator .muted a {
+        color: #999;
+    }
+    .paginator .muted a:hover {
+        background: none;
+    }
+
+/* sidebar */
+    .side-bar {
+        display: inline-block;
+        font-size: 14px;
+    }
+    .side-bar .side-thumbnail img {
+        display: block;
+    }
+    .side-bar .side-title {
+        color: #666;
+        margin-bottom: .6em;
+    }
+
+    .side-bar .side-spline {
+        display: block;
+        height: 1px;
+        border: .5px solid rgba(0, 0, 0, .1);
+        /* margin: .8em 0; */
+    }
+
+    .side-card .side-desc {
+        padding-left: 1.4em;
+    }
+    .side-card .side-info {
+        margin-top: .6em;
+        color: #666;
+    }
+
+    .side-card .side-info span {
+        margin-right: .6em;
+    }
+
+    .side-card {
+        padding: .8em 0;
+        border-bottom: .5px solid rgba(0, 0, 0, .1);
+    }
+
+/* footer */
+    .footer {
+        font-size: 13px;
+        border-top: .5px dashed rgba(0, 0, 0, .1);
+        padding: 1em 0;
+        margin-top: 2em;
+    }
+
+    .footer .filing {
+        color: #999;
+    }
+
+    .footer .about a {
+        margin: 0 .2em; 
+    }
+
+    .footer .about .pipe {
+        display: inline-block;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background: #259;
+        position: relative;
+        top: -.3em;
+    }
+
