@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    background: #eee;
     font-family: sans-serif;
 }
 
@@ -15,6 +14,15 @@ img {
 
 input {
     outline: none;
+}
+
+.base-title {
+    display: inline-block;
+    color: #37a;
+}
+.base-title:hover {
+    background: #37a;
+    color: #fff;
 }
 
 /* nav */
@@ -83,4 +91,160 @@ input {
         border: none;
     }
 
+/* content */
+    .content .title {
+        font-size: 26px;
+        color: #494949;
+        margin: 1.6em 0;
+    }
 
+    /* card */
+
+    
+    .content .card .like {
+        width: 50px;
+        background: #fae9da;
+        color: #ca6445;
+        text-align: center;
+        font-size: 13px;
+    }
+    .content .card .like div {
+        padding: .4em;
+    }
+
+    .content .card-main {
+        padding: 0 4em 0 1em;
+    }
+    
+    .content .card-title a {
+        color: #37a;
+        font-size: 15px;
+    }
+    .content .card-title a:hover,
+    .content .info a:hover {
+        background: #37a;
+        color: #fff;
+    }
+
+    .content .disc {
+        background: #f9f9f9;
+        color: #999;
+        padding: 1em;
+        margin: 1em 0;
+        font-size: 13px;
+    }
+    .content .disc .disc-text {
+        padding-left: 1em;
+    }
+    .content .info {
+        color: #666;
+        font-size: 13px;
+    }
+    .content .info a {
+        margin-right: 1em;
+    }
+    .content .info span:nth-child(2) {
+        color: #999;
+    }
+
+    .content .card .spline {
+        width: 100%;
+        height: 1px;
+        border: .4px solid rgba(0, 0, 0, .1);
+        margin: 1em 0;
+    }
+
+/* sidebar */
+    .content .sidebar .side-title {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .content .side-card a {
+        display: inline-block;
+    }
+    
+    .content .sidebar .side-card-title {
+        font-size: 14px;
+    }
+    
+    .content .sidebar .side-info {
+        font-size: 13px;
+        margin-top: .8em;
+    }
+    .content .sidebar .side-info span {
+        color: #666;
+        margin-right: 1em;
+    }
+
+    .content .sidebar .spline {
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        border: .4px solid rgba(0, 0, 0, .1);
+        margin: .4em 0;
+    }
+
+    .content .side-card  a {
+        display: inline-block;
+    }
+
+/* page-num */
+    .content .page-num {
+        text-align: center;
+        font-size: 13px;
+    }
+    .content .page-num span {
+        margin: 0 .2em;
+    }
+    .content .page-num a {
+        margin: .2em;
+        padding: 0 .4em;
+        color: #37a;
+    }
+    .content .page-num a:hover {
+        background: #37a;
+        color: #fff;
+    }
+
+    .link-selected {
+        background: #83BF73;
+        color: #fff !important;
+    }
+
+    .content .page-num .muted a {
+        color: #999;
+    }
+    .content .page-num .muted a:hover {
+        color: #999;
+        background: none;
+    }
+
+/* footer */
+    .footer {
+        font-size: 13px;
+        border-top: .5px dashed #ddd; 
+        margin: 3em 0;
+        padding: 1em 0;
+    }
+    .footer .filing {
+        color: #999;
+    }
+
+    .footer .about a {
+        color: #37a;
+    }
+    .footer .about a:hover {
+        background: #37a;
+        color: #fff;
+    }
+
+    .footer .about .pipe {
+        display: inline-block;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background: #37a;
+        position: relative;
+        top: -.2em;
+    }
