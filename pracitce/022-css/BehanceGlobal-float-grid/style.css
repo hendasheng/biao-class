@@ -200,6 +200,10 @@ a {
         display: inline-block;
         padding: .4em;
     }
+    .footer a:hover {
+        color: #fff;
+    }
+    
     
     .footer .footer-spline {
         display: inline-block;
