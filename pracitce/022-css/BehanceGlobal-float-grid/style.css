@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #f9f9f9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+/* nav */
+    .nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #191919;
+        color: #a4a4a4;
+        font-size: 15px;
+        padding: .7em 1em;
+        z-index: 999;
+    }
+    .nav a {
+        display: inline-block;
+    }
+    .nav .logo img {
+        vertical-align: middle;
+        padding: .8em 0;
+    }
+
+    .nav .nav-group {
+        text-align: center;
+    }
+    .nav .nav-group a {
+        padding: .6em;
+        font-weight: 600;
+    }
+    .nav .nav-group a:hover {
+        color: #fff;
+        transition: color 300ms;
+    }
+    .nav .nav-group a:nth-child(2) {
+        color: #fff;
+    }
+   
+    .nav .nav-group .btn {
+        background: #0057ff;
+        color: #fff;
+        border-radius: 20px;
+        padding: .3em 1em;
+    }
+    .nav .nav-group .btn:hover {
+        background: #003ecb;
+        transition: background 300ms;
+    }
+
+    .nav .user .nav-features img,
+    .nav .user .avatar img,
+    .nav .user .nav-more img {
+        vertical-align: middle;
+    }
+    .nav .user .avatar img {
+        border-radius: 50%;
+    }
+    .nav .user a {
+        padding: .3em .6em;
+    }
+    .nav .user .nav-features a, {
+        display: inline-block;
+        padding-top: .6em;
+        padding-bottom: .6em;
+    }
+
+/* page-nav */
+    .page-nav {
+        position: fixed;
+        top: 4em;
+        width: 100%;
+        text-align: center;
+        background: #fff;
+        font-weight: 600;
+        font-size: 15px;
+        padding: .6em 0;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+        z-index: 999;
+    }
+    .page-nav a {
+        display: inline-block;
+        padding: .8em;
+    }
+    .page-nav a:hover {
+        color: #0057ff;
+        transition: color 300ms;
+    }
+    .page-nav a:nth-child(1) {
+        color: #0057ff;
+    }
+
+/* con */
+    .con {
+        margin-top: 10em;
+    }
+
+    .con .card-wrap {
+        padding: 0 .6em;
+        margin-bottom: 1.4em;
+    }
+
+    .con .card {
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        font-size: 15px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    }
+   
+    .con .card .thumbnail img {
+        width: 100%;
+        height: 170px;
+    }
+
+    .con .card .card-text {
+        padding: 0 .8em;
+    }
+    .con .card .card-title {
+        font-weight: 600;
+        padding: .2em 0 1.4em 0;
+    }
+
+    .con .card .spline-short {
+        display: block;
+        width: 1em;
+        height: 1px;
+        border: .4px solid #eee;
+        margin: 1em 0 .4em 0;
+    }
+    
+    .con .card .card-owner {
+        font-size: 14px;
+    }
+    .con .card .card-sort {
+        font-size: 14px;
+        margin-bottom: .4em;
+        color: #191919;
+    }
+    
+    .con .card .spline-long {
+        display: block;
+        width: 100%;
+        height: 1px;
+        border: .4px solid #eee;
+        /* margin: .4em 0; */
+    }
+
+    .con .card .card-title a:hover,
+    .con .card .card-owner a:hover,
+    .con .card .card-sort a:hover{
+        text-decoration: underline;
+    }
+    
+    
+    .con .card .card-info {
+        padding: .6em 0;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .con .card .card-info span {
+        margin-right: .8em;
+    }
+    .con .card .card-info span:nth-last-child(1) {
+        margin: 0;
+    }
+    .con .card .card-info span img {
+        position: relative;
+        top: .2em;
+        border-radius: 50%;
+    }
+    .con .card .card-info .icon-text {
+        display: inline-block;
+        line-height: 1.3em;
+    }
+
+/* footer */
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #191919;
+        color: #a4a4a4;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 0 1em;
+
+    }
+
+    .footer a {
+        display: inline-block;
+        padding: .4em;
+    }
+    
+    .footer .footer-spline {
+        display: inline-block;
+        border: .4px solid rgba(255, 255, 255, .2);
+        height: .8em;
+        width: 1px;
+        margin: 0 1em;
+    }
+
+    .footer .about img {
+        position: relative;
+        top: .15em;
+        border-radius: 50%;
+    }
+
+    .footer .footer-logo img {
+        position: relative;
+        top: .15em;
+    }
