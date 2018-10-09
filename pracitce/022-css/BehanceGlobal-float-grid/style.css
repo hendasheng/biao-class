@@ -202,9 +202,10 @@ a {
     }
     .footer a:hover {
         color: #fff;
+        transition: color 300ms;
     }
     
-    
+
     .footer .footer-spline {
         display: inline-block;
         border: .4px solid rgba(255, 255, 255, .2);
