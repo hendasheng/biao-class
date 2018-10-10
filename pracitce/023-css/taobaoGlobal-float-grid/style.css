@@ -218,7 +218,25 @@ button {
         color: #f40;
         transition: color 300ms;
     }
+    
 
+
+    .hot {
+        background: #fff;
+        margin-top: .2em;
+        height: 115px;
+        text-align: center;
+    }
+    .hot img {
+        display: inline-block;
+        margin-top: 2.5em;
+    }
+    .hot span {
+        display: block;
+        font-size: 13px;
+        color: #999;
+    }
+    
 /* bannar */
     .banner {
         padding-top: .5em;
@@ -258,7 +276,7 @@ button {
     .banner .banner-sub .page-num span:nth-child(1) {
         color: #ff1648;
     }
-    
+
     .banner .banner-sub .spline {
         display: inline-block;
         height: .2em;
@@ -275,4 +293,202 @@ button {
         display: inline-block;
         position: relative;
         top: -.3em;
+    }
+
+
+    .banner .banner-ad {
+        background: #fff;
+        height: 114px;
+    }
+    .banner .banner-ad .ad-con {
+        padding: 0 .8em;
+    }
+    .banner .banner-ad .ad-title {
+        display: block;
+        font-size: 18px;
+        padding: .7em 0;
+    }
+    .banner .banner-ad .ad-more {
+        font-size: 13px;
+        color: #999;
+    }
+    .banner .banner-ad .ad-title:hover,
+    .banner .banner-ad .ad-more:hover {
+        color: #f40;
+    }
+    .banner .banner-ad .ad-desc {
+        color: #999;
+        font-size: 14px;
+    }
+    
+    .banner .banner-ad .ad-img img {
+        width: 100%;
+        height: 114px;
+        display: inline-block;
+        padding: 1em 0 1em 1em;
+    }
+
+/* featues */
+    .featurs-wrap {
+        padding: .5em;
+    }
+    .featurs-wrap a {
+        display: inline-block;
+    }
+    
+    .featurs {
+        background: #fff;
+        font-size: 12px;
+        line-height: 1.3em;
+    }
+    
+    .featurs .member {
+        text-align: center;
+    }
+    
+
+    .featurs .member-img img {
+        display: block;
+        border-radius: 50%;
+        margin: .4em 0;
+    }
+
+    .featurs .member-btn {
+        margin: .6em 0 1em 0;
+    }
+    
+    .featurs .member-btn a {
+        background: #ffe4db;
+        color: #f40;
+        padding: .2em .4em;
+        border-radius: 4px;
+        margin: 0 .4em;
+    }
+    .featurs .member-btn img {
+        vertical-align: middle;
+        border-radius: 50%;
+        position: relative;
+        top: -.1em;
+    }
+    
+    .featurs .member .sign a {
+        background-image: linear-gradient(to right,#ff5000 0,#ff6f06 100%);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        padding: .3em 1.6em;
+        margin: 0 .2em;
+        margin-bottom: 1em;
+        border-radius: 4px;
+    }
+
+    .featurs .report {
+        background: #ffe4dd;
+        color: #f40;
+        text-align: center;
+    }
+    .featurs .report a {
+        display: inline-block;  
+        padding: .4em;
+        line-height: 1.3em;
+    }
+    .featurs .report img {
+        display: inline-block;
+        position: relative;
+        right: -2em;
+        top: .2em;
+    }
+    .featurs .featurs-nav .nav-list {
+        text-align: center;
+
+    }
+    .featurs .featurs-nav .nav-list a {
+        display: inline-block;
+        padding: .4em .6em;
+        margin: 0 .5em;
+        margin-top: 1em;
+    }
+    .featurs .featurs-nav .nav-list a:nth-child(1) {
+        border-bottom: 2px solid #f40;
+        color: #3C3C3C;
+        font-weight: 600;
+    }
+    .featurs .featurs-nav .nav-list a:hover {
+        color: #f40;
+        transition: color 300ms;
+        font-weight: 600;
+    }
+
+    .featurs .featurs-nav .nav-con {
+        display: inline-block;
+        padding: .8em 0;
+        padding-left: 1em;
+        border-bottom: .4px solid rgba(0, 0, 0, .1);
+    }
+    .featurs .featurs-nav .nav-con a {
+        display: inline-block;
+        padding: .3em;
+    }
+    .featurs .featurs-nav .nav-con a:hover {
+        color: #f40;
+        transition: color 300ms;
+    }
+
+
+    .featurs .list .item {
+        padding: .62em 0;
+        text-align: center;
+        border: .4px solid rgba(0, 0, 0, .06);
+        color: #999;
+    }
+    .featurs .list .item span {
+        display: inline-block;
+        margin-top: 1.4em;
+        margin-bottom: .8em;
+    }
+    .featurs .list .item span:hover {
+        color: #f40;
+        transition: color 300ms;
+    }
+    .featurs .list img {
+        display: block;
+        border-radius: 50%;
+        position: relative;
+        top: .6em;
+        left: .7em;
+    }
+
+
+
+    .featurs .app {
+        padding: 0 1em;
+    }
+
+    .featurs .app .title span {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 2em;
+    }
+    .featurs .app .title .more a {
+        display: inline-block;
+        color: #3C3C3C;
+        padding: .5em 0 0 0;
+    }
+    .featurs .app .title .more a:hover {
+        color: #f40;
+    }
+    .featurs .app .title img {
+        vertical-align: middle;
+        position: relative;
+        top: -.2em;
+    }
+
+
+    .featurs .app .app-wrap {
+        padding: .4em;
+    }
+
+    .featurs .app .app-wrap img {
+        border-radius: 10px;
     }
