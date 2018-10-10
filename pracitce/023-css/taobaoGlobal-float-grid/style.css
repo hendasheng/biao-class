@@ -9,7 +9,9 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
+img {
+    max-width: 100%;
+}
 input,
 button {
     outline: none;
@@ -148,32 +150,33 @@ button {
     }
 
 /* banner */
-    .banner .related-nav {
+    .related-nav {
+        width: 100%;
         background-image: linear-gradient(to right,#ff9000 0,#ff5000 100%);
         color: #fff;
         font-weight: 600;   
     }
-    /* related-nav */
-    .banner .related-nav .theme {
+/* related-nav */
+    .related-nav .theme {
         text-align: center;
         background: #f40;
     }
-    .banner .related-nav span {
+    .related-nav span {
         line-height: 30px;
     }
-    .banner .related-nav a {
+    .related-nav a {
         display: inline-block;
         line-height: 30px;
         padding: 0 .6em;
     }
-    .banner .related-nav .ralated-main a {
+    .related-nav .ralated-main a {
         font-size: 16px;
     }
-    .banner .related-nav .related-other a {
+    .related-nav .related-other a {
         font-size: 14px;
         line-height: 1.4em;
     }
-    .banner .related-nav .related-spline {
+    .related-nav .related-spline {
         display: inline-block;
         position: relative;
         top: .15em;
@@ -181,3 +184,102 @@ button {
         height: 1em;
         border: .4px solid rgba(255, 255, 255, .8);
     }
+
+/* page-nav */
+    .page-nav {
+        background: #fff;
+        border: 1px solid #f40;
+        padding: .6em 0;
+        font-size: 14px;
+        color: #666;
+    }
+    .page-nav .page-nav-list-spline {
+        display: inline-block;
+        height: 1em;
+        width: 1px;
+        border: .4px solid rgba(0, 0, 0, .2);
+        transform:rotate(20deg);
+        position: relative;
+        top: .1em;
+        margin: 0 .2em;
+    }
+    .page-nav .page-nav-list i {
+        position: relative;
+        right: -3em;
+    }
+    .page-nav .page-nav-list {
+        padding: .4em 1em;
+    }
+    .page-nav .page-nav-list:hover {
+        background: #ffe4dd;
+        transition: background 300ms;
+    }
+    .page-nav .page-nav-list a:hover {
+        color: #f40;
+        transition: color 300ms;
+    }
+
+/* bannar */
+    .banner {
+        padding-top: .5em;
+        padding-left: .5em;
+    }
+    .banner a {
+        display: inline-block;
+    }
+    .banner .banner-main img,
+    .banner .banner-sub img {
+        display: inline-block;
+        height: 100%;
+        overflow: hidden;
+    }
+    .banner .banner-main img {
+        height: 280px;
+    }
+    .banner .banner-sub img {
+        height: 202px;
+    }
+    .banner .banner-left {
+        padding-right: .5em;
+    }
+    
+    .banner .banner-sub .title {
+        font-size: 13px;
+        line-height: 1.3em;
+    }
+    .banner .banner-sub .title img {
+        height: 19px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .banner .banner-sub .page-num {
+        color: #444;
+    }
+    .banner .banner-sub .page-num span:nth-child(1) {
+        color: #ff1648;
+    }
+
+    .banner .banner-sub .spline-wrap {
+
+    }
+    .banner .banner-sub .spline {
+        display: inline-block;
+        height: .2em;
+        background: #ff1648;
+    }
+    .banner .banner-sub .spline:nth-child(4){
+        background: #000;
+    }
+   
+    .banner .banner-right span {
+        font-size: 13px;
+        color: #999;
+        line-height: 1.3em;
+        display: inline-block;
+        position: relative;
+        top: -.3em;
+    }
+    .banner .banner-right .move-up img {
+   
+
+
