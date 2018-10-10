@@ -258,10 +258,7 @@ button {
     .banner .banner-sub .page-num span:nth-child(1) {
         color: #ff1648;
     }
-
-    .banner .banner-sub .spline-wrap {
-
-    }
+    
     .banner .banner-sub .spline {
         display: inline-block;
         height: .2em;
@@ -279,5 +276,3 @@ button {
         position: relative;
         top: -.3em;
     }
-    .banner .banner-right .move-up img {
-   
