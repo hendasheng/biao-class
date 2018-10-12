@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            font-family: sans-serif;
+            width: 300px;
+            height: 300px;
+            margin: 60px auto;
+        }
+
+        .readme {
+            margin-top: 2em;
+            line-height: 1.6em;
+            color: #333;
+            font-size: 14px;
+        }
+        .item {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgb(209, 87, 87);
+            margin-top: 1em;
+        }
+
+        .wrap {
+            border: 1px solid rgb(74, 160, 120);
+            height: 300px;
+            width: 300px;
+            line-height: 300px;
+            font-size: 0;
+            text-align: center;
+        }
+        .box {
+            background: rgb(146, 184, 77);
+            color: #fff;
+            display: inline-block;
+            font-size: 14px;
+            line-height: 14px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">文字水平垂直居中</div>
+    </div>
+
+    <div class="readme">
+        <span>
+            <h4>line height</h4>
+            <span>
+                设置父元素行高和高度相等、text-align 设置为 center，将子元素设置为行内块（display: inline-block），实现文本水平垂直居中。
+            </span>
+        </span>
+    </div>
+
+    <div class="item">
+        <span>
+            font-size 和 line-height 属性在不同层级单独设置，避免不同层级文字默认行高带来的问题。
+        </span>
+    </div>
+
+</body>

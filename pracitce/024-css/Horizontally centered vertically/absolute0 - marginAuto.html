@@ -1,0 +1,53 @@
+<style>
+     body {
+        font-family: sans-serif;
+        width: 300px;
+        height: 300px;
+        margin: 60px auto;
+    }
+    
+    .readme {
+        margin-top: 2em;
+        line-height: 1.6em;
+        color: #333;
+        font-size: 14px;
+    }
+    
+    .wrap {
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgb(67, 114, 114);
+        margin: 60px auto;
+
+        position: relative;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        background: rgb(253, 62, 62);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+</style>
+
+
+<div class="wrap">
+    <div class="box"></div>
+</div>
+
+<div class="readme">
+    <span>
+        <h4>absolute t / l / r / b 归零 + margin 自动</h4>
+        <span>
+            子元素 absolute 后，top / left / right / bottom 值归零。
+            <br>
+            再将 margin 设置为 auto，实现水平垂直居中。
+        </span>
+    </span>
+</div>

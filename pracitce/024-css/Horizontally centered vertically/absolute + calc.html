@@ -1,0 +1,48 @@
+<style>
+
+    body {
+        font-family: sans-serif;
+        width: 300px;
+        height: 300px;
+        margin: 60px auto;
+    }
+    .readme {
+        margin-top: 2em;
+        line-height: 1.6em;
+        color: #333;
+        font-size: 14px;
+    }
+    
+    .wrap {
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgb(98, 145, 61);
+
+        position: relative;
+    }
+
+    .box {
+        background: rgb(82, 90, 161);  
+        width: 100px;
+        height: 100px;
+
+        position: absolute;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+    }
+
+    
+</style>
+
+<div class="wrap">
+    <div class="box"></div>
+</div>
+
+<div class="readme">
+    <span>
+        <h4>通过 calc 属性控制位置。</h4>
+        <span>
+            和 absolute + 负 margin 原理类似，都需要确定子元素 width / height 值，calc 写法更简洁，但是依赖浏览器对 css3 的支持。
+        </span>
+    </span>
+</div>

@@ -1,0 +1,54 @@
+<style>
+
+    body {
+        font-family: sans-serif;
+        width: 300px;
+        height: 300px;
+        margin: 60px auto;
+    }
+    
+    .readme {
+        margin-top: 2em;
+        line-height: 1.6em;
+        color: #333;
+        font-size: 14px;
+    }
+    
+    .wrap {
+        width: 300px;
+        height: 300px;
+        border: 1px solid tomato;
+        margin: 60px auto;
+        position: relative;
+    }
+
+    .box {
+        display: inline-block;
+        background: blue;
+        width: 100px;
+        height: 100px;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -50px;
+    }
+
+    .con {}
+</style>
+
+<div class="wrap">
+    <div class="box"></div>
+</div>
+
+<div class="readme">
+    <span>
+        <h4>absolute + 负 margin 控制子元素位置</h4>
+        <span>
+            子元素 absolute 后， 将 top / left 值设置为 50%，但是 absolute 定位基于元素左上角。
+            <br>
+            所以再将 margin 的 top / left 设置为元素宽度二分之一的负值，使子元素在视觉上居中。
+        </span>
+    </span>
+</div>
