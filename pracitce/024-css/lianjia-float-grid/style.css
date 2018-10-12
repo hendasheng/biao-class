@@ -1,0 +1,188 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+
+.first-screen {
+    background: #161616 url('https://s1.ljcdn.com/feroot/pc/asset/img/home/bannerV2.jpg') no-repeat;
+    overflow: hidden;
+}
+
+.nav {
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+/* 导航栏左侧 */
+    #logo {
+        width: 137px;
+        height: 49px;
+        background-image: -webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?index=20170526') 2x) ;
+        background-position: 10px -379px;
+        display: inline-block;
+    }
+
+    .nav a {
+        display: inline-block;
+    }
+
+    .nav .locale {
+        display: inline-block;
+        background: rgba(0, 0, 0, .4);
+        color: #fff;
+        font-size: 13px;
+        padding: 4px 8px;
+        border-radius: 14px;
+        margin-left: 10px;
+    }
+    .nav .locale-icon {
+        width: 10px;
+        height: 12px;
+        display: inline-block;
+        background-image: -webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?index=20170526') 2x) ;
+        background-position: -189px -20px;
+    }
+
+    #logo,
+    .locale {
+        vertical-align: middle;
+    }
+
+    .nav-left {
+        margin-top: 20px;
+    }
+
+/* 导航栏右侧 */
+    .login .login-icon {
+        width: 17px;
+        height: 16px;
+        display: inline-block;
+        background-image: -webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?t=2017052520523424') 2x) ;
+        background-position: -203px -20px;
+    }
+    .login .line-group {
+        display: inline-block;
+        margin-left: 4px;
+        font-size: 13px;
+        color: #eee;
+    }
+    .login .line-group a {
+        padding: 2px 4px;      
+    }
+    .login > * {
+        vertical-align: middle;
+    }
+
+    .nav-group a {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 2px 8px;
+    }
+    .nav-group span {
+        width: 19px;
+        height: 22px;
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/lvju.png?_v=20181011211706') 1x);
+        background-size:19px 22px;
+        background-repeat:no-repeat;
+        display: inline-block;
+        margin-right: -4px;
+    }
+
+/* 大标题 */
+    .title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .title h1 {
+        margin: 0;
+        font-size: 62px;
+        font-weight: 600;
+        color: #fff;
+    }
+    .title span {
+        color: #eee;
+        font-size: 20px;
+    }
+
+/* 搜索框 */
+    #search {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 120px;
+    }
+
+    #search .sort a {
+        color: #eee;
+        padding: 4px;
+        font-size: 14px;
+    }
+    #search .sort a:hover {
+        font-weight: 600;
+        transition: color 200ms;
+    }
+
+    #search .arrow {
+        line-height: 14px;
+        display: block;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        width: 0;
+        height: 0;
+        border-bottom: 10px solid #fff;
+        z-index: 9;
+        position: relative;
+        top: 3px;
+        left: 16px;
+    }
+
+    #search .input-group input {
+        width: 100%;
+        padding: 14px;
+        height: 54px;
+        border-radius: 2px;
+    }
+    #search .input-group button {
+        position: absolute;
+        top: 32px;
+        right: 0;
+        background: #00ae66;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        height: 54px;
+        padding: 10px 24px;
+        border-radius: 0 2px 2px 0;
+    }
+
+    .other {
+        margin-bottom: 40px;
+    }
+    .other img,
+    .other span {
+        vertical-align: middle;
+    }
+    .other a {
+        color: #eee;
+        font-size: 13px;
+        padding: 4px 8px;
+        display: inline-block;
+    }
+    .other a:hover {
+        color: #fff;
+    }
+    .other img {
+        height: 16px;
+    }
