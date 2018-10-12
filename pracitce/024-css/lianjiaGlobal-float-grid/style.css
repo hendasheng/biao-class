@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button {
+    outline: none;
+    padding: 18px 10px;
+    border-radius: 4px;
+    border: 1px solid #444;
+}
+
+.first-screen {
+    background: #161616 url('https://s1.ljcdn.com/feroot/pc/asset/img/home/bannerV2.jpg') no-repeat;
+    overflow: hidden;
+}
+
+.nav {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 30px;
+}
+
+.nav a {
+    padding: 2px 4px;
+    display: inline-block;
+}
+
+
+
+.nav .logo {
+    width: 137px;
+    height: 49px;
+    background-image: -webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?index=20170526') 2x) ;
+    background-position: 10px -379px;
+}
+
+.locale {
+    background: rgba(0, 0, 0, .2);
+    display: inline-block;
+    font-size: 70%;
+    padding: 3px 8px;
+    border-radius: 14px;
+    margin-left: 10px;
+}
+
+.locale-icon {
+    width: 10px;
+    height: 12px;
+    display: inline-block;
+    background-image: -webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?index=20170526') 2x) ;
+    background-position: -189px -20px;
+
+    position: relative;
+    top: 1px;
+}
+
+.logo,
+.locale {
+    vertical-align: middle;
+}
+
+.nav-left {
+    margin-top: 20px;
+}
+
+.login-icon {
+    width: 17px;
+    height: 16px;
+    display: inline-block;
+    background-image: -webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?t=2017052520523424') 2x) ;
+    background-position: -203px -20px;
+}
+.login .line-group {
+    display: inline-block;
+    font-size: 80%;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+.line-group,
+.login-icon {
+    vertical-align: middle;
+}
+
+
+.nav-list .line-group span {
+    width: 19px;
+    height: 22px;
+    background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/lvju.png?_v=20181011211706') 1x);
+    background-size:19px 22px;
+    background-repeat:no-repeat;
+    display: inline-block;
+    margin-right: -4px;
+}
+
+.centered {
+    text-align: center;
+    margin-top: 100px;
+}
+#title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 30px;
+}
+#title h1 {
+    margin: 0;
+}
+#title  .sub-title {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+#search {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-bottom: 140px;
+}
+
+#search .cat-group {
+    color: #eee;
+    font-size: 14px;
+}
+#search .cat-group a {
+    display: inline-block;
+    padding: 6px;
+
+}
+#search .cat-group a:hover {
+    color: #fff;
+    font-weight: 600;
+}
+
+#search .arrow {
+    line-height: 14px;
+    display: block;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #fff;
+    z-index: 9;
+    position: relative;
+    top: 3px;
+    left: 16px;
+}
+
+#search .search-bar {
+    font-size: 0;
+}
+#search .search-bar input {
+   width: 80%;
+}
+#search .search-bar button {
+    width: 20%;
+    background: #00b86b;
+    color: #fff;
+    font-weight: 600;
+}
+#search .search-bar input,
+#search .search-bar button {
+    font-size: 16px;
+}
+
+.input-group > * {
+    border-radius: 0;
+    border: 0;
+}
+.input-group > *:first-child {
+    border-radius: 4px 0 0 4px;
+}
+.input-group > *:last-child {
+    border-radius:  0 4px 4px 0;
+}
+
+
+.other {
+    margin-bottom: 19px;
+}
+.other a {
+    display: inline-block;
+    color: rgba(255, 255, 255, .8);
+    font-size: 12px;
+    padding: 4px 0;
+    margin-right: 20px;
+}
+.other img {
+    height: 16px;
+    position: relative;
+    top: 3px;
+}
+
+/* .other a,
+.other img {
+    vertical-align: middle;
+} */
