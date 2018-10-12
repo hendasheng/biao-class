@@ -118,7 +118,7 @@ button {
 
 /* 搜索框 */
     #search {
-        max-width: 700px;
+        max-width: 800px;
         margin: 0 auto;
         position: relative;
         margin-bottom: 120px;
@@ -147,26 +147,34 @@ button {
         top: 3px;
         left: 16px;
     }
-
-    #search .input-group input {
-        width: 100%;
-        padding: 14px;
-        height: 54px;
-        border-radius: 2px;
+    #search form {
+        /* position: relative; */
     }
-    #search .input-group button {
+
+    #search input {
+        width: 80%;
+        height: 54px;
+        padding-left: 2em;
+        border-radius: 4px 0 0 4px;
+        font-size: 14px;
+    }
+    #search button {
         position: absolute;
-        top: 32px;
-        right: 0;
-        background: #00ae66;
-        color: #fff;
-        font-size: 18px;
-        font-weight: 600;
+        width: 20%;
         height: 54px;
-        padding: 10px 24px;
-        border-radius: 0 2px 2px 0;
+        background: #00ae66;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        border-radius: 0 4px 4px 0; 
     }
+    #search input:focus,
+    #search button:focus {
+        border: 1px solid rgba(0, 0, 0, .1);
+    }
+  
 
+/* 下面三个 */
     .other {
         margin-bottom: 40px;
     }
@@ -187,5 +195,4 @@ button {
         height: 16px;
     }
 
-    
-    
+
