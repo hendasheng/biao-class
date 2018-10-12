@@ -1,1 +1,1 @@
- 来自 [CSS 实现水平垂直居中的 10 种方式]（https://segmentfault.com/a/1190000016389031#articleHeader5）
+来自 [CSS 实现水平垂直居中的 10 种方式](https://segmentfault.com/a/1190000016389031#articleHeader5)
