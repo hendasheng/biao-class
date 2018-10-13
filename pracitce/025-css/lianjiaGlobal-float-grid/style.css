@@ -115,12 +115,12 @@ a {
     }
 
 /* 大标题 */
-    .title {
+    .title-main {
         color: #fff;
         text-align: center;
         margin-top: 100px;
     }
-    .title h1 {
+    .title-main h1 {
         font-size: 64px;
         font-weight: 600;
         margin: 0;
@@ -217,4 +217,80 @@ a {
     }
     .other a > * {
         vertical-align: middle;
+    }
+
+/* featurs */
+    .featurs {
+        text-align: center;
+    }
+    .featurs .card {
+        padding: 40px 0;
+    }
+    .featurs .card img {
+        width: 76px;
+        height: 65px;
+        vertical-align: middle;
+    }
+    .featurs .card .title {
+        font-size: 18px;
+        color: #394043;
+        padding: 1em 0;
+    }
+    .featurs .card .desc {
+        font-size: 13px;
+        color: #b0b3b4;
+    }
+
+/* app-down */
+    .app-down {
+        background: #161616 url('https://s1.ljcdn.com/feroot/pc/asset/img/home/bg-app.jpg') no-repeat;
+        width: 100%;
+        background-position: center 0;
+        overflow: hidden;
+        padding-top: 40px;
+        padding-bottom: 80px;
+        /* height: 500px; */
+    }
+
+    .app-down .title {
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new.png?t=2017052520523424') 1x);
+        background-position: -448px -379px;
+        width: 286px;
+        height: 118px;     
+    }
+
+    .app-down .desc {
+        display: block;
+        width: 40%;
+        font-size: 14px;
+        line-height: 1.6em;
+        color: #333;
+        margin-top: 20px;
+        margin-bottom: 40px; 
+    }
+
+    .app-down .down {
+        width: 134px;
+        margin-right: 10px;
+    }
+    .app-down .iphone {
+        display: inline-block;
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?t=2017052520523424') 2x);
+        background-position: -20px -139px;
+        width: 134px;
+        height: 44px;
+    }
+    .app-down .android {
+        display: inline-block;
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?t=2017052520523424') 2x);
+        background-position: -20px -197px;
+        width: 134px;
+        height: 44px;
+        margin-top: 9px;
+    }
+    
+    .app-down .qr-code img {
+        display: block;
+        width: 102px;
+        height: 102px;
     }
