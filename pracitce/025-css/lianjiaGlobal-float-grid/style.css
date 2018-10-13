@@ -1,0 +1,220 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.first-screen {
+    background: #161616 url('https://s1.ljcdn.com/feroot/pc/asset/img/home/bannerV2.jpg') no-repeat;
+    /* height: 600px; */
+    width: 100%;
+    background-position: center 0;
+    overflow: hidden;
+}
+
+.nav {
+    margin-top: 20px;
+}
+
+/* 导航栏左侧  */
+    #logo {
+        width: 108px;
+        height: 49px;
+        background-image: -webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?index=20170526') 2x);
+        background-position: -17px -379px;
+        display: inline-block;
+        margin-right: 14px;
+    }
+
+    .nav a {
+        color: #fff;
+    }
+
+    .locale {
+        color: #fff;
+        font-size: 13px;
+        padding: 2px 8px;
+        background: rgba(0, 0, 0, .4);
+        border-radius: 10px;
+        display: inline-block;
+    }
+    .locale-icon {
+        width: 10px;
+        height: 12px;
+        display: inline-block;
+        background-image: -webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?index=20170526') 2x) ;
+        background-position: -189px -20px;
+        position: relative;
+        top: 1px;
+    }
+
+    .nav #logo,
+    .nav .locale {
+        vertical-align: middle;
+    }
+
+    .nav-left {
+        margin-top: 20px;
+    }
+
+/* 导航栏右侧 */
+    .login .link-group {
+        font-size: 13px;
+        font-weight: normal;
+        display: inline-block;
+        margin-left: 4px;
+    }
+    .login-icon {
+        width: 17px;
+        height: 16px;
+        display: inline-block;
+        background-image: -webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?t=2017052520523424') 2x) ;
+        background-position: -203px -20px;
+    }
+    .login > * {
+        vertical-align: middle;
+    }
+    .login {
+        margin-bottom: 10px;
+    }
+
+    .nav-main {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .nav-main a {
+        display: inline-block;
+        padding-left: 16px;
+        text-shadow: 0 0 4px rgba(0, 0, 0, .5);
+    }
+
+    .nav-main .point {
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background: #fff;
+        transform: rotate(45deg);
+        border-radius: 1px;
+        position: relative;
+        top: -3px;
+        margin-left: 14px;
+    }
+
+    .nav-main .lvju-icon {
+        width: 19px;
+        height: 22px;
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/lvju.png?_v=20181011211706') 1x);
+        background-size:19px 22px;
+        background-repeat:no-repeat;
+        display: inline-block;
+        margin-right: -4px;
+    }
+
+/* 大标题 */
+    .title {
+        color: #fff;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .title h1 {
+        font-size: 64px;
+        font-weight: 600;
+        margin: 0;
+    }
+    .sub-title {
+        font-size: 18px;   
+    }
+
+/* 搜索框 */
+    .search {
+        width: 700px;
+        margin: 0 auto;
+        margin-top: 40px;
+        position: relative;
+    }
+
+    .search .sort a {
+        color: #ccc;
+        font-weight: 600;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+    .search .sort a:hover {
+        color: #fff;
+        transition: color 200ms;
+    }
+
+    .search input,
+    .search button {
+        outline: none;
+        height: 54px;
+        border: none;
+
+    }
+    
+    .search input {
+        width: 80%;
+        padding: 10px;
+        padding-left: 20px;
+        font-size: 14px;
+        border-radius: 3px 0 0 3px;
+    }
+    .search button {
+        width: 20%;
+        position: absolute;
+        background: #00ae66;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 0 3px 3px 0;
+    }
+    .search input:focus {
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-right-width: 0;
+    }
+    .search button:focus {
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-left-width: 0;
+    }
+
+    .search .arrow {
+        line-height: 14px;
+        display: block;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        width: 0;
+        height: 0;
+        border-bottom: 10px solid #fff;
+        z-index: 9;
+        position: relative;
+        top: 3px;
+        left: 16px;
+    }
+
+/* 下面三个 */
+    .other {
+        margin-top: 150px;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+    .other img {
+        width: 14px;
+    }
+
+    .other a {
+        margin-right: 14px;
+        font-size: 13px;
+        opacity: .8;
+    }
+    .other a:hover {
+        opacity: 1;
+        transition: opacity 200ms;
+
+    }
+    .other a > * {
+        vertical-align: middle;
+    }
