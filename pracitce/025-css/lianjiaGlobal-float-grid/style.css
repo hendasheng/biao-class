@@ -8,6 +8,14 @@ a {
     color: inherit;
 }
 
+img {
+    max-width: 100%;
+}
+
+input {
+    outline: none;
+}
+
 .first-screen {
     background: #161616 url('https://s1.ljcdn.com/feroot/pc/asset/img/home/bannerV2.jpg') no-repeat;
     /* height: 600px; */
@@ -125,7 +133,7 @@ a {
         font-weight: 600;
         margin: 0;
     }
-    .sub-title {
+    .title-main .sub-title {
         font-size: 18px;   
     }
 
@@ -231,6 +239,7 @@ a {
         height: 65px;
         vertical-align: middle;
     }
+
     .featurs .card .title {
         font-size: 18px;
         color: #394043;
@@ -253,7 +262,7 @@ a {
     }
 
     .app-down .title {
-        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new.png?t=2017052520523424') 1x);
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?t=2017052520523424') 2x);
         background-position: -448px -379px;
         width: 286px;
         height: 118px;     
@@ -294,3 +303,336 @@ a {
         width: 102px;
         height: 102px;
     }
+
+
+/* 二手房部分 */
+    .title-wrap .more a {
+        color: #394043;        
+    }
+    .title-wrap .more a:hover {
+        text-decoration: underline;
+    }
+    
+    .second-house,
+    .area,
+    .new-house {
+        padding: 60px 0;
+        font-size: 13px;
+    }
+    .title-wrap {
+        margin-bottom: 30px;
+        padding: 0 8px;
+    }
+    .second-house .main-title {
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?t=2017052520523424') 2x);
+        background-position: -19px -94px;
+        width: 248px;
+        height: 30px;
+        display: block;
+        margin-bottom: 14px;
+    }
+    .title-wrap .sub-title {
+        color: #999;
+        font-size: 14px;
+    }
+
+    .second-house .card-wrap {
+        /* padding: 0 5px; */
+    }
+    .second-house .card {
+        /* position: relative; */
+    }
+    .second-house .card,
+    .area .card {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
+    } 
+    .second-house .card img {
+        height: 190px;
+        width: 100%;
+    }
+    .second-house .card .tag {
+        font-size: 18px;
+        background: #394043;
+        color: #fff;
+        padding: 4px 6px;
+        position: relative;
+        bottom: 60px;  
+    }
+    .card .text-group {
+        padding: 10px 14px;
+    }
+    .second-house .card .text-group > * ,
+    .area .card .text-group > * {
+        padding: 4px 0;
+    }
+
+    .second-house .card .text-group .desc,
+    .second-house .card-wrap .info {
+        font-size: 12px;
+        color: #999;
+    }
+
+    .second-house .card .text-group .title {
+        font-size: 16px;
+        color: #333;
+    }
+    .second-house .card .text-group .desc span {
+        margin-right: 4px;
+    }
+
+/* 小区部分 */
+    .area {
+        background: #eeeef1;
+    }
+    .area .main-title {
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/xiaoqu-recom.png?t=2017052520523424') 2x);
+        width: 187px;
+        height: 28px;
+        background-size: 100%;
+        display: block;
+        margin-bottom: 14px;
+    }
+    .area .card {
+        background: #fff;
+    }
+    .area .card img {
+        height: 210px;
+        width: 100%;
+    }
+    .area .card .title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #394043;
+    }
+    .area .card .text-group .desc {
+        color: #394043;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .area .card .text-group .desc span:nth-last-child(1) {
+        font-size: 12px;
+        color: #888c8e;
+        font-weight: 400;
+    }
+
+/* 新房部分 */
+    .new-house .main-title {
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?t=2017052520523424') 2x);
+        background-position: -20px -56px;
+        width: 158px;
+        height: 30px;
+        display: block;
+        margin-bottom: 14px;
+    }
+    
+    .new-house .card {
+        background-image: url('https://dummyimage.com/600x600/e0e0e0/e0e0e0');
+        height: 260px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+    .new-house .card .text-group {
+        text-align: center;
+        width: 230px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -115px;
+        margin-top: -60px;
+        color: #fff;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+    .new-house .card .text-group .title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .new-house .card .text-group .desc {
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff2ab;
+    }
+    .new-house .card .text-group .desc span:nth-last-child(1) {
+        font-weight: 400;
+    }
+
+    .new-house .card .tag {
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        background: #fff2ab;
+        color: #394043;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+/* 查询真伪 */
+    .truth {
+        background: url('https://s1.ljcdn.com/feroot/pc/asset/img/home/truth-bgV2.jpg') no-repeat center top;
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        overflow: hidden;
+    }
+    .truth .text-group {
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?t=2017052520523424') 2x);
+        background-position: -19px -254px;
+        width: 501px;
+        height: 115px;
+        margin-top: 4px;
+    }
+    .truth .search-wrap {
+        padding-left: 20px;
+    }
+    .truth .search-wrap span {
+        display: inline-block;
+        color: #fff;
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 20px;
+    }
+    .truth .search-wrap input {
+        width: 100%;
+        padding: 14px;
+        border-radius: 3px;
+        border: none;
+    }
+    .truth form {
+        position: relative;
+    }
+    .truth .search-wrap .btn {
+        background-image:-webkit-image-set(url('https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new@2x.png?t=2017052520523424') 2x);
+        background-position: -407px -20px;
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        position: absolute;
+        top: 14px;
+        right: 24px;
+        cursor: pointer;
+    }
+
+/* 页尾 */
+    .footer {
+        background: url('https://s1.ljcdn.com/feroot/pc/asset/img/home/footer-bg.jpg') no-repeat center top #222;
+        clear: both;
+        width: 100%;
+        height: 426px;
+    }
+
+    .footer .about {
+        color: #fff;
+        font-size: 14px;
+        border-bottom: 1px solid #393939;
+    }
+    .footer .about a {
+        display: inline-block;
+        padding: 30px 0;
+        margin-right: 14px;
+    }
+    .footer .about .service { 
+        color: #7dcfa0;
+        padding: 30px 8px;
+    }
+
+    .footer .city-wrap {
+        font-size: 12px;
+        color: #888c8e;
+        padding-right: 200px;
+        border-bottom: 1px solid #393939;
+        padding-bottom: 20px;
+    }
+    .footer .city {
+        padding: 14px 0 20px 0;
+    }
+    .footer .city a {
+        background: #121212;
+        display: inline-block;
+        padding: 8px 10px;
+        margin-right: 10px;
+    }
+    .footer .city a:hover {
+        background: #394043;
+        color: #fff;
+        transition: color 200ms;
+        transition: background 200ms;
+    }
+    .footer .city-list a {
+        display: inline-block;
+        padding: 6px 0;
+        margin-right: 10px;
+    }
+    .footer .city-list a:hover {
+        text-decoration: underline;
+    }
+
+    .footer .filing {
+        font-size: 12px;
+        color: #888c8e;
+        margin-top: 20px;
+    }
+
+    .footer .filing a img {
+        width: 14px;
+        height: 14px;
+    }
+    .footer .filing a img,
+    .footer .filing a span {
+        vertical-align: middle;
+    }
+    
+    .footer .filing a {
+        display: inline-block;
+    }
+    .footer .filing div,
+    .footer .filing a {
+        line-height: 30px;
+    }
+
+
+/* 浮动下载 */
+    .float-down {
+        /* vertical-align: middle; */
+        height: 118px;
+        background: #fff;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 0 -3px 80px rgba(0,0,0,0.08);
+    }
+    .float-down .wrap {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .float-down .img {
+        width: 190px;
+        position: relative;
+        bottom: 50px;
+    }
+    .float-down .con {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .float-down .con .title {
+        font-size: 20px;
+        color: #394043;
+    }
+    .float-down .con span {
+        font-size: 13px;
+        color: #9c9fa1;
+    }
+    .float-down .qr-code {
+        width: 100px;
+        margin-top: 10px;
+    }
+
+    .float-down .close {
+        width: 15px;
+        margin-top: -108px;
+        cursor: pointer;
+    }
+    

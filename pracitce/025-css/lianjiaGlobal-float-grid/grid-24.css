@@ -36,7 +36,7 @@
 .col-1,
 .col {
     float: left;
-
+    padding: 0 8px;
     /* border: .4px solid; */
 }
 
