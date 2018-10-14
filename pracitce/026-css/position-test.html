@@ -1,0 +1,79 @@
+<style>
+    * {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .box {
+        height: 400px;
+        width: 400px;
+        margin: 40px auto;
+        background: #eee;
+        text-align: center;
+
+        position: relative;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 8px 16px;
+        background: tomato;
+        color: rgb(255, 221, 215);
+        border-radius: 0 4px 4px 0;
+
+        position: absolute;
+        top: 320px;
+        left: 0;
+    }
+
+    .tag a {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .tag:hover {
+        background: rgb(226, 84, 59);
+        color: #fff;
+        transition: color 200ms;
+        transition: background 200ms;
+
+    }
+
+    .con a {
+        display: block;
+        font-size: 24px;
+        padding: 10px 0;
+        color: #666;
+        font-weight: 600;
+    }
+    .con a:hover {
+        color: #333;
+        transition: color 300ms;
+    }
+
+    .con span {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .con {
+        display: inline-block;
+        margin-top: 140px;
+    }
+</style>
+
+
+<div class="box">
+    <div class="con">
+        <a href="#">Title</a>
+        <span>Lorem ipsum dolor sit</span>
+    </div>
+    <div class="tag">
+        <a href="#">Tag</a>
+    </div>
+</div>
