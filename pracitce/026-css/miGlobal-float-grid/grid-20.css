@@ -32,6 +32,11 @@
 .col-20,
 .col {
     float: left;
+ 
+}
+.col {
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .col-1 {width: 5%;}

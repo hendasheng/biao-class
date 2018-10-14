@@ -1,3 +1,188 @@
 body {
     font-family: sans-serif;
+    margin: 0;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+inpu:focus,
+button:focus {
+    border: none;
+}
+
+
+/* top-nav */
+    .top-nav {
+        background: #333;
+        color: #b0b0b0;
+        font-size: 12px;
+    }
+
+    .top-nav a {
+        display: inline-block;
+        padding: 12px 4px;
+    }
+    .top-nav a:hover {
+        color: #fff;
+        transition: color 200ms;
+    }
+    .top-nav-spline {
+        display: inline-block;
+        width: 1px;
+        height: 8px;
+        border: 1px solid #424242;
+    }
+    
+    .top-nav .car {
+        background: #424242;
+        padding: 12px 14px;
+    }
+    .top-nav .car:hover {
+        background: #fff;
+        color: #ff6700;
+        transition: color 200ms;
+        transition: background 200ms;
+    }
+
+    .top-nav .car img,
+    .top-nav .car span {
+        vertical-align: middle;
+    } 
+
+/* header */
+    .header {
+        padding: 20px 0;
+    }
+
+    .header .logo-wrap img {
+        vertical-align: middle;
+    }
+    .header .logo-wrap a {
+        display: inline-block;
+        /* margin: 0; */
+    }
+    .header .logo-main {
+        margin-right: 4px;
+    }
+
+    .header-nav a {
+        color: #333;
+        font-size: 16px;
+        display: inline-block;
+        padding: 17px 10px;
+    }
+    .header-nav a:hover {
+        color: #ff6700;
+        transition: color 200ms;
+    }
+    .header form {
+        position: relative;
+        margin-top: 6px;
+    }
+    .search input,
+    .search button {
+        padding: 14px 10px;
+        border: 1px solid #e0e0e0;
+
+    }
+    .search input {
+        width: 80%;
+        border-right-width: 0;
+    }
+    .search button {
+        width: 20%;
+        position: absolute;
+    }
+
+/* banner */
+    .banner-nav {
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        /* height: 500px; */
+        padding: 14px 0;
+    }
+
+    .banner-nav-list {
+        /* background: pink; */
+        padding-left: 20px;
+        font-size: 14px;
+        position: relative;
+    }
+    .banner-nav-list a {
+        display: inline-block;
+        padding: 10px 0;
+    }
+    .banner-nav-list img {
+        position: absolute;
+        top: 12px;
+        right: 20px;
+    }
+    .banner-nav-list:hover {
+        background: #ff6700;
+        transition: background 200ms;
+    }
+
+    .banner-img img {
+        width: 100%;
+        height: 429px;
+    }
+
+    .banner {
+        margin-bottom: 10px;
+    }
+    
+    
+    .promo .featurs {
+        text-align: center;
+        background: #5f5750;
+        padding: 4px;
+        font-size: 12px; 
+        color: #eee;
+    }
+    .promo .featurs-list {
+        padding: 16px;
+        opacity: .8;
+        position: relative;
+    }
+    .promo .featurs-list:hover {
+        opacity: 1;
+        transition: opacity 200ms;
+    }
+
+    .promo .card img {
+        width: 100%;
+        height: 163px;
+    }
+
+    .featurs-list::before,
+    .featurs-list::after {
+        position: absolute;
+        content: "";
+        background: #665e57;
+    }
+
+    .featurs-list::before {
+        top: -1px;
+        left: 6px;
+        width: 64px;
+        height: 1px;
+    }
+    .featurs-list::after {
+        top: 6px;
+        left: 0;
+        width: 1px;
+        height: 70px;
+    }
+  
