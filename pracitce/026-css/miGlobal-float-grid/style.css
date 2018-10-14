@@ -111,7 +111,8 @@ button:focus {
         background: rgba(0,0,0,0.6);
         color: #fff;
         /* height: 500px; */
-        padding: 14px 0;
+        padding-top: 14px;
+        padding-bottom: 14px;
     }
 
     .banner-nav-list {
@@ -141,9 +142,14 @@ button:focus {
 
     .banner {
         margin-bottom: 10px;
+        padding-left: 4px;
+        padding-right: 4px;
+
     }
     
-    
+    .promo  {
+        padding-left: 4px;
+    }
     .promo .featurs {
         text-align: center;
         background: #5f5750;
@@ -166,6 +172,8 @@ button:focus {
         height: 163px;
     }
 
+
+
     .featurs-list::before,
     .featurs-list::after {
         position: absolute;
@@ -186,3 +194,36 @@ button:focus {
         height: 70px;
     }
   
+
+/* 闪购 */
+    .purchase {
+        margin-top: 20px;
+    }
+    .purchase .card {
+        border: 1px solid #333;
+    }
+    .title-wrap {
+        padding: 20px 0;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .title-module {
+        font-size: 22px;
+        font-weight: 200;
+        color: #333;
+    }
+    .purchase .title-more {
+        font-size: 0;
+        position: relative;
+        top: 6px;
+    }
+    .purchase .title-more a {
+        display: inline-block;
+        border: 1px solid #eee;
+        padding: 2px 8px;
+    }
+    .purchase .title-more a:hover {
+        border: 1px solid #ff6700;
+    }
+    
