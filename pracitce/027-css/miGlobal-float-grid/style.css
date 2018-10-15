@@ -250,12 +250,18 @@ button:focus {
     .card {
         /* height: 100px; */
         /* border: 1px solid #ff6709; */
+        display: block;
         font-size: 14px;
         color: #212121;
         text-align: center;
         position: relative;
         padding-bottom: 40px;
-    }    
+        margin-bottom: 30px;
+    }
+    .card:hover {
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        transition: box-shadow .2s linear;
+    } 
     .card-title {
         margin-top: 10px;
     }
@@ -268,7 +274,6 @@ button:focus {
 
     .card-pirce {
         color: #ff6709;
-        margin-bottom: 40px;
     }
     .card-pirce del {
         color: #b0b0b0;
@@ -307,7 +312,7 @@ button:focus {
     .purchase .card-wrap:nth-child(1) .card {
         overflow: hidden;
         background: #f1eded;
-        padding: 30px 0 0 0;
+        padding: 30px 0 30px 0;
     }
     .purchase .card-wrap:nth-child(1) .card-title {
         color: #e53935;
@@ -326,7 +331,6 @@ button:focus {
         line-height: 46px;
         font-size: 28px;
         color: #fff;
-        margin-bottom: 30px;
     }
     .purchase .card-wrap:nth-child(1) .hour,
     .purchase .card-wrap:nth-child(1) .minute,
