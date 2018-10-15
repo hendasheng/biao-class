@@ -1,0 +1,342 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+input:focus,
+button:focus {
+    border: none;
+}
+
+.gl-ad {
+
+}
+
+
+/* 顶部广告 */
+    .top-ad img {
+        display: block;
+    }
+    
+/* 顶部导航 */
+    .top-nav {
+        background: #333;
+        color: #b0b0b0;
+        font-size: 12px;
+    }
+    .top-nav a {
+        display: inline-block;
+        padding: 10px 0;
+    }
+    .top-nav a:hover {
+        color: #fff;
+        transition: color 200ms;
+    }
+    .top-nav .spline {
+        display: inline-block;
+        width: 1px;
+        height: 10px;
+        border: 1px solid #424242;
+        margin: 0 .5em;
+    }
+
+    .top-nav .car {
+        display: inline-block;
+        background: #424242;
+        padding: 10px 14px;
+        margin-left: 10px;
+    }
+    .top-nav .car:hover {
+        background: #fff;
+        color: #ff6709;
+        transition: color 200ms;
+        transition: background 200ms;
+    }
+
+    .top-nav .car > * {
+        vertical-align: middle;
+    }
+
+
+/* 页面导航 */
+    .header {
+        /* background: pink; */
+        padding: 14px 0;
+    }
+
+    .header .logo > * {
+        vertical-align: middle;
+    }
+    .header .logo a {
+        display: inline-block;
+    }
+    .header .logo img {
+        display: block;
+    }
+    .header .logo-main {
+        margin-right: 12px;
+    }
+
+    .header-nav {
+        padding-left: 10px;
+    }
+    .header-nav a {
+        display: inline-block;
+        color: #333;
+        padding: 17px 6px;
+        font-size: 16px;
+    }
+    .header-nav a:hover {
+        color: #ff6709;
+        transition: color 200ms;
+    }
+
+
+    .header .search {
+        position: relative;
+        margin-top: 6px;
+    }
+    .header .search input,
+    .header .search button {
+        padding: 14px;
+        border: 1px solid #e0e0e0;
+    }
+    .header .search input {
+        width: 80%;
+        /* border-right-width: 0; */
+    }
+    .header .search button {
+        position: absolute;
+        width: 20%;
+        border-left-width: 0;
+    }
+
+/* banner */
+    .home-hreo {
+        margin-bottom: 20px;
+    }
+
+    .banner-wrap {
+        position: relative;
+        height: 469px;
+        margin-bottom: 10px;
+    }
+    .banner-img {
+        width: 100%;
+        height: 470px;
+        overflow: hidden;
+    }
+    .banner-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 18px 0;
+        background: rgba(0, 0, 0, .6);
+    }
+    .banner-nav .nav-list {
+        /* background: pink; */
+        padding: 11px 20px;
+        font-size: 14px;
+        color: #fff;
+    }
+    .banner-nav .nav-list:hover {
+        background: #ff6709;
+        transition: background 200ms;
+    }
+    .banner-nav .nav-list a > * {
+        vertical-align: middle;
+    }
+    .banner-nav .nav-list span {
+        margin-right: 110px;
+    }
+
+/* banner 下面的四个 */
+    .promo .featurs {
+        background: #5f5750;
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        padding: 4px;
+        height: 170px;
+    }
+    .promo .featurs-list {
+        display: inline-block;
+        padding: 20px 13px;
+        opacity: .8;
+        position: relative;
+    }
+    .promo .featurs-list:hover {
+        opacity: 1;
+    }
+
+    .featurs-list::before,
+    .featurs-list::after {
+        position: absolute;
+        content: "";
+        background: #665e57;
+    }
+
+    .featurs-list::before {
+        top: -3px;
+        left: 6px;
+        width: 64px;
+        height: 1px;
+    }
+    .featurs-list::after {
+        top: 6px;
+        left: -3px;
+        width: 1px;
+        height: 70px;
+    }
+    
+    .promo-card {
+        width: 310px;
+        float: left;
+        height: 170px;
+        overflow: hidden;
+        margin-right: 13px;
+    }
+    .promo-card:hover {
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        transition: box-shadow .2s linear;
+    }
+    .promo-card:nth-last-child(1) {
+        margin-right: 0;
+    }
+    .promo-card-group {
+        padding-left: 10px;
+    }
+    .promo-card-group img {
+        display: block;
+    }
+
+/* 卡片公共样式-开始 */
+    .title-wrap {
+        /* background: pink; */
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+
+    .title-wrap .title-module,
+    .title-wrap .title-sub a {
+        vertical-align: middle;
+    }
+
+    .title-module {
+        font-size: 22px;
+        font-weight: 200;
+    }
+
+    .card-wrap {
+        padding: 0 6px;
+    }
+
+    .card {
+        /* height: 100px; */
+        /* border: 1px solid #ff6709; */
+        font-size: 14px;
+        color: #212121;
+        text-align: center;
+        position: relative;
+        padding-bottom: 40px;
+    }    
+    .card-title {
+        margin-top: 10px;
+    }
+
+    .card-desc {
+        font-size: 12px;
+        color: #b0b0b0;
+        margin-bottom: 20px;
+    }
+
+    .card-pirce {
+        color: #ff6709;
+        margin-bottom: 40px;
+    }
+    .card-pirce del {
+        color: #b0b0b0;
+    }
+
+    .card-tag {
+        position: absolute;
+        background: #e53935;
+        width: 60px;
+        padding: 4px 0;
+        color: #fff;
+        font-size: 12px;
+        top: 0;
+        left: 50%;
+        margin-left: -30px;
+    }
+/* 卡片公共样式-结束 */
+
+    
+/* 闪购 */
+    .purchase .title-sub {
+        font-size: 0;
+    }
+    .purchase .title-sub img {
+        display: block;
+    }
+    .purchase .title-sub a {
+        display: inline-block;
+        border: 1px solid #eee;
+        padding: 2px 14px;
+    }
+    .purchase .card {
+        border-top: 1px solid #ff6709;
+    }
+
+    .purchase .card-wrap:nth-child(1) .card {
+        overflow: hidden;
+        background: #f1eded;
+        padding: 30px 0 0 0;
+    }
+    .purchase .card-wrap:nth-child(1) .card-title {
+        color: #e53935;
+        font-size: 21px;
+    }
+    .purchase .card-wrap:nth-child(1) img {
+        margin: 30px 0;   
+    }
+    .purchase .card-wrap:nth-child(1) .card-desc {
+        font-size: 15px;
+        color: rgba(0,0,0,0.54);
+        margin-bottom: 25px;
+    }
+
+    .purchase .card-wrap:nth-child(1) .time {
+        line-height: 46px;
+        font-size: 28px;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+    .purchase .card-wrap:nth-child(1) .hour,
+    .purchase .card-wrap:nth-child(1) .minute,
+    .purchase .card-wrap:nth-child(1) .second {
+        display: inline-block;
+        background: #605751;
+        width: 46px;
+        height: 46px;
+    }
+        
+    
+
+    
