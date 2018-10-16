@@ -25,8 +25,7 @@ button {
 
 
 .nav {
-    /* background: pink; */
-    padding: 6px 0;
+    padding: 10px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, .4);
     border-top: 2px solid #ff8144;
     color: #333;
@@ -37,14 +36,14 @@ button {
 }
 #logo img {
     display: block;
-    /* width: 82px; */
-    /* height: 27px; */
+    width: 80px;
 }
 
-.search-wrap input,
-.search-wrap button {
-    padding: 10px 14px;
-    border: 1px solid #eee; 
+.search-wrap input {
+    padding: 8px 14px;
+    border: 1px solid rgba(0, 0, 0, .04); 
+    width: 100%;
+    background: #eee;
 }
 
 .search-wrap {
@@ -52,19 +51,14 @@ button {
     padding-left: 20px;
 }
 
-.search {
-    padding-left: 10px;
-}
-
-.search-wrap input {
-    width: 90%;
-    border-right-width: 0;
-}
-
-.search-wrap button {
-    width: 10%;
+.search-wrap a {
     position: absolute;
     border-left-width: 0;
+    top: 1px;
+    right: 7px;
+}
+.search-wrap input:focus {
+    border: 1px solid #ff8144;
 }
 
 
@@ -75,7 +69,8 @@ button {
 
 .nav a {
     display: inline-block;
-    padding: 6px 10px;
+    padding: 3px 10px;
+    line-height: 26px;
 }
 .nav a:hover {
     color: #ff8144;
