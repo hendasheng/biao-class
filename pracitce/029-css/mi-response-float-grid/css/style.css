@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    font-size: 14px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+
+
+/* 导航栏 */
+    .nav {
+        background: #333;
+        color: #b0b0b0;
+    }
+
+    .nav .spline {
+        display: inline-block;
+        width: 1px;
+        height: 10px;
+        background: rgba(255, 255, 255, .2);
+    }
+
+    .nav a {
+        display: inline-block;
+        padding: 10px 4px;
+        font-size: .8rem;
+        line-height: 1rem;
+    }
+    .nav a:hover {
+        color: #fff;
+        transition: color 200ms;
+    }
+
+    .nav .car > * {
+        vertical-align: middle;
+    }
+    .nav .car {
+        display: inline-block;
+        background: #424242;
+        padding: 10px 24px;
+    }
+    .nav .car:hover {
+        background: #fff;
+        color: #ff6709;
+        transition: all 200ms;
+    }
+
+/* 页面导航 */
+    .header {
+        padding: 10px 0;
+        /* background: pink; */
+    }
+    
+    .header a {
+        display: inline-block;
+        line-height: 1rem;
+    }
+
+    .logo a {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .header img {
+        display: block;
+    }
+
+    .header-nav a {
+        font-size: 1rem;
+        padding: 20px 6px;
+    }
+    .header-nav a:hover {
+        color: #ff6709;
+        transition: all 200ms;
+    }
+
+
+    .search {
+        position: relative;
+        margin-top: 6px;
+    }
+
+    .search input,
+    .search button {
+        border: 1px solid #e0e0e0;
+        padding: 14px;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+    .search button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1rem;
+    }
+
+/* banner 部分 */
+    .banner {
+        background-image: url('https://i1.mifile.cn/a4/xmad_15397411954648_IeShs.jpg') ;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 10px;
+    }
+
+    .banner-nav {
+        background: rgba(0, 0, 0, .6);
+        padding: 10px 0;
+    }
+
+
+    .banner-nav .nav-list {
+        display:block;
+        padding: 20px;
+        color: #fff;
+        font-weight: 600;
+        /* background: pink; */
+    }
+    .banner-nav .nav-list:hover {
+        background: #ff6709;
+        transition: all 200ms;
+    }
+
+/* 下面四个卡片 */
+    .promo {
+        margin-bottom: 20px;
+    }
+
+    .promo .featurs {
+        background: #5f5750;
+        padding: 2px;   
+    }
+    .promo .item {
+        display: inline-block;
+        text-align: center;
+        padding: 21px 16px;
+        color: rgba(255, 255, 255, .8);
+        position: relative;
+    }
+    .promo .item .icon {
+        margin-bottom: 6px;
+    }
+
+    .promo .item::before,
+    .promo .item::after {
+        content: '';
+        background: rgba(255, 255, 255, .06);
+        position: absolute;
+    }
+
+    .promo .item::before {
+        top: 8px;
+        left: 0;
+        width: 1px;
+        height: 60px;
+    }
+    .promo .item::after {
+        top: 0;
+        left: 8px;
+        width: 60px;
+        height: 1px;
+    }
+
+    .promo .item:nth-child(1)::before,
+    .promo .item:nth-child(4)::before {
+        display: none;
+    }
+
+    .promo .item:nth-child(1)::after,
+    .promo .item:nth-child(2)::after,
+    .promo .item:nth-child(3)::after {
+        display: none;
+    }
+
+    .promo .card-wrap {
+        float: left;
+        display: inline-block;
+        width: 316px;
+        height: 168px;
+        margin-right: 11px;
+    }
+    .promo .card-wrap:nth-last-child(1) {
+        margin-right: 0;
+    }
+  
+    .promo .card-group {
+        padding-right: 0;
+    }
+
+/* 小米闪购 */
+    .title-main {
+        font-size: 1.4rem;
+        line-height: 4rem;
+        color: #333;
+    }
+    .title-more {
+        line-height: 4rem;
+    }
+    .purchase {
+        
+    }
+    .card-wrap a {
+        display: block;
+    }
+
+    .card {
+        text-align: center;
+        border: 1px solid #eee;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+    .card img {
+        width: 100%;
+        height: 200px;
+    }
+    .card:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+        transition: all 200ms;
+    }
+
+    .card-title {
+         font-size: 1.4rem;
+         padding: 20px 0;
+    }
+
+/* 手机 */
+    .phone {
+        margin-top: 20px;
+    }
+    .phone-card-group {
+        padding-left: 0;
+        padding-right: 0;
+    }
