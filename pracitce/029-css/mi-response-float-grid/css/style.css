@@ -62,7 +62,9 @@ button {
         padding: 10px 0;
         /* background: pink; */
     }
-    
+    .logo-main {
+        margin-right: 10px;
+    }
     .header a {
         display: inline-block;
         line-height: 1rem;
@@ -104,7 +106,7 @@ button {
     .search button {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 6px;
         font-size: 1rem;
     }
 
@@ -124,7 +126,7 @@ button {
 
     .banner-nav .nav-list {
         display:block;
-        padding: 20px;
+        padding: 15px;
         color: #fff;
         font-weight: 600;
         /* background: pink; */
@@ -141,12 +143,12 @@ button {
 
     .promo .featurs {
         background: #5f5750;
-        padding: 2px;   
+        padding: 3px;   
     }
     .promo .item {
-        display: inline-block;
+        /* display: inline-block; */
         text-align: center;
-        padding: 21px 16px;
+        padding: 18px 12px;
         color: rgba(255, 255, 255, .8);
         position: relative;
     }
@@ -175,29 +177,24 @@ button {
     }
 
     .promo .item:nth-child(1)::before,
-    .promo .item:nth-child(4)::before {
+    .promo .item:nth-child(5)::before {
         display: none;
     }
 
     .promo .item:nth-child(1)::after,
     .promo .item:nth-child(2)::after,
-    .promo .item:nth-child(3)::after {
+    .promo .item:nth-child(3)::after,
+    .promo .item:nth-child(4)::after {
         display: none;
     }
 
-    .promo .card-wrap {
-        float: left;
-        display: inline-block;
-        width: 316px;
-        height: 168px;
-        margin-right: 11px;
-    }
-    .promo .card-wrap:nth-last-child(1) {
-        margin-right: 0;
-    }
-  
-    .promo .card-group {
+    .promo .promo-card {
         padding-right: 0;
+    }
+
+    .main {
+        padding-left: 6px;
+        padding-right: 6px;
     }
 
 /* 小米闪购 */
