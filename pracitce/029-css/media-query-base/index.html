@@ -1,0 +1,118 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: rgb(255, 218, 56);
+        font-size: 14px;
+        line-height: 1.6em;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .row::before,
+    .row::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .col {
+        float: left;
+        width: 25%;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .card {
+        background: #fff;
+        /* padding: 10px 14px; */
+        margin: 20px 0;
+        border-radius: 4px;
+        box-shadow: 0 0 20px rgba(0, 4px, 0, .08)
+    }
+    .card img {
+        border-radius: 4px 4px 0 0;
+    }
+    .card span {
+        display: inline-block;
+        padding: 14px;
+    }
+
+    @media(max-width: 800px) {
+        .col {
+            width: 50%;
+        }
+
+        body {
+            background: rgb(245, 85, 85);
+        }
+
+    }
+</style>
+
+<!-- <style media="screen and (max-width: 800px)">
+
+    .col {
+        width: 50%;
+    }
+
+    body {
+        background: rgb(245, 85, 85);
+    }
+    
+</style> -->
+
+<style media="screen and (max-width: 500px)">
+    .col {
+        width: 100%;
+    }
+
+    body {
+        background: rgb(85, 109, 245);
+    }
+</style>
+
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <img src="https://dummyimage.com/600x400/2feba0/2feba0" alt="">
+            <span>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime illo adipisci quasi excepturi tempore
+                illum.
+            </span>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://dummyimage.com/600x400/2feba0/2feba0" alt="">
+            <span>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime illo adipisci quasi excepturi tempore
+                illum.
+            </span>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://dummyimage.com/600x400/2feba0/2feba0" alt="">
+            <span>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime illo adipisci quasi excepturi tempore
+                illum.
+            </span>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://dummyimage.com/600x400/2feba0/2feba0" alt="">
+            <span>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime illo adipisci quasi excepturi tempore
+                illum.
+            </span>
+        </div>
+    </div>
+</div>
