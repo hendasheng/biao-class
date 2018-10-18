@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+input {
+    outline: none;
+}
+
+
+
+.nav {
+    padding: 10px 0;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+
+.logo {
+    display: inline-block;
+    fill: #0084ff;
+    line-height: .9rem;
+}
+.logo svg {
+    width: 64px;
+}
+
+.nav a {
+    color: #8590a6;
+}
+
+.nav-list a:hover {
+    color: #175199;
+    transition: color 200ms;
+}
+
+.nav-list a {
+    /* display: inline-block; */
+    padding: 0 12px;
+    line-height: 2rem;
+    font-size: 1rem;
+}
+
+.search {
+    position: relative;
+    font-size: 0;
+}
+.search input,
+.search .search-btn {
+    display: inline-block;
+    padding: 7px;
+    /* border: 1px solid #333; */
+    font-size: .8rem;
+    line-height: 1.1rem;
+}
+
+.search input {
+    width: 80%;
+    border-radius: 3px;
+    background: #f6f6f6;
+    border: 1px solid #ebebeb;
+    color: #8590a6;
+}
+.search input:focus {
+    border: 1px solid #8590a6;
+}
+
+.search .search-btn {
+    position: absolute;
+    width: 15%;
+    text-align: center;
+    margin-left: 10px;
+    background: #0084ff;
+    border-radius: 3px;
+    color: #fff;
+    font-size: .9rem;
+    line-height: 1.2rem;
+}
+.search .search-btn:hover {
+    border-color: #0077e6;
+    background-color: #0077e6;
+    transform: all 200ms;
+}
+
+.search .search-icon {
+    position: absolute;
+    top: 7px;
+    right: 100px;
+}
+
+.nav-right a > * {
+    vertical-align: middle;
+}
+.nav-right a {
+    padding: 0 16px;
+    position: relative;
+}
+.nav-right a svg {
+    width: 22px;
+}
+.nav-right svg:hover {
+    fill: #77839c; 
+    transform: all 200ms;
+}
+
+.nav-right .user img {
+    border-radius: 50%;
+}
+
+.nav-right a span {
+    position: absolute;
+    top: -8px;
+    left: 28px;
+    background: #f1403c;
+    color: #fff;
+    padding: 0 5px;
+    line-height: inherit;
+    font-size: .4rem;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
