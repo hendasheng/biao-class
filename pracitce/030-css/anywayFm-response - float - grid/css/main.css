@@ -1,0 +1,317 @@
+body {
+    font-size: 14px;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f60c3e;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.bottom-spline,
+.top-spline {
+    width: 100%;
+    height: 10px;
+    background: #f60c3e;
+    position: fixed;
+}
+.bottom-spline {
+    bottom: 0;
+}
+.top-spline {
+    top: 0;
+    z-index: 999;
+}
+
+.main {
+    background: #fff;
+    margin: 10px;
+    display: flex;
+    /* height: 20000px; */
+}
+
+/* side-bar */
+    .side-bar {
+        position: fixed;
+        width: 240px;
+        height: 100%;
+        top: 0;
+        margin-top: 10px;
+        /* background: pink; */
+        padding: 10px;
+        border-right: 1px dotted #ddd;
+    }
+
+
+    .nav-list {
+        display: block;
+    }
+    .nav-icon {
+        width: 1.2rem;
+        height: 1.2rem;
+        fill: #333;
+    }
+
+
+
+/* con */
+    .con {
+        margin-left: 240px;
+        width: 100%;
+        padding: 40px 0;
+    }
+
+    .current {
+        margin: 0 30px;
+        border-bottom: 1px dotted #ddd;
+        padding: 2rem 1rem 2rem 3rem;
+        color: #444;
+    }
+
+    .current-main {
+        padding-right: 2rem; 
+        position: relative;
+    }
+    .current-main .title-icon {
+        position: absolute;
+        top: 4px;
+        left: -50px;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        font-weight: normal;
+    }
+    .current-main .title-icon::before {
+        content: '№';
+        margin-right: .2rem;
+        font-size: .9rem;
+        vertical-align: top;
+    }
+    
+    
+    .current-main .title {
+        display: inline-block;
+        font-size: 2.4rem;
+        font-weight: 600;
+        line-height: 2.6rem;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+    .current-main .title:hover,
+    .card .title:hover {
+        color: #f60c3e;
+        transition: all 200ms;
+    }
+    
+    .current-main .desc {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+    .current-main .desc a {
+        text-decoration: dotted;
+        border-bottom: 1px dotted #888;
+    }
+    .current-main .desc a:hover {
+        border-bottom: 1px solid #f60c3e;
+        transition: all 200ms;
+    }
+    
+    .current-main .desc span {
+        font-size: .8rem;
+        background: #eee;
+        padding: .2rem .4rem; 
+        font-weight: 600;
+    }
+    .current-main .desc span:hover {
+        background: #f60c3e;
+        color: #fff;
+        transition: all 200ms;
+    }
+
+    
+
+    .current .other {
+        border-left: 1px solid #ddd;
+        padding-left: 1.4rem;
+    }
+
+    .current .other .item {
+        margin-bottom: 2rem;
+        position: relative;
+    }
+    .current .other .item div:nth-child(1) {
+        font-size: .9rem;
+        font-weight: 600;
+    }
+    .current .other .item div:nth-child(2),
+    .current .other .item a span {
+        font-size: .7rem;
+    }
+    .current .other .item::before {
+        content: "▪ ";
+        color: #f60c3e;
+        position: absolute;
+        top: 0;
+        left: -12px;
+    }
+    .current .other .item a::before {
+        content: "#";
+        color: #f60c3e;
+    }
+    .current .other .item a:hover {
+        color: #f60c3e;
+        transition: all 200ms;
+    }
+    
+
+    .current .other svg {
+        height: 1.4rem;
+        width: 1.4rem;
+        background: #f60c3e;
+        fill: #fff;
+    }
+    .current .other .play-btn > * {
+        vertical-align: middle;
+    }
+    .current .other .play-btn {
+        display: inline-block;
+        font-size: 1rem;
+        line-height: 1rem;
+        font-weight: 600;
+        padding-right: 1rem;
+        margin-bottom: 0;
+    }
+    .current .other .play-btn:hover {
+        background: #f60c3e;
+        color: #fff;
+        transition: all 200ms;
+    }
+    
+
+
+
+    .past-wrap {
+        margin: 0 30px;
+        padding: 2rem 1rem 2rem 3rem;
+        color: #444;
+    }
+
+    .past-group {
+        border-bottom: 1px dotted #ddd;
+    }
+
+
+/* 往期内容卡片 */
+
+    .past-wrap {
+        font-size: .9rem;
+    }
+
+    .card {
+        padding-right: 3rem;
+        position: relative;
+    }
+
+    .past-group .spline {
+        width: 1px;
+        height: 13rem;
+        border: 1px dotted #ddd;
+        margin-left: 1rem;
+    }
+
+/* 卡片标题 */
+    .card .title {
+        display: block;
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+    .card .title-icon {
+        position: absolute;
+        top: 7px;
+        left: -50px;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        font-weight: normal;
+    }
+
+    .card .title-icon::before {
+        content: '№';
+        margin-right: .2rem;
+        font-size: .9rem;
+        vertical-align: top;
+    }
+
+/* 卡片标签 */
+    .card .tag,
+    .card .time {
+        font-size: .9rem;
+        color: #999;
+    }
+
+    .card .tag a::before {
+        content: '#';
+        color: #f60c3e;
+        margin-right: .2rem;
+    }
+    .card .tag a {
+        margin-right: .4rem;
+    }
+    .card .tag a:hover {
+        color: #f60c3e;
+        transition: all 200ms;
+    }
+    .card .sub {
+        margin-top: 1rem;
+    }
+    
+/* 卡片 desc */
+    .card .desc {
+        line-height: 1.6rem;
+    }
+    .card .desc span {
+        font-size: .8rem;
+        background: #eee;
+        padding: .2rem .4rem; 
+        font-weight: 600;
+    }
+    .card .desc span:hover {
+        background: #f60c3e;
+        color: #fff;
+        transition: all 200ms;
+    }
+    
+/* 立即收听按钮 */
+    .past-play-btn > * {
+        vertical-align: middle;
+    }
+    .past-play-btn {
+        display: inline-block;
+        font-size: 0;
+        margin-bottom: 2rem;
+    }
+
+    .past-play-btn span {
+        padding: 0 .2rem;
+        font-weight: 600;
+        line-height: 1.3rem;
+        font-size: .8rem;
+    }
+    
+    .past-play-btn svg {
+        width: 1.1rem;
+        height: 1.1rem;
+        background: #f60c3e;
+        fill: #fff;
+    }
+    .past-play-btn span:hover {
+        background: #f60c3e;
+        color: #fff;
+        transition: all 200ms;
+    }
+
