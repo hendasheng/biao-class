@@ -1,0 +1,222 @@
+<style>
+    body {
+        margin: 0;
+        font-size: 14px;
+        font-family: sans-serif;
+        background: #f4f4f4;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    img {
+        max-width: 100%;
+    }
+    input {
+        outline: none;
+        border: none;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 2%;
+        padding-right: 2%;
+        justify-content: space-between;
+    }
+    
+    .nav {
+        background: rgba(47,47,47,0.98);
+        color: #999;
+        font-size: .9rem;
+        margin-bottom: 1rem;
+    }
+    .nav a {
+        padding: 1.2rem .6rem;
+        display: inline-block;
+    }
+
+    .logo {
+        margin-right: 1rem;
+    }
+    .nav-list {
+        flex-grow: 3;
+        position: relative;
+    }
+    .nav-list a:hover {
+        color: #ddd;
+        transition: all 200ms;
+    }
+    .nav-list a:nth-last-child(1) {
+        position: absolute;
+        top: 3px;
+        opacity: .4;
+    }
+    .nav-list a:nth-last-child(1):hover {
+        position: absolute;
+        top: 3px;
+        opacity: 1;
+    }
+
+    .go-pro a {
+        background: linear-gradient(45deg, #E47B49 0%, #ea4c89 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .user {
+        margin-left: 1rem;
+    }
+    .user img {
+        border-radius: 50%;
+    }
+
+    .search {
+        margin-left: auto;
+        position: relative;
+        margin-left: 1rem;
+    }
+
+    .search input {
+        width: 190px;
+        padding: .4rem;
+        padding-left: 1.6rem;
+        border-radius: 4px;
+    }
+
+    .search .input-btn {
+        position: absolute;
+        padding: 0;
+        top: 6px;
+        left: .4rem;
+        z-index: 1;
+    }
+
+
+
+    .card {
+        display: block;
+        background: #fff;
+        padding: .8rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+        width: 30%;
+    }
+    .thumbnail {
+        margin-bottom: .6rem;
+    }
+    .other {
+        color: #aaa;
+        font-size: .8rem;
+    }
+    .other span,
+    .other a {
+        margin-left: .8rem;
+    }
+
+    .look {
+        margin-left: 0;
+        border-left: none;
+        padding-left: 18px;
+        background-repeat: no-repeat;
+        background-position: 0 4px;
+        background-image: url('https://cdn.dribbble.com/assets/icon-views-sm-7046a1e57d41dd2fa0837acd30313dc29c5ce5d505d935a465cb9767dc331a43.png');
+    }
+
+    .comment {
+        margin-left: 0;
+        border-left: none;
+        padding-left: 18px;
+        background-repeat: no-repeat;
+        background-position: 0 4px;
+        background-image: url('https://cdn.dribbble.com/assets/icon-comments-3d8aeb584a027f56fc85b2ffadac00756e2b9e91c9242ac148fe71d101a120eb.png');
+    }
+
+    .like {
+        margin-left: 0;
+        border-left: none;
+        padding-left: 18px;
+        background-repeat: no-repeat;
+        background-position: 0 4px;
+        background-image: url('https://cdn.dribbble.com/assets/icon-hearts-c75259e8ce04c45abf11f8a378bb2f6a218a4ff116c2eb93132cf01deb365964.png?2');
+    }
+    
+    
+</style>
+
+
+<div class="nav container">
+    <a href="#" class="logo">
+        <img src="https://cdn.dribbble.com/assets/logo-small-4612353cefa78dfe35ba5e8e9d35da9f9305a3a516ef9675b5c37004c5862b6d.png"
+            alt="">
+    </a>
+    <div class="nav-list">
+        <a href="#">Shots</a>
+        <a href="#">Desigers</a>
+        <a href="#">Teams</a>
+        <a href="#">Community</a>
+        <a href="#">Jobs</a>
+        <a href="#">
+            <img src="https://cdn.dribbble.com/assets/icon-more-dots-8624bddd5cc1950979b7c8dc571cf95d0e314600a9f8e43d99a17b57877808b6.png"
+                alt="">
+        </a>
+    </div>
+    <div class="go-pro">
+        <a href="#">Get more out of Dribbble — Go Pro</a>
+    </div>
+    <div class="user">
+        <a href="#">
+            <img src="https://dummyimage.com/20x20/ff54a7e/ff54a7e" alt="">
+        </a>
+        <a href="#">
+            <img src="https://dummyimage.com/20x20/ff54a7e/ff54a7e" alt="">
+        </a>
+        <a href="#">
+            <img src="https://dummyimage.com/20x20/ff54a7e/ff54a7e" alt="">
+        </a>
+        <a href="#">
+            <img src="https://dummyimage.com/20x20/ff54a7e/ff54a7e" alt="">
+        </a>
+    </div>
+    <div class="search">
+        <input type="text" placeholder="Search">
+        <a href="#" class="input-btn">
+            <img src="https://cdn.dribbble.com/assets/icon-search-7a07ad9f258fc1d8c28a29faa5627b41c2cc353d138b6bc3e987e0719584ce69.png"
+                alt="">
+        </a>
+    </div>
+</div>
+
+<div class="card-wrap container">
+    <div class="card">
+        <div class="thumbnail">
+            <img src="https://dummyimage.com/600x400/ff54a7e/ff54a7e" alt="">
+        </div>
+        <div class="other">
+            <span class="look">2,414</span>
+            <span class="comment">632</span>
+            <a href="#" class="like">132</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="thumbnail">
+            <img src="https://dummyimage.com/600x400/ff54a7e/ff54a7e" alt="">
+        </div>
+        <div class="other">
+            <span class="look">2,414</span>
+            <span class="comment">632</span>
+            <a href="#" class="like">132</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="thumbnail">
+            <img src="https://dummyimage.com/600x400/ff54a7e/ff54a7e" alt="">
+        </div>
+        <div class="other">
+            <span class="look">2,414</span>
+            <span class="comment">632</span>
+            <a href="#" class="like">132</a>
+        </div>
+    </div>
+</div>
