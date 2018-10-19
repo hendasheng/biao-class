@@ -41,6 +41,10 @@ input {
         color: #8590a6;
     }
 
+    .nav-list a:nth-last-child(1){
+        display: none;
+    }
+
     .nav-list a:hover {
         color: #175199;
         transition: color 200ms;
@@ -201,6 +205,8 @@ input {
     .card .img {
         display: inline-block;
         width: 25%;
+        height: 100px;
+        overflow: hidden;
     }
     .card .img img {
         display: block;

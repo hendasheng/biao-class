@@ -1,0 +1,57 @@
+
+
+
+.container,
+.side-bar-wrap,
+.con-wrap {
+    width: 100%;
+}
+
+.nav .search {
+    display: none;
+}
+
+.nav .nav-list {
+    width: 45%;
+}
+
+.nav .nav-list a > * {
+    vertical-align: middle;
+}
+
+.con-wrap {
+    margin-bottom: 10px;
+}
+
+.draft-wrap svg {
+    width: 2rem;
+}
+
+.col-24,
+.col-23,
+.col-22,
+.col-21,
+.col-20,
+.col-19,
+.col-18,
+.col-17,
+.col-16,
+.col-15,
+.col-14,
+.col-13,
+.col-12,
+.col-11,
+.col-10,
+.col-9,
+.col-8,
+.col-7,
+.col-6,
+.col-5,
+.col-4,
+.col-3,
+.col-2,
+.col-1,
+.col {
+    padding-left: 8px;
+    padding-right: 8px;
+}

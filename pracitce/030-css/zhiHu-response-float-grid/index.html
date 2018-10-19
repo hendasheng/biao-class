@@ -8,11 +8,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/grid-24.css">
     <link rel="stylesheet" href="./css/main.css">
+
+    <link media="(max-width: 768px)" rel="stylesheet" href="./css/main-md.css">
+    <link media="(max-width: 375px)" rel="stylesheet" href="./css/main-sm.css">
+
 </head>
 
 <body>
 
-    <div class="nav">
+    <div class="row nav">
         <div class="row container">
             <div class="col-17 nav-left">
                 <a href="#" class="col-3 logo">
@@ -28,6 +32,12 @@
                     <a href="#">首页</a>
                     <a href="#">发现</a>
                     <a href="#">话题</a>
+                    <a href="#">
+                        <svg class="Zi Zi--Search" fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
+                            <path d="M17.068 15.58a8.377 8.377 0 0 0 1.774-5.159 8.421 8.421 0 1 0-8.42 8.421 8.38 8.38 0 0 0 5.158-1.774l3.879 3.88c.957.573 2.131-.464 1.488-1.49l-3.879-3.878zm-6.647 1.157a6.323 6.323 0 0 1-6.316-6.316 6.323 6.323 0 0 1 6.316-6.316 6.323 6.323 0 0 1 6.316 6.316 6.323 6.323 0 0 1-6.316 6.316z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
                 </div>
                 <form action="" class="col-14 search">
                     <input type="text" placeholder="怎样评价王花花和拴蛋说的第二句话">
@@ -71,7 +81,7 @@
     </div>
 
     <div class="row container main">
-        <div class="col-17">
+        <div class="col-17 con-wrap">
             <div class="content">
                 <div class="title-bar">
                     <a href="#" class="title-bar-selected">推荐</a>
@@ -83,7 +93,7 @@
                     <a href="#" class="title">晚上吃了面条</a>
                     <a href="#" class="row card-con">
                         <span class="img fl">
-                            <img src="https://dummyimage.com/220x120/0084ff/0084ff" alt="">
+                            <img src="https://dummyimage.com/400x400/0084ff/0084ff" alt="">
                         </span>
 
                         <div class="desc fl">
@@ -221,8 +231,8 @@
             </div>
 
         </div>
-        <div class="col-7">
-            <div class="side-bar">
+        <div class="col-7 side-bar-wrap">
+            <div class="row side-bar">
                 <div class="row featurs">
                     <a href="#" class="col-8">
                         <svg fill="currentColor" viewBox="0 0 24 24">

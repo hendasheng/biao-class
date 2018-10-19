@@ -1,0 +1,70 @@
+
+
+.container,
+.nav-left,
+.nav-right {
+    width: 100%;
+}
+
+.nav .col-3 {
+    width: 20%;
+}
+.nav .nav-list {
+    width: 80%;
+    text-align: right;
+}
+
+
+
+
+
+.nav .nav-right {
+    text-align: center;
+    /* padding: 10px 0; */
+    margin-top: 20px;
+}
+
+
+.card .img {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 10px;
+}
+.card-con .desc {
+    width: 100%;
+    padding-left: 0;
+}
+
+.title-bar {
+   text-align: center;
+}
+.title-bar-selected::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background: #0084ff;
+    position: absolute;
+    top: 58px;
+    left: 88px;
+}
+
+.card, .card-thumbnail {
+    padding: 10px;
+    border-bottom: 1px solid #f0f2f7;
+}
+
+.other .praise,
+.other .oppose {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.other .praise {
+    width: 60%;
+}
+.other .oppose {
+    width: 30%;
+}
+.other a {
+    padding: 2px 6px;
+}
