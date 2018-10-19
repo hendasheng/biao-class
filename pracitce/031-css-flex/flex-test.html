@@ -1,0 +1,92 @@
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+    
+    pre {
+        font-size: 150%;
+        font-weight: bold;
+    }
+
+    .parent {
+        display: flex;
+        /* border: solid; */
+        align-items: flex-end;
+    }
+
+    .child {
+        border: solid red;
+        /* padding: 20px; */
+        /* width: 50%; */
+    }
+
+    .row {
+        flex-direction: row;
+    }
+
+    .row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .column {
+        flex-direction: column;
+    }
+    
+    .column-reverse {
+        flex-direction: column-reverse;
+    }
+    
+    #c {
+        margin-left: auto;
+    }
+
+    #a {
+        margin-right: auto;
+    }
+
+    .parent .child:nth-child(1) {
+        padding: 10px;
+    }
+    .parent .child:nth-child(2) {
+        padding: 20px;
+    }
+    .parent .child:nth-child(3) {
+        padding: 30px;
+    }
+    .parent .child:nth-child(4) {
+        padding: 40px;
+    }
+    
+</style>
+
+<pre>row</pre>
+<div class="parent row">
+    <div class="child">A</div>
+    <div class="child">B</div>
+    <div class="child">C</div>
+    <div class="child">C</div>
+    <div class="child">C</div>
+    <div id="c" class="child">C</div>
+</div>
+
+<pre>row-reverse</pre>
+<div class="parent row-reverse">
+    <div class="child">A</div>
+    <div class="child">B</div>
+    <div id="a" class="child">C</div>
+</div>
+
+<pre>column</pre>
+<div class="parent column">
+    <div class="child">A</div>
+    <div class="child">B</div>
+    <div class="child">C</div>
+</div>
+
+<pre>column-reverse</pre>
+<div class="parent column-reverse">
+    <div class="child">A</div>
+    <div class="child">B</div>
+    <div class="child">C</div>
+</div>
