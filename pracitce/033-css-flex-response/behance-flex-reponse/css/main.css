@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    font-size: 14px;
+    background: #f9f9f9;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    /* width: 1226px;
+    margin: 0 auto; */
+}
+
+.nav-wrap {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+
+    padding: 1rem 2rem;
+
+    background: #191919;
+    color: #a4a4a4;
+}
+
+/* .nav > * {
+    border: 1px solid #32eb8e;
+} */
+
+.logo {
+    width: 20%;
+    flex-grow: 1;
+}
+
+.nav-list {
+    width: 20%;
+    flex-grow: 10;
+}
+
+.user {
+    width: 20%;
+    flex-grow: 1;
+}
+
+.nav .logo svg {
+    width: 5.5rem;
+    line-height: 1rem;
+    fill: #fff;
+}
+
+.nav svg {
+    fill: #a4a4a4;
+    width: 1.1rem;
+}
+
+
+.nav .avatar img {
+    border-radius: 50%;
+    display: block;
+    /* border: 1px solid rgba(255, 255, 255, .4); */
+}
+
+.nav .user a > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nav a {
+    display: inline-block;
+    /* padding: 1rem .4rem; */
+}
+
+.logo {
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+}
+
+.nav-list a {
+    font-size: .95rem;
+    line-height: 1.2rem;
+    padding: .4rem;
+    font-weight: 600;
+}
+.nav-list .selected {
+    color: #fff;
+}
+.nav-list a:hover {
+    color: #fff;
+    transition: all 200ms;
+}
+
+.nav-list .create {
+    background: #0048ff;
+    color: #fff;
+    border-radius: 16px;
+    padding: .4rem 1rem;
+    margin-left: .4rem;
+}
+
+.nav-list .create:hover {
+    background: #003ecb;
+    transition: all 200ms;
+}
+
+.nav-list {
+    text-align: center;
+}
+
+.user {
+    text-align: right;
+}
+
+.user a {
+    padding-left: .4rem;
+    padding-right: .4rem;
+}
+
+.user .adobe {
+    padding-right: 0;
+}
+
+.user a svg:hover {
+    fill: #fff;
+    transition: all 200ms;
+}
+
+.user .adobe svg:hover {
+    fill: #a4a4a4;
+}
+
+
+
+.page-nav {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+    font-weight: 600;
+    font-size: .95rem;
+    margin-top: 67px;
+}
+
+.page-nav a {
+    padding: 1.2rem .8rem;
+}
+
+.page-nav a:hover,
+.selected {
+    color: #0048ff;
+    transition: all 200ms;
+}
+
+
+
+.card-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: block;
+    width: 19%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(25, 25, 25, 0.2);
+    border-radius: 4px;
+    margin: .4rem 0;
+}
+
+.card img {
+    border-radius: 4px 4px 0 0;
+}
+
+.card .text {
+    padding: 0 1rem;
+}
+
+.card .title {
+    font-size: .95rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    padding: .6rem 0;
+}
+
+.card .title:hover,
+.card .desc span:hover,
+.card .sort:hover {
+    text-decoration: underline;
+    transition: all 200ms;
+}
+
+.card .desc {
+    color: #191919;
+    font-size: .9rem;
+    position: relative;
+    margin-bottom: .6rem;
+}
+
+.card .desc span::after {
+    content: '-';
+    width: 1rem;
+    height: 1px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    color: #a4a4a4;
+}
+
+.card .desc span {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.card .other {
+    border-top: 1px solid #f2f2f2;
+    padding: .5rem 0;
+    fill: #a4a4a4;
+    font-size: 0.6rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.card .other .like,
+.card .other .look {
+    margin-right: 1rem;
+}
+
+.card .other svg {
+    position: relative;
+    top: .18rem;
+    margin-right: .1rem;
+}
+
+
+.card .tag {
+    margin-left: auto;
+}

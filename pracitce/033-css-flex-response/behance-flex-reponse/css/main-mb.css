@@ -1,0 +1,33 @@
+.nav {
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.nav-list {
+    width: 50%;
+    text-align: left;
+}
+
+.user {
+    width: 40%;
+}
+
+
+
+.page-nav {
+    margin-top: 119px;
+}
+
+
+.card-wrap {
+    flex-wrap: wrap;
+}
+.card {
+    width: 49%;
+}

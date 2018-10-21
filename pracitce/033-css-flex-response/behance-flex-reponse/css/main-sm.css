@@ -1,0 +1,46 @@
+.nav {
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.nav-list {
+    width: 100%;
+    margin-bottom: .4rem;
+}
+
+.user {
+    width: 100%;
+    text-align: center;
+}
+
+
+.nav-list a {
+    font-size: .6rem;
+    line-height: 1.2rem;
+    padding: .4rem;
+    font-weight: 600;
+}
+
+.nav svg {
+    fill: #a4a4a4;
+    width: .8rem;
+}
+.nav .avatar img {
+    border-radius: 50%;
+    width: 1.2rem;
+}
+
+
+.page-nav {
+    font-weight: 600;
+    font-size: .6rem;
+    margin-top: 146px;
+}
+
+
+.card-wrap {
+    padding: 0 .4rem;
+}
+.card {
+    width: 100%;
+}
