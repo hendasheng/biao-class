@@ -394,3 +394,13 @@
 .footer .contact {
     display: inline-block;
 } 
+
+.footer .spline {
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #8590a6;
+    position: relative;
+    top: -3px;
+}
