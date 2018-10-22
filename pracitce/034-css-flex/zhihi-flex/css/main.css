@@ -114,7 +114,7 @@
 /* 主要内容 */
 
 .content > * {
-    padding: 0 .4rem;
+    /* padding: 0 .4rem; */
     background: #fff;
     box-shadow: 0 1px 3px rgba(26,26,26,.1);
 }
@@ -122,12 +122,119 @@
 
 
 /* 左侧内容 - 开始 */
+.main {
+    flex-basis: 69%;
+}
 .main a {
     display: inline-block;
 }
 .main .title a {
+    position: relative;
     font-size: 1rem;
     padding: 1rem;
+}
+.main .title {
+    border-bottom: 1px solid #f6f6f6;
+}
+.main .selected {
+    font-weight: 600;
+}
+.main .selected::after {
+    display: inline-block;
+    content: '';
+    width: 2rem;
+    height:.2rem;
+    background: #0077e6;
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+}
+
+/* 卡片 */
+.card-wrap {
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.card {
+    padding: .4rem 1rem;
+    width: 100%;
+}
+.card > a {
+   width: 100%; 
+}
+
+.card-title a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: .6rem 0;
+}
+.card-title a:hover {
+    color: #175199;
+    transition: all 200ms;
+}
+
+.card .thumbnail img {
+    display: block;
+}
+
+.card .desc > span {
+    font-size: .9rem;
+    line-height: 1.2rem;
+    color: #1a1a1a;
+    cursor: pointer;
+}
+.card .desc > span:hover {
+    color: #646464;
+    transition: all 200ms;
+}
+
+.card .desc a {
+    color: #175199;
+    margin-left: .4rem;
+}
+.card .desc a:hover {
+    color: #646464;
+    transition: all 200ms;
+}
+
+.card .desc a > * {
+    vertical-align: middle;
+}
+
+
+
+.card .other {
+    padding: 1rem 0;
+}
+
+.card .other a > * {
+    vertical-align: middle;
+}
+
+.card .other .btn a {
+    background: rgba(0,132,255,.1);
+    color: #0077e6;
+    padding: .4rem .8rem;
+    border-radius: 4px;
+}
+.card .other .btn a:hover {
+    background: rgba(0,132,255,.2);
+    transition: all 200ms;
+}
+
+.card .other .btn {
+    margin-right: 2rem;
+}
+
+.card .other .item {
+    color: #8590a6;
+}
+.card .other .item a {
+    padding: 0 .4rem;
+}
+.card .other .item a:hover {
+    color: #77839c;
+    transition: all 200ms;
 }
 
 /* 左侧内容 - 结束 */
