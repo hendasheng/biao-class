@@ -35,6 +35,7 @@ button {
     justify-content: flex-end;
 }
 
+
 .container {
     width: 1000px;
     margin: 0 auto;
@@ -69,8 +70,6 @@ button {
 .text-fr {
     text-align: right;
 }
-
-
 
 
 .nav-l,

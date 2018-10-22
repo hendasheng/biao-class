@@ -113,17 +113,13 @@
 
 /* 主要内容 */
 
-.content > * {
-    /* padding: 0 .4rem; */
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(26,26,26,.1);
-}
-
 
 
 /* 左侧内容 - 开始 */
 .main {
     flex-basis: 69%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
 }
 .main a {
     display: inline-block;
@@ -238,3 +234,163 @@
 }
 
 /* 左侧内容 - 结束 */
+
+/* side-bar */
+.featurs-main svg,
+.featurs-main span {
+    width: 100%;
+}
+
+
+.featurs,
+.project,
+.side-bar .other {
+    color: #8590a6;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    font-size: 1rem;
+
+    margin-bottom: 1rem;
+}
+.featurs-main {
+    padding: 1rem;
+    text-align: center;
+}
+.featurs-main span {
+    color: #444;
+}
+.featurs-main span:hover {
+    color: #175199;
+    transition: all 200ms;
+}
+
+.draft-wrap {
+    border-top: 1px solid #f0f2f7;
+    padding: 1rem;
+    font-size: .9rem;
+}
+.draft-wrap:hover,
+.side-bar .other-item:hover {
+    background: #f6f6f6;
+    transition: all 200ms;
+}
+
+.draft-wrap .num {
+    margin-left: auto;
+    background: #f6f6f6;
+    padding: 0 .4rem;
+    border-radius: 4px;
+}
+.draft-wrap svg,
+.side-bar .other-item svg {
+    margin-right: .4rem;
+}
+
+
+.project {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: center;
+    padding: .5rem 1rem;
+    font-size: .9rem;
+}
+
+.project > * svg,
+.project > * span {
+    width: 100%;
+}
+.project > * svg {
+    margin-bottom: .4rem;
+}
+
+.project > * {
+    width: 30%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.project .live svg {
+    color: rgb(255, 207, 0);
+}
+.project .book svg {
+    color: rgb(67, 212, 128);
+}
+.project .table svg {
+    color: rgb(0, 132, 255);
+}
+.project .column svg {
+    color: rgb(15, 136, 235);
+}
+.project .advisory svg {
+    color: rgb(15, 136, 235);
+}
+
+
+
+.project .live:hover {
+    color: rgb(255, 207, 0);
+    transition: all 200ms;
+}
+.project .book:hover {
+    color: rgb(67, 212, 128);
+    transition: all 200ms;
+}
+.project .table:hover {
+    color: rgb(0, 132, 255);
+    transition: all 200ms;
+}
+.project .column:hover {
+    color: rgb(15, 136, 235);
+    transition: all 200ms;
+}
+.project .advisory:hover {
+    color: rgb(15, 136, 235);
+    transition: all 200ms;
+}
+
+
+
+
+.side-bar .other {
+    padding: .4rem 0;
+}
+.side-bar .other-item {
+    font-size: .9rem;
+    padding: 1rem;
+}
+
+.side-bar .other-item .num {
+    margin-left: auto;
+}
+.side-bar .num-selected {
+    margin-left: auto;
+    background: #f6f6f6;
+    padding: 0 .4rem;
+    border-radius: 4px;
+}
+
+
+
+.footer {
+    flex-wrap: wrap;
+    color: #8590a6;
+}
+
+.footer a:hover {
+    color: #175199;
+    transition: all 200ms;
+}
+
+.footer > * {
+    padding: .2rem 0;
+    width: 100%;
+}
+
+/* .footer .more a {
+    padding: .2rem 0;
+    display: block;
+}*/
+.footer .contact {
+    display: inline-block;
+} 
