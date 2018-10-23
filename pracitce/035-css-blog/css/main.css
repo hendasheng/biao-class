@@ -2,22 +2,16 @@
 
 /* side-bar */
     .side-bar-wrap {
-        padding: 0 2rem;
         font-size: 1rem;
-        border-right: 1px dashed rgba(0, 0, 0, .1);
         color: #4A4A4A;
-        
-
-        background: rgb(84, 175, 171);
     }
 
     .side-bar {
-        /* margin: 0 auto;*/
+        border-right: 1px dashed rgba(0, 0, 0, .1);
+
         height: 100%;
-        width: 20.8333333333%;
+        width: 16.6666666667%;
         position: fixed;
-        top: 0;
-        left: 0; 
     }
 
     .side-bar > * {
@@ -64,5 +58,20 @@
 
 /* 内容卡片 */
     .main {
-        background: rgb(255, 135, 181);
+        /* background: rgb(255, 135, 181); */
+
+
+    }
+
+    .card-wrap {
+        padding: 1rem 2rem;
+    }
+
+    .card {
+        background: rgb(245, 41, 41);
+    }
+
+    .title {
+        font-size: 1.6rem;
+        font-weight: 600;
     }
