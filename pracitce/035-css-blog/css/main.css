@@ -1,0 +1,68 @@
+
+
+/* side-bar */
+    .side-bar-wrap {
+        padding: 0 2rem;
+        font-size: 1rem;
+        border-right: 1px dashed rgba(0, 0, 0, .1);
+        color: #4A4A4A;
+        
+
+        background: rgb(84, 175, 171);
+    }
+
+    .side-bar {
+        /* margin: 0 auto;*/
+        height: 100%;
+        width: 20.8333333333%;
+        position: fixed;
+        top: 0;
+        left: 0; 
+    }
+
+    .side-bar > * {
+        flex-wrap: wrap;  
+        border-bottom: 1px dashed rgba(0, 0, 0, .1);
+    }
+
+    .user {
+        text-align: center;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+    .logo {
+        margin-bottom: .6rem;
+    }
+
+    .header {
+        padding: 6rem 0;
+        font-weight: 600;
+    }
+    .header-desc {
+        line-height: 1.6rem;
+    }
+
+
+    .name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1.4rem;
+    }
+
+    .nav,
+    .nav-label {
+        padding: 4rem 0;
+    }
+
+    .nav a,
+    .nav-label a {
+        padding: .6rem 0;
+    }
+
+
+/* 内容卡片 */
+    .main {
+        background: rgb(255, 135, 181);
+    }
