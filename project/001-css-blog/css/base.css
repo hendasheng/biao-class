@@ -1,0 +1,81 @@
+.side-bar-wrap {
+    font-size: 1rem;
+    color: #4A4A4A;
+}
+
+.side-bar {
+    border-right: 1px dashed rgba(0, 0, 0, .1);
+
+    height: 100%;
+    width: 16.6666666667%;
+    position: fixed;
+}
+
+.side-bar > * {
+    flex-wrap: wrap;  
+}
+
+.user {
+    text-align: center;
+}
+
+.logo {
+}
+.logo img {
+    width: 80px;
+    border-radius: 50%;
+}
+.logo img:hover {
+    transform: scale(1.1);
+    transition: all 200ms;
+}
+.logo {
+    margin-bottom: .6rem;
+}
+
+.header {
+    font-weight: 600;
+    padding: 1rem 0;
+}
+
+.header .name:hover {
+    text-decoration: underline;
+}
+
+.header-desc {
+    line-height: 1.6rem;
+}
+
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+}
+
+.nav a {
+    padding: 1rem 0;
+    display: inline;
+}
+.nav a:hover,
+.nav-label a:hover {
+    color: #333;
+    transition: all 200ms;
+    font-weight: 600;
+}
+
+.side-bar .icon {
+    font-weight: 600;
+    margin-right: .4rem;
+}
+
+.nav-label a {
+    padding: .6rem 0;
+}
+
+/* 分割线 */
+.side-bar .spline span {
+    width: 100%;
+    height: 1px;
+    border-top: 1px dashed rgba(0, 0, 0, .1);
+}
