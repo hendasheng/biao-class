@@ -22,6 +22,8 @@ img {
 .col {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+
 }
 
 .col-1 {flex-basis: 4.1666666667%;}

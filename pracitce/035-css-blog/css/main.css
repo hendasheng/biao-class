@@ -16,7 +16,6 @@
 
     .side-bar > * {
         flex-wrap: wrap;  
-        border-bottom: 1px dashed rgba(0, 0, 0, .1);
     }
 
     .user {
@@ -31,8 +30,8 @@
     }
 
     .header {
-        padding: 6rem 0;
         font-weight: 600;
+        padding: 1rem 0;
     }
     .header-desc {
         line-height: 1.6rem;
@@ -45,33 +44,77 @@
         margin-bottom: 1.4rem;
     }
 
-    .nav,
-    .nav-label {
-        padding: 4rem 0;
+    .nav a {
+        padding: 1rem 0;
     }
-
-    .nav a,
     .nav-label a {
         padding: .6rem 0;
     }
 
+    /* 分割线 */
+    .side-bar .spline span {
+        width: 100%;
+        height: 1px;
+        border-top: 1px dashed rgba(0, 0, 0, .1);
+    }
 
 /* 内容卡片 */
-    .main {
-        /* background: rgb(255, 135, 181); */
-
-
-    }
+    /* .main {
+        background: rgb(255, 135, 181);
+    } */
 
     .card-wrap {
-        padding: 1rem 2rem;
+        padding: 1rem 8rem;
     }
 
-    .card {
-        background: rgb(245, 41, 41);
+
+    .card-title {
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 8rem;
     }
 
-    .title {
-        font-size: 1.6rem;
-        font-weight: 600;
+    .card-l {
+        color: #666;
+        font-size: .9rem;
+    }
+    
+    .card .sort a {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+
+    .card .more a {
+        border: 1px solid #333;
+        color: #333;
+        display: inline-block;
+        padding: .6rem 1.6rem;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        font-weight: bold;
+    }
+    
+    .card-r {
+        padding-left: 4rem;
+        font-size: .9rem;
+        line-height: 1.6rem;
+    }
+    .card-desc span {
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+    
+    .card-con,
+    .card-title {
+        padding: 0 .4rem;
+    }
+    .card .card-img-wrap {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .card-img {
+        text-align: center;
+        padding: .4rem;
     }
