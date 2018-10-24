@@ -17,6 +17,7 @@
         font-size: 2.4rem;
         font-weight: bold;
         line-height: 8rem;
+        color: #2E2E2E;
     }
 
     .card-title a:hover,
@@ -57,6 +58,7 @@
         padding-left: 4rem;
         font-size: .9rem;
         line-height: 1.6rem;
+        color: #2E2E2E;
     }
     .card-desc span {
         display: inline-block;
