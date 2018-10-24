@@ -12,22 +12,20 @@
 }
 
 .side-bar > * {
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
+    /* flex-grow: 1;   */
 }
 
 .user {
     text-align: center;
 }
 
-.logo {
+.logo svg {
+    font-size: 5rem;
 }
-.logo img {
-    width: 80px;
-    border-radius: 50%;
-}
-.logo img:hover {
-    transform: scale(1.1);
-    transition: all 200ms;
+.logo svg:hover {
+    transform: scale(1.06);
+    transition: transform .15s cubic-bezier(0,.3,.8,1) 0s;
 }
 .logo {
     margin-bottom: .6rem;
@@ -35,7 +33,7 @@
 
 .header {
     font-weight: 600;
-    padding: 1rem 0;
+    padding: 2rem 0;
 }
 
 .header .name:hover {
@@ -64,7 +62,8 @@
     font-weight: 600;
 }
 
-.side-bar .icon {
+.side-bar .nav .icon,
+.side-bar .nav-label .icon {
     font-weight: 600;
     margin-right: .4rem;
 }
