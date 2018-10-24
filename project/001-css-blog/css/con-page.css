@@ -1,15 +1,96 @@
 .con-wrap {
-    padding: 4rem 10rem;
+    padding: 4rem 6rem;
 }
 
 .content {
     /* background: #000; */
 }
 
+.con-header {
+    align-items: flex-end;
+
+}
+
+.title-wrap {
+    color: #666;
+    font-size: .9rem;
+    margin-bottom: 2rem;
+}
+
 .title {
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: bold;
-    line-height: 8rem;
+    line-height: 2.4rem;
     color: #2E2E2E;
+    margin-bottom: 1rem;
+}
+
+.sort a {
+    margin-right: .2rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.share {
+    margin-top: 2rem;
+    color: #888;
+}
+.share a {
+    margin-right: 2rem;
+    font-size: 1.4rem;
+}
+.share a:hover {
+    color: #444;
+    transition: all 200ms;
+}
+
+.share .rq-code img {
+    width: 100px;
+}
+.share .rq-code {
+    float: left;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.con-main {
+    padding: 0 7rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+    line-height: 1.8rem;
+    color: #333;
+}
+
+.con-main > *,
+.con-main .article span {
+    display: inline-block;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+
+.con-footer {
+    border-top: 1px dashed rgba(0, 0, 0, .1);
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.con-footer .card {
+    flex-basis: 32%;
+}
+
+.con-f-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1rem 0 .4rem 0;
+}
+
+.con-f-title:hover {
+    text-decoration: underline;
+}
+
+.con-f-desc {
+    color: #888;
 }
 
