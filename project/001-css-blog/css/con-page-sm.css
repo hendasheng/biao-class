@@ -13,3 +13,16 @@
     padding: 1.4rem 0;
 }
 
+.share {
+    display: none;
+}
+
+.share-sm {
+    display: block;
+    color: #888;
+    text-align: center;
+}
+.share-sm a {
+    padding: 0 1rem;
+    font-size: 1.4rem;
+}
