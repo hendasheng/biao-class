@@ -1,0 +1,58 @@
+.nav-list a {
+    padding: 1rem .8rem;
+}
+
+.nav-label {
+    font-size: .6rem;
+}
+.nav-label a {
+    padding: 1rem .5rem;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.4rem;
+    color: #2E2E2E;
+}
+
+.card-con, .card-title {
+    padding: 1rem .4rem;
+}
+
+.card .sort a {
+    margin-right: .4rem;
+    margin-bottom: .4rem;
+    display: inline-block;
+}
+
+.card-con {
+    flex-wrap: wrap;
+}
+.col-6-sm {
+    flex-basis: 100%;
+}
+.card-r-sm {
+    padding: 0;
+    flex-basis: 100%;
+    font-size: .9rem;
+    line-height: 1.6rem;
+    color: #2E2E2E;
+    margin-top: 1rem;
+}
+
+.card .more {
+    display: none;
+}
+
+.img-half {
+    flex-wrap: wrap;
+}
+.card-img-sm {
+    flex-basis: 100%;
+}
+
+.card-img {
+    text-align: center;
+    padding: .2rem .4rem;
+}

@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="./css/side-bar.css">
 
     <link media="(max-width:768px)" rel="stylesheet" href="./css/main-md.css">
+    <link media="(max-width: 768px)" rel="stylesheet" href="./css/side-bar-md.css">
+
+    <link media="(max-width:414px)" rel="stylesheet" href="./css/main-sm.css">
 
     <script src="http://at.alicdn.com/t/font_886160_rkqxw0djtz.js"></script>
 
@@ -109,77 +112,79 @@
 
         <!-- 导航栏 md start-->
         <div class="md-nav row-md">
-            <div class="col-4 logo">
+            <div class="col-21 logo">
                 <a href="./index.html">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-logo"></use>
                     </svg>
                 </a>
             </div>
-           
+            
+            <label id="menu-toggle" for="menu-checkbox">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-menu"></use>
+                </svg>
+            </label>
+            <input id="menu-checkbox" type="checkbox">
 
-            <div class="col-20 nav">
-                <a href="#" id="menu">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-menu"></use>
-                    </svg>
-                </a>
-            </div>
 
             <div class="nav-list col-24">
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-work"></use>
-                    </svg>
-                    <span>作品</span>
-                </a>
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-lab"></use>
-                    </svg>
-                    <span>实验</span>
-                </a>
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-article"></use>
-                    </svg>
-                    <span>文章</span>
-                </a>
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-about"></use>
-                    </svg>
-                    <span>关于</span>
-                </a>
+                <div class="col">
+                        <a href="#" class="col-24">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-work"></use>
+                                </svg>
+                                <span>作品</span>
+                            </a>
+                            <a href="#" class="col-24">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-lab"></use>
+                                </svg>
+                                <span>实验</span>
+                            </a>
+                            <a href="#" class="col-24">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-article"></use>
+                                </svg>
+                                <span>文章</span>
+                            </a>
+                            <a href="#" class="col-24">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-about"></use>
+                                </svg>
+                                <span>关于</span>
+                            </a>
+                </div>
+               
             </div>
 
             <div class="nav-label col-24">
                 <a href="#"">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-Dribbble"></use>
+                    <svg class=" icon" aria-hidden="true">
+                    <use xlink:href="#icon-Dribbble"></use>
                     </svg>
                     <span>Dribbble</span>
                 </a>
                 <a href="#"">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-behance"></use>
+                    <svg class=" icon" aria-hidden="true">
+                    <use xlink:href="#icon-behance"></use>
                     </svg>
                     <span>Behance</span>
                 </a>
                 <a href="#"">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-github"></use>
+                    <svg class=" icon" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
                     </svg>
                     <span>GitHub</span>
                 </a>
                 <a href="#"">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-weibo"></use>
+                    <svg class=" icon" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
                     </svg>
                     <span>新浪微博</span>
                 </a>
             </div>
-            
+
         </div>
         <!-- 导航栏 md end-->
 
@@ -193,7 +198,7 @@
                         </a>
                     </div>
                     <div class="row card-con">
-                        <div class="col-6 card-l">
+                        <div class="col-6 card-l col-6-sm">
                             <div class="sort">
                                 <a href="#"><span>#</span>stor</a>
                                 <a href="#"><span>#</span>stor</a>
@@ -211,7 +216,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-18 card-r">
+                        <div class="col-18 card-r card-r-sm">
                             <a href="./con-page.html" class="card-desc">
                                 <span>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Error numquam pariatur
@@ -230,12 +235,12 @@
                     <div class="col card-img-wrap">
                         <!-- 多张小图 -->
                         <div class="row img-half">
-                            <div class="card-img col-12">
+                            <div class="card-img col-12 card-img-sm">
                                 <a href="./con-page.html">
                                     <img src="./img/photo-1540275398928-d6b7b38c45f9.jpeg" alt="">
                                 </a>
                             </div>
-                            <div class="card-img col-12">
+                            <div class="card-img col-12 card-img-sm">
                                 <a href="./con-page.html">
                                     <img src="./img/photo-1540251655970-db58d367db82.jpeg" alt="">
                                 </a>
@@ -261,7 +266,7 @@
                         </a>
                     </div>
                     <div class="row card-con">
-                        <div class="col-6 card-l">
+                        <div class="col-6 card-l col-6-sm">
                             <div class="sort">
                                 <a href="#"><span>#</span>stor</a>
                                 <a href="#"><span>#</span>stor</a>
@@ -279,7 +284,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-18 card-r">
+                        <div class="col-18 card-r card-r-sm">
                             <a href="./con-page.html" class="card-desc">
                                 <span>
                                     In efforts to expand our horizons, we welcome every investment-minded individual to
@@ -297,17 +302,17 @@
                     <div class="col card-img-wrap">
                         <!-- 多张小图 -->
                         <div class="row img-half">
-                            <div class="card-img col-12">
+                            <div class="card-img col-12 card-img-sm">
                                 <a href="./con-page.html">
                                     <img src="./img/photo-1471810453144-267af72c00e4.jpeg" alt="">
                                 </a>
                             </div>
-                            <div class="card-img col-12">
+                            <div class="card-img col-12 card-img-sm">
                                 <a href="./con-page.html">
                                     <img src="./img/photo-1447083143451-7d35ac4cea71.jpeg" alt="">
                                 </a>
                             </div>
-                            <div class="card-img col-12">
+                            <div class="card-img col-12 card-img-sm">
                                 <a href="./con-page.html">
                                     <img src="./img/photo-1439192762818-e56f8ea12296.jpeg" alt="">
                                 </a>
@@ -315,12 +320,12 @@
                         </div>
                         <!-- 多张小图 -->
                         <div class="row img-half">
-                            <div class="card-img col-12">
+                            <div class="card-img col-12 card-img-sm">
                                 <a href="./con-page.html">
                                     <img src="./img/photo-1471705301355-ec78367a7b07.jpeg" alt="">
                                 </a>
                             </div>
-                            <div class="card-img col-12">
+                            <div class="card-img col-12 card-img-sm">
                                 <a href="./con-page.html">
                                     <img src="./img/photo-1443736935966-458a7520ec6d.jpeg" alt="">
                                 </a>
@@ -338,7 +343,7 @@
                         </a>
                     </div>
                     <div class="row card-con">
-                        <div class="col-6 card-l">
+                        <div class="col-6 card-l col-6-sm">
                             <div class="sort">
                                 <a href="#"><span>#</span>stor</a>
                                 <a href="#"><span>#</span>stor</a>
@@ -356,7 +361,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-18 card-r">
+                        <div class="col-18 card-r card-r-sm">
                             <a href="./con-page.html" class="card-desc">
                                 <span>
                                     With the appealing and attractive colors that we see, we are yet daunted and
@@ -384,12 +389,12 @@
 
                         <!-- 多张小图 -->
                         <div class="row img-half">
-                            <div class="card-img col-12">
+                            <div class="card-img col-12 card-img-sm">
                                 <a href="./con-page.html">
                                     <img src="./img/photo-1503187685617-d78d295f163e.jpeg" alt="">
                                 </a>
                             </div>
-                            <div class="card-img col-12">
+                            <div class="card-img col-12 card-img-sm">
                                 <a href="./con-page.html">
                                     <img src="./img/photo-1503039153293-d4d2ba067754.jpeg" alt="">
                                 </a>

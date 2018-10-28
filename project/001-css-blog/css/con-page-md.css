@@ -1,0 +1,28 @@
+.header-bg {
+    display: block;
+    background-image: url('../img/photo-1540275398928-d6b7b38c45f9.jpeg');
+    min-height: 300px;
+    background-position: 50% 50%;
+    height: auto;
+}
+
+.header-img {
+    display: none;
+}
+
+.con-wrap {
+    padding: 0rem;
+}
+
+.title-wrap,
+.con-main,
+.con-footer {
+    flex-basis: 100%;
+    margin-top: 2rem;
+    padding: 0 5rem;
+}
+
+.con-footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}

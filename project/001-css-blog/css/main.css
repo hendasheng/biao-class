@@ -16,7 +16,7 @@
     .card-title {
         font-size: 2.4rem;
         font-weight: bold;
-        line-height: 8rem;
+        line-height: 2.8rem;
         color: #2E2E2E;
     }
 
@@ -71,7 +71,7 @@
     
     .card-con,
     .card-title {
-        padding: 0 .4rem;
+        padding: 1.4rem .4rem;
     }
     .card .card-img-wrap {
         flex-wrap: wrap;

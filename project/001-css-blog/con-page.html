@@ -11,13 +11,19 @@
     <link rel="stylesheet" href="./css/grid.css">
     <link rel="stylesheet" href="./css/side-bar.css">
 
+
+    <link media="(max-width: 768px)" rel="stylesheet" href="./css/side-bar-md.css">
+    <link media="(max-width: 768px)" rel="stylesheet" href="./css/con-page-md.css">
+    <link media="(max-width: 320px)" rel="stylesheet" href="./css/side-bar-sm.css">
+    <link media="(max-width: 414px)" rel="stylesheet" href="./css/con-page-sm.css">
+
     <script src="http://at.alicdn.com/t/font_886160_rkqxw0djtz.js"></script>
 
 </head>
 
 <body>
 
-    <div class="row">
+    <div class="row col-md">
         <div class="col-4 side-bar-wrap">
             <div class="col side-bar">
                 <div class="row header">
@@ -106,9 +112,89 @@
             </div>
 
         </div>
+
+        <!-- 导航栏 md start-->
+        <div class="md-nav row-md">
+            <div class="col-21 logo">
+                <a href="./index.html">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-logo"></use>
+                    </svg>
+                </a>
+            </div>
+
+            <label id="menu-toggle" for="menu-checkbox">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-menu"></use>
+                </svg>
+            </label>
+            <input id="menu-checkbox" type="checkbox">
+
+
+            <div class="nav-list col-24">
+                <div class="col">
+                    <a href="#" class="col-24">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-work"></use>
+                        </svg>
+                        <span>作品</span>
+                    </a>
+                    <a href="#" class="col-24">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-lab"></use>
+                        </svg>
+                        <span>实验</span>
+                    </a>
+                    <a href="#" class="col-24">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-article"></use>
+                        </svg>
+                        <span>文章</span>
+                    </a>
+                    <a href="#" class="col-24">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-about"></use>
+                        </svg>
+                        <span>关于</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="nav-label col-24">
+                <a href="#"">
+                        <svg class=" icon" aria-hidden="true">
+                    <use xlink:href="#icon-Dribbble"></use>
+                    </svg>
+                    <span>Dribbble</span>
+                </a>
+                <a href="#"">
+                        <svg class=" icon" aria-hidden="true">
+                    <use xlink:href="#icon-behance"></use>
+                    </svg>
+                    <span>Behance</span>
+                </a>
+                <a href="#"">
+                        <svg class=" icon" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="#"">
+                        <svg class=" icon" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                    <span>新浪微博</span>
+                </a>
+            </div>
+
+        </div>
+        <!-- 导航栏 md end-->
+
         <div class="col-20 main">
 
             <div class="con-wrap">
+                <div class="row header-bg"></div>
                 <div class="content">
                     <div class="row con-header">
                         <div class="col-8 title-wrap">
@@ -213,7 +299,7 @@
                     </div>
 
                     <div class="row con-footer">
-                        <a href="#" class="col-8 card">
+                        <a href="#" class="col-8 card card-sm">
                             <div class="thumbnail">
                                 <img src="./img/photo-1540260761692-76f21797ab65.jpeg" alt="">
                             </div>
@@ -225,7 +311,7 @@
                                 first telescope.
                             </div>
                         </a>
-                        <a href="#" class="col-8 card">
+                        <a href="#" class="col-8 card card-sm">
                             <div class="thumbnail">
                                 <img src="./img/photo-1439192762818-e56f8ea12296.jpeg" alt="">
                             </div>
@@ -237,7 +323,7 @@
                                 first telescope.
                             </div>
                         </a>
-                        <a href="#" class="col-8 card">
+                        <a href="#" class="col-8 card card-sm">
                             <div class="thumbnail">
                                 <img src="./img/photo-1540251655970-db58d367db82.jpeg" alt="">
                             </div>
@@ -253,7 +339,7 @@
 
                 </div>
             </div>
-
+        </div>
 
 </body>
 

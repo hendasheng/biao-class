@@ -1,0 +1,14 @@
+.title-wrap, 
+.con-main, 
+.con-footer {
+    padding: 0 1rem;
+}
+
+.con-footer {
+    flex-wrap: wrap;
+}
+
+.con-footer .card-sm {
+    flex-basis: 100%;
+    padding: 1.4rem 0;
+}
