@@ -8,10 +8,25 @@
     /* display: block; */
 }
 
+.first-screen .title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: rgb(27, 27, 27);
+    margin-top: 12rem;
+    margin-bottom: 3rem;
+    display: inline-block;
+}
+
+.first-screen span {
+    display: block;
+    max-width: 30%;
+    font-size: .9rem;
+}
+
 .main-show {
-    background-image: url('../img/spring.png');
+    background-image: url('../img/all.png');
     background-repeat: no-repeat;
-    background-position: 50% 30%;
+    background-position: 50% 42%;
     background-size: 80%;
     display: block; 
     height: 100%;
@@ -22,7 +37,7 @@
     font-family: 'source Han Serif TW';
     font-weight: 900;
     display: inline-block;
-    margin-top: 10%;
+    margin-top: 70%;
 }
 
 .sub-show {
@@ -44,17 +59,17 @@
 
 .sub-show .title {
     display: inline-block;
-    padding: 1rem;
+    padding: 2rem 0;
     font-size: 1.4rem;
     font-weight: 600;
     color: #333;
-    margin-top: 85%;
+    margin-top: 80%;
 }
 
 .sub-show > * {
     background-repeat: no-repeat;
     background-position: 50% 30%;
-    background-size: 70%;
+    background-size: 90%;
     display: block;
     height: 50%;
 }
@@ -69,11 +84,34 @@
     background-image: url('../img/fall.png');
 }
 .winter {
-    background-image: url('../img/fall.png');
+    background-image: url('../img/winter.png');
+}
+
+.frontend-html {
+    background-image: url('../img/html.png');
+}
+.frontend-css {
+    background-image: url('../img/css.png');
+}
+.frontend-js {
+    background-image: url('../img/js.png');
+}
+.frontend-more {
+    background-image: url('../img/more.png');
 }
 
 
 
+.frontend {
+    background: #000;
+}
+.frontend .icon {
+    color: rgb(231, 23, 23);
+    /* font-size: 40rem; */
+    width: 80%;
+    height: 80%;
+    margin-top: 4rem;
+}
 
 
 .more {
@@ -85,3 +123,8 @@
 
 
 
+.project-wrap a:hover {
+    color: #444;
+    text-decoration: underline;
+    transition: all 200ms;
+}
