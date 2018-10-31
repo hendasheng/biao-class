@@ -1,0 +1,59 @@
+.first-screen {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+}
+
+.sm-img {
+    padding-right: .2rem;
+}
+.big-img {
+    padding-left: .4rem;
+}
+
+.first-screen .sell {
+    padding-left: 2rem;
+}
+.first-screen .title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.8rem;
+}
+
+.first-screen .desc {
+    color: #999;
+}
+
+
+
+.first-screen .size {
+    margin-bottom: 2rem;
+}
+.first-screen .size a {
+    color: #999;
+}
+.first-screen .size-sub {
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: .2rem 1rem;
+    margin-right: 1rem;
+}
+.first-screen .size .size-selected {
+    border: 1px solid blue;
+    color: blue;
+}
+
+.first-screen .price-sub {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+
+.first-screen .btn {
+    background: blue;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.first-screen .btn a {
+    line-height: 2.2rem;
+}
