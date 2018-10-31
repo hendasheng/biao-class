@@ -57,3 +57,17 @@
 .first-screen .btn a {
     line-height: 2.2rem;
 }
+
+.in-wrap {
+    margin: 2rem 0;
+}
+.in-wrap .title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.in-wrap .desc {
+    width: 50%;
+    margin: 1rem auto;
+    color: #444;
+}
