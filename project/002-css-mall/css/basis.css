@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: 'Source Han Sans SC', sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.nav-wrap {
+    background: #373737;
+    color: #eee;
+    fill: #eee;
+    padding: .2rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.nav-wrap .logo a {
+    display: inline-block;
+    background: #fff;
+    border-radius: 50%;
+    padding: .2rem;
+}
+.nav-wrap .logo .icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: #333;
+}
+
+.nav-wrap .nav a,
+.nav-wrap .other a {
+    display: inline-block;
+    padding: .41rem 1.4rem;
+}
+
+.nav-wrap .other .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+
+

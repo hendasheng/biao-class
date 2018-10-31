@@ -1,0 +1,54 @@
+.first-screen {
+    background-image: url('https://dummyimage.com/2000x600/e0e0e0/e0e0e0');
+    height: 600px;
+    margin-top: 2.5rem;
+}
+
+.main-show,
+.sub-show {
+
+}
+
+.main-show {
+}
+.sub-show {
+    flex-wrap: wrap;
+}
+
+.card-wrap {
+    margin-top: .4rem;
+
+}
+
+
+.more {
+    margin: 3rem 0;
+    font-size: 2rem;
+    color: #eee;
+    font-weight: 600;
+}
+
+
+
+.footer {
+    background: rgb(247, 247, 247);
+    padding: 4rem 0;
+}
+
+
+.footer-fl > * {
+    flex-basis: 20%;
+    color: #999;
+    font-size: .8rem;
+}
+
+.footer-fl .title {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-fl a {
+    display: block;
+    line-height: 1.6rem;
+}
