@@ -1,8 +1,10 @@
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     font-family: 'Source Han Sans SC', sans-serif;
     font-size: 14px;
-    box-sizing: border-box;
 }
 
 a {
@@ -31,6 +33,7 @@ img {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 2;
 }
 
 .nav-wrap .logo a {
@@ -49,6 +52,7 @@ img {
 .nav-wrap .other a {
     display: inline-block;
     padding: .41rem 1.4rem;
+    letter-spacing: .02rem;
 }
 
 .nav-wrap .other .icon {
@@ -57,4 +61,56 @@ img {
 }
 
 
+.nav-wrap .nav a:hover,
+.nav-wrap .other a:hover {
+    color: #ccc;
+    transition: all 200ms;
+}
 
+.nav-wrap .nav {
+    flex-grow: 2;
+}
+.nav-wrap .logo {
+    flex-grow: 1;
+}
+.nav-wrap .other {
+    flex-grow: 1;
+}
+
+
+
+
+
+
+.footer {
+    background: rgb(247, 247, 247);
+    padding: 4rem 0;
+}
+
+
+.footer-fl > * {
+    flex-basis: 20%;
+    color: #999;
+    font-size: .8rem;
+}
+
+.footer-fl .title {
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-fl a {
+    display: block;
+    line-height: 1.6rem;
+}
+
+.footer-fr .icon {
+    font-size: 3rem;
+    fill: #333;
+}
+
+.footer a:hover {
+    color: #888;
+    transition: all 200ms;
+}

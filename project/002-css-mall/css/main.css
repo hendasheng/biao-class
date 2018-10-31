@@ -1,18 +1,38 @@
 .first-screen {
-    background-image: url('https://dummyimage.com/2000x600/e0e0e0/e0e0e0');
+    background-image: url('../img/first-screen-img.jpg');
+    width: 100%;
     height: 600px;
+    background-position: center;
+    background-size: cover;
     margin-top: 2.5rem;
-}
-
-.main-show,
-.sub-show {
-
+    /* display: block; */
 }
 
 .main-show {
+    background-image: url('../img/spring.png');
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+    background-size: 80%;
+    display: block; 
+    height: 100%;
 }
+
+.main-show .title {
+    font-size: 4rem;
+    font-family: 'source Han Serif TW';
+    font-weight: 900;
+    display: inline-block;
+    margin-top: 10%;
+}
+
 .sub-show {
     flex-wrap: wrap;
+    height: 100%;
+}
+
+.main-show,
+.sub-show > * {
+    border: 1px solid #eee;
 }
 
 .card-wrap {
@@ -21,34 +41,47 @@
 }
 
 
+
+.sub-show .title {
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 85%;
+}
+
+.sub-show > * {
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+    background-size: 70%;
+    display: block;
+    height: 50%;
+}
+
+.spring {
+    background-image: url('../img/spring.png');
+}
+.summer {
+    background-image: url('../img/summer.png');
+}
+.fall {
+    background-image: url('../img/fall.png');
+}
+.winter {
+    background-image: url('../img/fall.png');
+}
+
+
+
+
+
 .more {
     margin: 3rem 0;
     font-size: 2rem;
     color: #eee;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 
 
-.footer {
-    background: rgb(247, 247, 247);
-    padding: 4rem 0;
-}
-
-
-.footer-fl > * {
-    flex-basis: 20%;
-    color: #999;
-    font-size: .8rem;
-}
-
-.footer-fl .title {
-    color: #333;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.footer-fl a {
-    display: block;
-    line-height: 1.6rem;
-}
