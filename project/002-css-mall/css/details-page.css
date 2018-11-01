@@ -2,13 +2,28 @@
     margin-top: 6rem;
     margin-bottom: 4rem;
 }
+.first-screen .row {
 
+}
 .sm-img {
     padding-right: .2rem;
 }
+.sm-img a:hover,
+.sm-img-selected {
+    border: 1px solid #eee;
+    transition: all 200ms;
+}
+
 .big-img {
+    background-image: url('../img/spring.png');
+    background-repeat: no-repeat;
+    background-position: 50% 42%;
+    background-size: 120%;
+    display: block; 
+    /* height: 100%; */
     padding-left: .4rem;
 }
+
 
 .first-screen .sell {
     padding-left: 2rem;
@@ -17,19 +32,29 @@
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 1.8rem;
+    cursor: default;
 }
 
 .first-screen .desc {
     color: #999;
+    cursor: default;
 }
 
 
 
-.first-screen .size {
-    margin-bottom: 2rem;
+.first-screen .selected-size {
+    margin: 2rem 0;
+    color: rgb(248, 90, 90);
+    font-weight: 600;
 }
 .first-screen .size a {
     color: #999;
+}
+.first-screen .size a:hover {
+    border: 1px solid #444;
+    color: #444;
+    font-weight: 400;
+    transition: all 200ms;
 }
 .first-screen .size-sub {
     border: 1px solid #999;
@@ -38,8 +63,9 @@
     margin-right: 1rem;
 }
 .first-screen .size .size-selected {
-    border: 1px solid blue;
-    color: blue;
+    border: 1px solid #3572F7;
+    color: #3572F7;
+    font-weight: 600;
 }
 
 .first-screen .price-sub {
@@ -49,17 +75,33 @@
 
 
 .first-screen .btn {
-    background: blue;
+    background: #3572F7;
+    border-radius: 4px;
     color: #fff;
     font-size: 1rem;
     font-weight: 400;
 }
+.first-screen .btn:hover {
+    background: rgb(45, 101, 223);
+    transition: all 200ms;
+}
 .first-screen .btn a {
-    line-height: 2.2rem;
+    line-height: 2.4rem;
+    display: block;
 }
 
+.spline span {
+    /* background: #000; */
+    height: 1px;
+    width: 100%;
+    display: inline-block;
+    border: 1px dashed #eee;
+}
+
+
+
 .in-wrap {
-    margin: 2rem 0;
+    margin: 3rem 0;
 }
 .in-wrap .title {
     font-size: 2rem;
@@ -70,4 +112,14 @@
     width: 50%;
     margin: 1rem auto;
     color: #444;
+}
+
+
+.recommend .title {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.recommend a:hover {
+    text-decoration: underline;
 }
