@@ -12,10 +12,20 @@
 
 
 .container {
-    max-width: 980px;
     margin: 0 auto;
 }
 
+@media (min-width: 1220px) {
+    .container {
+        max-width: 980px;
+    }
+  }
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+}
 
 .text-cn {
     text-align: center;
