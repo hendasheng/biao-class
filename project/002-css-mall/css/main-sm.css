@@ -1,0 +1,25 @@
+
+
+.first-screen .title {
+    font-size: 2rem;
+    margin-top: 8rem;
+}
+
+.first-screen span {
+    font-size: .8rem;
+}
+
+.main-show {
+    background-position: 50% 42%;
+    background-size: 100%;
+}
+
+.sub-show .title {
+    font-size: .8rem;
+}
+
+
+.more {
+    font-size: 1.4rem;
+}
+

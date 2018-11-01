@@ -1,0 +1,46 @@
+
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.first-screen {
+    height: 400px;
+}
+
+.first-screen .title {
+    font-size: 3rem;
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+}
+
+.first-screen span {
+    display: block;
+    max-width: 80%;
+    font-size: .9rem;
+    cursor: default;
+}
+
+.card-wrap {
+    flex-wrap: wrap;
+}
+
+.main-show {
+    height: 360px;
+}
+
+.main-show {
+    background-position: 50% 42%;
+    background-size: 60%;
+}
+
+.frontend .icon {
+    width: 70%;
+    height: 70%;
+    margin-top: 3rem;
+}
+
+
+
+

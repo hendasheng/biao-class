@@ -25,6 +25,10 @@ img {
     overflow: hidden;
 }
 
+.nav-wrap-sm {
+    display: none;
+}
+
 .nav-wrap {
     background: #373737;
     color: #eee;

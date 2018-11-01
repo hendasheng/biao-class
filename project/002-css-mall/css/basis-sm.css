@@ -1,0 +1,135 @@
+.col-sm-24 {flex-basis: 100%;}
+
+
+input {
+    outline: none;
+}
+
+
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+
+.nav-wrap {
+    display: none;
+}
+
+.nav-wrap-sm {
+    display: block;
+    background: #373737;
+    color: #eee;
+    fill: #eee;
+    padding: .2rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+}
+
+.nav-list,
+.pop-up {
+    flex-wrap: wrap;
+}
+
+.nav-wrap-sm .logo a {
+    display: inline-block;
+    background: #fff;
+    border-radius: 50%;
+    padding: .2rem;
+}
+
+.nav-wrap-sm .logo .icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: #333;
+}
+
+.nav-wrap-sm .car .icon {
+    width: 1.4em;
+    height: 1.4em;
+}
+
+.nav-wrap-sm .other a {
+    display: inline-block;
+    padding: 1rem 0;
+}
+
+
+
+.first-screen {
+    margin-top: 2rem
+}
+
+
+.pop-up .item {
+    display: block;
+    margin: 1rem 0;
+}
+.pop-up .item:nth-last-child(1) {
+    margin-top: 2rem;
+}
+.search-input {
+    width: 100%;
+    display: inline-block;
+    padding: .5rem;
+    position: relative;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.nav-list {
+    justify-content: space-between;
+}
+
+.pop-up .search-icon {
+    position: absolute;
+    fill: #333;
+    color: red;
+    z-index: 9;
+    margin: .5rem;
+}
+
+.pop-up {
+    display: none;
+    padding: 1rem 0;
+} 
+#menu-toggle {
+    padding: .3rem 0;
+}
+#menu-checkbox:checked ~ .pop-up {
+    display: block;
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+
+
+.footer-fr {
+    display: none;
+}
+.footer-fl {
+    flex-wrap: wrap;
+}
+
+.footer-fl > div a {
+    display: inline-block;
+    margin-right: 1rem;
+} 
+.footer-fl > div {
+    margin: .8rem 0;
+    flex-wrap: wrap;
+}
+
+.footer-fl .title {
+    margin-bottom: .6rem;
+}
+
+.footer {
+    padding: 2rem 0;
+}
