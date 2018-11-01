@@ -21,13 +21,19 @@
     flex-wrap: wrap;
 }
 
+.sub-show .title {
+    padding: 0rem 0;
+    font-size: 1rem;
+    margin-top: 74%;
+}
+
 .main-show {
     height: 360px;
 }
 
 .main-show {
     background-position: 50% 42%;
-    background-size: 60%;
+    background-size: 90%;
 }
 
 .frontend .icon {
