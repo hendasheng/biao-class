@@ -1,0 +1,36 @@
+.first-screen > .row {
+    flex-wrap: wrap;
+}
+
+.first-screen {
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
+
+
+.first-screen .title {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+.first-screen .price-sub {
+    font-size: 1.2rem;
+}
+
+.first-screen .btn {
+    margin: 1rem 0;
+}
+
+.first-screen .sell {
+    padding-left: 0rem;
+}
+
+.in-wrap {
+    margin: 2rem 0;
+}
+.in-wrap .title {
+    font-size: 1.4rem;
+}
+.in-wrap .desc {
+    width: 80%;
+}

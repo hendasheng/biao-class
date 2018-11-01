@@ -1,0 +1,64 @@
+
+
+
+.first-screen > .row {
+    flex-wrap: wrap;
+}
+.first-screen .sm-img {
+    display: none;
+}
+.first-screen .big-img {
+    height: 300px;
+}
+
+
+.first-screen .sell {
+    padding-left: 0;
+}
+
+.first-screen {
+    margin-top: 2.5rem;
+}
+
+.first-screen .title,
+.first-screen .desc,
+.first-screen .btn,
+.first-screen .size,
+.first-screen .selected-size,
+.first-screen .price {
+    margin: 1rem 0;
+}
+
+.first-screen {
+    margin-bottom: 0rem;
+}
+
+.size a {
+    display: inline-block;
+}
+
+
+
+.in-wrap .title {
+    font-size: 1.4rem;
+}
+
+
+.in-wrap {
+    margin: 2rem 0;
+}
+
+.in-wrap .desc {
+    width: 100%;
+    margin: 1rem auto;
+    color: #444;
+}
+
+.recommend > .row {
+    flex-wrap: wrap;
+}
+
+.recommend > .row a {
+    display: inline-block;
+    margin-bottom: 2rem;
+}
