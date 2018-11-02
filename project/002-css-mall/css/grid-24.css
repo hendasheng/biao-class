@@ -19,12 +19,12 @@
     .container {
         max-width: 980px;
     }
-  }
+}
 
 @media (max-width: 1112px) {
-.container {
-    max-width: 90%;
-}
+    .container {
+        max-width: 90%;
+    }
 }
   
 @media (max-width: 1024px) {

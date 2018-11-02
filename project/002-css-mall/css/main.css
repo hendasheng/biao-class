@@ -110,12 +110,17 @@
 .frontend .icon {
     color: red;
     fill: red;
-    /* font-size: 40rem; */
-    width: 35rem;
-    height: 35rem;
+    font-size: 50rem;
+    /* width: 45rem; */
+    /* height: 45rem; */
     margin-top: 6rem;
 }
 
+@media (max-width: 1366px) {
+    .frontend .icon {
+        font-size: 30rem;
+    }
+}
 
 .more {
     margin: 3rem 0;
