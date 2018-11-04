@@ -1,2 +1,8 @@
+body {
+  font-size: 14px; }
+
 h1 {
   color: red; }
+
+h1 {
+  font-size: 12rem; }

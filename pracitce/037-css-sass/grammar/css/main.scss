@@ -1,0 +1,17 @@
+body {
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+form {
+    a, span {
+        color: tomato;
+    }
+
+    span {
+        border: solid;
+    }
+    &:hover {
+        background: red;
+    }
+}
