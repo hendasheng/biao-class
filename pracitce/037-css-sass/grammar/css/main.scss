@@ -14,4 +14,32 @@ form {
     &:hover {
         background: red;
     }
+
+    font: {
+        fize: 2rem;
+        weight: 200;
+    }
+}
+
+div {
+    p {
+        a {
+            color: pink;
+            font-weight: 600;
+        }
+    }
+}
+
+@import "sub", "fontFamily";
+
+.btn {
+    border: 1px solid rgba(0, 0, 0, .1);
+    background: pink;
+}
+.btn-default {
+    @extend .btn;
+    padding: 5px 10px;
+}
+.btn-danger {
+    @extend .btn-default;
 }

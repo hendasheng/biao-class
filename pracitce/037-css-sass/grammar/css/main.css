@@ -2,6 +2,10 @@ body {
   font-weight: 600;
   font-family: sans-serif; }
 
+form {
+  font-fize: 2rem;
+  font-weight: 200; }
+
 form a, form span {
   color: tomato; }
 
@@ -10,3 +14,20 @@ form span {
 
 form:hover {
   background: red; }
+
+div p a {
+  color: pink;
+  font-weight: 600; }
+
+div span a {
+  color: purple; }
+
+div form a {
+  font-family: serif; }
+
+.btn, .btn-default, .btn-danger {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: pink; }
+
+.btn-default, .btn-danger {
+  padding: 5px 10px; }
