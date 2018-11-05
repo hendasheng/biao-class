@@ -22,8 +22,8 @@
 
     console.log(DD + ' ' + C);
 
-    const N = 'niu';
-    const age = 25;
+    const N = 'AIYOUWEI';
+    const age = 1;
 
     console.log(N + ' ' + '今年' + ' ' + age + ' ' + '岁了');
     
