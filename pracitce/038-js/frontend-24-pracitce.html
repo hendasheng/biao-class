@@ -1,0 +1,125 @@
+<script>
+
+    let a, b;
+    a = 5;
+    b = 5;
+    console.log(a + b);
+
+    let arr = [1, 2, 666];
+    console.log(arr[2]);
+
+    let arrT = [
+        [
+            [1, 5],
+            ['www', 666]
+        ],
+    ];
+    console.log(arrT[0][1][1]);
+
+    let arrS = [
+        [
+            [100, 'Emmm'],
+            [
+                2, 'yo', [666],
+            ],
+        ],
+    ];
+    console.log(arrS[0][1][2][0]);
+
+    let obj = {
+        a: 1,
+        b: 2,
+        c: 666,
+    };
+    console.log(obj.c);
+
+    let obj2 = {
+        a: 1,
+        b: {
+            yo: {
+                em: '6',
+                ha: 666,
+            },
+        },
+    };
+    console.log(obj2.b.yo.ha);
+
+
+    let obj3 = {
+        a: 1,
+        b: {
+            yo: [
+                2,
+                'la',
+                {
+                    muhaha: '~',
+                    a: 666,
+                }
+            ],
+        },
+    };
+    console.log(obj3.b.yo[2].a);
+
+
+    let obj4 = {
+        a: 1,
+        b: {
+            x: [
+                2, { ya: [666] },
+            ],
+        },
+    };
+    console.log(obj4.b.x[1].ya[0]);
+
+
+    let obj5 = {
+        a: [3, 5],
+        b: ['yo', 1],
+    };
+    let aLength, bLength;
+    aLength = obj5.a.length;
+    bLength = obj5.b.length;
+    console.log(aLength);
+    console.log(bLength);
+
+
+    let obj6 = {
+        a: { foo: 2 },
+        yo: [3, 5],
+        b: {
+            la: {
+                name: 'Wood',
+                x: [5, 'a', 'b'],
+                muhaha: ['Bob', 'Huahua'],
+                length: 100,
+            },
+        },
+    };
+    let obj_yo = obj6.yo;
+    console.log(obj_yo.length);
+    let obj_x = obj6.b.la.x;
+    console.log(obj_x.length);
+    let obj_muhaha = obj6.b.la.muhaha;
+    console.log(obj_muhaha.length);
+    console.log(obj_yo.length + obj_x.length + obj_muhaha.length);
+
+
+    let obj7 = {
+        la: 'Ha',
+        v: 2,
+        p: [2, 5],
+        b: {
+            a: {
+                name: 'White',
+                yo: [5, 'a', 'c'],
+                length: 100,
+                map: true,
+            },
+        },
+    };
+    let obj_la = obj7.la;
+    console.log(obj_la);
+    let obj_name = obj7.b.a.name;
+    console.log(obj_name);
+
+</script>
