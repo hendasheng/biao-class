@@ -1,0 +1,141 @@
+<script>
+// 取到并打印下列变量中的666
+    let a, b;
+    a = 3;
+    b = 7;
+    console.log(a + b);
+
+// 取到并打印下列变量中的666
+    let arr1 = [
+        1,
+        2,
+        666,
+    ];
+    let six1 = arr1[2];
+    console.log(six1);
+
+// 取到并打印下列变量中的666
+    let arr2 = [
+        [
+            [1, 5],
+            ['whh', 666],
+        ],
+    ];
+    let six2 = arr2[0][1][1];
+    console.log(six2);
+
+// 取到并打印下列变量中的666
+    let arr3 = [
+        [
+            [100, 'Emmm'],
+            [
+                2, 'yo', [666],
+            ],
+        ],
+    ];
+    let six3 = arr3[0][1][2][0];
+    console.log(six3);
+
+// 取到并打印下列变量中的666
+    let obj1 = {
+        a: 1,
+        b: 2,
+        c: 666,
+    };
+    let obj_six1 = obj1.c;
+    console.log(obj_six1);
+
+// 取到并打印下列变量中的666
+    let obj2 = {
+        a: 1,
+        b: {
+            yo: {
+                em: '6',
+                ha: 666,
+            },
+        },
+    };
+    let obj_six2 = obj2.b.yo.ha;
+    console.log(obj_six2);
+
+// 取到并打印下列变量中的666
+    let obj3 = {
+        a: 1,
+        b: {
+            yo: [
+                2,
+                'la',
+                {
+                    muhaha: '~',
+                    a: 666,
+                }
+            ],
+        },
+    };
+    let obj_six3 = obj3.b.yo[2].a;
+    console.log(obj_six3);
+
+// 取到并打印下列变量中的666
+    let obj4 = {
+        a: 1,
+        b: {
+            x: [
+                2, {ya: [666]},
+            ],
+        },
+    };
+    let obj_six4 = obj4.b.x[1].ya[0];
+    console.log(obj_six4);
+
+// 找到下方数据中所有的数组，并分别打印出每个数组的长度
+    let obj5 = {
+        a: [3, 5],
+        b: ['yo', 1],
+    };
+    let arrA = obj5.a;
+    let arrB = obj5.b;
+
+    console.log(arrA.length);
+    console.log(arrB.length);
+    
+// 找到下方数据中所有的数组，并打印出每个数组的长度的和
+    let obj6 = {
+        a: {foo: 2},
+        yo: [3, 5],
+        b: {
+            la: {
+                name: 'Wood',
+                x: [5, 'a', 'c'],
+                muhaha: ['Bob', 'Huahua'],
+                length: 100,
+            },
+        },
+    };
+
+    let arrF = obj6.yo.length;
+    let arrG = obj6.b.la.x.length;
+    let arrH = obj6.b.la.muhaha.length;
+    console.log(arrF + arrG+ arrH);
+    
+    
+// 找到下方数据中所有的对象，并分别打印出每个对象中的值为字符串的属性
+    let obj7 = {
+        la: 'Ha',
+        v: 2,
+        p: [2, 5],
+        b: {
+            a: {
+                name: 'White',
+                yo: [5, 'a', 'c'],
+                length: 100,
+                map: true,
+            },
+        },
+    };
+    let arrI = obj7.la;
+    console.log(arrI);
+    let arrJ = obj7.b.a.;
+    console.log(arrJ);
+    
+        
+</script> 
