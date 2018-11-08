@@ -6,15 +6,14 @@
         '赵可爽',
     ];
 
+    let str = ',';
     let i = 0;
 
     while(i < userList.length) {
         let user = userList[i];
-        i++;
-        if(user === '李栓蛋') {
-            break;
-        }
-        console.log(user + ', ' + '向你致以第' + ' ' + (i) + ' ' + '号问候');
+        i ++;
+        user += str;
+        console.log(user + i);
     }
     
 </script>
