@@ -1,0 +1,48 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        let arr = [
+            {
+                name: '王花花',
+                salary: 100,
+            },
+            {
+                name: '李拴蛋',
+                salary: 200,
+            },
+            {
+                name: '牛备备',
+                salary: 300,
+            },
+        ];
+            
+        // let result = [];
+        // for (let i = 0; i < arr.length; i++) {
+        //     let it = arr[i];
+        //     if(it.salary <= 100) {
+        //         continue;
+        //     }
+        //     result.push(it);
+        // }
+        // console.log(result);
+
+
+        let result, i;
+        result = [];
+        i = 0;
+
+        while (i < arr.length) {
+            let it = arr[i];
+            i++;
+            if(it.salary <= 100) {
+                continue;
+            }
+            result.push(it);
+        }
+        console.log(result);
+
+
+
+    })();
+</script>
