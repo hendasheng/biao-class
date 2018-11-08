@@ -1,0 +1,21 @@
+<script>
+
+    let userList = [
+        '王花花',
+        '李栓蛋',
+        '赵可爽',
+    ];
+
+
+
+    for(let i = 0; i < userList.length; i++) {
+        let user = userList[i];
+
+        if(user === '赵可爽') {
+            continue;
+        }
+        
+        console.log(user + '向你致以第' + (i+1) + '号问候');
+    }
+    
+</script>
