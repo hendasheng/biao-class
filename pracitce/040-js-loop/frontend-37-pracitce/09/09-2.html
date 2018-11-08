@@ -1,0 +1,34 @@
+<script>
+
+    let list = [
+        {
+            name: '王花花',
+            salary: 100,
+        },
+        {
+            name: '李拴蛋',
+            salary: 200,
+        },
+        {
+            name: '牛备备',
+            salary: 300,
+        },
+    ];
+
+    let result = [];
+    let i = 0;
+
+    while(i < list.length) {
+        let it = list[i];
+        i++;
+        if(it.salary <= 100) {
+            continue;
+        }
+        result.push(it);
+    }
+
+    console.log(result);
+
+
+    
+</script>

@@ -1,0 +1,16 @@
+<script>
+
+    let arr = ['Yo', 'Em', 1, 'La', 4, 8, 'Ha', 11, 5];
+
+    let sum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        let it = arr[i];
+        if (typeof it != 'number') {
+            continue;
+        }
+        sum += it;
+    }
+    console.log(sum);
+
+</script>
