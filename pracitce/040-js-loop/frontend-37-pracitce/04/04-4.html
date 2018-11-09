@@ -1,0 +1,40 @@
+<script>
+
+    ; (function () {
+        'use strict';
+
+        let arr = [
+            '王花花',
+            '李拴蛋',
+            '赵可爽',
+        ];
+
+        // let str = '';
+        // for (let i = 0; i < arr.length; i++) {
+        //     let it = arr[i];
+        //     let connector = ',';
+        //     if(i === arr.length - 1) {
+        //         connector = '';
+        //     }
+        //     str += it + connector;
+        // }
+        // console.log(str);
+
+        let str, i;
+        i = 0;
+        str = '';
+
+        while( i < arr.length) {
+            let it = arr[i];
+            let connector = ',';
+            if(i === arr.length - 1) {
+                connector = '';
+            }
+            i++;
+            str += it + connector;
+        }
+        console.log(str);
+
+    })();
+
+</script>

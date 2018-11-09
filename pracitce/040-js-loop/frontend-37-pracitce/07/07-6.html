@@ -1,0 +1,65 @@
+<script>
+
+    ; (function () {
+        'use styicy';
+
+
+        let arr = [1, 3, 2, 7, 6];
+        
+        // let sum = 0;
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     let it = arr[i];
+        //     if(it % 2) {
+        //         continue;
+        //     }
+        //     sum += it;
+        // }
+        // console.log(sum);
+        
+
+        // let sum, i;
+        // sum = i = 0;
+
+        // while(i < arr.length) {
+        //     let it = arr[i];
+        //     i++;
+        //     if(it % 2) {
+        //         continue;
+        //     }
+        //     sum += it;
+        // }
+        // console.log(sum);
+
+        
+
+        // let result = [];
+
+        // for(let i = 0; i < arr.length; i++) {
+        //     let it = arr[i];
+        //     if(!(it % 2)) {
+        //         continue;
+        //     }
+        //     result.push(it);
+        // }
+        // console.log(result);
+        
+
+        let i, result;
+        i = 0;
+        result = [];
+
+        while(i < arr.length) {
+            let it = arr[i];
+            i++;
+            if(!(it % 2)) {
+                continue;
+            }
+            result.push(it);
+        }
+        console.log(result);
+        
+        
+    })();
+
+</script>

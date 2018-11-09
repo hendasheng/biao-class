@@ -1,0 +1,34 @@
+<script>
+    ; (function () {
+        'usr scrict';
+
+        let arr = ['a1', 'a2', ['b1', 'b2', ['c1', 'c2', 'c3'], 'b3'], 'a3'];
+
+        let level1 = '第1级: ';
+        let level2 = '第2级: ';
+        let level3 = '第3级: ';
+
+        for (let i = 0; i < arr.length; i++) {
+            let it = arr[i];
+            if (typeof it === 'string') {
+                level1 += it + ' ';
+            } else {
+                for (let j = 0; j < it.length; j++) {
+                    let it2 = it[j];
+                    if (typeof it2 === 'string') {
+                        level2 += it2 + ' ';
+                    } else {
+                        for (let k = 0; k < it2.length; k++) {
+                            let it3 = it2[k];
+                            level3 += it3 + ' ';
+                        }
+                    }
+                }
+            }
+        }
+
+        console.log(level1);
+        console.log(level2);
+        console.log(level3);
+    })();
+</script>
