@@ -1,0 +1,24 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        let list = [
+            '王花花',
+            '刘备备',
+            '李拴蛋',
+            '赵可爽',
+        ];
+
+        function add(badAss, arr) {
+            for(let i = 0; i < arr.length; i++) {
+                let it = arr[i];
+                if (it === badAss)
+                    continue;
+                
+                console.log(it);
+            }
+        }
+        add('刘备备', list);
+
+    })();
+</script>

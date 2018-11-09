@@ -1,0 +1,35 @@
+<script>
+    ; (function () {
+        'use strict';
+
+
+        // function a() {
+        //     let a1 = 1;
+        //     b();
+        //     function b() {
+        //         console.log(a1);
+        //     }
+        // }
+        // a();
+
+
+
+
+        let a = 1;
+        function outer() {
+            let b = 2;
+            console.log('a:', a);
+            console.log('b:', b);
+
+            inner();
+            function inner() {
+                console.log('a:', a);
+                console.log('b:', b);
+            }
+        }
+        outer();
+
+
+
+    })();
+</script>
