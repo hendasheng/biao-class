@@ -1,0 +1,20 @@
+<script>
+    ;(function(){
+        'use strict';
+        
+        function filterOdd(arr) {
+            let result = [];
+            for(let i = 0; i < arr.length; i++) {
+                let it = arr[i];
+                if(!(it % 2))
+                    continue;
+                result.push(it);
+            }
+            console.log(result);
+        }
+
+        filterOdd([5, 2, 3]);
+        filterOdd([1, 2, 3, 4]);
+        
+    })();
+</script>

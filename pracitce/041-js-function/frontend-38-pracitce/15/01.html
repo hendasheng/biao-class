@@ -1,0 +1,27 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        let list = [
+            'abb',
+            'bcc',
+            'cdd',
+            'daa',
+        ];
+
+        function search(arr, keyword) {
+            let result = [];
+            for(let i = 0; i < arr.length; i++) {
+                let it = arr[i];
+                if(it.includes(keyword))
+                    result.push(it);
+            }
+            return result;
+        }
+
+        console.log(search(list, 'a'));
+        console.log(search(list, 'b'));
+        console.log(search(list, 'ab'));
+
+    })();
+</script>
