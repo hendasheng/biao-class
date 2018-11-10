@@ -2,16 +2,16 @@
     ;(function(){
         'use strict';
 
-        function evenMaker(length) {
-            let result = [];
-            for(let i = 0; i < length; i++) {
+        function evenMaker(num) {
+            let arr = [];
+            for(let i = 0; i < num; i++) {
                 let even = (i + 1) * 2;
-
-                if(even > length)
+                
+                if(even > num)
                     break;
-                result.push(even);
+                arr.push(even);
             }
-            return result;
+            return arr;
         }
         
         console.log(evenMaker(4));
