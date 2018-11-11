@@ -1,0 +1,21 @@
+<script>
+    ;(function(){
+        'use strict';
+
+        function sumEven(arr) {
+            let sum = 0;
+            for(let i = 0; i < arr.length; i++) {
+                if(arr[i] %2)
+                    continue;
+                sum += arr[i];
+            }
+            console.log(sum);
+        }
+        
+        
+        sumEven([1, 2, 3, 4]);
+
+        sumEven([2, 5, 2]);
+        
+    })();
+</script>

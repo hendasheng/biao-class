@@ -1,0 +1,27 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        let list = [
+            'abb',
+            'bcc',
+            'cdd',
+            'daa',
+        ];
+
+        function search(arr, badAss) {
+            let result = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (!(arr[i].includes(badAss)))
+                    continue;
+                result.push(arr[i]);
+           }
+           return result;
+        }
+
+        console.log(search(list, 'a'));
+        console.log(search(list, 'b'));
+        console.log(search(list, 'ab'));
+
+    })();
+</script>

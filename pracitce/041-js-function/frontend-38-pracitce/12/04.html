@@ -1,0 +1,21 @@
+<script>
+    ;(function(){
+        'usr strict';
+        
+        function yoMaker(num) {
+            let arr = [];
+            for(let i = 0; i < num; i++) {
+                arr.push('Yo');
+                if(i > num)
+                    break;
+            }
+            return arr;
+        }
+        
+
+        console.log(yoMaker(2));
+        console.log(yoMaker(3));
+        console.log(yoMaker(1));
+        
+    })();
+</script>

@@ -1,0 +1,25 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        let list = [
+            '王花花',
+            '刘备备',
+            '李拴蛋',
+        ];
+
+        function printer(arr, badAss) {
+            for(let i = 0; i < arr.length; i++) {
+                if(arr[i] === badAss)
+                    continue;
+                console.log(arr[i]);
+            }
+        }
+
+        printer(list, '李拴蛋');
+
+        printer(list, '王花花');
+
+        
+    })();
+</script>

@@ -1,0 +1,20 @@
+<script>
+    ;(function(){
+        'use strict';
+
+        function arrayMaker(num) {
+            let result = [];
+            for(let i = 0; i < num; i++) {
+                let array =  i + 1;
+                if(i > num)
+                    break;
+                result.push(array);
+            }
+            return result;
+        }
+
+        console.log(arrayMaker(2));
+        console.log(arrayMaker(3));
+        
+    })();
+</script>

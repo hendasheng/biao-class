@@ -1,0 +1,25 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        let list = [
+            '王花花',
+            '李拴蛋',
+            '赵可爽',
+        ];
+        
+        function glue(arr, connection) {
+            let str = '';
+            for(let i = 0; i < arr.length; i++) {
+                if(i === arr.length - 1)
+                    connection = '。';
+                str += arr[i] + connection;
+            }
+            console.log(str);
+        }
+
+        glue(list, ', ');
+
+
+    })();
+</script>

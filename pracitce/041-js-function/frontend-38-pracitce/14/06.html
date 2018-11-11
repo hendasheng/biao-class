@@ -1,0 +1,21 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        function evenMaker(num) {
+            let arr = [];
+            let even = 0;
+            for(let i = 0; i < num; i++) {
+                even = (i + 1) * 2;
+                if(even > num)
+                    break;
+                arr.push(even);
+            }
+            return arr;
+        }
+        
+        console.log(evenMaker(4));
+        console.log(evenMaker(8));
+
+    })();
+</script>
