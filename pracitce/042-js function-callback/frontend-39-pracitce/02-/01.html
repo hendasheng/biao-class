@@ -1,0 +1,105 @@
+<script>
+    ; (function () {
+        'use strict';
+        
+        
+        function eachNumber(arr, fn) {
+            for(let i = 0; i < arr.length; i++) {
+                fn(arr[i]);
+            }
+        }
+
+
+        /**
+         * 过滤奇数
+         * @param  arr 数字组成的数组
+         * @return  result 过滤后由 奇数 组成的数组
+         */
+        function evenNumber(arr) {
+            let result = [];
+            eachNumber(arr, function(it) {
+                if(it % 2) {
+                    return;
+                }
+                result.push(it);
+            });
+            return result;
+        }
+
+        /**
+         * 过滤偶数
+         * @param   arr 数字组成的数组
+         * @return  result 过滤后由 偶数 组成的数组
+         */
+        function oddNumber(arr) {
+            let result = [];
+            eachNumber(arr, it => {
+                if(!(it % 2))
+                    return;
+                result.push(it);
+            });
+            return result;
+        }
+        
+        console.log(evenNumber([1, 2, 3, 4]));
+        console.log(oddNumber([1, 2, 3, 4]));
+        
+        
+        /**
+         * 将数组中的所有元素相加 
+         * @param arr 数字组成的 数组
+         * @return result 元素相加的结果
+         */
+        function sum(arr) {
+            let result = 0;
+            eachNumber(arr, it => {
+                result += it;
+            });
+            return result;
+        }
+        console.log(sum([1, 2]));
+        
+
+
+        /**
+         * 找到数组中最大值
+         * @param arr 由数字组成的数组
+         * @return result 数组中最大的元素
+         */
+        function max(arr) {
+            let result;
+            eachNumber(arr, it => {
+                if(result === undefined) {
+                    result = it;
+                    return;
+                }
+                if(it > result)
+                    result = it;
+            });
+            return result;
+        }
+        console.log(max([1, 2, 3, 4]));
+
+
+        /**
+         * 找到数组中最小值 
+         * @param arr 由数字组成的数组
+         * @return result 数组中最小的元素
+         */
+        function min(arr) {
+            let result;
+            eachNumber(arr, it => {
+                if(result === undefined) {
+                    result = it;
+                    return;
+                }
+                if(it < result)
+                    result = it;
+            });
+            return result;
+        }
+        console.log(min([1, 2, 3, 4]));
+        
+
+    })();
+</script>
