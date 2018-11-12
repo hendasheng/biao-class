@@ -1,0 +1,89 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        function eachStr(arr, fn) {
+            for (let i = 0; i < arr.length; i++) {
+                fn(arr[i]);
+            };
+        }
+
+
+        /**
+         * 找出数组中以 ‘Yo’ 的元素
+         * @param arr 由 字符串 组成的 数组
+         * @return result arr 中以 'Yo' 开头的元素组成的新数组
+         */
+        function getYo(arr) {
+            let result = [];
+            eachStr(arr, it => {
+                if (it.includes('yo'))
+                    result.push(it);
+            });
+            return result;
+        }
+        console.log(getYo(['a', 'yo', 'yoo']));
+
+
+        /**
+         * 找出数组中长度位 1 的元素 
+         * @param arr 由字符串组成的数组
+         * @return result 由 arr 中，长度为 1 的元素组成的新数组
+         */
+        function shortStr(arr) {
+            let result = [];
+            eachStr(arr, it => {
+                if (it.length === 1)
+                    result.push(it);
+            });
+            return result;
+        }
+        console.log(shortStr(['a', 'foo', 'b', 'bar']));
+
+
+
+        /**
+         * 将数组中的每个元素连接 
+         * @param arr 由字符串组成的数组
+         * @return result 数组中每个元素相连的字符串
+         */
+        function join(arr) {
+            let result = '';
+            eachStr(arr, it => {
+                result += it;
+            })
+            return result;
+        }
+        console.log(join(['Y', 'o', 'o']));
+
+
+        /**
+         * 找出包含关键字的元素
+         * @param arr 由字符串组成的数组
+         * @return result 包含关键字元素的数组
+         */
+        function search(arr) {
+            let result = [];
+            eachStr(arr, it => {
+                if(it.includes('背背'))
+                    result.push(it);
+            });
+            return result;
+        }
+        console.log(search(['背背山', '六六坡', '背背路'], '背背'));
+        
+
+
+        function exclude(arr) {
+            let result = [];
+            eachStr(arr, it => {
+                if(!(it.includes('背背')))
+                    result.push(it);
+            });
+            return result;
+        }
+        console.log(exclude(['背背山', '六六坡', '背背路'], '背背'));
+        
+
+    })();
+</script>

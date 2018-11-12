@@ -1,0 +1,84 @@
+d
+<script>
+    ; (function () {
+        'use strict';
+
+        function numberModifier(num, fn) {
+            return fn(num);
+        }
+
+        /**
+         * 给传入的数字 + 1
+         * @param num 数字
+         * @return num + 1 （ + 1 后的数字 ）
+         */
+        function increment(num) {
+            numberModifier(num, it => {
+                if (typeof it != 'number')
+                    throw '请传入数字类型';
+            });
+            return num + 1;
+        }
+
+        console.log(increment(1));
+        console.log(increment(2));
+
+
+        /**
+         * 给传入的数字 * 2 
+         * @param num 数字
+         * @return num * 2
+         */
+        function double(num) {
+            let result;
+            numberModifier(num, it => {
+                result = it * 2;
+            });
+            return result;
+        }
+
+        console.log(double(1));
+        console.log(double(10));
+
+
+        /**
+         * 给传入的数字 * 10
+         * @param 数字
+         * @return num * 10
+         */
+        function decuple(num) {
+            let result;
+            numberModifier(num, it => {
+                result = num * 10;
+            });
+            return result;
+        }
+        console.log(decuple(1));
+        console.log(decuple(10));
+
+
+
+        /**
+         * 生成数列
+         * @param arr 传入数组
+         * @return result 输出数列
+         */
+        function list(arr) {
+            let result = [];
+            numberModifier(arr, it => {
+                for(let i = 0; i < it; i++) {
+                    if(i > it)
+                        break;
+                    result.push(i + 1);
+                }
+            });
+            return result;
+        }
+        console.log(list([3]));
+        console.log(list([6]));
+        
+
+        
+
+    })();
+</script>

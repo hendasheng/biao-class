@@ -1,0 +1,38 @@
+<script>
+    ; (function () {
+        'use strict';
+        
+        let list = [1, 2, 3, 4];
+        
+        function eachNumber(arr) {
+            let result = [];
+            for(let i = 0; i < arr.length; i++) {
+                if(arr[i] % 2)
+                    continue;
+
+                result.push(arr[i]);
+            }
+            return result;
+        }
+        
+        
+        console.log(eachNumber(list));
+
+
+        function oddNumber(arr) {
+            let result = [];
+            for(let i = 0; i < arr.length; i++) {
+                if(!(arr[i] % 2)) 
+                    continue;
+
+                result.push(arr[i]);
+            }
+            return result;
+        }
+
+        console.log(oddNumber(list));
+
+
+
+    })();
+</script>

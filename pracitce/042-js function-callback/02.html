@@ -1,0 +1,22 @@
+
+<script>
+    ;(function(){
+        'use strict';
+
+        let arr = [1, 2, 3];
+        
+        function iterator(list, fn) {
+            for(let i = 0; i < list.length; i++) {
+                fn(list[i]);
+            }
+        }
+        
+        let str = '';
+        iterator(arr, function (it) {
+            str += it;
+        })
+        console.log(str);
+
+        
+    })();
+</script>
