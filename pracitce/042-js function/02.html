@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+
+<script>
+    ;(function(){
+        'use strict';
+
+       function a(吃什么, 选择主食, 数人, 询问忌口) {
+           console.log('1. 买菜：' + 吃什么 + ' ' + '需要用到的菜');
+           console.log('2. 主食：' + 选择主食);
+           console.log('3. 人数：' + 数人 + '位');
+           console.log('2. 忌口：' + 询问忌口);
+       }
+
+        function 吃什么() {
+           let arr = ['香菇油菜', '炝炒菜花'];
+           return arr;
+       }
+
+
+       function 选择主食() {
+           return '米饭';
+       }
+
+       function 数人() {
+           return 4;
+       }
+
+       function 询问忌口() {
+           let arr = ['香菜', '不吃辣'];
+           return arr;
+       }
+       
+       a(吃什么(), 选择主食(), 数人(), 询问忌口());
+
+        
+        
+        
+    })();
+</script>
