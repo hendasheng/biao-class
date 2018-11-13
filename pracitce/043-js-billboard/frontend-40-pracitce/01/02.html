@@ -1,0 +1,42 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    .board {
+        font-size: 2rem;
+        font-weight: 600;
+        background: #000;
+        color: rgb(250, 51, 223);
+        padding: 1rem;
+        display: inline-block;
+        border: .4rem solid rgb(250, 51, 223);
+        opacity: 1;
+    }
+
+    
+</style>
+
+<div class="board">
+    <div class="inner">修Buh 吃面条</div>
+</div>
+
+<script>
+
+   const board = document.querySelector('.board');
+   const inner = board.querySelector('.inner');
+
+   setInterval(() => {
+       let visible = getComputedStyle(inner).opacity;
+       if(visible === '1') {
+           inner.style.opacity = 0;
+           board.style.borderColor = 'transparent';
+       } else {
+           inner.style.opacity = 1;
+           board.style.borderColor = 'inherit';
+       }
+
+   }, 500);
+    
+</script>
