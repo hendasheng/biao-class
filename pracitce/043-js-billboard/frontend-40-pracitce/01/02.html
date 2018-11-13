@@ -14,6 +14,7 @@
         border: .4rem solid rgb(250, 51, 223);
         opacity: 1;
     }
+
     
 </style>
 
@@ -23,19 +24,19 @@
 
 <script>
 
-    const board = document.querySelector('.board');
-    const inner = document.querySelector('.inner');
+   const board = document.querySelector('.board');
+   const inner = board.querySelector('.inner');
 
-    setInterval(() => {
-        let visible = getComputedStyle(inner).opacity;
+   setInterval(() => {
+       let visible = getComputedStyle(inner).opacity;
+       if(visible === '1') {
+           inner.style.opacity = 0;
+           board.style.borderColor = 'transparent';
+       } else {
+           inner.style.opacity = 1;
+           board.style.borderColor = 'inherit';
+       }
 
-        if(visible === '1') {
-            inner.style.opacity = 0;
-            board.style.borderColor = 'transparent';
-        } else {
-            inner.style.opacity = 1;
-            board.style.borderColor = 'inherit';
-        }
-    }, 500);
+   }, 500);
     
 </script>
