@@ -1,0 +1,69 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    .board {
+        font-size: 2rem;
+        font-weight: 600;
+        background: #000;
+        color: rgb(250, 51, 223);
+        padding: 1rem;
+        display: inline-block;
+        opacity: 1;
+        border: .4rem solid rgb(250, 51, 223);
+    }
+
+    .item {
+        font-size: .4rem;
+        background: rgb(250, 51, 223);
+        color: #000;
+        padding: .1rem .4rem;
+    }
+</style>
+
+
+<div class="board">
+    <div class="inner">
+        饺子里面的肉块要大哦
+        <span class="item"></span>
+    </div>
+</div>
+
+
+<script>
+
+    const board = document.querySelector('.board');
+    const inner = board.querySelector('.inner');
+    const item = inner.querySelector('.item');
+
+
+    function boot() {
+        item.innerText = '说的太对了：）';
+        startFlash();
+    }
+
+    let current = 0;
+    
+    function startFlash() {
+        setInterval(() => {
+            isVisible();
+        }, 500);
+    }
+
+    function isVisible() {
+        if (getComputedStyle(inner).opacity === '1') {
+            inner.style.opacity = 0;
+            board.style.borderColor = 'transparent';
+        } else {
+            inner.style.opacity = 1;
+            board.style.borderColor = 'inherit';
+            current++;
+        }
+        item.innerText = current + ' ' + '个人觉得说的太对了：）';
+    }
+
+    boot();
+
+</script>

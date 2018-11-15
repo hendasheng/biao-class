@@ -1,0 +1,65 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    .board {
+        font-size: 2rem;
+        font-weight: 600;
+        background: #000;
+        color: rgb(250, 51, 223);
+        padding: 1rem;
+        display: inline-block;
+        opacity: 1;
+        border: .4rem solid rgb(250, 51, 223);
+    }
+</style>
+
+
+<div class="board">
+    <div class="inner">修Bug</div>
+</div>
+
+
+<script>
+
+    const board = document.querySelector('.board');
+    const inner = board.querySelector('.inner');
+
+    function boot() {
+        motion();
+    }
+    
+    function motion() {
+        setInterval(() => {
+            textVisible();
+        }, 500);
+    }
+
+
+    function isVisible() {
+        return getComputedStyle(inner).opacity === '1';
+    }
+
+    function textVisible() {
+        if (isVisible()) {
+            inner.style.opacity = 0;
+        } else {
+            inner.style.opacity = 1;
+            textConvert();
+        }
+    }
+
+    function textConvert() {
+        if (inner.innerText === '修Bug') {
+            inner.innerText = '造Bug';
+        } else {
+            inner.innerText = '修Bug';
+        }
+    }
+
+    boot();
+
+
+</script>

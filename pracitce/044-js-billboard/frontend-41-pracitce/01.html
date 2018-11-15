@@ -1,0 +1,84 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    .board {
+        font-size: 2rem;
+        font-weight: 600;
+        background: #000;
+        color: rgb(250, 51, 223);
+        padding: 1rem;
+        display: inline-block;
+        opacity: 1;
+        border: .4rem solid rgb(250, 51, 223);
+    }
+</style>
+
+
+<div class="board">
+    <div class="inner">饺子里面的肉块要大哦</div>
+</div>
+
+
+<script>
+
+    const board = document.querySelector('.board');
+    const inner = board.querySelector('.inner');
+
+    function boot() {
+        startFlash();
+    }
+    
+    function startFlash() {
+        setInterval(() => {
+            textVisible();
+        }, 500);
+    }
+
+    function isVisible() {
+        return getComputedStyle(inner).opacity === '1';
+    }
+
+    /**
+    *   文字显示
+    *   文字显示的时候启动 边框颜色 / 文字颜色
+    */
+    function textVisible() {
+        if (isVisible()) {
+            inner.style.opacity = 0;
+        } else {
+            inner.style.opacity = 1;
+            textColor();
+            borderColor();
+        }
+    }
+
+    /**
+    *   边框颜色
+    */
+    function borderColor() {
+        if (getComputedStyle(board).borderColor === 'rgb(250, 51, 223)') {
+            board.style.borderColor = 'rgb(51, 64, 250)';
+        } else {
+            board.style.borderColor = 'rgb(250, 51, 223)';
+        }
+    }
+
+    /**
+    *   文字颜色
+    */
+    function textColor() {
+        if (getComputedStyle(board).color === 'rgb(250, 51, 223)') {
+            board.style.color = 'rgb(51, 64, 250)';
+        } else {
+            board.style.color = 'rgb(250, 51, 223)';
+        }
+    }
+
+
+    boot();
+
+
+</script>
