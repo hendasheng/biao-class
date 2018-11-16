@@ -40,57 +40,44 @@
     const parent = document.querySelector('.slider');
     const slides = parent.querySelectorAll('.item');
 
-    // 计数器
     let current = 0;
-
-    // slides 中最后一位
     let lastIndex = slides.length - 1;
 
     boot();
-
     function boot() {
-        show(slides[0]);
+        slides[0].style.opacity = 1;
         setInterval(() => {
             loop();
-        }, 3000);
+        }, 1000);
     }
 
     function loop() {
         if (current >= slides.length)
             current = 0;
- 
+
         let prev = getPrev();
-
         let next = slides[current];
-
-        current++;
-
-        console.log(current);
+        current++
 
         hide(prev);
         show(next);
     }
 
     function getPrev() {
-        // current === 0 ? slides[lastIndex] : slides[current - 1];
-
-        if (current === 0) {
+        if (current === 0)
             return slides[lastIndex];
-        } else {
+        else
             return slides[current - 1];
-        }
     }
-
 
     function hide(el) {
         if (!el)
             return;
         el.style.opacity = 0;
     }
-
     function show(el) {
         if (!el)
-            retuen;
+            return;
         el.style.opacity = 1;
     }
 
