@@ -1,0 +1,87 @@
+<style>
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .silder {
+        position: relative;
+    }
+
+    .item {
+        position: absolute;
+        display: block;
+        opacity: 0;
+        transition: all 1s;
+    }
+</style>
+
+<div class="container">
+    <div class="slider">
+        <a href="#" class="item">
+            <img src="img/cover-A.png" alt="">
+        </a>
+        <a href="#" class="item">
+            <img src="img/cover-B.png" alt="">
+        </a>
+        <a href="#" class="item">
+            <img src="img/cover-C.png" alt="">
+        </a>
+    </div>
+</div>
+
+<script>
+
+    const parent = document.querySelector('.slider');
+    const slides = parent.querySelectorAll('.item');
+
+    let current = 0;
+
+    boot();
+    function boot() {
+        show(slides[0]);
+        setInterval(() => {
+            loop();
+
+        }, 1000);
+    }
+
+    function loop() {
+        current++;
+        if (current >= slides.length)
+            current = 0;
+        console.log(current);
+
+
+        let prev = getPrev();
+        let next = slides[current];
+
+
+        hide(prev);
+        show(next);
+    }
+
+    function getPrev() {
+        if (current === 0)
+            return slides[slides.length - 1];
+        return slides[current - 1];
+    }
+
+    function hide(el) {
+        if (!el)
+            return;
+        el.style.opacity = 0;
+    }
+    function show(el) {
+        if (!el)
+            return;
+        el.style.opacity = 1;
+    }
+
+
+</script>
