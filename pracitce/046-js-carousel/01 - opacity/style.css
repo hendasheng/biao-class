@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.slider {
+    position: relative;
+    margin-top: 4rem;
+}
+
+.item {
+    position: absolute;
+    display: block;
+    opacity: 0;
+    transition: all 1s;
+}
