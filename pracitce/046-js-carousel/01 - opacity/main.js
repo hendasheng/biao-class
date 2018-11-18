@@ -5,7 +5,7 @@
 
     const parent = document.querySelector('.slider');
     const slides = parent.querySelectorAll('.item');
-
+    
     let current = 0;
 
 
