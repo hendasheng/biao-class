@@ -1,0 +1,30 @@
+<style>
+    
+    #a {
+        padding: 10px;
+        border: 10px solid;
+        margin: 10px;
+        display: inline-block;
+        /* width: 50px; */
+        /* height: 50px; */
+    }
+    
+</style>
+
+<div id="a">Yo</div>
+
+
+<script>
+
+    const a = document.getElementById('a');
+
+    
+    
+    let style = getComputedStyle(a);
+
+    console.log(parseFloat(style.width) + parseFloat(style.padding) * 2 + 'px');
+
+    // console.log(a.clientWidth); // padding 之间的宽度
+    // console.log(a.offsetWidth);  // border 之间的宽度
+    
+</script>
