@@ -49,12 +49,14 @@
     
     let flipC = item[item.length - 1];
 
-    let style = getComputedStyle(item);
+    let parentStyle = getComputedStyle(parent);
     
-    console.log(style.opacity);
+    console.log(parentStyle.width);
+
+    console.log(flipC.offset);
+
     
     setInterval(() => {
-
     }, 500);
 
 
