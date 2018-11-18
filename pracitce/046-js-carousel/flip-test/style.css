@@ -1,0 +1,25 @@
+img {
+    max-width: 100%;
+    display: inline-block;
+}
+
+a {
+    display: inline-block;
+}
+
+.container {
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+}
+
+.item {
+    position: absolute;
+    width: 800px;
+    height: 400px;
+}

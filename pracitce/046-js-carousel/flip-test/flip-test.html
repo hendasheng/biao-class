@@ -1,68 +1,22 @@
-<style>
+<link rel="stylesheet" href="style.css">
 
-    img {
-        max-width: 100%;
-        display: inline-block;
-    }
-
-    a {
-        display: inline-block;
-    }
-    
-    .container {
-        width: 800px;
-        margin: 0 auto;
-    }
-
-    .box {
-        position: relative;
-    }
-
-    .item {
-        position: absolute;
-        width: 800px;
-        opacity: 1;
-    }
-
-    
-    
-</style>
-
-<div class="container">
-    <div class="box">
-        <a href="#" class="item">
-            <img src="https://dummyimage.com/1600x800/ff4040/ffffff?text=A" alt="">
-        </a>
-        <a href="#" class="item">
-            <img src="https://dummyimage.com/1600x800/3048ff/ffffff?text=B" alt="">
-        </a>
-        <a href="#" class="item">
-            <img src="https://dummyimage.com/1600x800/ff820d/ffffff?text=C" alt="">
-        </a>
+<body>
+    <div class="container">
+        <div class="box">
+            <a href="#" class="item">
+                <img src="https://dummyimage.com/1600x800/ff4040/ffffff?text=A" alt="">
+            </a>
+            <a href="#" class="item">
+                <img src="https://dummyimage.com/1600x800/3048ff/ffffff?text=B" alt="">
+            </a>
+            <a href="#" class="item">
+                <img src="https://dummyimage.com/1600x800/ff820d/ffffff?text=C" alt="">
+            </a>
+        </div>
     </div>
-</div>
 
-<script>
 
-    const parent = document.querySelector('.box');
-    const item = parent.querySelectorAll('.item');
+
+    <script src="main.js"></script>
     
-    let flipC = item[item.length - 1];
-
-    let parentStyle = getComputedStyle(parent);
-    
-    console.log(parentStyle.width);
-
-    console.log(flipC.offset);
-
-    
-    setInterval(() => {
-    }, 500);
-
-
-
-
-
-
-    
-</script>
+</body>
