@@ -1,12 +1,12 @@
 ; (function () {
     'use strict';
 
-
     const parent = document.getElementById('box');
-    const slides = parent.querySelectorAll('.item');
+    const slides = document.querySelectorAll('.item');
 
     let currentIndex = 0;
     let lastIndex = slides.length - 1;
+
 
     boot();
     function boot() {
@@ -16,53 +16,9 @@
             increment();
             slideX();
             slideZ();
-        }, 2000)
+        }, 2000);
     }
 
-
-    /**
-     * 获取 上一张
-     *  
-     * @returns 如果 计数器 大于 0 则 - 1，否则直接变成最后一张
-     */
-    function getPrev() {
-        if (currentIndex > 0)
-            return slides[currentIndex - 1];
-        else
-            return slides[lastIndex];
-    }
-
-    /**
-     * 获取 当前这张
-     *
-     * @returns 
-     */
-    function getCurrent() {
-        return slides[currentIndex];
-    }
-
-    /**
-     * 获取下一张
-     *
-     * @returns 如果在 item 总数的数量范围内，则 +1，如果超出范围，则回到第一张
-     */
-    function getNext() {
-        if (currentIndex < lastIndex)
-            return slides[currentIndex + 1];
-        return slides[0];
-    }
-
-    /**
-     * 增量
-     *
-     * @returns 如果在 item 总数范围内，则 ++，如果超出范围，则归零
-     */
-    function increment() {
-        if (currentIndex < lastIndex)
-            return currentIndex++;
-        else
-            return currentIndex = 0;
-    }
 
     function slideX() {
         let prev = getPrev();
@@ -84,6 +40,42 @@
         next.style.zIndex = 0;
     }
 
+    function increment() {
+        if (currentIndex < lastIndex)
+            return currentIndex++;
+        return currentIndex = 0;
+    }
+
+    /**
+     * 获取 前一个
+     *
+     * @returns 如果不是第一个，则 -1， 否则回到最后一个
+     */
+    function getPrev() {
+        if (currentIndex > 0)
+            return slides[currentIndex - 1];
+        return slides[lastIndex];
+    }
+
+    /**
+     * 获取 当前元素
+     *
+     * @returns
+     */
+    function getCurrent() {
+        return slides[currentIndex];
+    }
+
+    /**
+     * 获取后一个
+     *
+     * @returns 如果不是最后一个，则 +1，否则回到第一个
+     */
+    function getNext() {
+        if (currentIndex < lastIndex)
+            return slides[currentIndex + 1];
+        return slides[0];
+    }
 
 
 
