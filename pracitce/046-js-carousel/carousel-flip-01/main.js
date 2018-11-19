@@ -20,7 +20,7 @@
             increment();
             slideX();
             slideZ()
-        }, 4000);
+        }, 1000);
     }
 
 
