@@ -34,6 +34,12 @@
             current = 0;
     }
 
+    
+    /**
+     * 如果 
+     *
+     * @returns
+     */
     function getPrev() {
         if (current === 0)
             return slides[slides.length - 1];
