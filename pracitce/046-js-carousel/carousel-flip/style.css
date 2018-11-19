@@ -12,7 +12,6 @@ img {
 #box {
     position: relative;
     overflow: hidden;
-    width: 100%;
     height: 100%;
 }
 
@@ -20,9 +19,6 @@ img {
     position: absolute;
     width: 100%;
     display: block;
-    transition: all .5s;
+    transition: all 4s;
 }
 
-/* .item:nth-last-child(1) {
-    left: -10px;
-} */

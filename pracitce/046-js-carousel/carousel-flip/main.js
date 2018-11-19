@@ -4,46 +4,44 @@
     const parent = document.getElementById('box');
     const item = parent.querySelectorAll('.item');
 
+    // 最后一张
     let lastIndex = item.length - 1;
+
+    // 计数器
     let currentIndex = 0;
 
     boot();
     function boot() {
-        // 确保一开始就滚动一次
-        // 横向移动
-        itemX();
-        // "前后"移动
-        itemZ();
 
-        // 每隔1秒滚动一次
+        slideX();
+        slideZ();
+
         setInterval(() => {
-            // 自增current
-            inCrement();
-
-            // 滚动其实就是重新调整元素位置
-            // 横向移动
-            itemX();
-            // "前后"移动
-            itemZ();
-        }, 1000);
+            increment();
+            slideX();
+            slideZ()
+        }, 4000);
     }
 
+
     /**
-     *  获取 上一页
-     *
-     * @returns
+     * 获取 上一张
+     * 
+     *  如果在页面在 item 范围内，则 -1
+     *  否则 回到最后一张
      */
     function getPrev() {
         if (currentIndex > 0)
             return item[currentIndex - 1];
         else
-            return item[currentIndex];
+            return item[lastIndex];
     }
 
     /**
-     *  获取 下一页
-     *
-     * @returns
+     * 获取 下一张
+     * 
+     *  如果页面在 item 范围内，则 +1
+     *  否则 回到第一张
      */
     function getNext() {
         if (currentIndex < lastIndex)
@@ -53,50 +51,40 @@
     }
 
     /**
-     *  获取 当前元素
-     *
-     * @returns
+     * 获取当前页面
      */
     function getCurrent() {
         return item[currentIndex];
     }
 
     /**
-     *  索引自增
-     *
+     * 自增当前索引 - 翻页
      */
-    function inCrement() {
+    function increment() {
         if (currentIndex < lastIndex)
             currentIndex++;
         else
             currentIndex = 0;
     }
 
-    function itemZ() {
+    function slideX() {
         let prev = getPrev();
         let current = getCurrent();
         let next = getNext();
 
-        prev.style.zIndex = 1; // 前一页次重要
-        current.style.zIndex = 2; // 当前页最重要，所以最靠前
-        next.style.zIndex = 0; // 下一页最不重要，因为还看不见
-    }
-
-    function itemX() {
-        let prev = getPrev();
-        let current = getCurrent();
-        let next = getNext();
-
-        // 前一页向左挪
         prev.style.left = -prev.offsetWidth + 'px';
-        // 当前页在中间
         current.style.left = 0;
-        // 后一页向右挪
         next.style.left = next.offsetWidth + 'px';
     }
 
+    function slideZ() {
+        let prev = getPrev();
+        let current = getCurrent();
+        let next = getNext();
 
-
-
+        prev.style.zIndex = 1;
+        current.style.zIndex = 2;
+        next.style.zIndex = 0;
+    }
 
 })();   
