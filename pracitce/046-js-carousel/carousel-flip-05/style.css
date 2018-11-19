@@ -19,6 +19,7 @@ img {
 .item {
     position: absolute;
     transition: left 1s;
+    /* transition: opacity 1s; */
     display: block;
     width: 100%;
 }
