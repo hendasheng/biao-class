@@ -1,0 +1,58 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .container {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    #board {
+        background: #222;
+        color: #fff;
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+    .title {
+        font-size: 3rem;
+        font-weight: 600;
+        margin: 1rem 0;
+    }
+
+    #board span {
+        line-height: 1.2rem;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<div class="container">
+    <div id="board" hidden>
+        <div class="title">看起来像内部公告</div>
+        <span>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed impedit totam reprehenderit? Quia omnis qui
+            quo assumenda voluptatum. Sit, eveniet iusto. Vero recusandae obcaecati, quis delectus reprehenderit
+            eligendi aliquid dolores.
+        </span>
+    </div>
+</div>
+
+
+
+<script>
+
+    const board = document.getElementById('board');
+
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'h' && event.ctrlKey)
+            board.hidden = !board.hidden;
+   })
+
+
+</script>
