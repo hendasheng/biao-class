@@ -1,0 +1,25 @@
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#box {
+    position: relative;
+    overflow: hidden;
+    width: 800px;
+    height: 400px;
+}
+
+.item {
+    position: absolute;
+    transition: all 1s;
+    display: block;
+    width: 100%;
+    opacity: 0;
+}
