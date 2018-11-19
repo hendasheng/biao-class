@@ -1,0 +1,62 @@
+<style>
+    .container {
+        width: 100px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .box {
+        background: #eee;
+    }
+
+    .box a {
+        display: block;
+        text-decoration: none;
+        color: blue;
+        padding: 14px 10px;
+    }
+    .box a:hover {
+        background: rgb(212, 212, 212);
+    }
+
+    button {
+        padding: 10px 34px;
+        display: inline-block;
+        margin: 30px 0;
+        background: #ccc;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    [hidden] {
+        display: none !important;
+    }
+
+</style>
+
+
+<div class="container">
+    <button>more</button>
+    <div class="box" hidden>
+        <a href="#" class="item">阴天</a>
+        <a href="#" class="item">播客</a>
+        <a href="#" class="item">台灯</a>
+        <a href="#" class="item">眼镜布</a>
+        <a href="#" class="item">喷雾</a>
+        <a href="#" class="item">渴了</a>
+    </div>
+</div>
+
+
+<script>
+
+    const btn = document.querySelector('button');
+    const box = document.querySelector('.box');
+
+    console.log(btn);
+
+    btn.addEventListener('click', () => {
+        box.hidden = !box.hidden;
+    })
+
+    
+</script>
