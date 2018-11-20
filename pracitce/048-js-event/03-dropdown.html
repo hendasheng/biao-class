@@ -1,0 +1,80 @@
+<style>
+    .container {
+        text-align: center;
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    button {
+        background: blue;
+        padding: 10px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        width: 100%;
+        margin-bottom: 20px;
+        outline: none;
+        border: none;
+    }
+
+    .box {
+        border: 1px solid blue;
+
+    }
+
+    .box a {
+        display: block;
+        text-decoration: none;
+        padding: 14px 0;
+    }
+
+    .box a:hover {
+        background: #eee;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+
+<div class="container">
+    <button>很多：）</button>
+    <div class="box" hidden>
+        <a href="#" class="item">下拉</a>
+        <a href="#" class="item">菜单</a>
+        <a href="#" class="item">也</a>
+        <a href="#" class="item">特么有</a>
+        <a href="#" class="item">这么</a>
+        <a href="#" class="item">多事</a>
+    </div>
+</div>
+
+<script>
+
+    const btn = document.querySelector('button');
+    const box = document.querySelector('.box');
+
+    // document.body.addEventListener('click', (e) => {
+    //     let target = e.target;
+
+    //     if (target === btn) {
+    //         box.hidden = !box.hidden;
+    //         return;
+    //     }
+
+    //     if (!target.closest('.box'))
+    //         box.hidden = true;
+    // })
+
+    window.addEventListener('click', (e) => {
+        if (e.target === btn) {
+            box.hidden = !box.hidden;
+            return;
+        }
+
+        if (!e.target.closest('box'))
+            box.hidden = true;
+    })
+
+</script>
