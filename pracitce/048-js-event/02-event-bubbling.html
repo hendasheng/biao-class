@@ -1,0 +1,40 @@
+<style>
+    div {
+        background: rgba(0, 0, 0, .1);
+        padding: 10px;
+    }
+</style>
+
+<div id="a">
+    a
+    <div id="b">
+        b
+        <div id="c">
+            c
+        </div>
+    </div>
+</div>
+
+<script>
+
+    const a = document.getElementById('a');
+    const b = document.getElementById('b');
+    const c = document.getElementById('c');
+
+
+    a.addEventListener('click', (e) => {
+        console.log(e.currentTarget);
+        // console.log('a');
+    }, true);
+
+    b.addEventListener('click', (e) => {
+        console.log(e.currentTarget);
+        // console.log('b');
+    });
+
+    c.addEventListener('click', (e) => {
+        console.log(e.currentTarget);
+        // console.log('c');
+    });
+
+</script>
