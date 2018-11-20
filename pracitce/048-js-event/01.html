@@ -1,0 +1,34 @@
+
+
+<div onclick="console.log('被点了')">哎呦喂</div>
+
+<div id="a">再点</div>
+
+<div id="b">又点</div>
+
+
+<script>
+
+    const a = document.getElementById('a');
+    const b = document.getElementById('b');
+
+    a.onclick = function() {
+        console.log('A');
+    }
+    a.onclick = function() {
+        console.log('AA');
+    }
+    
+
+    /**
+    * addEventListener 可给一个元素绑定多个指令
+    * 前两种方式在绑定多个指令的时候，后面的指令会覆盖前面的指令
+    */
+    b.addEventListener('click', () => {
+        console.log('B');
+    })
+    b.addEventListener('click', () => {
+        console.log('BB');
+    })
+    
+</script>
