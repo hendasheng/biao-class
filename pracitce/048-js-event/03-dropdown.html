@@ -55,26 +55,15 @@
     const btn = document.querySelector('button');
     const box = document.querySelector('.box');
 
-    // document.body.addEventListener('click', (e) => {
-    //     let target = e.target;
-
-    //     if (target === btn) {
-    //         box.hidden = !box.hidden;
-    //         return;
-    //     }
-
-    //     if (!target.closest('.box'))
-    //         box.hidden = true;
-    // })
-
     window.addEventListener('click', (e) => {
         if (e.target === btn) {
             box.hidden = !box.hidden;
             return;
         }
 
-        if (!e.target.closest('box'))
+        if (!e.target.closest('box')) {
             box.hidden = true;
+        }
     })
 
 </script>
