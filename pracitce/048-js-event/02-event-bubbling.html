@@ -23,18 +23,21 @@
 
 
     a.addEventListener('click', (e) => {
-        console.log(e.currentTarget);
-        // console.log('a');
-    }, true);
+        console.log(e.target);
+        console.log('a');
+    });
 
     b.addEventListener('click', (e) => {
-        console.log(e.currentTarget);
-        // console.log('b');
+        console.log(e.target);
+        console.log('b');
     });
 
     c.addEventListener('click', (e) => {
-        console.log(e.currentTarget);
-        // console.log('c');
+        console.log(e.target);
+        console.log('c');
     });
+
+    // e.target === 从谁开始 冒泡
+    // e.currentTarget === 事件绑定在谁身上
 
 </script>
