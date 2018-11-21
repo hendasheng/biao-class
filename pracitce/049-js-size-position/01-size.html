@@ -1,0 +1,41 @@
+<style>
+
+    .a {
+        width: 80%;
+        border: 10px solid;
+        padding: 10px;
+        height: 80px;
+        overflow: auto;
+    }
+    
+</style>
+
+<div class="a">
+    <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos animi doloremque id quia recusandae sequi neque deleniti, in natus debitis, quibusdam cumque mollitia placeat beatae dicta reiciendis sint iusto?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos animi doloremque id quia recusandae sequi neque deleniti, in natus debitis, quibusdam cumque mollitia placeat beatae dicta reiciendis sint iusto?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos animi doloremque id quia recusandae sequi neque deleniti, in natus debitis, quibusdam cumque mollitia placeat beatae dicta reiciendis sint iusto?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos animi doloremque id quia recusandae sequi neque deleniti, in natus debitis, quibusdam cumque mollitia placeat beatae dicta reiciendis sint iusto?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos animi doloremque id quia recusandae sequi neque deleniti, in natus debitis, quibusdam cumque mollitia placeat beatae dicta reiciendis sint iusto?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos animi doloremque id quia recusandae sequi neque deleniti, in natus debitis, quibusdam cumque mollitia placeat beatae dicta reiciendis sint iusto?
+    </span>
+</div>
+
+<script>
+
+    const a = document.querySelector('.a');
+    
+    console.log('clientWidth: 检测 padding 间的距离 - '+ a.clientWidth);
+    console.log('clientHeight: 检测 padding 间的距离 - '+ a.clientHeight);
+
+    console.log('offsetWidth: 检测 border 间的距离 - '+ a.offsetWidth);
+    console.log('offsetHeight: 检测 border 间的距离 - '+ a.offsetHeight);
+
+    console.log('scrollWidth: 检测横向滚动距离（包括 padding）' + a.scrollWidth);
+    console.log('scrollHeight: 检测纵向滚动距离（包括 padding ）' + a.scrollHeight);
+
+
+
+
+    
+</script>
