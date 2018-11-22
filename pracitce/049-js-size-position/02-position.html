@@ -1,0 +1,79 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        width: 50px;
+        height: 50px;
+        padding: 20px;
+        border: 10px solid;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    #a {
+        /* position: relative; */
+    }
+
+    #b {
+        overflow: auto;
+    }
+
+    form {
+        border: 5px red solid;
+        position: relative;
+        /* height: 80px;
+        margin-left: 10px;
+        margin-top: 40px; */
+    }
+</style>
+
+<form>
+    <div id="a">A</div>
+
+    <div id="b">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates explicabo quos asperiores?
+        Dolore natus impedit voluptatem! Quaerat minus enim labore cum rerum excepturi dolores officiis laboriosam
+        unde, perferendis repellat?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates explicabo quos asperiores?
+        Dolore natus impedit voluptatem! Quaerat minus enim labore cum rerum excepturi dolores officiis laboriosam
+        unde, perferendis repellat?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates explicabo quos asperiores?
+        Dolore natus impedit voluptatem! Quaerat minus enim labore cum rerum excepturi dolores officiis laboriosam
+        unde, perferendis repellat?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates explicabo quos asperiores?
+        Dolore natus impedit voluptatem! Quaerat minus enim labore cum rerum excepturi dolores officiis laboriosam
+        unde, perferendis repellat?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates explicabo quos asperiores?
+        Dolore natus impedit voluptatem! Quaerat minus enim labore cum rerum excepturi dolores officiis laboriosam
+        unde, perferendis repellat?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates explicabo quos asperiores?
+        Dolore natus impedit voluptatem! Quaerat minus enim labore cum rerum excepturi dolores officiis laboriosam
+        unde, perferendis repellat?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates explicabo quos asperiores?
+        Dolore natus impedit voluptatem! Quaerat minus enim labore cum rerum excepturi dolores officiis laboriosam
+        unde, perferendis repellat?
+    </div>
+</form>
+
+<script>
+
+    const a = document.getElementById('a');
+
+    console.log('offsetParent: 元素的父级' + a.offsetParent);
+    console.log('offsetTop: 元素顶部到父级顶部的距离' + a.offsetTop);
+    console.log('offsetLeft: 元素左侧到父级左侧的位置' + a.offsetLeft);
+    console.log(getComputedStyle(a).marginLeft);
+
+    b.scrollTo(0, 200);
+    console.log('scrollTop: 元素滚动到哪个高度 ' + b.scrollTop);
+    console.log('scrollHeight: 滚动整体的高度 ' + b.scrollHeight);
+
+
+    // getBoundingClientRect() 获取元素在 document 的位置
+    console.log(a.getBoundingClientRect());
+
+
+</script>
