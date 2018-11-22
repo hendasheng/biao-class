@@ -1,0 +1,148 @@
+<style>
+    img {
+        display: block;
+    }
+
+    .n-popup {
+        position: fixed;
+        padding: 10px;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+        z-index: 1000;
+    }
+
+    .n-mask {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, .4);
+        z-index: 999;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<style>
+
+</style>
+
+
+<button id="trigger">收藏</button>
+<div id="popup">
+    <img src="https://dummyimage.com/200x200/eee/888">
+    确定要收藏吗？
+</div>
+
+<div>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo doloremque, corrupti voluptatum vitae ipsum ducimus
+    laboriosam, in, incidunt dicta animi aliquam? Aperiam vel impedit deleniti ipsum molestiae ratione quasi a.
+</div>
+
+<script>
+
+    let trigger, popup, mask;
+
+    boot('#trigger', '#popup');
+
+    function boot(triggerSelector, popupSelector) {
+        trigger = document.querySelector(triggerSelector);
+        popup = document.querySelector(popupSelector);
+
+        initPopup();
+        initMask();
+
+        bindOpen();
+        bindClose();
+    }
+
+
+
+    /**
+    *   打开 popup / mask
+    */
+    function bindOpen() {
+        trigger.addEventListener('click', () => {
+            setVisibility(true);
+            rePositionPopup('center', -200, 0);
+        });
+    }
+
+    /**
+    *   关闭 popup / mask
+    */
+    function bindClose() {
+        mask.addEventListener('click', () => {
+            setVisibility(false);
+        });
+
+        window.addEventListener('keyup', (e) => {
+            if (e.code === 'Escape')
+                setVisibility(false);
+        });
+    }
+
+    /**
+    *   判断可见性
+    */
+    function setVisibility(visible = false) {
+        mask.hidden = popup.hidden = !visible;
+    }
+
+    /**
+    *   popup 基础样式
+    */
+    function initPopup() {
+        popup.hidden = true;
+        popup.classList.add('n-popup');
+    }
+
+    /**
+    *   mask 基础样式
+    */
+    function initMask() {
+        mask = document.createElement('div');
+        mask.classList.add('n-mask');
+        mask.hidden = true;
+        document.body.appendChild(mask);
+    }
+
+    function rePositionPopup(position = 'center', yOffset, xOffset) {
+        let width = popup.offsetWidth;
+        let height = popup.offsetHeight;
+        popup.style.left = window.innerWidth / 2 - width / 2 + xOffset;
+        popup.style.top = window.innerHeight / 2 - height / 2 + yOffset;
+    }
+
+</script>
