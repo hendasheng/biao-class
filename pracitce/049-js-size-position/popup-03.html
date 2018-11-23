@@ -127,7 +127,7 @@
 
     /**
      *  初始化 Mask
-     * 
+     *  
      */
     function initMask() {
         mask = document.createElement('div');
@@ -137,12 +137,21 @@
     }
 
     /**
+     * 判断可见性
+     * setVisiblity(true) - 可见
+     * setVisiblity(false) - 不可见
+     */
+    function setVisiblity(visible = false) {
+        mask.hidden = popup.hidden = !visible;
+    }
+    
+    /**
      *  显示 popup & mask
-     * 
+     *  rePopupPosition(0, 100) - popup 显示时计算位置
      */
     function bindOpen() {
         trigger.addEventListener('click', () => {
-            mask.hidden = popup.hidden = false;
+            setVisiblity(true);
             rePopupPosition(0, 100);
         })
     }
@@ -156,23 +165,27 @@
         let cancel = document.querySelector('.cancel');
 
         mask.addEventListener('click', () => {
-            mask.hidden = popup.hidden = true;
+            setVisiblity(false);
         })
         window.addEventListener('keyup', (e) => {
             if (e.code === 'Escape')
-                mask.hidden = popup.hidden = true;
+            setVisiblity(false);
         })
 
         confirm.addEventListener('click', () => {
-            mask.hidden = popup.hidden = true;
+            setVisiblity(false);
         })
 
         cancel.addEventListener('click', () => {
-            mask.hidden = popup.hidden = true;
+            setVisiblity(false);
         })
 
     }
 
+    /**
+     *  重新定位 popup 位置
+     *  xOffset / yOffset - 自定义 向左 / 向上 偏移数量
+     */
     function rePopupPosition(xOffset, yOffset) {
         let popupWidth = popup.offsetWidth;
         let popupHeight = popup.offsetHeight;
