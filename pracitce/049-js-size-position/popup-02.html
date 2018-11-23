@@ -1,0 +1,194 @@
+<style>
+    .niu-mask {
+        position: fixed;
+        background: rgba(0, 0, 0, .4);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 999;
+    }
+
+    .niu-popup {
+        z-index: 1000;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+        display: inline-block;
+        position: fixed;
+    }
+</style>
+
+<style>
+    .container {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .trigger {
+        padding: 4px 10px;
+        background: blue;
+        color: #fff;
+        border: none;
+        outline: none;
+        display: block;
+    }
+
+    .popup-btn {
+        margin-top: 30px;
+    }
+
+    .popup-btn>* {
+        display: inline-block;
+        float: left;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .popup-btn .cancel {
+        color: #999;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+
+<div class="container">
+    <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit sapiente fuga nostrum harum ea minus,
+        dolorem enim eos asperiores, ex consectetur repellat perferendis sit facilis dolore inventore, eveniet
+        reiciendis veniam!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit sapiente fuga nostrum harum ea minus,
+        dolorem enim eos asperiores, ex consectetur repellat perferendis sit facilis dolore inventore, eveniet
+        reiciendis veniam!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit sapiente fuga nostrum harum ea minus,
+        dolorem enim eos asperiores, ex consectetur repellat perferendis sit facilis dolore inventore, eveniet
+        reiciendis veniam!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit sapiente fuga nostrum harum ea minus,
+        dolorem enim eos asperiores, ex consectetur repellat perferendis sit facilis dolore inventore, eveniet
+        reiciendis veniam!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit sapiente fuga nostrum harum ea minus,
+        dolorem enim eos asperiores, ex consectetur repellat perferendis sit facilis dolore inventore, eveniet
+        reiciendis veniam!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit sapiente fuga nostrum harum ea minus,
+        dolorem enim eos asperiores, ex consectetur repellat perferendis sit facilis dolore inventore, eveniet
+        reiciendis veniam!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit sapiente fuga nostrum harum ea minus,
+        dolorem enim eos asperiores, ex consectetur repellat perferendis sit facilis dolore inventore, eveniet
+        reiciendis veniam!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit sapiente fuga nostrum harum ea minus,
+        dolorem enim eos asperiores, ex consectetur repellat perferendis sit facilis dolore inventore, eveniet
+        reiciendis veniam!
+    </div>
+    <button class="trigger">收藏</button>
+    <div class="popup">
+        <div class="popup-text">确定添加到收藏夹？</div>
+        <div class="popup-btn">
+            <div class="determine" style="width:50%;">确定</div>
+            <div class="cancel" style="width:50%;">取消</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    /**
+    *   点击 收藏 时 - 显示 弹窗 & 黑色遮罩
+    *   点击弹窗之外的所有地方，隐藏弹窗 
+    */
+
+    let tirgger, popup, mask;
+
+
+    boot('.trigger', '.popup');
+
+    function boot(triggerSelector, popupSelector) {
+        trigger = document.querySelector(triggerSelector);
+        popup = document.querySelector(popupSelector);
+
+        initPopup();
+        initMask();
+        bindOpen();
+        bindClose();
+        btnEvent();
+    }
+
+
+    /*
+    *   显示 popup
+    *   点击 trigger - 显示 mask & popup
+    */
+    function bindOpen() {
+        trigger.addEventListener('click', () => {
+            mask.hidden = popup.hidden = false;
+            rePositionPopup(100);
+        })
+    }
+
+    /*
+    *   隐藏 popup
+    *   点击 mask - 隐藏 mask & popup
+    *   点击 Escape 键 - 隐藏 mask & popup
+    */
+    function bindClose() {
+        mask.addEventListener('click', () => {
+            getVisible(false);
+        })
+
+        window.addEventListener('keyup', (e) => {
+            if (e.code === 'Escape')
+                getVisible(false);
+        })
+    }
+
+    function getVisible(visible = false) {
+        mask.hidden = popup.hidden = !visible;
+    }
+
+
+    /*
+    *   Mask 初始化
+    */
+    function initMask() {
+        mask = document.createElement('div');
+        mask.classList.add('niu-mask');
+        mask.hidden = true;
+        document.body.appendChild(mask);
+    }
+
+    /*
+    *   popup 初始化
+    */
+    function initPopup() {
+        popup.classList.add('niu-popup');
+        popup.hidden = true;
+    }
+
+    /*
+   *   给 popup 里面的按钮绑定事件
+   */
+    function btnEvent() {
+        let determine = document.querySelector('.determine');
+        let cancel = document.querySelector('.cancel');
+
+        determine.addEventListener('click', () => {
+            getVisible(false);
+        })
+
+        cancel.addEventListener('click', () => {
+            getVisible(false);
+        })
+    }
+
+    function rePositionPopup(yOffset) {
+        let popupWidth = popup.offsetWidth;
+        let popupHeight = popup.offsetHeight;
+
+        popup.style.left = window.innerWidth / 2 - popupWidth / 2;
+        popup.style.top = window.innerHeight / 2 - popupHeight / 2 - yOffset;
+    }
+
+</script>
