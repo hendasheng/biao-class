@@ -1,0 +1,191 @@
+<style>
+    .n-popup {
+        z-index: 1000;
+    }
+
+    .n-mask {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .2);
+        z-index: 999;
+    }
+</style>
+
+
+<style>
+    .container {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .con-text {
+        color: #333;
+        line-height: 20px;
+        margin: 20px 0;
+    }
+
+    .trigger {
+        padding: 4px 10px;
+        border: 1px solid rgb(60, 95, 190);
+        border-radius: 4px;
+        outline: none;
+        color: rgb(60, 95, 190);
+    }
+
+    .popup {
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        display: inline-block;
+        position: fixed;
+        padding: 10px;
+        width: 30%;
+        text-align: center;
+    }
+
+    .popup .main {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .popup-btn>* {
+        float: left;
+        width: 50%;
+        cursor: pointer;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<div class="container">
+    <div class="con-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+    </div>
+
+    <button class="trigger">收藏这个</button>
+    <div class="popup">
+        <div class="main">真的要收藏吗？</div>
+        <div class="popup-btn">
+            <div class="confirm">确认</div>
+            <div class="cancel">取消</div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    /**
+     *  造一个弹窗插件
+     *  调用函数时，以字符串的形式输入相应的 类名 / id 名，实现弹窗 显示 / 隐藏
+     *  显示 - 点击 按钮  出现弹窗和遮罩层
+     *  隐藏 - 点击 弹窗以外的所有区域 隐藏弹窗和遮罩层
+     */
+
+    let trigger, popup, mask;
+
+
+    boot('.trigger', '.popup');
+
+    function boot(triggerSelector, popupSelector) {
+        trigger = document.querySelector(triggerSelector);
+        popup = document.querySelector(popupSelector);
+
+        initPopup();
+        initMask();
+
+        bindOpen();
+        bindClose();
+    }
+
+
+    /**
+    *   初始化 popup
+    *   增加控制显示层级的类 n-popup
+    */
+    function initPopup() {
+        popup.classList.add('n-popup');
+        popup.hidden = true;
+    }
+
+    /**
+    *   初始化 Mask
+    */
+    function initMask() {
+        mask = document.createElement('div');
+        document.body.appendChild(mask);
+        mask.classList.add('n-mask');
+        mask.hidden = true;
+    }
+
+    /**
+    *   判断可见性
+    */
+    function setVisiblity(visible = false) {
+        mask.hidden = popup.hidden = !visible;
+    }
+
+
+    /**
+    *   绑定 显示popup事件
+    *
+    */
+    function bindOpen() {
+        trigger.addEventListener('click', () => {
+            setVisiblity(true);
+            rePositionPopup(0, 100);
+        })
+    }
+
+    /**
+    *   绑定 隐藏popup事件
+    *
+    */
+    function bindClose() {
+        let confirm = document.querySelector('.confirm');
+        let cancel = document.querySelector('.cancel');
+
+        mask.addEventListener('click', () => {
+            setVisiblity(false);
+        })
+
+        confirm.addEventListener('click', () => {
+            setVisiblity(false);
+        })
+
+        cancel.addEventListener('click', () => {
+            setVisiblity(false);
+        })
+    }
+
+    function rePositionPopup(xOffset, yOffset) {
+        let popupWidth = popup.offsetWidth;
+        let popupHeight = popup.offsetHeight;
+
+        popup.style.left = window.innerWidth / 2 - popupWidth / 2;
+        popup.style.top = window.innerHeight / 2 - popupHeight / 2 - yOffset;
+    }
+
+
+
+
+
+</script>
