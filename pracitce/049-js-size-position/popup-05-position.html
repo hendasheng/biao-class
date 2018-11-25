@@ -159,7 +159,7 @@
             // rePositionPopup('top');
             // rePositionPopup('bottom');
             // rePositionPopup('left');
-            rePositionPopup('right');
+            rePositionPopup('right', 100, 100);
         })
     }
 
@@ -195,15 +195,14 @@
      *  
      * @param position 所有位置:
      *      center | to | bottom | left | right | top-left | top-right | bottom-left | bottom-right
-     * @param xOffset - 居中基础上横向偏移
-     * @param yOffset - 居中基础上纵向偏移
+     * @param xOffset - 横向偏移量
+     * @param yOffset - 纵向偏移量
      */
 
     function rePositionPopup(position = 'center', xOffset = 0, yOffset = 0) {
         let popupWidth = popup.offsetWidth;
         let popupHeight = popup.offsetHeight;
 
-        // 默认 popup 横轴 / 纵轴居中 - center
         switch (position) {
             case 'top-left':
                 popup.style.left = xOffset + 'px';
@@ -211,18 +210,18 @@
                 break;
 
             case 'top-right':
-                popup.style.left = window.innerWidth - popupWidth + 'px';
+                popup.style.left = window.innerWidth - popupWidth - xOffset + 'px';
                 popup.style.top = yOffset + 'px';
                 break;
 
             case 'bottom-left':
                 popup.style.left = xOffset + 'px';
-                popup.style.top = window.innerHeight - popupHeight + 'px';
+                popup.style.top = window.innerHeight - popupHeight - yOffset + 'px';
                 break;
 
             case 'bottom-right':
-                popup.style.left = window.innerWidth - popupWidth + 'px';
-                popup.style.top = window.innerHeight - popupHeight + 'px';
+                popup.style.left = window.innerWidth - popupWidth - xOffset + 'px';
+                popup.style.top = window.innerHeight - popupHeight - yOffset + 'px';
                 break;
 
             case 'top':
@@ -232,19 +231,20 @@
 
             case 'bottom':
                 popup.style.left = window.innerWidth / 2 - popupWidth / 2 - xOffset + 'px';
-                popup.style.top = window.innerHeight - popupHeight + 'px';
+                popup.style.top = window.innerHeight - popupHeight - yOffset + 'px';
                 break;
             
             case 'left':
                 popup.style.left = xOffset + 'px';
-                popup.style.top = window.innerHeight / 2 - popupHeight / 2 + 'px';
+                popup.style.top = window.innerHeight / 2 - popupHeight / 2 - yOffset + 'px';
                 break;
             
             case 'right':
-                popup.style.left = window.innerWidth - popupWidth + 'px';
-                popup.style.top = window.innerHeight / 2 - popupHeight / 2 + 'px';
+                popup.style.left = window.innerWidth - popupWidth - xOffset + 'px';
+                popup.style.top = window.innerHeight / 2 - popupHeight / 2 - yOffset + 'px';
                 break;
-
+            
+            // 默认 popup 横轴 / 纵轴居中 - center
             default:
                 popup.style.left = window.innerWidth / 2 - popupWidth / 2 - xOffset + 'px';
                 popup.style.top = window.innerHeight / 2 - popupHeight / 2 - yOffset + 'px';
