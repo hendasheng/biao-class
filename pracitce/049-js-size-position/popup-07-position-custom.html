@@ -1,0 +1,294 @@
+<style>
+    .n-popup {
+        z-index: 1000;
+    }
+
+    .n-mask {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .2);
+        z-index: 999;
+    }
+</style>
+
+
+<style>
+    .container {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .con-text {
+        color: #333;
+        line-height: 20px;
+        margin: 20px 0;
+    }
+
+    .trigger {
+        padding: 4px 10px;
+        border: 1px solid rgb(60, 95, 190);
+        border-radius: 4px;
+        outline: none;
+        color: rgb(60, 95, 190);
+    }
+
+    .popup {
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        display: inline-block;
+        position: fixed;
+        padding: 10px;
+        width: 30%;
+        text-align: center;
+    }
+
+    .popup .main {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .popup-btn>* {
+        float: left;
+        width: 50%;
+        cursor: pointer;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<div class="container">
+    <div class="con-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam blanditiis, quod magnam culpa maiores cum ab?
+        Eligendi perspiciatis porro est, magnam eum soluta, quia adipisci nihil illo deleniti, doloribus nemo.
+    </div>
+
+    <button class="trigger">收藏这个</button>
+    <div class="popup">
+        <div class="main">真的要收藏吗？</div>
+        <div class="popup-btn">
+            <div class="confirm">确认</div>
+            <div class="cancel">取消</div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    /**
+     *  造一个弹窗插件
+     *  调用函数时，以字符串的形式输入相应的 类名 / id 名，实现弹窗 显示 / 隐藏
+     *  显示 - 点击 按钮  出现弹窗和遮罩层
+     *  隐藏 - 点击 弹窗以外的所有区域 隐藏弹窗和遮罩层
+     */
+
+    let trigger, popup, mask, config;
+
+    // 默认配置
+    const defaultConfig = {
+        position: 'center',
+        offsetX: 0,
+        offseY: 0,
+    }
+
+
+    boot('.trigger', '.popup', {
+        position: 'top-left',
+        offsetX: 0,
+        offsetY: 0,
+    });
+
+    /**
+    *   启动弹出
+    *   @param {string} triggerSelector 点谁控制弹出 (选择器)
+    *   @param {string} popupSelectior  弹出谁 (选择器)
+    *   @param {Object} config 用户位置配置
+    */
+    function boot(triggerSelector, popupSelector, custom = {}) {
+        // 获取 元素 对象 trigger & popup
+        trigger = document.querySelector(triggerSelector);
+        popup = document.querySelector(popupSelector);
+
+        // 加载用户自定义配置
+        loadConfig(custom);
+
+        // 准备 popup
+        initPopup();
+
+        // 准备 mask
+        initMask();
+
+        // 绑定 打开事件
+        bindOpen();
+
+        // 绑定 关闭事件
+        bindClose();
+    }
+
+
+    function loadConfig(custom) {
+        config = Object.assign({}, defaultConfig, custom);
+    }
+
+    /**
+    *   初始化 popup
+    *   增加控制显示层级的类 n-popup
+    */
+    function initPopup() {
+        popup.classList.add('n-popup');
+        popup.hidden = true;
+    }
+
+    /**
+    *   初始化 Mask
+    */
+    function initMask() {
+        mask = document.createElement('div');
+        document.body.appendChild(mask);
+        mask.classList.add('n-mask');
+        mask.hidden = true;
+    }
+
+    /**
+    *   判断可见性
+    */
+    function setVisiblity(visible = false) {
+        mask.hidden = popup.hidden = !visible;
+    }
+
+
+    /**
+    *   绑定 显示popup事件
+    *
+    */
+    function bindOpen() {
+        trigger.addEventListener('click', () => {
+            setVisiblity(true);
+
+            // rePositionPopup('center', 100, 300);
+            // rePositionPopup('top-left', 100, 300);
+            // rePositionPopup('top-right');
+            // rePositionPopup('bottom-left');
+            // rePositionPopup('bottom-right');
+            // rePositionPopup('top');
+            // rePositionPopup('right');
+            // rePositionPopup('bottom');
+            // rePositionPopup('left');
+            rePositionPopup();
+        })
+    }
+
+    /**·
+    *   绑定 隐藏popup事件
+    *
+    */
+    function bindClose() {
+        let confirm = document.querySelector('.confirm');
+        let cancel = document.querySelector('.cancel');
+
+        mask.addEventListener('click', () => {
+            setVisiblity(false);
+        })
+
+        confirm.addEventListener('click', () => {
+            setVisiblity(false);
+        })
+
+        cancel.addEventListener('click', () => {
+            setVisiblity(false);
+        })
+
+        window.addEventListener('keyup', (e) => {
+            if (e.code = 'Escape')
+                setVisiblity(false);
+        })
+    }
+
+
+    /**
+     *  定位 Popup
+     *  
+     * @param position 所有位置:
+     *      center | to | bottom | left | right | top-left | top-right | bottom-left | bottom-right
+     * @param xOffset - 横向偏移量
+     * @param yOffset - 纵向偏移量
+     */
+
+    function rePositionPopup(position = 'center', xOffset = 0, yOffset = 0) {
+        // 获取 元素本身 尺寸
+        let popupWidth = popup.offsetWidth;
+        let popupHeight = popup.offsetHeight;
+
+        // 获取 浏览器窗口 尺寸
+        let windowWidth = window.innerWidth;
+        let windowHeight = window.innerHeight;
+
+        // 缓存 style
+        let style = popup.style;
+
+        // 如果位置不是 xx-xx 的形式，仅是 xx
+        if (!position.includes('-')) {
+            // 如果仅指定 横轴
+            if (position === 'left' || position === 'right') {
+                position += '-centery'; // 纵轴 默认居中，position 值就变成 xxx-centery
+                //  如果仅指定 纵轴
+            } else if (position === 'top' || position === 'bottom') {
+                position += '-centerx'; // 横轴 默认居中，position 值就变成 xxx-centerx
+            } else {
+                // 默认 popup 横轴 / 纵轴居中 - center
+                position = 'centerx-centery';
+            }
+        }
+
+        // 是否横向居中
+        if (position.includes('centerx')) {
+            style.left = window.innerWidth / 2 - popupWidth / 2 - xOffset + 'px';
+        }
+
+        // 是否纵向居中
+        if (position.includes('centery')) {
+            style.top = window.innerHeight / 2 - popupHeight / 2 - yOffset + 'px';
+        }
+
+        // 是否紧贴顶部
+        if (position.includes('top')) {
+            style.top = yOffset + 'px';
+        }
+
+        // 是否紧贴底部
+        if (position.includes('bottom')) {
+            style.bottom = yOffset + 'px';
+        }
+
+        // 是否紧贴左侧
+        if (position.includes('left')) {
+            style.left = xOffset + 'px';
+        }
+
+        // 是否紧贴右侧
+        if (position.includes('right')) {
+            style.right = xOffset + 'px';
+        }
+
+    }
+
+
+</script>
