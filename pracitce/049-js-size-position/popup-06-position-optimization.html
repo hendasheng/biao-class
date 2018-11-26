@@ -151,15 +151,16 @@
     function bindOpen() {
         trigger.addEventListener('click', () => {
             setVisiblity(true);
-            // rePositionPopup('center', 0, 100);
-            rePositionPopup('top-left');
+            // rePositionPopup('center', 100, 300);
+            // rePositionPopup('top-left', 100, 300);
             // rePositionPopup('top-right');
-            // rePositionPopup('bottom-left');
+            rePositionPopup('bottom-left');
             // rePositionPopup('bottom-right');
             // rePositionPopup('top');
+            // rePositionPopup('right');
             // rePositionPopup('bottom');
             // rePositionPopup('left');
-            // rePositionPopup('right', 100, 100);
+            // rePositionPopup();
         })
     }
 
@@ -202,22 +203,56 @@
     function rePositionPopup(position = 'center', xOffset = 0, yOffset = 0) {
         let popupWidth = popup.offsetWidth;
         let popupHeight = popup.offsetHeight;
-        
+
         let windowWidth = window.innerWidth;
         let windowHeight = window.innerHeight;
 
+        let style = popup.style;
 
-        if(position.includes('top')) {
-            popup.style.top = yOffset + 'px';
-        } else if('center') {
-            popup.style.top = window.innerHeight / 2 - popupHeight / 2 - yOffset + 'px';
-            popup.style.left = window.innerWidth / 2 - popupWidth / 2 - xOffset + 'px';
-
+        // 如果位置不是 xx-xx 的形式，仅是 xx
+        if (!position.includes('-')) {
+            // 如果仅指定 横轴
+            if (position === 'left' || position === 'right') {
+                position += '-centery'; // 纵轴 默认居中，position 值就变成 xxx-centery
+            //  如果仅指定 纵轴
+            } else if (position === 'top' || position === 'bottom') {
+                position += '-centerx'; // 横轴 默认居中，position 值就变成 xxx-centerx
+            } else {
+                // 默认 popup 横轴 / 纵轴居中 - center
+                position = 'centerx-centery';
+            }
+        }
+        
+        // 是否横向居中
+        if (position.includes('centerx')) {
+            style.left = window.innerWidth / 2 - popupWidth / 2 - xOffset + 'px';
         }
 
+        // 是否纵向居中
+        if (position.includes('centery')) {
+            style.top = window.innerHeight / 2 - popupHeight / 2 - yOffset + 'px';
+        }
         
+        // 是否紧贴顶部
+        if (position.includes('top')) {
+            style.top = yOffset + 'px';
+        }
         
+        // 是否紧贴底部
+        if (position.includes('bottom')) {
+            style.bottom = yOffset + 'px';
+        }
+
+        // 是否紧贴左侧
+        if (position.includes('left')) {
+            style.left = xOffset + 'px';
+        }
         
+        // 是否紧贴右侧
+        if (position.includes('right')) {
+            style.right = xOffset + 'px';
+        }
+
     }
 
 
