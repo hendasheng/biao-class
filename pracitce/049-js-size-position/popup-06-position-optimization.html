@@ -102,20 +102,31 @@
 
     let trigger, popup, mask;
 
-
     boot('.trigger', '.popup');
 
-    function boot(triggerSelector, popupSelector) {
+    /**
+    *   启动弹出
+    *   @param {string} triggerSelector 点谁控制弹出 (选择器)
+    *   @param {string} popupSelectior  弹出谁 (选择器)
+    *   @param {Object} config 用户位置配置
+    */
+    function boot(triggerSelector, popupSelector,) {
+        // 获取 元素 对象 trigger & popup
         trigger = document.querySelector(triggerSelector);
         popup = document.querySelector(popupSelector);
 
+        // 准备 popup
         initPopup();
+
+        // 准备 mask
         initMask();
 
+        // 绑定 打开事件
         bindOpen();
+
+        // 绑定 关闭事件
         bindClose();
     }
-
 
     /**
     *   初始化 popup
@@ -151,20 +162,21 @@
     function bindOpen() {
         trigger.addEventListener('click', () => {
             setVisiblity(true);
+
             // rePositionPopup('center', 100, 300);
             // rePositionPopup('top-left', 100, 300);
             // rePositionPopup('top-right');
-            rePositionPopup('bottom-left');
+            // rePositionPopup('bottom-left');
             // rePositionPopup('bottom-right');
             // rePositionPopup('top');
             // rePositionPopup('right');
-            // rePositionPopup('bottom');
+            rePositionPopup('bottom');
             // rePositionPopup('left');
             // rePositionPopup();
         })
     }
 
-    /**
+    /**·
     *   绑定 隐藏popup事件
     *
     */
@@ -201,12 +213,15 @@
      */
 
     function rePositionPopup(position = 'center', xOffset = 0, yOffset = 0) {
+        // 获取 元素本身 尺寸
         let popupWidth = popup.offsetWidth;
         let popupHeight = popup.offsetHeight;
 
+        // 获取 浏览器窗口 尺寸
         let windowWidth = window.innerWidth;
         let windowHeight = window.innerHeight;
 
+        // 缓存 style
         let style = popup.style;
 
         // 如果位置不是 xx-xx 的形式，仅是 xx
@@ -214,7 +229,7 @@
             // 如果仅指定 横轴
             if (position === 'left' || position === 'right') {
                 position += '-centery'; // 纵轴 默认居中，position 值就变成 xxx-centery
-            //  如果仅指定 纵轴
+                //  如果仅指定 纵轴
             } else if (position === 'top' || position === 'bottom') {
                 position += '-centerx'; // 横轴 默认居中，position 值就变成 xxx-centerx
             } else {
@@ -222,7 +237,7 @@
                 position = 'centerx-centery';
             }
         }
-        
+
         // 是否横向居中
         if (position.includes('centerx')) {
             style.left = window.innerWidth / 2 - popupWidth / 2 - xOffset + 'px';
@@ -232,12 +247,12 @@
         if (position.includes('centery')) {
             style.top = window.innerHeight / 2 - popupHeight / 2 - yOffset + 'px';
         }
-        
+
         // 是否紧贴顶部
         if (position.includes('top')) {
             style.top = yOffset + 'px';
         }
-        
+
         // 是否紧贴底部
         if (position.includes('bottom')) {
             style.bottom = yOffset + 'px';
@@ -247,7 +262,7 @@
         if (position.includes('left')) {
             style.left = xOffset + 'px';
         }
-        
+
         // 是否紧贴右侧
         if (position.includes('right')) {
             style.right = xOffset + 'px';
