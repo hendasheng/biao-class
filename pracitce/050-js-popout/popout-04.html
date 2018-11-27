@@ -1,0 +1,90 @@
+<style>
+    body {
+        background: rgb(43, 43, 51);
+    }
+
+    button {
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        background: rgb(42, 42, 247);
+        color: #fff;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .popout {
+        padding: 4px 10px;
+        background: #fff;
+        display: inline-block;
+        font-size: 13px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        position: absolute;
+        border-radius: 3px;
+        top: 50px;
+        left: 5px;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<button data-popout="说说得了，继续 ：）">不会写的时候情绪很重</button>
+<button data-popout="坏习惯">去抽烟</button>
+<button>没有 data-popout</button>
+
+
+
+<script>
+
+    let triggers = new Set();
+    let lastTrigger;
+    
+    window.addEventListener('mouseover', (e) => {
+        let el = e.target;
+        let content = el.dataset.popout;
+        if (content) {
+            if(lastTrigger)
+                hide(lastTrigger);
+            lastTrigger = el;
+            
+            if (!el.$popout) {
+                let popout = document.createElement('div');
+                popout.classList.add('popout');
+                popout.innerText = content;
+                el.$popout = popout;
+                document.body.appendChild(popout);
+            }
+            el.$popout.hidden = false;
+            rePosition(el);
+
+            triggers.add(el);
+        } else {
+            hideAll(el);
+        }
+    })
+
+    function rePosition(el) {
+        let popout = el.$popout;
+        let elPosition = el.getBoundingClientRect();
+
+        popout.style.left = elPosition.left + 'px';
+        popout.style.top = elPosition.top + el.offsetHeight + 'px';
+    }
+
+    function hideAll() {
+        triggers.forEach(el => {
+            el.$popout.hidden = true;
+        })
+    }
+
+    function hide(el) {
+        if (el.$popout)
+            el.$popout.hidden = true;
+    }
+
+</script>
