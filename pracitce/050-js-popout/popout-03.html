@@ -1,0 +1,135 @@
+<style>
+    body {
+        background: rgb(43, 43, 51);
+    }
+
+    button {
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        background: rgb(42, 42, 247);
+        color: #fff;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .popout {
+        padding: 4px 10px;
+        background: #fff;
+        display: inline-block;
+        font-size: 13px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        position: absolute;
+        border-radius: 3px;
+        top: 50px;
+        left: 5px;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<button data-popout="说说得了，继续 ：）">不会写的时候情绪很重</button>
+<button data-popout="坏习惯">去抽烟</button>
+<button>没有 data-popout</button>
+
+
+
+<script>
+
+    let triggers = new Set();
+    let lastTrigger;
+
+    window.addEventListener('mouseover', (e) => {
+        let el = e.target;
+        let content = el.dataset.popout;
+
+        // console.log(el);
+        
+        //如果元素中有 data-popout，则执行：
+        if (content) {
+
+            // 如果有 上一条弹出框，则 隐藏
+            if(lastTrigger)
+                hide(lastTrigger);
+            
+            // 将当前触发的 el 设置为 lastTrigger， 为下次触发作准备
+            lastTrigger = el;
+            
+            // 显示相应的 弹出框
+            show(el, content);
+            
+            // 保存到 triggers 中，用于 全部隐藏
+            triggers.add(el);
+            
+        } else {
+            hideAll(el);
+        }
+
+    })
+
+
+    /**
+     *  显示 popout
+     *  
+     */
+    function show(btn, content) {
+        // 如果没有 $popout 属性，则
+        if (!btn.$popout) {
+            // 新建 div - 弹出框
+            let popout = document.createElement('div');
+
+            // 添加类名 .popout
+            popout.classList.add('popout');
+
+            // 添加内容
+            popout.innerText = content;
+
+            // 将 弹出框 对象存到 按钮对象 的自定义属性中中
+            btn.$popout = popout;
+
+            // 将 弹出框 添加到 DOM 中
+            document.body.appendChild(popout);
+        } else { // 如果有 $popout 属性，则显示
+            btn.$popout.hidden = false;
+        }
+        // 如果有 按钮对象有 $popout 属性，则重置 弹出框 位置
+        rePosition(btn);
+    }
+
+    // 重置 弹出框 位置
+    function rePosition(btn) {
+        let popout = btn.$popout;
+        let btnPosition = btn.getBoundingClientRect();
+
+        popout.style.left = btnPosition.left + 'px';
+        popout.style.top = btnPosition.top + btn.offsetHeight + 'px';
+    }
+
+
+    /**
+     * 隐藏全部 弹出框
+     * 在绑定事件中，如果触发元素没有 data-popout ，则全部隐藏
+     */
+    function hideAll(btn) {
+        triggers.forEach((btn) => {
+            btn.$popout.hidden = true;
+        })
+    }
+
+    /**
+     * 隐藏 弹出框
+     * 每次只显示一个弹出框
+     */
+    function hide(btn) {
+        if(btn.$popout) {
+            btn.$popout.hidden = true;
+        }
+    }
+     
+    
+</script>
