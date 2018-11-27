@@ -1,0 +1,122 @@
+<style>
+    body {
+        background: rgb(43, 43, 51);
+    }
+
+    button {
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        background: rgb(42, 42, 247);
+        color: #fff;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .popout {
+        padding: 4px 10px;
+        background: #fff;
+        display: inline-block;
+        font-size: 13px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        position: absolute;
+        border-radius: 3px;
+        top: 50px;
+        left: 5px;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<button data-popout="说说得了，继续 ：）">不会写的时候情绪很重</button>
+<button data-popout="坏习惯">去抽烟</button>
+<button>没有 data-popout</button>
+
+
+
+<script>
+
+    let triggers = new Set();
+    let lastTrigger;
+
+    boot();
+    function boot() {
+        bindEvents();
+    }
+
+    /**
+     * 绑定事件 
+     * 
+     */
+    function bindEvents() {
+        document.addEventListener('mouseover', (e) => {
+            let el = e.target;
+            let content = el.dataset.popout;
+
+            // 如果 data-popout 存在，则执行
+            if (content) {
+                if (lastTrigger)    // 如果上一条 lastTrigger 存在（不是第一次点击）
+                    hide(lastTrigger); // 则隐藏 lastTrigger（上一次点击）
+                lastTrigger = el; // 把当前点击的 el 设置为 lastTrigger，为下一次触发做准备
+
+                // 显示对应的 popout
+                show(el, content);
+
+                // 记录到 triggers 方便隐藏
+                triggers.add(el);
+            } else
+                hideAll(el);
+        });
+    }
+
+    /**
+     * 显示 popout
+     * @param {HTMLButtonElement} button
+     */
+    function show(button, content) {
+        if (!button.$popout) { // 如果 el 中没有自定义的 $popout
+            let popout = document.createElement('div'); // 创建 div
+            popout.classList.add('popout'); // 添加类名 - <div class="popout"></div>
+            popout.innerText = content; // 添加文字内容 - <div class="popout">content</div>
+            button.$popout = popout;    // 
+            document.body.appendChild(popout);
+        } else { // 如果存在 button.$popout
+            button.$popout.hidden = false; // 则保持显示
+        }
+        reposition(button);
+    }
+
+    /**
+     * 隐藏 popout 
+     * 
+     */
+    function hide(button) {
+        if (button.$popout)
+            button.$popout.hidden = true;
+    }
+
+    /**
+     * 隐藏全部 popout 
+     * 
+     */
+    function hideAll() {
+        triggers.forEach(button => {
+            button.$popout.hidden = true;
+        })
+    }
+
+    function reposition(button) {
+        let popout = button.$popout;
+
+        let buttonPosition = button.getBoundingClientRect();
+
+        popout.style.left = buttonPosition.left + 'px';
+        popout.style.top = buttonPosition.top + button.offsetHeight + 'px';
+    }
+
+</script>
