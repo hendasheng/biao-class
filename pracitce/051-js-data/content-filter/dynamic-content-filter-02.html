@@ -1,0 +1,146 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td,
+    th {
+        text-align: left;
+        border: 1px solid #999;
+        padding: .4rem;
+    }
+
+    .toolbar {
+        margin: 1rem 0;
+    }
+</style>
+
+<div class="container">
+    <h1>查查哈中学花名册</h1>
+    <div class="toolbar">
+        <div id="score-filter">
+            <button data-max="100" data-min="0">查看全部</button>
+            <button data-max="100" data-min="80">查看学霸</button>
+            <button data-max="80" data-min="60">查看学酥</button>
+            <button data-max="60" data-min="0">只看学渣</button>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>分数</th>
+            <th>操作</th>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</div>
+
+
+<script>
+    let tbody = document.getElementById('tbody');
+    let scoreFilter = document.querySelector('#score-filter');
+
+    let users = [
+        {
+            name: '王花花',
+            gender: '女',
+            score: '82',
+        },
+        {
+            name: '李拴蛋',
+            gender: '男',
+            score: '12',
+        },
+        {
+            name: '赵可爽',
+            gender: '女',
+            score: '73',
+        },
+    ];
+
+
+    boot();
+    function boot() {
+        render();
+        bindEvents();
+    }
+
+    /**
+     *  通过数据生成内容 
+     *  @param {Object} 
+     */
+    function render(range) {
+        tbody.innerHTML = '';
+        // 循环 每条数据
+        users.forEach((el, i) => {
+
+            // 如果设置了成绩范围
+            if (range) {
+                // 是否在范围内
+                let valid = el.score < +range.max && el.score > +range.min;
+
+                // 如果不在范围内，则直接返回
+                if (!valid)
+                    return;
+            }
+
+            // 为每条数据创建元素
+            let tr = document.createElement('tr');
+
+            // 设置元素内容
+            tr.innerHTML = `
+                <td>${el.name}</td>
+                <td>${el.gender}</td>
+                <td>${el.score}</td>
+                <td><button class="del">删除</button></td>
+            `;
+
+            // 将 tr 插入到 tbody 中
+            tbody.appendChild(tr);
+
+            // 选中 删除按钮
+            let delBtn = tr.querySelector('.del');
+
+            // 给 删除按钮 绑定点击事件
+            delBtn.addEventListener('click', () => {
+                users.splice(i, 1);
+                tr.remove();
+            });
+
+        });
+    }
+
+    /**
+     *  toolbar 绑定事件 
+     * 
+     */
+    function bindEvents() {
+        // 当 toolbar 被点击时
+        scoreFilter.addEventListener('click', e => {
+            let target = e.target;
+
+            // 如果不是 button 元素，则返回
+            if (target.nodeName != 'BUTTON')
+                return;
+
+            // 否则
+            // 取到 button data-max / data-min
+            let range = target.dataset;
+            // 重新渲染
+            render(range);
+        });
+    }
+
+</script>
