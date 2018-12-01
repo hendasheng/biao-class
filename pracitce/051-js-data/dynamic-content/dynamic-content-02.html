@@ -63,9 +63,12 @@
     function render() {
         // 循环 users 数组
         users.forEach((user, i) => {
+            // 为每条数据创建元素
             let tr = document.createElement('tr');
             let tbody = document.querySelector('#tbody');
             
+            
+            // 设置元素内容
             // 将 users 中的内容添加到 tr 中
             // 增加 删除 标签
             tr.innerHTML = `
