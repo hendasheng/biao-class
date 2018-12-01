@@ -1,0 +1,92 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td,
+    th {
+        text-align: left;
+        border: 1px solid #999;
+        padding: .4rem;
+    }
+</style>
+
+<div class="container">
+    <h1>查查哈中学花名册</h1>
+    <table>
+        <thead>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>分数</th>
+            <th>操作</th>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</div>
+
+
+<script>
+
+    let users = [
+        {
+            name: '王花花',
+            gender: '女',
+            score: '82',
+        },
+        {
+            name: '李拴蛋',
+            gender: '男',
+            score: '24',
+        },
+        {
+            name: '赵可爽',
+            gender: '女',
+            score: '73',
+        },
+    ];
+
+    boot();
+    function boot() {
+        render();
+    }
+    
+    function render() {
+
+        users.forEach((el, i) => {
+            let tr = document.createElement('tr');
+            let tbody = document.querySelector('#tbody');
+           
+            tr.innerHTML = `
+                <td>${el.name}</td>
+                <td>${el.gender}</td>
+                <td>${el.score}</td>
+                <td><button class="del">删除</button></td>
+            `;
+
+            tbody.appendChild(tr);
+
+            let delBtn = tr.querySelector('.del');
+            delBtn.addEventListener('click', () => {
+                users.splice(i, 1);
+                tr.remove();
+            })
+
+        });
+
+    }
+
+
+
+
+</script>
