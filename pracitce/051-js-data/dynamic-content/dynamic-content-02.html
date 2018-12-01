@@ -61,11 +61,14 @@
     }
 
     function render() {
+        
+        // 用于追加数据的跟元素
+        let tbody = document.querySelector('#tbody');
+        
         // 循环 users 数组
         users.forEach((user, i) => {
             // 为每条数据创建元素
             let tr = document.createElement('tr');
-            let tbody = document.querySelector('#tbody');
             
             
             // 设置元素内容
