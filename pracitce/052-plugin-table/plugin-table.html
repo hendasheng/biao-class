@@ -1,0 +1,66 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td,
+    th {
+        text-align: left;
+        border: 1px solid #999;
+        padding: .4rem;
+    }
+
+    .toolbar {
+        margin: 1rem 0;
+    }
+</style>
+
+
+<table id="user-table">
+    <thead></thead>
+    <tbody></tbody>
+</table>
+
+<script src="niuTable.js">
+
+</script>
+
+<script>
+    let users = [
+        {
+            name: '王花花',
+            gender: '女',
+            score: '82',
+            balance: 80,
+        },
+        {
+            name: '李拴蛋',
+            // gender: '男',
+            // score: '24',
+        },
+        {
+            name: '赵可爽',
+            // gender: '女',
+            // score: '73',
+        },
+    ];
+
+    let struct = {
+        name: '姓名',
+        gender: '性别',
+        score: '分数',
+    }
+    
+    niuTable.boot('#user-table', struct, users);
+</script>
