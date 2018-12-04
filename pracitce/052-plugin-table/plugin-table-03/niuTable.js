@@ -13,6 +13,7 @@
      * @param {Array} arr 
      */
     function boot(tableSelector, struct, arr) {
+        // 启动功能时更新所有变量
         table = document.querySelector(tableSelector);
         thead = table.tHead;
         tbody = table.tBodies[0];
@@ -21,6 +22,9 @@
         render();
     }
 
+    /**
+     * 总渲染
+     */
     function render() {
         renderHead();
         renderBody();
