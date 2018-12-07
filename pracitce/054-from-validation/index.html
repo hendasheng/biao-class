@@ -1,4 +1,4 @@
-<style>
+·<style>
     :root {
         font-family: sans-serif;
         font-size: 14px;
@@ -14,6 +14,10 @@
         outline: none;
     }
 
+    input {
+        margin-top: .4rem;
+    }
+    
     button {
         background: #333;
         color: #fff;
@@ -39,12 +43,11 @@
     <button>提交</button>
 </main>
 
+<script src="js/validateUtils.js"></script>
 <script>
-    let str = 'whh';
+    console.log(isUsername('wss'));
+    console.log(isEmail('asdfasf@das'));
+    console.log(isPhone('12342324432'));
+    console.log(isPassword('12a'));
 
-    function isUsername(str) {
-        if (str.length < 4)
-            return false;
-        
-    }
 </script>
