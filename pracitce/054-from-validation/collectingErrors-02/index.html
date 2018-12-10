@@ -1,4 +1,4 @@
-·<style>
+<style>
     :root {
         font-family: sans-serif;
         font-size: 14px;
@@ -30,19 +30,32 @@
         max-width: 20rem;
     }
 
+    .error-container {
+        background: pink;
+        color: #c10;
+        padding: .4rem;
+        margin-bottom: .4rem;
+        font-size: .8rem;
+    }
 
-
+    input.error {
+        border: 1px solid #c10;
+    }
+    
+    [hidden] {
+        display: none;
+    }
     
 </style>
 
 <main>
     <form novalidate>
         <h1>注册</h1>
-        <input type="text" name="username" placeholder="username" value="whhh">
+        <input type="text" name="username" placeholder="username" value="wh">
         <input type="text" name="email" placeholder="email" value="whh@gmail.com">
         <input type="text" name="phone" placeholder="phone" value="11122223333">
         <input type="password" name="password" placeholder="password" value="123456">
-        <div class="error-container"></div>
+        <div class="error-container" hidden></div>
         <button>提交</button>
     </form>
 </main>
@@ -51,6 +64,8 @@
 <script>
 
     let form = document.querySelector('form');
+    let errorContainer = form.querySelector('.error-container');
+
     // 定义存放 input > value 的容器
     let data = {};
     // 定义存放错误信息的容器
@@ -70,6 +85,26 @@
      *  绑定初始事件
      */
     function bindEvents() {
+        bindSubmit();
+        bindKeyup();
+    }
+
+    /**
+     * 绑定键盘事件 
+     */
+    function bindKeyup() {
+        // 当键盘案件弹起时
+        form.addEventListener('keyup', e => {
+            // 如果不是 Enter 键，则
+            if (e.key != 'Enter')
+                // 隐藏 HTML 元素
+                hideError();
+                // 取消 .error 类名
+                resetErrorInput();
+        })
+    }
+
+    function bindSubmit() {
         form.addEventListener('submit', e => {
             e.preventDefault();
 
@@ -78,13 +113,68 @@
             data.email = form.querySelector('[name=email]').value;
             data.phone = form.querySelector('[name=phone]').value;
             data.password = form.querySelector('[name=password]').value;
-            
+
             // 如果 验证不合法
-            if(validate(data)) {
+            if (!validate(data)) {
                 // 则显示错误信息
                 showError();
+            } else {
+                hideError();
             }
+
         });
+    }
+
+    /**
+     * 隐藏 html 元素 
+     */
+    function hideError() {
+        errorContainer.hidden = true;
+    }
+
+    /**
+     * 取消 .error 类名 
+     */
+    function resetErrorInput() {
+        form.querySelectorAll('.error').forEach(it => {
+            it.classList.remove('error');
+        });
+    }
+
+    /**
+     * 显示错误 
+     * 
+     */
+    function showError() {
+        // 出现错误的时候显示 
+        errorContainer.hidden = false;
+        
+        // 每次检查错误前，清空包含错误的容器
+        errorContainer.innerHTML = '';
+
+        // 循环每条错误信息
+        for (let key in error) {
+            // it 就是每条错误信息
+            let it = error[key];
+
+            let klass = form.querySelector(`[name=${key}]`).classList;
+            // 如果 it 有长度，也就是有错误信息
+            if (it.length)
+                // 就添加 error 类名
+                klass.add('error');
+            
+            // 通过 forEach 循环，给每条 it 添加功能
+            it.forEach(str => {
+                // 为找出的错误信息创建元素
+                let errorItem = document.createElement('div');
+
+                // 在元素内填充错误信息
+                errorItem.innerText = str;
+
+                // 在错误信息追加到包含错误的容器中
+                errorContainer.appendChild(errorItem);
+            });
+        }
     }
 
     /**
@@ -94,6 +184,13 @@
      */
     function validate(data) {
         let valid = true;
+
+        error = {
+            username: [],
+            email: [],
+            phone: [],
+            password: [],
+        };
 
         if (!vali.isUsername(data.username)) {
             valid = false;
@@ -114,9 +211,9 @@
             valid = false;
             error.password.push('密码格式有误，密码长度介于 6-64 位之间')
         }
-        
+
         return valid;
-        
+
     }
 
 </script>
