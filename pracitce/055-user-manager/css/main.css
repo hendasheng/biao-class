@@ -10,7 +10,6 @@
     input,
     button {
         border: 1px solid #999;
-        width: 100%;
         padding: .4rem;
         font-size: inherit;
         margin-bottom: .5rem;
@@ -19,6 +18,25 @@
 
     input {
         margin-top: .4rem;
+    }
+    
+    form input,
+    form button {
+        width: 100%;
+    }
+
+    .fill,
+    .delete {
+        background: #eee;
+        border: 1px solid rgb(214, 214, 214);
+        color: #666;
+        border-radius: 4px;
+        font-size: .9rem;
+    }
+    .fill:hover,
+    .delete:hover {
+        background: rgb(216, 216, 216);
+        transition: all .3s;
     }
     
     button {
@@ -63,4 +81,8 @@
     
     [hidden] {
         display: none;
+    }
+
+    .text-right {
+        text-align: right;
     }
