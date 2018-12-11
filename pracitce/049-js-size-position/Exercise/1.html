@@ -1,0 +1,58 @@
+<style>
+    .popup {
+        position: fixed;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .mask {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, .8);
+        z-index: 999;
+    }
+
+    [hidden] {
+        display: none;
+    }
+</style>
+
+<style>
+
+</style>
+
+<button id="trigger">第一个</button>
+<div id="popup">第一个的内容</div>
+
+<script>
+
+    let trigger, popup;
+
+    boot('#trigger', '#popup');
+
+    function boot(triggerSelector, popupSelector) {
+        trigger = document.querySelector(triggerSelector);
+        popup = document.querySelector(popupSelector);
+
+
+
+        popup.hidden = true;
+        popup.classList.add('popup');
+
+        trigger.addEventListener('click', () => {
+            popup.hidden = false;
+            let mask = document.createElement('div');
+
+            mask.classList.add('mask');
+
+            document.body.appendChild(mask);
+        })
+    }; 
+
+
+</script>
