@@ -1,0 +1,37 @@
+<style>
+    div {
+        width: 50px;
+        height: 50px;
+        font-size: 14px;
+        padding: 20px;
+        border: 10px solid;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    #b {
+        overflow: auto;
+    }
+</style>
+
+<div id="a">A</div>
+
+<div id="b">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ab unde perferendis, a inventore ea ratione, alias,
+    cupiditate dignissimos quis ipsam corrupti. Eos temporibus dicta cumque eligendi natus ipsa facilis?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio maiores eaque id nisi quas enim ullam assumenda
+    aspernatur in, unde harum soluta est quia. Cupiditate at excepturi obcaecati alias laboriosam.
+</div>
+
+<script>
+
+    let a = document.getElementById('a');
+    console.log('a - padding 间的距离:' + ' ' + a.clientWidth + 'px');
+    console.log('a - border 间的距离:' + ' ' + a.offsetWidth + 'px');
+    console.log('a - 滚动高度:' + ' ' + a.scrollHeight + 'px');
+
+    console.log('b - padding 间的距离:' + ' ' + b.clientWidth + 'px');
+    console.log('b - border 间的距离:' + ' ' + b.offsetWidth + 'px');
+    console.log('b - 滚动高度:' + ' ' + b.scrollHeight + 'px');
+
+</script>
