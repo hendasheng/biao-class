@@ -1,0 +1,125 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .popup {
+        position: fixed;
+        width: 800px;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+        padding: 1rem;
+        z-index: 1000;
+        /* left: 50%; */
+        /* margin-left: -400px; */
+    }
+
+    .mask {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, .8);
+        z-index: 999;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<style>
+
+</style>
+
+<button id="trigger">第一个</button>
+<div id="popup">
+    <img src="https://dummyimage.com/2000x600/2f80fa/2f80fa" alt="">
+    <div>第一个的内容</div>
+</div>
+
+
+<script>
+
+    let trigger, popup, mask;
+
+    boot('#trigger', '#popup');
+
+    function boot(triggerSelector, popupSelector) {
+        trigger = document.querySelector(triggerSelector);
+        popup = document.querySelector(popupSelector);
+
+        initPopup();
+        initMask();
+
+        bindOpen();
+        bindClose();
+
+
+
+    };
+
+
+
+    /**
+     * 显示 popup
+     */
+    function bindOpen() {
+        trigger.addEventListener('click', () => {
+            setVisibility(true);
+            repositionPopup();
+        })
+    }
+
+    /**
+     * 控制 popup 位置
+     */
+    function repositionPopup() {
+        let popupWidth = popup.offsetWidth;
+        popup.style.left = '50%';
+        popup.style.top = '60px';
+        popup.style.marginLeft = - popupWidth / 2 + 'px';
+    }
+
+    /**
+     * 隐藏 popup
+     */
+    function bindClose() {
+        mask.addEventListener('click', () => {
+            setVisibility();
+        })
+    }
+
+    /**
+     * 可见性
+     */
+    function setVisibility(visible = false) {
+        popup.hidden = mask.hidden = !visible;
+    }
+
+    /**
+     * 初始化 mask
+     */
+    function initMask() {
+        mask = document.createElement('div');
+        mask.classList.add('mask');
+        mask.hidden = true;
+        document.body.appendChild(mask);
+    }
+
+    /**
+    * 初始化 popup
+    */
+    function initPopup() {
+        popup.hidden = true;
+        popup.classList.add('popup');
+    }
+
+
+</script>
