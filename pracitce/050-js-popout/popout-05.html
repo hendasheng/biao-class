@@ -1,90 +1,120 @@
 <style>
-    body {
-        background: rgb(43, 43, 51);
-    }
-
-    button {
-        padding: 10px;
-        font-size: 18px;
-        font-weight: 600;
-        background: rgb(42, 42, 247);
-        color: #fff;
-        border: none;
-        outline: none;
-        border-radius: 3px;
-        position: relative;
-        margin-right: 10px;
-    }
+    #trigger {}
 
     .popout {
-        padding: 4px 10px;
+        position: fixed;
+        width: 400px;
+        top: 30px;
+        left: 50%;
+        margin-left: -200px;
         background: #fff;
-        display: inline-block;
-        font-size: 13px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-        position: absolute;
-        border-radius: 3px;
-        top: 50px;
-        left: 5px;
+        color: #333;
+        border: solid blue;
+        padding: .4rem;
+        z-index: 1000;
+    }
+
+    .mask {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .8);
+        z-index: 999;
     }
 
     [hidden] {
-        display: none !important;
+        display: none;
     }
 </style>
 
-<button data-popout="说说得了，继续 ：）">不会写的时候情绪很重</button>
-<button data-popout="坏习惯">去抽烟</button>
-<button>没有 data-popout</button>
+<button data-html=".popout" id="trigger">第一个</button>
+<div class="popout">11111</div>
 
-
+<button data-html=".popout" id="trigger">第二个</button>
+<div class="popout">22222</div>
 
 <script>
 
-    let triggers = new Set();
-    let lastTrigger;
-    
-    window.addEventListener('mouseover', (e) => {
-        let el = e.target;
-        let content = el.dataset.popout;
-        if (content) {
-            if(lastTrigger)
-                hide(lastTrigger);
-            lastTrigger = el;
-            
-            if (!el.$popout) {
-                let popout = document.createElement('div');
-                popout.classList.add('popout');
-                popout.innerText = content;
-                el.$popout = popout;
-                document.body.appendChild(popout);
-            }
-            el.$popout.hidden = false;
-            rePosition(el);
+    let triggers, popouts, mask;
 
-            triggers.add(el);
-        } else {
-            hideAll(el);
-        }
-    })
+    triggers = document.querySelectorAll('#trigger');
+    popouts = document.querySelectorAll('.popout');
 
-    function rePosition(el) {
-        let popout = el.$popout;
-        let elPosition = el.getBoundingClientRect();
 
-        popout.style.left = elPosition.left + 'px';
-        popout.style.top = elPosition.top + el.offsetHeight + 'px';
+    boot();
+
+    function boot() {
+        initMask();
+        initPopouts();
+        bindOpen();
+        bindClose();
     }
 
-    function hideAll() {
-        triggers.forEach(el => {
-            el.$popout.hidden = true;
-        })
+
+    /**
+     * 初始化所有 popout  
+     */
+    function initPopouts() {
+        popouts.forEach(it => {
+            it.hidden = true;
+        });
     }
 
-    function hide(el) {
-        if (el.$popout)
-            el.$popout.hidden = true;
+    /**
+     * 显示 popout 
+     */
+    function bindOpen() {
+        // 循环所有的 按钮
+        triggers.forEach(it => {
+            // 给每个按钮绑定 点击事件
+            it.addEventListener('click', e => {
+                let el = e.target;
+                // 显示 当前按钮的下一个兄弟节点（popout）和 mask
+                el.nextElementSibling.hidden = mask.hidden = false;
+            });
+        });
     }
+
+    /**
+     * 初始化 mask 
+     */
+    function initMask() {
+        // 创建 div 容器
+        mask = document.createElement('div');
+
+        // 添加 mask 类名
+        mask.classList.add('mask');
+
+        // mask 默认隐藏
+        mask.hidden = true;
+
+        // 将 mask 插入到 dom 中
+        document.body.appendChild(mask);
+    }
+
+    /**
+     * 隐藏 popout
+     */
+    function bindClose() {
+        // 循环所有 popout
+        popouts.forEach(it => {
+
+            // 当 mask 被点击的时候
+            mask.addEventListener('click', e => {
+                // 当前 popout 和 mask 都执行 hidden （隐藏）
+                it.hidden = mask.hidden = true;
+            });
+
+            // 如果按了快捷键"Escape"
+            window.addEventListener('keyup', e => {
+                // 就隐藏Popup和遮罩
+                if (e.code === 'Escape')
+                    it.hidden = mask.hidden = true;
+            });
+        });
+    }
+
 
 </script>
