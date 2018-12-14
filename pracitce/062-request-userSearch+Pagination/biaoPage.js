@@ -11,21 +11,45 @@
         limit: 10,
     };
 
-    let config;
-    
     window.biaoPage = {
-        boot, render,
+        boot, render
     };
 
-    boot();
-
     function boot(settings) {
-        config = { ...DEFAULT_CONFIG, ...settings };
+        let config = { ...DEFAULT_CONFIG, ...settings };
+        let state = { config };
+
+        prepare(state);
         console.log(config);
     }
 
-    function render() {
+    function prepare(state) {
+        let el = document.createElement('div');
+        el.classList.add('biao-page');
+        el.innerHTML = `
+                        <span class="shortcuts">
+                            <button>prev</button>
+                        </span>
+
+                        <span class="page-list">
+                            <button>1</button>
+                            <button>2</button>
+                            <button>3</button>
+                        </span>
+
+                        <span class="shortcuts">
+                            <button>next</button>
+                        </span>
+                        `;
+
+        state.root = document.querySelector(state.config.selector);
+        state.el = el;
+        state.root.appendChild(el)
         
     }
+
+    function render(state) {
+        
+    };
 
 })();
