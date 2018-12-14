@@ -1,6 +1,10 @@
 <script src="rq.js"></script>
 <script>
 
-    rq.get('http');
+    let url = 'https://api.github.com/search/users?q=N1U';
+
+    rq.get(url, data => {
+        console.log(data);
+    });
     
 </script>
