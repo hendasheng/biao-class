@@ -5,6 +5,7 @@
     let input = form.querySelector('[name=keyword')
     let userList = document.getElementById('user-list');
     let limit = 10;
+    let currentPage = 1;
 
     boot();
 
@@ -22,7 +23,7 @@
 
     function search(keyword) {
         let http = new XMLHttpRequest();
-        http.open('get', `https://api.github.com/search/users?q=${keyword}&per_page=${limit}`);
+        http.open('get', `https://api.github.com/search/users?q=${keyword}&page=${currentPage}&per_page=${limit}`);
         http.send();
         http.addEventListener('load', () => {
             let json = http.responseText;
@@ -30,11 +31,14 @@
             biaoPage.boot({
                 selector: '#page-container',
                 limit,
+                currentPage,
                 amount: data.total_count,
                 onChange(page) {
-                    limit = page;
+                    if (page == currentPage)
+                        return;
+                    currentPage= page;
                     search(keyword);
-                }
+                },
             });
             render(data);
         });
