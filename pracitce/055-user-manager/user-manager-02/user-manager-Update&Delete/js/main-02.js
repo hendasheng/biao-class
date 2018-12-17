@@ -55,21 +55,23 @@
             index ?
                 // 如果有索引值，代表更新，则用当前用户信息替换 users[index] 的信息
                 users[index] = row :
+
                 // 如果没有所以只，则代表提交新的数据，直接把数据推入到 users 中
                 users.push(row);
 
-            // 渲染 tBody
-            render();
 
             // 提交后清空 form 中的数据
             elForm.reset();
+
+            // 渲染 tBody
+            render();
         });
     };
 
 
     /**
      * 渲染 tbody
-     */    
+     */
     function render() {
         // 清空前一次渲染的数据，避免重复渲染数据
         elTbody.innerHTML = '';

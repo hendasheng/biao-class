@@ -3,12 +3,12 @@
 
     // 用于存放全部用户数据
     let users = [
-         {
-             username: 'whh',
-             email: 'whh@gmail',
-             balance: '103',
-         },
-         {
+        {
+            username: 'whh',
+            email: 'whh@gmail',
+            balance: '103',
+        },
+        {
             username: 'lsd',
             email: 'lsd@gmail',
             balance: '101',
@@ -59,11 +59,11 @@
                 //如果没有 index，则代表 新增,把每个用户数据存到 user 数组中
                 users.push(row);
 
-            // 执行渲染 tbody 函数
-            render();
-
             // 每次执行 submit 后，重置 form
             elForm.reset();
+            
+            // 执行渲染 tbody 函数
+            render();
         });
     }
 
