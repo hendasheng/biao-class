@@ -79,6 +79,8 @@
         // 循环每一条用户数据， user > 每一条用户数据，index > 每条数据的索引
         users.forEach((user, index) => {
 
+            // 如果用户不存在就跳过
+            // 因为删除用户时会将数据设为 null
             if (!user)
                 return;
                 
