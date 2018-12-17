@@ -52,13 +52,13 @@
             // 定义索引值
             let index = inputs.index.value;
 
-            index ?
+            if (index) {
                 // 如果有索引值，代表更新，则用当前用户信息替换 users[index] 的信息
-                users[index] = row :
-
+                users[index] = row;
+            } else {
                 // 如果没有所以只，则代表提交新的数据，直接把数据推入到 users 中
                 users.push(row);
-
+            }
 
             // 提交后清空 form 中的数据
             elForm.reset();
@@ -79,6 +79,9 @@
         // 循环每一条用户数据， user > 每一条用户数据，index > 每条数据的索引
         users.forEach((user, index) => {
 
+            if (!user)
+                return;
+                
             // 创建包含数据的容器
             let tr = document.createElement('tr');
 
@@ -100,10 +103,11 @@
                 // 如果冒泡源类名是 fill（如果点击的是 ”更新“）
                 if (klass.contains('fill')) {
                     // 将当前用户数据填充到表单中
-                    inputs.index.value = index;
                     inputs.username.value = user.username;
                     inputs.email.value = user.email;
                     inputs.balance.value = user.balance;
+
+                    inputs.index.value = index;
                 }
 
                 // 如果冒泡源类名是 delete（如果点击的是 ”删除“)
