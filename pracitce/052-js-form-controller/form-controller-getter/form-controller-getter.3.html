@@ -34,14 +34,19 @@
 
 <script>
 
-    let data = {};
 
-    let inputs = document.querySelectorAll('[name]');
+    function getData(form) {
+        let data = {};
+
+        let inputs = form.querySelectorAll('[name]');
+
+        inputs.forEach(it => {
+            data[it.name] = it.value;
+        });
+
+        console.log(data);
+    }
+
+    getData(document.querySelector('form'));
     
-    inputs.forEach(it => {
-        data[it.name] = it.value;
-    });
-
-    console.log(data);
-
 </script>
