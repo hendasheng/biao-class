@@ -1,0 +1,100 @@
+<style>
+
+    main {
+        width: 40%;
+        margin: 0 auto;
+    }
+    
+    input[type=text],
+    input[type=number] {
+        width: 100%;
+    }
+    
+    input[type=radio] {
+        width: auto;
+    }
+
+    input {
+        margin-bottom: .4rem;
+    }
+    
+</style>
+
+<main>
+    <form id="a">
+        <input type="text" name="name" placeholder="姓名" value="王花花">
+        <input type="text" name="age" placeholder="年龄" value="24">
+        <input type="text" name="gender" placeholder="性别" value="女">
+        <input type="text" name="height" placeholder="身高" value="174">
+        <button type="submit">提交</button>
+    </form>
+
+    <form id="b">
+        <input type="text" name="name" placeholder="姓名" value="2">
+        <input type="text" name="age" placeholder="年龄" value="2">
+        <input type="text" name="gender" placeholder="性别" value="2">
+        <input type="text" name="height" placeholder="身高" value="2">
+        <button type="submit">提交</button>
+    </form>
+
+    <form id="c">
+        <input type="text" name="name" placeholder="姓名" value="3">
+        <input type="text" name="age" placeholder="年龄" value="3">
+        <input type="text" name="gender" placeholder="性别" value="3">
+        <input type="text" name="height" placeholder="身高" value="3">
+        <button type="submit">提交</button>
+    </form>
+</main>
+
+<script>
+
+    /**
+     * 获取表单数据 
+     * @param {HTMLFormElement} form - 目标表单
+     * @retuen {Object} data - 存放数据的对象
+     */
+    function getData(form) {
+        // 创建储存数据的对象
+        let data = {};
+        // 找到目标表单内所有 input {Array}
+        let inputs = form.querySelectorAll('[name]');
+
+        // 循环 inputs 数组
+        inputs.forEach(it => {
+            // 把相应 input.value 存入到 data 中
+            // 例：data[age] = 24
+            data[it.name] = it.value;
+        });
+        // 返回 data
+        return data;
+    }
+
+
+    /**
+     * 通过纯数据填充表单 
+     * @param {Object} data - 纯数据对象
+     * @param {HTMLFormElement} form - 目标表单
+     */
+    function setData(data, form) {
+        // 循环数据中的每一项
+        for(let key in data) {
+            // 找到对应的输入组件
+            let input = form.querySelector(`[name=${key}]`)
+            // 存值
+            input.value = data[key];
+        };
+    }
+
+    let userA = {
+        name: '李拴蛋',
+        age: 24,
+        gender: '男',
+        height: '174cm',
+    };
+
+    let getInputValue = getData(document.getElementById('a'));
+    console.log(getInputValue);
+
+    setData(userA, document.getElementById('c'));
+    
+</script>
