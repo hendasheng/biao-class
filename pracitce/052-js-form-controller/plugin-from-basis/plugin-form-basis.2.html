@@ -1,0 +1,92 @@
+<style>
+
+    main {
+        width: 40%;
+        margin: 0 auto;
+    }
+    
+    input[type=text],
+    input[type=number] {
+        width: 100%;
+    }
+    
+    input[type=radio] {
+        width: auto;
+    }
+
+    input {
+        margin-bottom: .4rem;
+    }
+    
+</style>
+
+<main>
+    <form id="a">
+        <input type="text" name="name" placeholder="姓名" value="王花花">
+        <input type="text" name="age" placeholder="年龄" value="24">
+        <input type="text" name="gender" placeholder="性别" value="女">
+        <input type="text" name="height" placeholder="身高" value="174">
+        <button type="submit">提交</button>
+    </form>
+
+    <form id="b">
+        <input type="text" name="name" placeholder="姓名" value="2">
+        <input type="text" name="age" placeholder="年龄" value="2">
+        <input type="text" name="gender" placeholder="性别" value="2">
+        <input type="text" name="height" placeholder="身高" value="2">
+        <button type="submit">提交</button>
+    </form>
+
+    <form id="c">
+        <input type="text" name="name" placeholder="姓名" value="3">
+        <input type="text" name="age" placeholder="年龄" value="3">
+        <input type="text" name="gender" placeholder="性别" value="3">
+        <input type="text" name="height" placeholder="身高" value="3">
+        <button type="submit">提交</button>
+    </form>
+</main>
+
+<script>
+
+
+    /**
+     * 解析表单数据（获取）
+     * @param {HTMLFormElement} form - 目标表单
+     * @return {Object}
+     */
+    function getData(form) {
+        let data = {};
+        inputs = form.querySelectorAll('[name]');
+
+        inputs.forEach(it => {
+            data[it.name] = it.value;
+        });
+
+        return data;
+    }
+
+
+    /**
+     * 通过纯数据填充表单
+     * @param {Object} data -  填充的数据
+     * @param {HTMLFormElement} form - 目标表单
+     */
+    function setData(data, form) {
+        for (let key in data) {
+            let input = form.querySelector(`[name=${key}]`);
+            input.value = data[key];
+        }
+    }
+
+    let dataA = {
+        name: 'whh',
+        age: 24,
+        gender: '女',
+        height: '174cm',
+    };
+
+    console.log(getData(document.getElementById('b')));
+
+    setData(dataA, document.getElementById('c'));
+
+</script>
