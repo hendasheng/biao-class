@@ -39,11 +39,9 @@
         height: '174',
     };
 
-    // let form = document.querySelector('form');
 
     for (let key in data) {
         let input = document.querySelector(`[name=${key}]`);
-
         input.value = data[key];
     }
 
