@@ -92,12 +92,63 @@
         let inputs = form.querySelectorAll('[name');
         // 循环所有输入组建，it 就是每一个输入组件
         inputs.forEach(it => {
-            // 以 <input name="age" value="10"> 为例：
-            // it.name => age
-            // value => 10
-            // 最后得出 data{age: 10}
-            data[it.name] = it.value;
+
+            // 检测输入组件值的类型
+            switch (it.type) {
+                // 如果是数字
+                case 'number':
+                    // 就将其转换为数字类型
+                    data[it.name] = parseFloat(it.value);
+                    break;
+
+                // 如果是单选框
+                case 'radio':
+                    // 如果没有勾选，则跳过
+                    if (!it.checked)
+                        return;
+                    // 否则直接存到 data 中
+                    data[it.name] = it.value;
+
+                // 如果是复选框，那么取到的值一定是数组，
+
+                case 'checkbox':
+                    // 如果第一次遇到复选框，现将 data 中对应项初始化为空数组
+                    // 否则后面无法推入选中的值
+                    if (!Array.isArray(data[it.name]))
+                        data[it.name] = [];
+
+                    // 如果复选框被勾选
+                    if (it.checked)
+                        // 直接将选中的值推入数组
+                        // <input type="checkbox" name="orientation" value="a" checked>
+                        // <input type="checkbox" name="orientation" value="b" checked>
+                        // data{orientation: [a, b]}
+                        data[it.name].push(it.value);
+                    break;
+
+                // 如果是以下类型
+                case 'date':
+                case 'time':
+                case 'week':
+                case 'month':
+                case 'datetime':
+                case 'datetime-local':
+                    // 就将其转化为更强大的Date对象
+                    data[it.name] = it.valueAsDate;
+                    break;
+
+                // 默认直接取字符串
+                default:
+                    // 以 <input name="age" value="10"> 为例：
+                    // it.name => age
+                    // value => 10
+                    // 最后得出 data{age: 10}
+                    data[it.name] = it.value;
+                    break;
+            }
         });
+
+        // 返回解析好的纯数据
         return data;
     }
 
