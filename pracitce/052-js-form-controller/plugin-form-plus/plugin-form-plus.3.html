@@ -1,0 +1,213 @@
+<style>
+    input[type=text],
+        input[type=number] {
+            width: 100%;
+        }
+    
+        input[type=radio] {
+            width: auto;
+        }
+
+        main {
+            width: 40%;
+            margin: 0 auto;
+        }
+        
+</style>
+
+<main>
+    <form id="a">
+        <input type="text" name="name" placeholder="姓名" value="王花花">
+        <input type="number" name="age" placeholder="年龄" value="18">
+        <input type="email" name="email" placeholder="邮箱" value="email">
+        <div>
+            性别
+            <label>
+                男<input type="radio" name="gender" value="male">
+            </label>
+            <label>
+                女<input type="radio" name="gender" value="female" checked>
+            </label>
+        </div>
+        <div>
+            取向
+            <label>
+                男<input type="checkbox" name="orientation" value="male" checked>
+            </label>
+            <label>
+                女<input type="checkbox" name="orientation" value="female" checked>
+            </label>
+            <label>
+                双性<input type="checkbox" name="orientation" value="bisexual" checked>
+            </label>
+        </div>
+        <input type="number" name="balance" placeholder="余额" value="10">
+        <input type="number" name="height" placeholder="身高" value="174">
+        <button type="submit">提交</button>
+    </form>
+
+
+    <form id="b">
+        <input type="text" name="name" placeholder="姓名">
+        <input type="number" name="age" placeholder="年龄">
+        <input type="email" name="email" placeholder="邮箱">
+        <input type="date" name="birthday" placeholder="生日">
+        <div>
+            性别
+            <label>
+                男<input type="radio" name="gender" value="male">
+            </label>
+            <label>
+                女<input type="radio" name="gender" value="female">
+            </label>
+        </div>
+        <div>
+            取向
+            <label>
+                男<input type="checkbox" name="orientation" value="male">
+            </label>
+            <label>
+                女<input type="checkbox" name="orientation" value="female">
+            </label>
+            <label>
+                双性<input type="checkbox" name="orientation" value="bisexual">
+            </label>
+        </div>
+        <input type="number" name="balance" placeholder="余额">
+        <button type="submit">提交</button>
+    </form>
+</main>
+
+<script>
+
+    /**
+     * 获取表单数据
+     * @param {HTMLFormElement} form - 目标表单
+     * @return {Object} data - 储存表单数据的对象
+     */
+    function getData(form) {
+        // 保存数据的对象
+        let data = {};
+        // 找到所有输入组件
+        let inputs = form.querySelectorAll('[name]');
+        // 循环所有输入组件
+        inputs.forEach(it => {
+            // 检测输入组件类型
+            switch (it.type) {
+                // 如果是 radio - 单选框
+                case 'radio':
+                    // 如果没有勾选， 则返回
+                    if (!it.checked)
+                        return;
+                    // 否则把勾选的值存入 data
+                    data[it.name] = it.value;
+                    break;
+
+                // 如果是 checkbox - 复选框
+                case 'checkbox':
+                    // 如果第一次遇到复选框，现将 data 中对应项初始化为空数组
+                    // 否则后面无法推入选中的值
+                    if (!Array.isArray(data[it.name]))
+                        data[it.name] = [];
+
+                    // 如果复选框被勾选
+                    if (it.checked)
+                        // 直接将选中的值推入数组
+                        // <input type="checkbox" name="orientation" value="a" checked>
+                        // <input type="checkbox" name="orientation" value="b" checked>
+                        // data{orientation: [a, b]}
+                        data[it.name].push(it.value);
+                    break;
+
+                // 如果是 number 数字
+                case 'number':
+                    // 将其转换为数字类型存入 data
+                    data[it.name] = parseFloat(it.value);
+                    break;
+
+                // 如果是以下类型
+                case 'date':
+                case 'time':
+                case 'week':
+                case 'month':
+                case 'datetime':
+                case 'datetime-local':
+                    // 就将其转化为更强大的Date对象
+                    data[it.name] = it.valueAsDate;
+                    break;
+
+                // 默认情况下，直接取值存入 data
+                default:
+                    data[it.name] = it.value;
+                    break;
+            }
+        });
+        return data;
+
+    }
+
+
+    /**
+     * 通过纯数据填充表单
+     * @param {Object} data - 纯数据对象
+     * @param {HTMLFormElement} form - 目标表单
+     */
+    function setData(data, form) {
+        // 循环数据对象
+        for (let key in data) {
+            // 取到每一项的值，方便后面调用
+            let val = data[key];
+            // 在循环中找到所有相应输入组件
+            let input = form.querySelector(`[name=${key}]`);
+
+            // 判断输入组件类型
+            switch (input.type) {
+                // 如果是 radio - 单选框
+                case 'radio':
+                    // 找到 radio 输入组件
+                    // 如果类型为 radio， name 为当前项的 键（key）, value 为当前项的值
+                    // 以 gender: 'female' 为例， 但 data 循环到 {... gender: 'female' ...}
+                    // radio = <input type="radio" name="gender" valu="female">
+                    let radio = form.querySelector(`[type=radio][name=${key}][value=${val}]`);
+                    // 如果 radio 存在，则勾选
+                    radio && (radio.checked = true);
+                    break;
+
+                // 如果是 checkbox - 复选框
+                case 'checkbox':
+                    // 复选框的值一定有多项，所以是数组，如 orientation: ['male', 'female']
+                    // 循环数组
+                    val.forEach(it => {
+                        // 选中类型为 checkbox，name 为当前键（key）的值，value 为当前项的值
+                        // 以 orientation: ['male', 'female'] 为例
+                        // checkbox = <input type="checkbox" name="orientation" value="male">
+                        //                                                      value="female"
+                        let checkbox = form.querySelector(`[type=checkbox][name=${key}][value=${it}]`);
+                        // 如果有 checkbox，则勾选
+                        checkbox && (checkbox.checked = true);
+                    });
+                    break;
+                
+                // 如果不是以上类型，直接存值
+                default:
+                    input.value = data[key];
+                    break;
+            }
+        }
+    }
+
+    let user = {
+        name: '王花花',
+        age: 18,
+        email: 'wanghuahua@gmail.com',
+        birthday: '1993-01-02',
+        gender: 'female',
+        orientation: ['male', 'female'],
+        balance: 10,
+    };
+
+    console.log(getData(document.getElementById('a')));
+
+    setData(user, document.getElementById('b'));
+
+</script>
