@@ -1,0 +1,83 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align-last: left;
+    }
+
+    tr.active {
+        background: rgb(111, 169, 255);
+    }
+
+    td,
+    th {
+        border: 1px solid #999;
+        padding: .4rem;
+    }
+</style>
+
+<div class="container">
+    <table id="table">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script src="biaoTable.js"></script>
+
+<script>
+    let orderStruct = {
+        oid: '订单号',
+        project: '产品',
+        totalCost: '总费用',
+    }
+
+    let orders = [
+        {
+            oid: '001',
+            project: '防霾口罩',
+            totalCost: '32',
+            a: '1',
+            b: '2',
+        },
+        {
+            oid: '002',
+            project: '手工耳机包',
+            totalCost: '260',
+        }, {
+            oid: '003',
+            project: '站立工作台',
+            totalCost: '1200',
+        },
+    ];
+
+    biaoTable.boot(
+        '#table',
+        orderStruct,
+        orders,
+        {
+            Delete(tr, i) {
+                orders[i] = null;
+                tr.remove();
+                console.log(orders);
+            },
+            A(tr, i) {
+                console.log(tr, i);
+            },
+            B() {
+                console.log('b');
+            },
+        }
+    );
+
+</script>
