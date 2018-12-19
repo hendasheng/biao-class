@@ -4,7 +4,7 @@
     // 将 boot 暴露在全局
     window.biaoTable = { boot };
 
-    let table, thead, tbody, struct, arr;
+    let table, thead, tbody, struct, arr, operations;
 
     /**
      * 启动渲染表格
@@ -13,12 +13,13 @@
      * @param {Object} structure
      * @param {Array} list
      */
-    function boot(tableSelector, structure, list) {
+    function boot(tableSelector, structure, list, ops) {
         table = document.querySelector(tableSelector);
         thead = table.querySelector('thead');
         tbody = table.querySelector('tbody');
         struct = structure;
         arr = list;
+        operations = ops;
 
         render();
     }
@@ -40,6 +41,13 @@
             // <td>订单号</td>
             html += `<td>${struct[key]}</td>`;
         }
+
+        // 如果传入 operations
+        // 渲染 thead 时追加 “操作” 
+        if(operations) {
+            html += `<td>操作</td>`;
+        }
+        
         // 将组装好的字符串填充到 thead 中
         thead.innerHTML = html; 
     }
@@ -61,6 +69,20 @@
                 html += `<td>${it[key]}</td>`;
             }
 
+            // 如果传入 operations
+            if(operations) {
+                // 创建按钮 html 结构
+                let btn = '';
+                // 循环 operations 中的每一项 action（功能）
+                for(let key in operations) {
+                    // 以 Delete(tr, i) {...} 为例
+                    // <button>Delete</button>
+                    btn += `<button>${key}</button>`;
+                }
+                // 把组装好的 btn 插入到表单中
+                html += `<th>${btn}</th>`;
+            }
+            
             // 将组装好的字符串填充到 tr 中
             tr.innerHTML = html;
 
