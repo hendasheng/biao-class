@@ -35,7 +35,10 @@
             html += `<th>${struct[key]}</th>`;
         };
 
+
+        // 如果有 operations
         if (operations)
+            // 就在 html 中添加 “操作” 按钮
             html += '<th>操作</th>';
 
         tHead.innerHTML = html;
@@ -49,19 +52,26 @@
                 html += `<td>${it[key] || '-'}</td>`;
             }
 
+            // 如果有 operations - 自定义功能
             if (operations) {
                 let btnHtml = '';
+                // 则循环 operation 数组，因为数组内有可能是多项功能
                 for (let action in operations) {
+                    // 每个功能都是一个按钮
+                    // 以 Deletr:function() {...} 为例
+                    //                          ↓Delete   ↓ Delete   
                     btnHtml += `<button class="${action}">${action}</button>`;
                 }
+                // 把组装好的按钮填充到 html 中
                 html += `<td>${btnHtml}</td>`;
             }
 
+            // 把组装好的 html 填充到 tr 中
             tr.innerHTML = html;
 
             if (operations) {
                 for (let key in operations) {
-                    tr.querySelector('.'+ key).addEventListener('click', e => {
+                    tr.querySelector('.' + key).addEventListener('click', e => {
                         operations[key](tr, index);
                     });
                 }
