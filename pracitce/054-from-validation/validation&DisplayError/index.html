@@ -1,0 +1,182 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+    
+    input,
+    button {
+        border: 1px solid #999;
+        width: 100%;
+        padding: .4rem;
+        font-size: inherit;
+        margin-bottom: .5rem;
+        outline: none;
+    }
+
+    input {
+        margin-top: .4rem;
+    }
+    
+    button {
+        background: #333;
+        color: #fff;
+        margin-top: .5rem;
+    }
+    
+    main {
+        padding: .5rem;
+        margin: 0 auto;
+        margin-top: 5rem;
+        max-width: 20rem;
+    }
+
+    .error-container {
+        background: rgb(255, 216, 223);
+        color: rgb(204, 64, 87);
+        font-size: 1rem;
+        padding: .3rem;
+    }
+
+    input.error {
+        border: 1px solid rgb(204, 64, 87);
+    }
+
+    [hidden] {
+        display: none;
+    }
+        
+</style>
+
+<main>
+    <form>
+        <h1>注册</h1>
+        <input type="text" name="username" placeholder="username" value="whh">
+        <input type="text" name="email" placeholder="email" value="whh@gmail.com">
+        <input type="number" name="phone" placeholder="phone" value="11122223333">
+        <input type="password" name="password" placeholder="passwore" value="121sadf23">
+        <div class="error-container" hidden></div>
+        <button>提交</button>
+    </form>
+</main>
+
+<script src="js/validateUtils-coreData.js"></script>
+<script>
+
+    let form = document.querySelector('form');
+    let errorContainer = form.querySelector('.error-container');
+    let data = {};
+    let error = {
+        username: [],
+        email: [],
+        phone: [],
+        password: [],
+    };
+
+    boot();
+    function boot() {
+        bindEvents();
+    }
+
+    function bindEvents() {
+        bindSubmit();
+        bindKeyup();
+    }
+
+    function bindSubmit() {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            let inputs = form.querySelectorAll('[name]');
+            inputs.forEach(it => {
+                data[it.name] = it.value;
+            });
+            if (!validatae(data))
+                showError();
+            else
+                hideError();
+        });
+    }
+
+    function bindKeyup() {
+        form.addEventListener('keyup', e => {
+            if (e.key != 'Enter')
+                resetErrorInput();
+        });
+    }
+
+    function resetErrorInput() {
+        form.querySelectorAll('.error').forEach(it => {
+            it.classList.remove('error');
+        });
+    }
+
+    function hideError() {
+        errorContainer.hidden = true;
+        resetErrorInput();
+    }
+
+    function showError() {
+        errorContainer.hidden = false;
+        errorContainer.innerHTML = '';
+
+        for (let key in error) {
+            let it = error[key];
+
+            let klass = form.querySelector(`[name=${key}]`).classList;
+            if (it.length)
+                klass.add('error');
+
+            it.forEach(str => {
+                let errorItem = document.createElement('div');
+                errorItem.innerText = str;
+                errorContainer.appendChild(errorItem);
+            });
+        }
+    }
+
+    function validatae(data) {
+        let vali = true;
+
+        // 每次检查时重置包含错误信息的对象
+        error = {
+            username: [],
+            email: [],
+            phone: [],
+            password: [],
+        };
+
+        if (!valid.isUsername(data.username)) {
+            vali = false;
+            error.username.push('用户名长度应在 6-24 位之间');
+        }
+
+        if (!valid.isEmail(data.email)) {
+            vali = false;
+            error.email.push('邮箱格式有误');
+        }
+
+        if (!valid.isPhone(data.phone)) {
+            vali = false;
+            error.phone.push('电话号格式有误');
+        }
+
+        if (!valid.isPassword(data.password)) {
+            vali = false;
+            error.password.push('密码长度应在 6-60 位之间');
+        }
+
+        return vali;
+
+    }
+
+    let username = 'asassds';
+    let email = 'whh@hhw.com';
+    let phone = '11122223333';
+    let password = 'aafasdfaf';
+
+    // console.log(isUsername(username));
+    // console.log(isEmail(email));
+    // console.log(isPhone(phone));
+    // console.log(isPassword(password));
+
+</script>
