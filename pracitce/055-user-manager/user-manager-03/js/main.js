@@ -2,21 +2,21 @@
     'use strict';
 
     let users = [
-        // {
-        //     username: 'whh',
-        //     email: 'whh@gmail.com',
-        //     balance: '192',
-        // },
-        // {
-        //     username: 'lsd',
-        //     email: 'lsd@gmail.com',
-        //     balance: '123',
-        // },
-        // {
-        //     username: 'zks',
-        //     email: 'zks@gmail.com',
-        //     balance: '134',
-        // },
+        {
+            username: 'whh',
+            email: 'whh@gmail.com',
+            balance: '192',
+        },
+        {
+            username: 'lsd',
+            email: 'lsd@gmail.com',
+            balance: '123',
+        },
+        {
+            username: 'zks',
+            email: 'zks@gmail.com',
+            balance: '134',
+        },
     ];
 
     let elForm = document.getElementById('user-form');
@@ -43,7 +43,7 @@
             // 循环所有输入组件
             inputs.forEach(it => {
                 // 保存到 row
-                row[it.name] = it.value
+                row[it.name] = it.value;
             });
             // 把 row 中的数据推到 users 数组中
             users.push(row);
@@ -65,7 +65,7 @@
             // 因为删除用户时会将数据设为null
             if (!users)
                 return;
-                
+
             // 初始化组装字符串
             let html = '';
             // 创建表格行
@@ -96,7 +96,13 @@
                 let el = e.target;
                 // 如果点击的是 fill - 更新
                 if (el.classList.contains('fill')) {
-
+                    // 循环当前这条用户数据
+                    for(let key in it) {
+                        // 找到相对应的 input - 输入组件
+                        let input = document.querySelector(`[name=${key}]`);
+                        // 在 input 中填入数据
+                        input.value = it[key];
+                    };
                 };
                 // 如果点击的是 delete - 删除
                 if (el.classList.contains('delete')) {
