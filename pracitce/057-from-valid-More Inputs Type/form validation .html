@@ -1,0 +1,57 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    form input,
+    form button {
+        width: 100%;
+    }
+
+    input,
+    button {
+        border: 1px solid #999;
+        padding: .4rem;
+        font-size: inherit;
+        margin-bottom: .5rem;
+        outline: none;
+    }
+
+    input {
+        margin-top: .4rem;
+    }
+
+    button {
+        background: #333;
+        color: #fff;
+    }
+    
+    main {
+        padding: .5rem;
+        margin: 0 auto;
+        margin-top: 5rem;
+        max-width: 40rem;
+    }
+
+    input.error {
+        border: 1px solid #c10;
+    }
+</style>
+
+<main>
+    <form>
+        <h2>更多表单类型验证</h2>
+        <input data-rule="regex:\w+{4,12}" type="text" name="username" placeholder="username">
+        <input data-rule="email" type="text" name="email" placeholder="email">
+        <input data-rule="minLength:11 | maxLength:13 | startsWith:1" type="text" name="phone" placeholder="phone">
+        <input type="text" name="balance" placeholder="balance">
+        <input type="text" name="age" placeholder="age">
+        <input type="text" name="gender" placeholder="gender">
+        <input type="text" name="month" placeholder="month">
+        <input type="text" name="week" placeholder="week">
+        <button type="submit">提交</button>
+    </form>
+</main>
+
+<script src="biaoVali.js"></script>
