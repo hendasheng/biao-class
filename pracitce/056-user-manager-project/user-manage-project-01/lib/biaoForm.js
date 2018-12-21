@@ -12,12 +12,13 @@
             onSubmit(getData());
             form.reset();
         });
-
+    
         return {
             getData, // 相当于 getData: getData
             setData, // 相当于 setData: setData
         };
     };
+
 
     /**
      * 解析表单数据（取值）

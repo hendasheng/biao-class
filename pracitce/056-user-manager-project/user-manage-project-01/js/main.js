@@ -1,6 +1,8 @@
 ; (function () {
     'use strict';
 
+    let bf, bt;
+
     let structure = {
         username: '用户名',
         email: '邮箱',
@@ -20,21 +22,28 @@
         },
     ];
 
-    let actions =  {
-        yo(){
-            console.log('Yo');
+    let actions = {
+        Delete(tr, i) {
+            tr.remove();
+            list[i] = null;
         },
+        Updata(tr, i) {
+
+            bf.setData(list[i]);
+        }
     };
 
+    boot();
 
-    let form = document.querySelector('form');
-    let bf = biaoForm('form');
-    let bt = biaoTable('table', structure, list, actions);
+    function boot() {
+        bf = biaoForm('form', onSubmit);
 
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        let b = bf.getData();
-        console.log(b);
-    })
-    
+        bt = biaoTable('table', structure, list, actions);
+    }
+
+    function onSubmit(data) {
+        list.push(data);
+        bt.render();
+    }
+
 })();
