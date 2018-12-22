@@ -64,6 +64,9 @@
             return guide.indexOf(value) !== -1;
         },
 
+        regex(value, reg) {
+            
+        } 
 
     };
 
