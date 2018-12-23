@@ -215,7 +215,11 @@
    * @param {Array} rules 解析好的规则对象：{numeric:true, min:3, max:12}
    */
   function applyRule(value, rules) {
+    // 循环验证规则
+    // 如 {numeric:true, ...}
+    // key 为 numeric
     for (let key in rules) {
+      // rules[key] 为 true
       let ru = rules[key];
       let a = is[key](value, ru);
       console.log(key);
