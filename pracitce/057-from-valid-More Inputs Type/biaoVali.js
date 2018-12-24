@@ -9,7 +9,9 @@
      * @return {boolean}
      */
     numeric(value) {
-      return !isNaN(parseFloat(value));
+      if (isNaN(parseFloat(value))) {
+        throw '不是合法数字';
+      }
     },
 
     /**
@@ -19,10 +21,10 @@
      * @return {boolean}
      */
     min(value, comparison) {
-      if (!this.numeric(value))
-        return false;
+      this.numeric(value);
 
-      return value >= comparison;
+      if (value < comparison)
+        throw '数字不可小于' + comparison;
     },
 
     /**
@@ -35,7 +37,8 @@
       if (!this.numeric(value))
         return false;
 
-      return value <= comparison;
+      if (value > comparison)
+        throw '数字不可大于' + comparison;
     },
 
     /**
@@ -46,8 +49,8 @@
      * @return {boolean}
      */
     between(value, min, max) {
-      return this.min(value, min) &&
-        this.max(value, max);
+      if (!this.min(value, min) && !this.max(value, max))
+        throw '必须小于' + max + '且大于' + min;
     },
 
     /**
@@ -59,7 +62,8 @@
       if (!this.numeric(value))
         return false;
 
-      return value > 0;
+      if (value <= 0)
+        throw '不可小于0';
     },
 
     /**
@@ -71,7 +75,8 @@
       if (!this.numeric(value))
         return false;
 
-      return value < 0;
+      if (value >= 0)
+        throw '不可大于0';
     },
 
     /**
@@ -81,7 +86,8 @@
      * @return {boolean}
      */
     minLength(value, comparison) {
-      return value.length >= comparison;
+      if (value.length < comparison)
+        throw '长度不可小于' + comparison;
     },
 
     /**
@@ -91,7 +97,8 @@
      * @return {boolean}
      */
     maxLength(value, comparison) {
-      return value.length <= comparison;
+      if (value.length > comparison)
+        throw '长度不可大于' + comparison;
     },
 
     /**
@@ -102,8 +109,8 @@
      * @return {*|boolean}
      */
     lengthBetween(value, min, max) {
-      return this.minLength(value, min) &&
-        this.maxLength(value, max);
+      if (!this.minLength(value, min) || !this.maxLength(value, max))
+        throw '长度需介于' + min + '至' + max + '之间';
     },
 
     /**
@@ -197,7 +204,7 @@
    */
   window.valee = {
     validate(value, strRule) {
-      applyRule(value, parseRule(strRule));
+      return applyRule(value, parseRule(strRule));
     },
     is,
     applyRule,
@@ -209,22 +216,27 @@
   */
   // applyRule('4', parseRule('numeric:true|min:3|max:12'));
 
-  /**
+  /**·
    * 批量验证多条规则（一条数据，多种限制）
    * @param {*} value 验证的值：123
    * @param {Array} rules 解析好的规则对象：{numeric:true, min:3, max:12}
    */
   function applyRule(value, rules) {
+    let errors = [];
     // 循环验证规则
     // 如 {numeric:true, ...}
     // key 为 numeric
     for (let key in rules) {
       // rules[key] 为 true
       let ru = rules[key];
-      let a = is[key](value, ru);
-      console.log(key);
-      console.log(a);
+
+      try {
+        is[key](value, ru);
+      } catch (e) {
+        errors.push(e);
+      }
     }
+    return errors;
   }
 
   /**
@@ -258,14 +270,19 @@
       let numRules = ['numeric', 'min', 'max', 'between', 'minLength', 'maxLength'];
 
       // 如果没有 值，则说明是 xxx:true 的简写，如 numeric:true
-      if (!comparison)
+      if (!comparison) {
         comparison = true;
+      }
       // 否则
       else {
         // 如果是数字类型的规则就将其转换为数字类型
         // 否则会给下游造成隐患
-        if (numRules.indexOf(key))
+        if (numRules.indexOf(key) !== -1)
           comparison = parseFloat(comparison);
+
+        if (key == 'in') {
+          comparison = comparison.split(',');
+        }
       }
       // 将当前的规则存到规则对象里
       rule[key] = comparison;
