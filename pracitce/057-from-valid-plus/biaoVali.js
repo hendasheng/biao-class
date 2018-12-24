@@ -9,7 +9,7 @@
      * @return {boolean}
      */
     numeric(value) {
-      if (isNaN(parseFloat(value))) {
+      if (!/^\d+$/.test(value.toString())) {
         throw '不是合法数字';
       }
     },
@@ -21,8 +21,6 @@
      * @return {boolean}
      */
     min(value, comparison) {
-      this.numeric(value);
-
       if (value < comparison)
         throw '数字不可小于' + comparison;
     },
@@ -34,9 +32,6 @@
      * @return {boolean}
      */
     max(value, comparison) {
-      if (!this.numeric(value))
-        return false;
-
       if (value > comparison)
         throw '数字不可大于' + comparison;
     },
@@ -120,7 +115,8 @@
      * @return {*|boolean}
      */
     startsWith(value, comparison) {
-      return value.startsWith(comparison);
+      if (!value.startsWith(comparison))
+        throw '必须以"' + comparison + '"开头';
     },
 
     /**
@@ -130,11 +126,13 @@
      * @return {*|boolean}
      */
     endsWith(value, comparison) {
-      return value.endsWith(comparison);
+      if (!value.endsWith(comparison))
+        throw '必须以"' + comparison + '"结束';
     },
 
     includes(value, comparison) {
-      return value.includes(comparison);
+      if (!value.endsWith(comparison))
+        throw '必须包含"' + comparison + '"';
     },
 
     /**
@@ -143,7 +141,8 @@
      * @param {Array} comparison
      */
     in(value, comparison) {
-      return comparison.indexOf(value) !== -1;
+      if (comparison.indexOf(value) === -1)
+        throw '必须在' + comparison + '之中';
     },
 
     /**
@@ -153,7 +152,8 @@
      */
     email(value) {
       let re = /^\w+@\w+\.\w+$/;
-      return re.test(value);
+      if (!re.test(value))
+        throw '不合法的邮箱';
     },
 
     /**
@@ -163,7 +163,8 @@
      */
     username(value) {
       let re = /^[a-zA-Z0-9]\w+$/;
-      return re.test(value);
+      if (!re.test(value))
+        throw '不合法的用户名';
     },
 
     /**
@@ -181,7 +182,8 @@
           break;
       }
 
-      return re.test(value);
+      if (!re.test(value))
+        throw '不合法的手机号';
     },
 
     /**
@@ -194,7 +196,8 @@
       if (typeof re == 'string')
         re = new RegExp(re);
 
-      return re.test(value);
+      if (!re.test(value))
+        throw '不合法的格式';
     },
   };
 
@@ -203,12 +206,158 @@
    * 暴露接口
    */
   window.valee = {
-    validate(value, strRule) {
-      return applyRule(value, parseRule(strRule));
-    },
+    validate,
     is,
     applyRule,
+    boot
   }
+
+  function validate(value, strRule) {
+    return applyRule(value, parseRule(strRule));
+  }
+
+  function boot(selector) {
+    let el = document.querySelector(selector);
+    console.log(el.nodeName);
+    if (el.nodeName == 'FORM') {
+      bindSubmit(el);
+      bindFormKeyup(el);
+    } else {
+      bindInputKeyup(el);
+    }
+  }
+
+  function bindInputKeyup(input) {
+    console.log(input);
+  }
+
+  /**
+  * 验证单个input
+  * @param input
+  * @return {Array}
+  */
+  function validateInput(input) {
+    // 获取data-rule中的规则
+    let rule = input.dataset.rule;
+    // 获取输入的值
+    let value = input.value;
+    // 验证并拿到错误信息
+    let errors = validate(value, rule);
+
+    return errors;
+  }
+
+  /**
+   * 验证表单
+   * @param {HTMLFormElement} form
+   */
+  function validateForm(form) {
+    // 找到提交按钮，因为如果表单数据不合法就需要禁用提交按钮
+    let submit = form.querySelector('[type=submit]');
+    // 选中所有需要验证的input
+    let inputs = form.querySelectorAll('[data-rule]');
+    // 循环每个input
+    inputs.forEach(input => {
+      // 验证并拿到错误
+      let errors = validateInput(input);
+
+      // 如果验证通过，就解禁提交按钮
+      if (!errors.length) {
+        submit.disabled = false;
+      } else { // 否则
+        // 禁用提交按钮
+        submit.disabled = true;
+      }
+
+      // 显示错误信息
+      showInputError(input, errors);
+    });
+  }
+
+
+  function bindFormKeyup(form) {
+    form.addEventListener('keyup', e => {
+      validateForm(form);
+    });
+  };
+
+  function bindSubmit(form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let inputs = form.querySelectorAll('[data-rule]');
+      inputs.forEach(input => {
+        let rule = input.dataset.rule;
+        let value = input.value;
+        let errors = validate(value, rule);
+        let errorContainerExist = input.nextElementSibling.classList.contains('error');
+
+        if (!errors.length) {
+          if (input.$errorContainer)
+            input.$errorContainer.hidden = true;
+          return;
+        }
+
+        if (!errorContainerExist) {
+          let ec = input.$errorContainer = document.createElement('div');
+          ec.classList.add('error');
+          input.insertAdjacentElement('afterend', ec);
+        }
+
+        let html = '';
+
+        errors.forEach(err => {
+          html += `<div>${err}</div>`;
+        })
+
+        input.$errorContainer = input.nextElementSibling;
+
+        input.$errorContainer.innerHTML = html;
+        input.$errorContainer.hidden = false;
+      });
+    });
+  }
+
+
+  /**
+   * 显示单个input的错误信息
+   * @param {HTMLElement} input 输入组件
+   * @param {Array} errors 错误信息
+   */
+  function showInputError(input, errors) {
+    // 如果通过了验证（没有错误信息）
+    if (!errors.length) {
+      // 就隐藏错误信息（可能是前一次验证生成的）
+      if (input.$errorContainer)
+        input.$errorContainer.hidden = true;
+      return;
+    }
+
+    // 如果没有错误信息容器
+    // <input>
+    //    <div class="error"></div>  <== 错误信息容器
+    if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error')) {
+      // 就造一个 ==> <div>
+      // 然后将其缓存在input元素中，方便下次验证时使用
+      let ec = input.$errorContainer = document.createElement('div');
+      // 添加error类 ==> <div class="error">
+      ec.classList.add('error');
+      // 将其添加在input后面（弟弟的位置）
+      input.insertAdjacentElement('afterend', ec);
+    }
+
+    // 循环errors，生成错误信息
+    let html = '';
+    errors.forEach(err => {
+      html += `<div>${err}</div>`;
+    });
+
+    // 替换以前的错误信息
+    input.$errorContainer.innerHTML = html;
+    // 显示错误信息
+    input.$errorContainer.hidden = false;
+  }
+
+
 
   /** 
    * 使用方式
@@ -291,7 +440,6 @@
     // 返回解析好的规则对象
     return rule;
   }
-
 
 
 
