@@ -1,2 +1,2 @@
-let v = valee.validate('1241231232', 'regex:^OID-\\d+$');
+let v = valee.validate('a-b', 'username|min:4');
 console.log(v);
