@@ -108,7 +108,85 @@
     },
   };
 
-  
+  window.valee = {
+    validate(value, strRule) {
+      applyRule(value, strRule);
+    },
+    is,
+    applyRule,
+  }
+
+
+  /**
+   * 应用规则
+   *
+   * @param {Sring} value
+   * @param {Object} rules
+   */
+  function applyRule(value, rules) {
+    // 循环规则对象
+    for (let key in rules) {
+      // 如 {..., max: 12, ...}
+      // 此时 key 为 'max', rules[key] 为 '12'
+      let ru = rules[key];
+      // 此时 is[key], 就相当于 is.max();
+      let a = is[key](value, ru);
+      console.log(ru + ':' + typeof (ru));
+      console.log(a);
+    }
+  }
+
+  /**
+   * 解析规则
+   *
+   * @param {String} str - 'numeric|min:1|max:12'
+   * @returns {Object} rule - 储存已解析规则的对象
+   */
+  function parseRule(str) {
+    // 拆分 str
+    // 得到 ["numeric", "min:1", "max:12"]
+    let ruleArr = str.split('|');
+
+    // 储存拼装好的规则
+    let rule = {};
+
+    // 循环每一条规则
+    ruleArr.forEach(it => {
+      // 拆分每一条规则，得到：
+      // ["numeric"]
+      // ["min", "1"]
+      // ["max", "12"]
+      let itArr = it.split(':');
+
+      // 如 ["max", "12"]
+      // 此时 key(键) 为 'max'
+      let key = itArr[0];
+      // guide(值) 为 '12'
+      let guide = itArr[1];
+
+      // 这些规则的值应该是数字类型
+      let numRules = ['numeric', 'min', 'max', 'between', 'minLength', 'maxLength'];
+
+      // 如果没有值，如 numeric
+      if (!guide) {
+        // 则直接通过，因为外部有专门检测如 numeric 、positive ... 的函数
+        guide = true;
+      } else { // 否则
+        // 如果是数字类型的规则，就将其转换成数字类型
+        if (numRules.indexOf(key))
+          guide = parseFloat(guide);
+      }
+
+      // 讲解析好的规则存到 rule 中
+      // 如 ["max", "12"]
+      // rele {..., max: 12, ...}
+      rule[key] = guide;
+    });
+
+    // 返回解析好的规则
+    // rule = {numeric: true, min: "1", max: "12"};
+    return rule;
+  }
 
 
 
