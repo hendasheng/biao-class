@@ -110,7 +110,7 @@
 
   window.valee = {
     validate(value, strRule) {
-      applyRule(value, strRule);
+      return applyRule(value, parseRule(strRule));
     },
     is,
     applyRule,
@@ -124,16 +124,22 @@
    * @param {Object} rules
    */
   function applyRule(value, rules) {
+    // 默认为合法
+    let valid = true;
     // 循环规则对象
     for (let key in rules) {
       // 如 {..., max: 12, ...}
       // 此时 key 为 'max', rules[key] 为 '12'
       let ru = rules[key];
       // 此时 is[key], 就相当于 is.max();
-      let a = is[key](value, ru);
-      console.log(ru + ':' + typeof (ru));
-      console.log(a);
+      let result = is[key](value, ru);
+
+      // 如果存在不合法的结果，验证结果为 false
+      if (!result)
+        valid = false;
     }
+
+    return valid;
   }
 
   /**
