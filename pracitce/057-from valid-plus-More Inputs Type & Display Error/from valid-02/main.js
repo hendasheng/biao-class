@@ -1,2 +1,2 @@
-let v = valee.validate(2, 'min:1|max:12');
+let v = valee.validate('1241231232', 'regex:^OID-\\d+$');
 console.log(v);

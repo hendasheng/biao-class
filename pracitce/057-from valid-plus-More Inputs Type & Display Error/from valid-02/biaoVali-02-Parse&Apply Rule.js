@@ -101,13 +101,14 @@
     },
 
     // 正则匹配
-    regex(value, reg) {
-      if (typeof reg == 'string')  // 如果 teg 是字符串
+    regex(value, re) {
+      if (typeof re == 'string')  // 如果 teg 是字符串
         re = new RegExp(re) // 则转换为正则表达式
       return re.test(value);
     },
   };
 
+  // 暴露接口
   window.valee = {
     validate(value, strRule) {
       return applyRule(value, parseRule(strRule));
@@ -121,7 +122,7 @@
    * 应用规则
    *
    * @param {Sring} value
-   * @param {Object} rules
+   * @param {Object} rules - 解析好的规则对象 {numeric: true, min: 1, max:12}
    */
   function applyRule(value, rules) {
     // 默认为合法
@@ -138,7 +139,6 @@
       if (!result)
         valid = false;
     }
-
     return valid;
   }
 
@@ -179,14 +179,17 @@
         guide = true;
       } else { // 否则
         // 如果是数字类型的规则，就将其转换成数字类型
-        if (numRules.indexOf(key))
+        if (numRules.indexOf(key) !== -1)
           guide = parseFloat(guide);
+        if (key == 'in')
+          guide = guide.split(',');
       }
 
       // 讲解析好的规则存到 rule 中
       // 如 ["max", "12"]
       // rele {..., max: 12, ...}
       rule[key] = guide;
+      console.log(rule);
     });
 
     // 返回解析好的规则
