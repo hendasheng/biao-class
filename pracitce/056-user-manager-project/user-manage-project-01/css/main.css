@@ -85,3 +85,9 @@
     .text-right {
         text-align: right;
     }
+
+    [disabled] {
+        opacity: .6;
+        /* cursor: not-allowed; */
+        transition: all .5s;
+    }

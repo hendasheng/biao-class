@@ -11,10 +11,13 @@
 
 <body>
     <main>
+        <nav>
+            <input id="search" type="search" data-rule="numeric|min:3|max:6" placeholder="独苗">
+        </nav>
         <form id="user-form">
             <h2>添加用户</h2>
-            <input type="bumber" name="index">
-            <input data-rule="username" type="text" name="username" placeholder="用户名">
+            <input type="bumber" name="index" hidden>
+            <input data-rule="username|minLength:4|maxLength:12" type="text" name="username" placeholder="用户名">
             <input data-rule="email" type="text" name="email" placeholder="邮箱">
             <input data-rule="numeric" type="number" name="balance" placeholder="余额">
             <button type="submit">提交</button>
@@ -37,7 +40,7 @@
     <script src="lib/biaoTable.js"></script>
     <script src="../../../project/005-biaoValid/biaoVali.js"></script>
     <script src="js/main.js"></script>
-    
+
 </body>
 
 </html>
