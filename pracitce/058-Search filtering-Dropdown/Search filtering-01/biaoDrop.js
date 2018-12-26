@@ -8,7 +8,7 @@
     let defaultConfig = {
         display: 'name',
     };
-    
+
     /**
      * 启动
      *
@@ -19,13 +19,18 @@
     function boot(selector, list, config) {
         // 找到 Drop 的容器
         let container = document.querySelector(selector);
+        // 缓存 list
         container.$list = list;
         config = Object.assign({}, defaultConfig, config);
-          
+
         // 准备
         prepare(container);
+        // 默认隐藏 list
         setListVisible(container, false);
+        // 渲染页面
         render(container, list, config);
+
+        // 绑定事件们
         bindFocus(container, config);
         bindClick(container);
         bindSelect(container, config);
@@ -98,29 +103,46 @@
             // 根据被点击的 list 获取相对应数据
             let data = e.target.$data;
 
+            // 搜索框的内容填入相应的 list
             input.value = data[config.display];
 
+            // 隐藏 list 列表
             setListVisible(container, false);
 
+            // 如果有 onSelect 则执行
             onSelect && onSelect(data);
         });
     }
 
     /**
-     * 当 搜索 时
-     *
-     * @param {*} container
-     * @param {*} config
+     * 绑定 搜索 事件 - 在 ipnut 中键盘抬起
+     * @param {HTMLElement} container
+     * @param {Object} config
      */
     function bindSearch(container, config) {
+        // 缓存
         let input = container._input;
         let list = container.$list;
+
+        // 当用户开始输入时
         input.addEventListener('keyup', e => {
+            // 显示 list 列表
             setListVisible(container, true);
+
+            // 取到用户输入的关键词
             let keyword = input.value;
+
+            // 过滤数据
+            // .filter() 用法
+            //  ↓ 原始数组                       ↓ 过滤条件      ↓ 符合条件的新数组
+            // [1, 2, 3].filter(num => {return num > 1}) ==> [2, 3]
             let filtered = list.filter(it => {
+                // 如果 config.display 为 'name',关键词是 'sd':
+                // it.name.includes('lsd')
                 return it[config.display].includes(keyword);
             });
+
+            // 重新渲染过滤后的数据
             render(container, filtered, config);
         });
     }
@@ -131,18 +153,18 @@
      */
     function bindFocus(container) {
         container._input.addEventListener('focus', e => {
+            // 显示列表
             setListVisible(container, true);
         });
     }
 
     /**
      * 当插件被点击时
-     *
      * @param {HTMLElement} container
      */
     function bindClick(container) {
         container.addEventListener('click', e => {
-            // 如果点的是插件内部就算了
+            // 如果点的是插件内部则返回
             if (e.target.closest('.dropdown'))
                 return;
 
@@ -151,7 +173,11 @@
         });
     }
 
-
+    /**
+     * 设置 显示/隐藏
+     * @param {HTMLElement} container
+     * @param {boolean} [visible=true] - 是否可见
+     */
     function setListVisible(container, visible = true) {
         container._list.hidden = !visible;
     }
