@@ -1,0 +1,68 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    form input,
+    form button {
+        width: 100%;
+    }
+
+    input,
+    button {
+        border: 1px solid #999;
+        padding: .4rem;
+        font-size: inherit;
+        margin-bottom: .5rem;
+        outline: none;
+    }
+
+    input {
+        margin-top: .4rem;
+    }
+
+    button {
+        background: #333;
+        color: #fff;
+    }
+    
+    main {
+        padding: .5rem;
+        margin: 0 auto;
+        margin-top: 5rem;
+        max-width: 40rem;
+    }
+
+    .error {
+        color:  #c10;
+    }
+
+    [hidden] {
+        display: none;
+    }
+    
+</style>
+
+<main>
+
+    <nav>
+        <input id="search" type="search" data-rule="min:3|max:6">
+    </nav>
+
+    <form>
+        <h2>更多表单类型验证</h2>
+        <input data-rule="numeric|min:1|max:12" type="text" name="month" placeholder="month">
+        <input data-rule="numeric|min:1|max:7" type="text" name="week" placeholder="week">
+        <input data-rule="numeric|positive|min:1" type="text" name="age" placeholder="age">
+        <input data-rule="phone:zh|minLength:11|maxLength:13|startsWith:1" type="text" name="phone" placeholder="phone">
+        <input data-rule="in:male,female" type="text" name="gender" placeholder="gender">
+        <input data-rule="regex:^[a-zA-Z]{4,12}$" type="text" name="username" placeholder="username">
+        <input data-rule="email" type="text" name="email" placeholder="email">
+        <input data-rule="numeric" type="text" name="balance" placeholder="balance">
+        <button type="submit">提交</button>
+    </form>
+</main>
+
+<script src="biaoVali.js"></script>
+<script src="main.js"></script>
