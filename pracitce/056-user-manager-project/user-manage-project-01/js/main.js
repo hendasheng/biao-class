@@ -28,6 +28,7 @@
     boot();
 
     function boot() {
+        valee.boot('form');
         perpareForm();
         perpareTable();
     }
