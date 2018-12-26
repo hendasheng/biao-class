@@ -86,7 +86,14 @@
             let data = e.target.$data;
 
             onSelect && onSelect(data);
+            show(container, data);
         });
     }
+
+    function show(container, data) {
+        let search = container.querySelector('[type=search]');
+        search.value = data.name;
+    }
+
 
 })();
