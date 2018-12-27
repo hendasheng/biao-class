@@ -1,0 +1,62 @@
+<h1>Niu</h1>
+
+<script src="http://unpkg.com/jquery"></script>
+<script src="https://unpkg.com/axios@0.18.0/dist/axios.min.js"></script>
+<script>
+
+    /**
+     * 使用 XMLHttpRequest - Js 原生方法
+     */
+    // let http = new XMLHttpRequest();
+    // http.open('get', 'https://api.github.com/search/users?q=niu&page=2') 
+    // http.send();
+
+    // // 当请求成功时
+    // http.addEventListener('load', () => {
+    //     // 解析数据（JSON 字符串 ==> js 原生数据）
+    //     let data = JSON.parse(http.responseText);
+    //     console.log(data);
+    // })
+
+
+
+    /**
+     * 使用 ES6 fetch
+     */
+    // 当请求返回                                               ↓ 然后调用其中的函数
+    // fetch('https://api.github.com/search/users?q=niu&page=2').then(response => {
+    //     // 返回 接到的数据并解析
+    //     // rssponse 为返回的数据
+    //     // data 为解析好的数据
+    //     return response.json().then(data => {
+    //         console.log(data);
+    //     });
+    // });
+
+
+    /**
+     * jQuery get
+     */
+    // $.get('https://api.github.com/search/users?q=niu&page=2').then(data => {
+    //     console.log(data);
+    // })
+
+    /**
+     * jQuery ajax
+     */
+    // $.ajax({
+    //     method: 'get',
+    //     url: 'https://api.github.com/search/users?q=niu&page=2'
+    // }).then(data => {
+    //     console.log(data);
+    // })
+
+    /**
+     * Axios 
+     */
+    axios.get('https://api.github.com/search/users?q=niu&page=2').then(data => {
+        console.log(data);
+    });
+
+    
+</script>
