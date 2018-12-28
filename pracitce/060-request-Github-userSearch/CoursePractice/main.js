@@ -41,10 +41,10 @@
                             </div>
                             <div class="detail">
                                 <div class="username">
-                                    <a href='${it.url}'>
+                                    <a href='${it.html_url}'>
                                     ${it.login}</div>
                                 <div class="url">
-                                    <a href='${it.url}'>
+                                    <a href='${it.html_url}'>
                                     ${it.url}
                                     </div>
                             </div>
@@ -52,7 +52,6 @@
             userList.appendChild(item);
         });
     }
-
 
 
 })();
