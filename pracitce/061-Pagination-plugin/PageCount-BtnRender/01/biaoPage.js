@@ -78,7 +78,7 @@
      */
     function render(state) {
         // console.log(state);
-        // ↓ 页面数              ↓ 向上取整         ↓ 数据总数             ↓ 每页显示数量
+        // ↓ 页面数         ↓ 共多少页         ↓ 向上取整         ↓ 数据总数             ↓ 每页显示数量
         let amount = state.pageCount = Math.ceil(state.config.amount / state.config.limit);
 
         // 每次渲染时先清空 page-list
