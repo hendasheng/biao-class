@@ -90,7 +90,8 @@
             button.innerText = i;
             // 把 button 插入到 page-list HTML 结构中
             state.pageList.appendChild(button);
-        }
+        };
+        
     }
 
 })();
