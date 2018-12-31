@@ -139,7 +139,7 @@
 
 
     /**
-     * 获取 当前页
+     * 前往 当前页
      * 给相应按钮添加 active 类名
      * @param {Object} state
      * @param {HTMLElemnt} page
