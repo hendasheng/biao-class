@@ -70,6 +70,8 @@
         state.root.appendChild(el);
     }
 
+    
+
     /**
      * 渲染
      * @param {Object} state
@@ -91,7 +93,7 @@
             // 把 button 插入到 page-list HTML 结构中
             state.pageList.appendChild(button);
         };
-        
+
     }
 
 })();
