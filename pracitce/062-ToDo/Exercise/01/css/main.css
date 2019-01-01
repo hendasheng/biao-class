@@ -1,0 +1,46 @@
+:root {
+    background: #eee;
+}
+
+input,
+button,
+.todo-item {
+    border-radius: .2rem;
+}
+
+#todo-form,
+.todo-item {
+    margin-bottom: 1.4rem;    
+}
+
+.todo-item {
+    font-size: 0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    margin-bottom: .6rem;
+}
+
+.todo-item > *  {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1rem .6rem;
+    font-size: 1rem;
+}
+
+.todo-item > .checkbox {
+    width: 5%;
+}
+
+.todo-item > .title {
+    width: 65%;
+}
+
+.todo-item > .operations {
+    width: 30%;
+    text-align: right;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 4rem;
+}

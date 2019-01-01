@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+body {
+    margin: 0;
+}
+
+input,
+button,
+textarea {
+    color: inherit;
+}
+
+form input,
+form button {
+    width: 100%;
+    outline: 0;
+    padding: .7rem;
+    border: 1px solid rgb(211, 211, 211);
+}
+
+form {
+    margin: 0;
+}
+
+form input:focus,
+form button:focus {
+    border-color: #666;
+    transition: all .4s;
+}
+
+.container,
+.container-sm {
+    margin: 0 auto;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.container {
+    max-width: 50rem;
+}
+
+.container-sm {
+    max-width: 35rem;
+}
+
