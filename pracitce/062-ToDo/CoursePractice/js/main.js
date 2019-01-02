@@ -16,9 +16,13 @@
         bindEvents();
     }
 
+    /**
+     * 绑定提交事件
+     */
     function bindEvents() {
         form.addEventListener('submit', e => {
             e.preventDefault();
+            // 输入框中输入的内容
             let title = input.value;
 
             if (currentId)
@@ -29,7 +33,11 @@
         });
     }
 
-
+    /**
+     * 创建一条 list
+     *
+     * @param {} row
+     */
     function create(row) {
         api('todo/create', row, r => {
             if (r.success) {

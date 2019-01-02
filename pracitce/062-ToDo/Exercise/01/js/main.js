@@ -68,10 +68,12 @@
     }
 
     /**
-     *
+     * 渲染 todo-list
      */
     function render() {
+        // 清空 todo-list
         list.innerHTML = '';
+        // 
         $list.forEach(it => {
             let item = document.createElement('div');
             item.classList.add('todo-item');
