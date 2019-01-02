@@ -36,7 +36,7 @@
     /**
      * 创建一条 list
      *
-     * @param {} row
+     * @param {Object} row
      */
     function create(row) {
         api('todo/create', row, r => {
@@ -47,6 +47,11 @@
         });
     }
 
+    /**
+     * 更新 
+     * @param {Number} id
+     * @param {Object} row
+     */
     function update(id, row) {
         api('todo/update', { id, ...row }, r => {
             if (r.success) {
@@ -67,18 +72,31 @@
         });
     }
 
+    /**
+     * 删除一条 list
+     * @param {Number} id - 删除哪一条
+     */
     function remove(id) {
         api('todo/delete', { id }, r => {
             read();
         });
     }
 
+    /**
+     * 设置是否完成 - checked
+     * @param {Number} id
+     * @param {Boolean} completed
+     */
     function setCompleted(id, completed) {
         api('todo/update', { id, completed }, r => {
             read();
         });
     }
 
+    /**
+     * 渲染清单列表 - todo-list
+     *
+     */
     function render() {
         list.innerHTML = '';
         $list.forEach(it => {
@@ -104,11 +122,14 @@
                 setCompleted(it.id, checkbox.checked);
             });
 
+            // 绑定代理
             operations.addEventListener('click', e => {
                 let target = e.target;
+                // 如果点击的是 delete
                 if (target.classList.contains('delete'))
                     remove(it.id);
 
+                // 如果点击的是 update
                 if (target.classList.contains('fill')) {
                     currentId = it.id;
                     input.value = it.title;
