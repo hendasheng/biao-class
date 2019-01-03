@@ -1,5 +1,6 @@
 // 01 - 获取数据 read()
 //      缓存取得的数据到全文变量，方便以后调用
+//      获取数据后渲染 render()
 
 // 02 - 绑定提交事件 bindEvents()
 //      获取输入框中输入的内容 listTitle
@@ -34,6 +35,7 @@
     function read() {
         api('todo/read', null, data => {
             $list = data.data;
+            // 取得数据后渲染
             render();
         });
     }
