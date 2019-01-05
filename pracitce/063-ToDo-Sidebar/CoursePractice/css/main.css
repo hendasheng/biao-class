@@ -46,28 +46,28 @@ button,
     margin-top: 4rem;
 }
 
-.operations .fill,
-.operations .delete {
+.todo-item .operations > *,
+#cat-list .operations > * {
     background: none;
     border: none;
     cursor: hand;
     transition: all .4s;
 }
 
-.operations .fill {
+.todo-item .operations .fill {
     color: rgb(42, 42, 255);
 }
 
-.operations .delete {
+.todo-item .operations .delete {
     color: rgb(192, 192, 192);
 }
 
-.operations .fill:hover {
+.todo-item .operations .fill:hover {
     color: rgb(19, 19, 185);
 
 }
 
-.operations .delete:hover {
+.todo-item .operations .delete:hover {
     color: #999;
 }
 
@@ -83,7 +83,7 @@ button,
 }
 
 .sidebar-section .item:hover {
-    background: rgb(223, 223, 223);
+    /* background: rgb(223, 223, 223); */
     color: #333;
 }
 
@@ -93,12 +93,12 @@ button,
 }
 
 .sidebar-section .item {
-    padding: .4rem;
+    padding: .6rem .4rem;
 }
 
 .sidebar-section button {
     width: 100%;
-    padding: .4rem 0;
+    padding: .2rem 0;
 }
 
 
@@ -106,4 +106,35 @@ button,
 #cat-form .btn-group > * {
     width: 50%;
     float: left;
+}
+
+#cat-list .item {
+    font-size: 0;
+}
+
+#cat-list .item > * {
+    display: inline-block;
+}
+
+#cat-list .item .name {
+    font-size: 1rem;
+    width: 60%;
+}
+
+#cat-list .item .operations {
+    width: 40%;
+    display: none;
+}
+#cat-list > .item:hover .operations {
+    display: inline-block;
+}
+
+#cat-list .item .operations > * {
+    width: 50%;
+    color: #999;
+    padding: 0;
+}
+
+#cat-list .item button:hover {
+    color: #666;
 }
