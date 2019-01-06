@@ -18,6 +18,13 @@
         biaoAlert('Yo', {
             desc: '描述这个...',
             type: 'info',
+            onOpen() {
+                console.log('打开了');
+            },
+            onClose() {
+                console.log('关闭');
+            },
+            clickToClose: false, // 不能被点击关闭
         });
 
         biaoAlert('很重要，点击才能关闭', {
@@ -30,8 +37,10 @@
             desc: '描述这个...',
             type: 'warn',
             onClick(config) {
-                console.log(config.desc);
-            }
+                document.body.append(config.el);
+                config.el.hidden = false;
+            },
+            timeout: false,
         });
 
         biaoAlert('成功', {
