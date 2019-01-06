@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="biaoAlert.css">
+
+<body>
+    <!-- <div class="biao-alert">
+        <div class="inner">
+            <div class="title">Yo</div>
+            <div class="desc">
+                Lorem ipsum dolor sit ...
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <script src="biaoAlert.js"></script>
+    <script>
+
+        biaoAlert('Yo', {
+            desc: '描述这个...',
+            type: 'info',
+        });
+
+        biaoAlert('很重要，点击才能关闭', {
+            desc: '描述这个...',
+            type: 'danger',
+            timeout: false,
+        });
+
+        biaoAlert('警告', {
+            desc: '描述这个...',
+            type: 'warn',
+            onClick(config) {
+                console.log(config.desc);
+            }
+        });
+
+        biaoAlert('成功', {
+            desc: '描述这个...',
+            type: 'success',
+        });
+
+
+
+    </script>
+</body>
