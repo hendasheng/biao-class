@@ -1,9 +1,15 @@
 <script>
     class Alert {
-        open() {
-    
+        constructor(title, type) {
+            this.title = title;
+            this.type = type;
         }
+        open() {
+            console.log(this.title);
+        }
+
     }
 
-    console.log(new Alert);
-</script>    
+    let msg = new Alert('余额不足', 'warn');
+    msg.open();
+</script>

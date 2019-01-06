@@ -6,10 +6,10 @@
     let container;
 
     const defaultConfig = {
-        type: 'info',
-        timeout: 2000,
-        containerClass: 'biao-alert-container',
-        clickToClose: true,
+        type: 'info', // {info | warn | danger | success} 类型，默认为 info
+        timeout: 2000,  // 提醒显示时常
+        containerClass: 'biao-alert-container', // {string} 包含提醒的容器类
+        clickToClose: true, // {bool} 点击就关闭
     }
 
     function boot(title, config) {
