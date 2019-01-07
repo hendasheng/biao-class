@@ -1,54 +1,42 @@
 <link rel="stylesheet" href="biaoAlert.css">
 
 <body>
-    <!-- <div class="biao-alert">
-        <div class="inner">
-            <div class="title">Yo</div>
-            <div class="desc">
-                Lorem ipsum dolor sit ...
-            </div>
-        </div>
-    </div> -->
-
-
-
     <script src="biaoAlert.js"></script>
     <script>
 
-        biaoAlert('Yo', {
-            desc: '描述这个...',
-            type: 'info',
-            onOpen() {
-                console.log('打开了');
-            },
-            onClose() {
-                console.log('关闭');
-            },
-            clickToClose: false, // 不能被点击关闭
-        });
-
-        biaoAlert('很重要，点击才能关闭', {
-            desc: '描述这个...',
-            type: 'danger',
+        let a = new Alert('Yo', {
+            // onClick() {
+            //     console.log(1);
+            // },
             timeout: false,
         });
 
-        biaoAlert('警告', {
-            desc: '描述这个...',
+        let b = new Alert('余额不足，请充值', {
+            desc: '请前往我的余额进行充值',
             type: 'warn',
-            onClick(config) {
-                document.body.append(config.el);
-                config.el.hidden = false;
-            },
             timeout: false,
+            onClick(config) {
+                document.body.appendChild(this.el);
+            },
+            onOpen() {
+                console.log('打开 b');
+            },
+
         });
 
-        biaoAlert('成功', {
+        let c = new Alert('成功', {
             desc: '描述这个...',
             type: 'success',
+            onClose() {
+                console.log('关闭 c');
+            },
         });
 
-
+        // setInterval($ => {
+        //     c.close();
+        // }, 5000);
+        // c.close();
+        // console.log(b);
 
     </script>
 </body>

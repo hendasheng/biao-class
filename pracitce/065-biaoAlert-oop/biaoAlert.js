@@ -1,127 +1,105 @@
 ; (function () {
     'use strict';
 
-    window.biaoAlert = boot;
+    class Alert {
+        constructor(title, { desc, onClick, onOpen, onClose, type = 'info', timeout = 3000, containerClass = 'biao-alert-container', clickToClose = true } = {}) {
+            this.title = title;
+            this.desc = desc;
+            this.type = type;
+            this.timeout = timeout;
+            this.onClick = onClick;
+            this.onOpen = onOpen;
+            this.onClose = onClose;
+            this.containerClass = containerClass;
+            this.clickToClose = clickToClose;
 
-    let container;
+            this.containrer = null;
 
-    const defaultConfig = {
-        type: 'info', // {info | warn | danger | success} 类型，默认为 info
-        timeout: 2000,  // 提醒显示时常
-        containerClass: 'biao-alert-container', // {string} 包含提醒的容器类
-        clickToClose: true, // {bool} 点击就关闭
+            this.prepareEnv();
+            this.render();
+            this.open();
+            this.bindClick();
+        }
+
+
+        prepareEnv() {
+            this.container =
+                this.getContainer();
+
+            // 有就用
+            if (this.getContainer())
+                return;
+
+            // 没有就造一个
+            let container = this.container = document.createElement('div');
+            container.classList.add(this.containerClass);
+            document.body.appendChild(container);
+        }
+
+
+        getContainer() {
+            return document.querySelector('.' + this.containerClass);
+        }
+
+
+        render() {
+            let el = document.createElement('div');
+            el.classList.add('biao-alert');
+
+            // 给不同的类型添加不同的类
+            // 实现不同类型不同的颜色
+            el.classList.add(this.type);
+            // el.hidden = true;
+            el.innerHTML = `
+                    <div class="inner">
+                    <div class="title">${this.title}</div>
+                    ${this.desc ? `<div class="desc">${this.desc}</div>` : ''}
+                    </div>
+                `;
+            document.body.appendChild(el);
+
+            // 把 biao-alert(每个提醒) 缓存到 this 中
+            this.el = el;
+        }
+
+
+        open() {
+            // 如果有回调就叫 回调函数
+            this.onOpen && this.onOpen();
+            this.container.appendChild(this.el);
+
+            // console.log(this.el);
+            // 如果没有期限，就一直显示
+            if (!this.timeout)
+                return;
+
+            // 如果有期限就按人家说的办
+            setTimeout(e => {
+                // 到指定时间隐藏提醒
+                this.close(this);
+            }, this.timeout);
+        }
+
+
+        close() {
+            this.onClose && this.onClose();
+            this.el.hidden = true;
+        }
+
+
+        bindClick() {
+            this.el.addEventListener('click', e => {
+                // clickToClose 为 true 则表示执行在点击时隐藏
+                if (this.clickToClose)
+                    close(this);
+
+                // 如果有回调，就叫回调函数
+                this.onClick && this.onClick();
+
+            });
+        }
     }
-
-    function boot(title, config) {
-        // 合并默认配置和用户配置
-        config = { ...defaultConfig, ...config, title };
-        prepareEnv(config);
-        render(config);
-        open(config);
-        bindClick(config);
-    }
-
-    /**
-     * 准备环境
-     * @param {Object} config
-     * @returns
-     */
-    function prepareEnv(config) {
-        // 所有提醒都存在一个容器内
-        container = getContainer(config);
-
-        // 如果有就直接用
-        if (getContainer(config))
-            return;
-
-        // 没有就造一个
-        container = document.createElement('div');
-        container.classList.add(config.containerClass);
-        document.body.appendChild(container);
-
-    }
-
-    /**
-     * 获取容器
-     * @param {Object} config
-     * @returns
-     */
-    function getContainer(config) {
-        return document.querySelector('.' + config.containerClass);
-    }
-
-    /**
-     * 渲染提醒到页面中
-     * @param {Object} config
-     */
-    function render(config) {
-        let el = document.createElement('div');
-        el.classList.add('biao-alert');
-        
-        // 给不同的类型添加不同的类
-        // 实现不同类型不同的颜色
-        el.classList.add(config.type);
-        // el.hidden = true;
-        el.innerHTML = `
-                        <div class="inner">
-                        <div class="title">${config.title}</div>
-                        ${config.desc ? `<div class="desc">${config.desc}</div>` : ''}
-                        </div>
-                    `;
-        document.body.appendChild(el);
-
-        // 把 biao-alert(每个提醒) 缓存到 config 中
-        config.el = el;
-    }
-
-    /**
-     * 显示提醒
-     * @param {Object} config
-     * @returns
-     */
-    function open(config) {
-        // 如果有回调就叫 回调函数
-        config.onOpen && config.onOpen(config);
-        container.appendChild(config.el);
-
-        // 如果没有期限，就一直显示
-        if (!config.timeout)
-            return;
-
-        // 如果有期限就按人家说的办
-        setTimeout(e => {
-            // 到指定时间隐藏提醒
-            close(config);
-        }, config.timeout);
-    }
-
-    /**
-     * 隐藏提醒
-     * @param {Object } config
-     */
-    function close(config) {
-        config.onClose && config.onClose(config);
-        config.el.hidden = true;
-    }
-
-
-    /**
-     * 当被点击时
-     *
-     * @param {Object} config
-     */
-    function bindClick(config) {
-        config.el.addEventListener('click', e => {
-            // clickToClose 为 true 则表示执行在点击时隐藏
-            if (config.clickToClose)
-                close(config);
-
-            // 如果有回调，就叫回调函数
-            config.onClick && config.onClick(config);
-        });
-    }
-
-
+    window.Alert = Alert;
 })();
 
 
