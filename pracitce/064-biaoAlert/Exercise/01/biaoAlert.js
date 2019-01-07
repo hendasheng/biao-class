@@ -5,7 +5,7 @@
 
     let container;
 
-    const defaultCongif = {
+    const defaultConfig = {
         type: 'info', // {info | warn | danger | success} 类型，默认为 info
         containerClass: 'biao-alert-container',     // 包含所有提醒的容器
         clickToClose: true,     // 点击是否关闭 - 默认是
@@ -13,7 +13,7 @@
     }
 
     function boot(title, config) {
-        config = { ...defaultCongif, ...config, title };
+        config = { ...defaultConfig, ...config, title };
         prepare(config);
         render(config);
         open(config);
