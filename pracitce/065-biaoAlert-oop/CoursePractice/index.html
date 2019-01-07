@@ -1,30 +1,38 @@
 <link rel="stylesheet" href="biaoAlert.css">
 
 <body>
+
+
+
     <script src="biaoAlert.js"></script>
     <script>
 
-        let a = new Alert('Yo', {
-            // onClick() {
-            //     console.log(1);
-            // },
+        new Alert('Yo', {
+            desc: '面向对象编程',
+            // clickToClose: false,
             timeout: false,
+            onOpen() {
+                console.log('打开');
+            },
+            onClose() {
+                console.log('关闭');
+            }
         });
 
-        let b = new Alert('余额不足，请充值', {
+        new Alert('余额不足，请充值', {
             desc: '请前往我的余额进行充值',
             type: 'warn',
             timeout: false,
+            clickToClose: false,
             onClick(config) {
                 document.body.appendChild(this.el);
             },
             onOpen() {
                 console.log('打开 b');
             },
-
         });
 
-        let c = new Alert('成功', {
+        new Alert('成功', {
             desc: '描述这个...',
             type: 'success',
             onClose() {
@@ -32,11 +40,6 @@
             },
         });
 
-        // setInterval($ => {
-        //     c.close();
-        // }, 5000);
-        // c.close();
-        // console.log(b);
 
     </script>
 </body>
