@@ -11,6 +11,8 @@
 
 .biao-alert {
     margin: .4rem 0;
+    opacity: 1;
+    transition: all .4s;
 }
 
 
