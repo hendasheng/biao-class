@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+body {
+    margin: 0;
+}
+
+input,
+button,
+textarea {
+    color: inherit;
+}
+
+button {
+    outline: none;
+}
+
+form input,
+form button,
+form textarea {
+    width: 100%;
+    outline: none;
+    padding: .7rem;
+    border: 1px solid rgb(211, 211, 211);
+}
+
+form {
+    margin: 0;
+}
+
+form input:focus {
+    border-color: #666;
+    transition: all .4s;
+}
+
+.container,
+.container-sm {
+    margin: 0 auto;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.container {
+    max-width: 50rem;
+}
+
+.container-sm {
+    max-width: 45rem;
+    font-size: 0;
+}
+
+.container-sm > * {
+    font-size: 1rem;
+}
+
+.container-sm > .left {
+    width: 30%;
+    float: left;
+}
+.container-sm > .right {
+    width: 70%;
+    float: left;
+}
+
+[hidden] {
+    display: none !important;
+}
