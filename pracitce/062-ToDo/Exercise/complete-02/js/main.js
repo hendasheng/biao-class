@@ -16,6 +16,9 @@
         bindEvents();
     }
 
+    /**
+     * 获取数据
+     */
     function read() {
         api('todo/read', null, result => {
             $list = result.data;
@@ -23,17 +26,26 @@
         })
     }
 
+    /**
+     * 绑定提交事件
+     */
     function bindEvents() {
         todoForm.addEventListener('submit', e => {
             e.preventDefault();
             let title = input.value;
+            // 如果有 currendId 说明是更新
             if (currentId)
                 update({ id: currentId, title });
+            // 否则被视为创建新的 item
             else
                 create({ title });
         })
     }
 
+    /**
+     * 在数据库中创建一条 item
+     * @param {Object} row 
+     */
     function create(row) {
         api('todo/create', row, result => {
             if (result)
@@ -42,6 +54,9 @@
         })
     }
 
+    /**
+     * 渲染清单列表 - list
+     */
     function render() {
         list.innerHTML = '';
         $list.forEach(it => {
@@ -57,20 +72,27 @@
                             <button class="delete">删除</button>
                         </div>
                         `;
-
+            
             let checkbox = item.querySelector('.completed');
             let operation = item.querySelector('.operation');
 
+            // 当点击 checkbox 时
             checkbox.addEventListener('change', e => {
+                // 设置 checkbox
                 setCompleted(it.id, checkbox.checked);
             })
 
+            // 当点击 更新 或 删除时
             operation.addEventListener('click', e => {
                 let target = e.target;
+                // 如果是 更新
                 if (target.classList.contains('fill')) {
                     input.value = it.title;
+                    // 给 currentId 提醒 bindEvents 这是 “更新”
                     currentId = it.id;
                 }
+
+                // 如果是 删除
                 if (target.classList.contains('delete'))
                     remove(it.id);
             })
@@ -80,6 +102,7 @@
         });
     }
 
+    // 设置 checkbox
     function setCompleted(id, completed) {
         api('todo/update', { id, completed }, result => {
             if (result)
@@ -87,6 +110,7 @@
         })
     }
 
+    // 删除 item
     function remove(id) {
         api('todo/delete', { id }, result => {
             if (result)
@@ -94,6 +118,7 @@
         })
     }
 
+    // 更新 item
     function update(row) {
         api('todo/update', row, result => {
             currentId = null;
