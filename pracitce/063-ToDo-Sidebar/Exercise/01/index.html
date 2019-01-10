@@ -3,24 +3,41 @@
 
 <div class="container-sm">
     <h1>待办清单单单单</h1>
-    <form id="todo-form">
-        <input type="search" name="title" autofocus>
-        <button type="submit" hidden></button>
-    </form>
 
-    <div id="todo-list">
-        <!-- <div class="todo-item">
-            <div class="checkbox">
-                <input type="checkbox">
-            </div>
-            <div class="title">
-                菜单要买当天的，要不然第二天就坏了
-            </div>
-            <div class="operation">
-                <button class="fill">更新</button>
-                <button class="delete">删除</button>
-            </div>
-        </div> -->
+    <div class="left">
+        <div class="sidebar-section">
+            <div class="item">哎呦</div>
+            <div class="item active">喂</div>
+        </div>
+        <div class="sidebar-section">
+            <button class="add-cat">+</button>
+        </div>
+        <form class="sidebar-section">
+            <input type="search">
+            <button type="submit" hidden></button>
+        </form>
+    </div>
+
+    <div class="right">
+        <form id="todo-form">
+            <input type="search" name="title" autofocus>
+            <button type="submit" hidden></button>
+        </form>
+
+        <div id="todo-list">
+            <!-- <div class="todo-item">
+                <div class="checkbox">
+                    <input type="checkbox">
+                </div>
+                <div class="title">
+                    菜单要买当天的，要不然第二天就坏了
+                </div>
+                <div class="operation">
+                    <button class="fill">更新</button>
+                    <button class="delete">删除</button>
+                </div>
+            </div> -->
+        </div>
     </div>
 
 </div>

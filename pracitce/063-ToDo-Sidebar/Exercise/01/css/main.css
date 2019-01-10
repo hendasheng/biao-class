@@ -13,19 +13,19 @@
     display: inline-block;
     vertical-align: middle;
     font-size: 1rem;
-    padding: 1rem;
+    padding: 1rem .4rem;
 }
 
 .todo-item .checkbox {
     width: 10%;
 }
 .todo-item .title {
-    width: 70%;
+    width: 65%;
     font-size: 1rem;
     padding-left: 0;
 }
 .todo-item .operation {
-    width: 20%;
+    width: 25%;
     text-align: right;
 }
 
@@ -34,4 +34,50 @@
     border: none;
     outline: none;
     cursor: pointer;
+    padding-left: .2rem;
+    padding-right: .2rem;
+}
+
+
+.container-sm > .left {
+    float: left;
+    width: 30%;
+}
+.container-sm > .right {
+    float: left;
+    width: 70%;
+} 
+
+.container-sm .left > * {
+    padding-right: .6rem;
+}
+
+
+.sidebar-section .item {
+    padding: .8rem;
+    border-radius: .2rem;
+    transition: all .4s;
+    color: #666;
+}
+
+.sidebar-section .item:hover {
+    background: rgba(0, 0, 0, .1);
+    color: #333;
+}
+
+.sidebar-section .active {
+    background: rgb(49, 104, 255);
+    color: #fff;
+}
+
+.left .add-cat {
+    margin: .6rem 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: .4rem 0;
+}
+
+.left .add-cat {
+    outline: none;
+    /* border: 1px solid blue; */
 }

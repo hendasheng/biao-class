@@ -34,6 +34,7 @@ form button:focus {
     border: 1px solid blue;
 }
 
+
 h1 {
     margin: 2rem 0;
 }
@@ -49,3 +50,4 @@ h1 {
 .container-sm {
     max-width: 40rem;
 }
+
