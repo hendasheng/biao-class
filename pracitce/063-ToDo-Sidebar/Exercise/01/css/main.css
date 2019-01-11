@@ -29,15 +29,18 @@
     text-align: right;
 }
 
-.todo-item .operation button {
+.todo-item .operation button,
+.cat-item .operation button {
     background: none;
     border: none;
     outline: none;
     cursor: pointer;
+}
+
+.todo-item .operation button {
     padding-left: .2rem;
     padding-right: .2rem;
 }
-
 
 .container-sm > .left {
     float: left;
@@ -50,17 +53,18 @@
 
 .container-sm .left > * {
     padding-right: .6rem;
+    margin-bottom: .6rem;
 }
 
 
-.sidebar-section .item {
-    padding: .8rem;
+.sidebar-section .cat-item {
+    padding: .6rem;
     border-radius: .2rem;
     transition: all .4s;
     color: #666;
 }
 
-.sidebar-section .item:hover {
+.sidebar-section .cat-item:hover {
     background: rgba(0, 0, 0, .1);
     color: #333;
 }
@@ -70,14 +74,39 @@
     color: #fff;
 }
 
-.left .add-cat {
+.left #add-cat {
     margin: .6rem 0;
     width: 100%;
     border: 1px solid #ccc;
     padding: .4rem 0;
+    outline: none;
+    cursor: pointer;
 }
 
-.left .add-cat {
-    outline: none;
-    /* border: 1px solid blue; */
+#cat-form .btn-group > * {
+    float: left;
+    width: 50%;
+    padding: .4rem;
+}
+.cat-item {
+    position: relative;  
+}
+
+.cat-item .operation {
+    position: absolute;
+    top: 7px;
+    right: 4px;
+    display: none;
+    transition: all .4s;
+    color: #888;  
+}
+.cat-item:hover .operation {
+    display: block;
+}
+
+.cat-item .operation > * {
+    padding: 0;
+}
+.cat-item .operation button:hover {
+    color: #333;
 }

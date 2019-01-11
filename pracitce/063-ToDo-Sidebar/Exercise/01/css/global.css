@@ -24,7 +24,7 @@ form input,
 form button {
     width: 100%;
     outline: none;
-    padding: .8rem;
+    padding: .6rem;
     border: 1px solid #ccc;
     transition: all .6s;
 }
