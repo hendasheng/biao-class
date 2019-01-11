@@ -61,7 +61,7 @@
     padding: .6rem;
     border-radius: .2rem;
     transition: all .4s;
-    color: #666;
+    /* color: #666; */
 }
 
 .sidebar-section .cat-item:hover {
@@ -70,8 +70,8 @@
 }
 
 .sidebar-section .active {
-    background: rgb(49, 104, 255);
     color: #fff;
+    background: rgb(49, 104, 255);
 }
 
 .left #add-cat {
@@ -89,7 +89,8 @@
     padding: .4rem;
 }
 .cat-item {
-    position: relative;  
+    position: relative;
+    cursor: pointer;
 }
 
 .cat-item .operation {

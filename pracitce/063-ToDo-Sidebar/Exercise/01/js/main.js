@@ -13,14 +13,20 @@
 
 
     // 用于储存 Todo 数据，方便以后调用
-    let $listTodo;
+    let $todoList;
 
-    let $listCat
+    // 用于储存 Cat 数据，方便以后调用
+    let $catList;
 
-    // 用于判断是 更新 还是 创建
-    let currentIdTodo = null;
+    // 用于判断 Todo - item 是 更新 还是 创建
+    let $updatingTodoId = null;
 
-    let currentIdCat = null;
+    // 用于判断 Cat - item 是 更新 还是 创建
+    let $updatingCatId = null;
+
+    // 用于区别分类的 id
+    // 点击侧栏中 item 时，当前 item 的 id
+    let $currentCatId = null;
 
     boot();
     function boot() {
@@ -30,12 +36,22 @@
     }
 
     /**
+     *  Todo 部分
+     */
+
+    /**
      * 从服务器获取数据 - Todo
      */
-    function readTodo() {
-        api('todo/read', null, result => {
+    function readTodo(params) {
+        params = params || {};
+        params.where = {
+            and: {
+                cat_id: $currentCatId,
+            },
+        };
+        api('todo/read', params, result => {
             // 把取到的数据存到全文变量中
-            $listTodo = result.data;
+            $todoList = result.data || [];
             renderTodo();
             todoForm.reset();
         })
@@ -59,8 +75,8 @@
             e.preventDefault();
             let title = todoInput.value;
             // 当 更新 时， currentId 会被替换成相应的 id，如果有 currentId 说明此时应该执行 更新
-            if (currentIdTodo)
-                updateTodo({ id: currentIdTodo, title })
+            if ($updatingTodoId)
+                updateTodo({ id: $updatingTodoId, title })
             // 如果没有 currentId 则执行 创建
             else
                 createTodo({ title });
@@ -72,6 +88,7 @@
      * @param {Object} row 
      */
     function createTodo(row) {
+        row.cat_id = $currentCatId;
         api('todo/create', row, result => {
             readTodo();
         })
@@ -82,7 +99,7 @@
      */
     function renderTodo() {
         todoList.innerHTML = '';
-        $listTodo.forEach(it => {
+        $todoList.forEach(it => {
             let item = document.createElement('div');
             item.classList.add('todo-item');
             item.innerHTML = `
@@ -112,7 +129,7 @@
                     // 把 输入框 中的内容替换成当前 title
                     todoInput.value = it.title;
                     // currentId 设置为当前 id，creat 中会根据 currentId 判断此时为 更新
-                    currentIdTodo = it.id;
+                    $updatingTodoId = it.id;
                 }
 
                 if (target.classList.contains('delete'))
@@ -142,7 +159,7 @@
     function updateTodo(row) {
         api('todo/update', row, result => {
             // 执行更新时，currentId 设置为 null，不然 create 会一直认为是 更新
-            currentIdTodo = null;
+            $updatingTodoId = null;
             if (result)
                 readTodo();
         })
@@ -161,12 +178,14 @@
     }
 
 
-
+    /**
+     *  Cat 部分
+     */
 
 
     /**
- * catForm 中的点击事件（确定/取消）
- */
+     * catForm 中的点击事件（确定/取消）
+     */
     function bindClickCatForm() {
         catBtnGroup.addEventListener('click', e => {
             // e.preventDefault();
@@ -202,8 +221,9 @@
     function readCat() {
         api('cat/read', null, result => {
             // 把取到的数据存到全文变量中
-            $listCat = result.data;
+            $catList = result.data || [];
             renderCat();
+            // 取到数据后隐藏 form，显示 addCat - Btn
             catForm.hidden = !(addCat.hidden = false);
             catForm.reset();
         })
@@ -217,8 +237,8 @@
         catForm.addEventListener('submit', e => {
             e.preventDefault();
             let name = catInput.value;
-            if (currentIdCat)
-                updateCat({ id: currentIdCat, name });
+            if ($updatingCatId)
+                updateCat({ id: $updatingCatId, name });
             else
                 createCat({ name })
         })
@@ -240,8 +260,9 @@
      */
     function renderCat() {
         catList.innerHTML = '';
-        $listCat.forEach(it => {
+        $catList.forEach(it => {
             let item = document.createElement('div');
+            item.$id = it.id;
             item.classList.add('cat-item');
             item.innerHTML = `
                                 <span class="name">${it.name}</span>
@@ -251,22 +272,27 @@
                                 </div>
                                 `;
 
-            let operation = item.querySelector('.operation');
 
-            operation.addEventListener('click', e => {
+            item.addEventListener('click', e => {
                 let target = e.target;
                 // 当点击 更新 时
                 if (target.classList.contains('fill')) {
                     catForm.hidden = !(addCat.hidden = true);
-
                     // 把 输入框 中的内容替换成当前 title
                     catInput.value = it.name;
-                    // currentId 设置为当前 id，creat 中会根据 currentId 判断此时为 更新
-                    currentIdCat = it.id;
+                    // $updatingCatId 设置为当前 id，creat 中会根据 currentId 判断此时为 更新
+                    $updatingCatId = it.id;
                 }
 
                 if (target.classList.contains('delete'))
                     removeCat(it.id);
+
+                // if (target.classList.contains('name')) {
+                $currentCatId = it.id
+
+                highlightCurrentCat();
+                readTodo();
+                // }
             });
 
             // 把组装好的 item 插入到 list 中
@@ -292,10 +318,22 @@
     function updateCat(row) {
         api('cat/update', row, result => {
             // 执行更新时，currentId 设置为 null，不然 create 会一直认为是 更新
-            currentIdCat = null;
+            $updatingCatId = null;
             if (result)
                 readCat();
         })
+    }
+
+    function highlightCurrentCat() {
+        let items = catList.children;
+        for (let i = 0; i < items.length; i++) {
+            let it = items[i];
+
+            if (it.$id == $currentCatId)
+                it.classList.add('active');
+            else
+                it.classList.remove('active');
+        }
     }
 
 })()
