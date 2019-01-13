@@ -1,0 +1,115 @@
+:root {
+    background: #eee;
+}
+
+.todo-item {
+    background: #fff;
+    font-size: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    margin-bottom: .6rem;
+}
+
+.todo-item > * {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1rem;
+    padding: 1rem .4rem;
+}
+
+.todo-item .checkbox {
+    width: 10%;
+}
+.todo-item .title {
+    width: 70%;
+    font-size: 1rem;
+    padding-left: 0;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+}
+.todo-item .operation {
+    width: 20%;
+    text-align: right;
+}
+.todo-item .operation > * {
+    padding: 0 0.2rem;
+}
+.todo-item .operation button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* 
+.sidebar-section .operation {
+    display: inline-block;
+    display: none;
+}  */
+
+.sidebar-section {
+    margin-bottom: 1rem;
+}
+
+.cat-item {
+    position: relative;
+    padding: .6rem;
+    /* background: #999; */
+}
+
+.cat-item:hover {
+    background: rgba(0, 0, 0, .1);
+}
+
+.cat-item .name {
+    cursor: pointer;
+}
+
+.cat-item .operation {
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    color: #999;
+    opacity: 0;
+}
+.cat-item .operation:hover {
+    opacity: 1;
+
+}
+
+.cat-item .operation button {
+    background: none;
+    border: none;
+    padding-left: .1rem;
+    padding-right: .1rem;
+    cursor: pointer;
+}
+.cat-item .operation button:hover {
+    color: #333;
+}
+
+.btn-group {
+    font-size: 0;
+}
+.btn-group > * {
+    width: 50%;
+    font-size: 1rem;
+}
+
+.btn-group button {
+    padding: .4rem;
+}
+
+#add-cat {
+    width: 100%;
+    padding: .4rem 0;
+    border: 1px solid #ccc;
+    outline: none;
+
+}
+#add-cat:focus {
+    border-color: #999;
+}
+
+#cat-form input {
+    padding: .6rem;
+}
