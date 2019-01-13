@@ -60,7 +60,7 @@
 
 
 .cat-item:hover {
-    background: rgba(0, 0, 0, .1);
+    background: rgba(0, 0, 0, .06);
 }
 
 .cat-item .name {
@@ -71,12 +71,12 @@
     position: absolute;
     top: 8px;
     right: 6px;
-    color: #999;
+    color: rgba(0, 0, 0, .6);
     opacity: 0;
     transition: all .4s;
 
 }
-.cat-item .operation:hover {
+.cat-item:hover .operation {
     opacity: 1;
 
 }

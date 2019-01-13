@@ -27,7 +27,7 @@
     // 当前 cat id，用于确定高亮
     let $currentCatId = null;
 
-    
+
     boot();
     function boot() {
         readTodo();
@@ -102,14 +102,19 @@
     /**
     * todo - 获取数据
     */
-    function readTodo() {
-        api('todo/read', null, result => {
-            // 取到数据后，存到 全文变量中
-            $todoList = result.data;
+    function readTodo(params) {
+        params = params || {};
+        params.where = {
+            and: {
+                cat_id: $currentCatId,
+            },
+        };
+        api('todo/read', params, result => {
+            // 把取到的数据存到全文变量中
+            $todoList = result.data || [];
             renderTodo();
-            // 获取到数据后，清空 输入框
             todoForm.reset();
-        });
+        })
     }
 
     /**
@@ -117,10 +122,10 @@
      * @param {Object} row 
      */
     function createTodo(row) {
+        row.cat_id = $currentCatId;
         api('todo/create', row, result => {
-            if (result)
-                readTodo();
-        })
+            readTodo();
+        });
     }
 
     /**
@@ -262,8 +267,9 @@
                 // 设置 $currentCatId 为当前 id，用于设置高亮
                 $currentCatId = it.id;
                 highLightCurrentCat();
+                readTodo();
 
-            })
+            });
             catList.appendChild(item);
         })
     }
