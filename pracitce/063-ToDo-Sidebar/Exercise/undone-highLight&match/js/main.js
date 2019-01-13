@@ -12,18 +12,20 @@
     let catList = document.getElementById('cat-list');
 
 
-    // 在 create 中，把取到的数据存到 $list 全文变量中，方便以后调用
+    // 在 readTodo 中，把取到的数据存到 $list 全文变量中，方便以后调用
     let $todoList;
 
+    // 在 readCat 中，把取到的数据存到 $list 全文变量中，方便以后调用
     let $catList;
 
-    // 用于判断是 更新 还是 创建
-    let updateTodoId = null;
+    // 用于判断 todo 是 更新 还是 创建
+    let $updateTodoId = null;
 
-    let updateCatId = null;
+    // 用于判断 cat 是 更新 还是 创建
+    let $updateCatId = null;
 
 
-
+    
     boot();
     function boot() {
         readTodo();
@@ -49,8 +51,8 @@
             e.preventDefault();
             let title = todoInput.value;
             // 如果 currentId 存在，则执行 更新
-            if (updateTodoId)
-                updateTodo({ id: updateTodoId, title });
+            if ($updateTodoId)
+                updateTodo({ id: $updateTodoId, title });
             // 否则为执行 创建
             else
                 createTodo({ title });
@@ -58,21 +60,21 @@
     }
 
     /**
-     * cat 提交事件
+     * cat - 提交事件
      */
     function bindCatSubmit() {
         catForm.addEventListener('submit', e => {
             e.preventDefault();
             let name = catInput.value;
-            if (updateCatId)
-                updateCat({ id: updateCatId, name });
+            if ($updateCatId)
+                updateCat({ id: $updateCatId, name });
             else
                 createCat({ name });
         })
     }
 
     /**
-     * slider 添加分类按钮
+     * cat - slider 添加分类按钮
      * 打开 catForm
      */
     function bindToggleCatForm() {
@@ -83,18 +85,20 @@
     }
 
     /**
-     * 关闭 catForm
+     * cat - 关闭 catForm
      */
     function bindClickCatForm() {
         catBtnGroup.addEventListener('click', e => {
             let target = e.target;
-            if (target.classList.contains('cancel'))
+            if (target.classList.contains('cancel')) {
                 catForm.hidden = !(addCat.hidden = false);
+                catForm.reset();
+            }
         })
     }
 
     /**
-    * 获取数据
+    * todo - 获取数据
     */
     function readTodo() {
         api('todo/read', null, result => {
@@ -107,7 +111,7 @@
     }
 
     /**
-     * 创建一条 item
+     * todo - 创建一条 item
      * @param {Object} row 
      */
     function createTodo(row) {
@@ -118,7 +122,7 @@
     }
 
     /**
-     * 渲染 list
+     * todo - 渲染 list
      */
     function renderTodo() {
         todoList.innerHTML = '';
@@ -151,7 +155,7 @@
                     // 把当前 title 传入到输入框内
                     todoInput.value = it.title;
                     // 设置 currrentId 为当前 Id，create 中则会判断此时为更新
-                    updateTodoId = it.id;
+                    $updateTodoId = it.id;
                 }
 
                 // 如果点击的是 删除
@@ -165,7 +169,7 @@
     }
 
     /**
-    * 删除一条 item
+    * todo - 删除一条 item
     * @param {Number} id 
     */
     function removeTodo(id) {
@@ -176,12 +180,12 @@
     }
 
     /**
-     * 更新 item
+     * todo - 更新 item
      * @param {Object} row 
      */
     function updateTodo(row) {
         api('todo/update', row, result => {
-            updateTodoId = null;
+            $updateTodoId = null;
             if (result)
                 readTodo();
         })
@@ -200,6 +204,9 @@
     }
 
     // 左侧
+    /**
+     * cat - 获取数据
+     */
     function readCat() {
         api('cat/read', null, result => {
             $catList = result.data;
@@ -209,17 +216,26 @@
         });
     }
 
+    /**
+     * cat - 创建一条 item
+     * @param {Object} row 
+     */
     function createCat(row) {
         api('cat/create', row, result => {
             readCat();
         });
     }
 
+    /**
+     * cat - 渲染 list
+     */
     function renderCat() {
         catList.innerHTML = '';
         $catList.forEach(it => {
             let item = document.createElement('div');
             item.classList.add('cat-item');
+            // 把 id 储存到 item 自身，方便在外部调用
+            item.$id = it.id;
             item.innerHTML = `
                             <span class="name">${it.name}</span>
                             <div class="operation">
@@ -227,8 +243,9 @@
                                 <button class="delete">删除</button>
                             </div>
                             `;
-            let operation = item.querySelector('.operation');
-            operation.addEventListener('click', e => {
+
+            // 当 item 被点击的时候
+            item.addEventListener('click', e => {
                 let target = e.target;
 
                 if (target.classList.contains('delete'))
@@ -237,32 +254,38 @@
                 if (target.classList.contains('fill')) {
                     catForm.hidden = !(addCat.hidden = true);
                     catInput.value = it.name;
-                    updateCatId = it.id;
+                    $updateCatId = it.id;
                     return;
                 }
 
-            })
 
+            })
             catList.appendChild(item);
         })
     }
 
+    /**
+     * cat - 删除一条 item
+     * @param {Number} id 
+     */
     function removeCat(id) {
         api('cat/delete', { id }, result => {
             readCat();
         })
     }
 
+    /**
+     * cat - 更新一条 item
+     * @param {Object} row 
+     */
     function updateCat(row) {
         api('cat/update', row, result => {
-            updateCatId = null;
+            $updateCatId = null;
             readCat();
             catForm.hidden = !(addCat.hidden = false);
         })
     }
 
-    // 待完成：
-    //      高亮
-    //      匹配 cat 和 todo id
+
 
 })()

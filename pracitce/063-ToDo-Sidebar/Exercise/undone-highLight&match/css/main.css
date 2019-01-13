@@ -53,8 +53,11 @@
 .cat-item {
     position: relative;
     padding: .6rem;
-    /* background: #999; */
+    cursor: pointer;
+    transition: all .4s;
 }
+
+
 
 .cat-item:hover {
     background: rgba(0, 0, 0, .1);
@@ -70,6 +73,8 @@
     right: 6px;
     color: #999;
     opacity: 0;
+    transition: all .4s;
+
 }
 .cat-item .operation:hover {
     opacity: 1;
@@ -79,12 +84,13 @@
 .cat-item .operation button {
     background: none;
     border: none;
+    outline: none;
     padding-left: .1rem;
     padding-right: .1rem;
     cursor: pointer;
 }
 .cat-item .operation button:hover {
-    color: #333;
+    color: #fff;
 }
 
 .btn-group {
@@ -112,4 +118,9 @@
 
 #cat-form input {
     padding: .6rem;
+}
+
+.sidebar-section .active {
+    background: rgb(50, 112, 247);
+    color: #fff;
 }
