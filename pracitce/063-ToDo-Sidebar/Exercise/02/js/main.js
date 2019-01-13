@@ -18,7 +18,11 @@
     let $catList;
 
     // 用于判断是 更新 还是 创建
-    let currentId = null;
+    let updateTodoId = null;
+
+    let updateCatId = null;
+
+
 
     boot();
     function boot() {
@@ -45,8 +49,8 @@
             e.preventDefault();
             let title = todoInput.value;
             // 如果 currentId 存在，则执行 更新
-            if (currentId)
-                updateTodo({ id: currentId, title });
+            if (updateTodoId)
+                updateTodo({ id: updateTodoId, title });
             // 否则为执行 创建
             else
                 createTodo({ title });
@@ -60,8 +64,10 @@
         catForm.addEventListener('submit', e => {
             e.preventDefault();
             let name = catInput.value;
-            console.log(name);
-            createCat({ name });
+            if (updateCatId)
+                updateCat({ id: updateCatId, name });
+            else
+                createCat({ name });
         })
     }
 
@@ -145,7 +151,7 @@
                     // 把当前 title 传入到输入框内
                     todoInput.value = it.title;
                     // 设置 currrentId 为当前 Id，create 中则会判断此时为更新
-                    currentId = it.id;
+                    updateTodoId = it.id;
                 }
 
                 // 如果点击的是 删除
@@ -175,7 +181,7 @@
      */
     function updateTodo(row) {
         api('todo/update', row, result => {
-            currentId = null;
+            updateTodoId = null;
             if (result)
                 readTodo();
         })
@@ -197,7 +203,7 @@
     function readCat() {
         api('cat/read', null, result => {
             $catList = result.data;
-            render();
+            renderCat();
             catForm.reset();
             catForm.hidden = !(addCat.hidden = false);
         });
@@ -209,7 +215,7 @@
         });
     }
 
-    function render() {
+    function renderCat() {
         catList.innerHTML = '';
         $catList.forEach(it => {
             let item = document.createElement('div');
@@ -224,10 +230,17 @@
             let operation = item.querySelector('.operation');
             operation.addEventListener('click', e => {
                 let target = e.target;
-                if (target.classList.contains('fill'))
-                    console.log('fill');
+
                 if (target.classList.contains('delete'))
                     removeCat(it.id);
+
+                if (target.classList.contains('fill')) {
+                    catForm.hidden = !(addCat.hidden = true);
+                    catInput.value = it.name;
+                    updateCatId = it.id;
+                    return;
+                }
+
             })
 
             catList.appendChild(item);
@@ -242,12 +255,13 @@
 
     function updateCat(row) {
         api('cat/update', row, result => {
-            read();
+            updateCatId = null;
+            readCat();
+            catForm.hidden = !(addCat.hidden = false);
         })
     }
 
     // 待完成：
-    //      更新
     //      高亮
     //      匹配 cat 和 todo id
 
