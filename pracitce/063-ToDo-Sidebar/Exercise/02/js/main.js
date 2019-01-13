@@ -24,7 +24,7 @@
     // 用于判断 cat 是 更新 还是 创建
     let $updateCatId = null;
 
-    // 当前 cat id，用于确定高亮
+    // 当前 cat id，用于确定 高亮 和 分类下的 todolist
     let $currentCatId = null;
 
 
@@ -267,6 +267,7 @@
                 // 设置 $currentCatId 为当前 id，用于设置高亮
                 $currentCatId = it.id;
                 highLightCurrentCat();
+
                 readTodo();
 
             });
