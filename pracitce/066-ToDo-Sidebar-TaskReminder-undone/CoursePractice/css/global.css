@@ -12,63 +12,51 @@ body {
     margin: 0;
 }
 
-input,
-button,
-textarea {
+input, button, textarea {
     color: inherit;
 }
 
-button {
-    outline: none;
+input, button, .todo-item {
+    border-radius: .2rem;
 }
 
 form input,
-form button,
-form textarea {
+form button {
     width: 100%;
     outline: none;
-    padding: .7rem;
-    border: 1px solid rgb(211, 211, 211);
+    padding: .8rem;
+    border: 1px solid #ccc;
+    transition: all .6s;
 }
 
-form {
-    margin: 0;
+form input:focus,
+form button:focus {
+    border: 1px solid blue;
 }
 
-form input:focus {
-    border-color: #666;
-    transition: all .4s;
+h1 {
+    margin: 2rem 0;
 }
 
 .container,
 .container-sm {
     margin: 0 auto;
-    padding-left: .5rem;
-    padding-right: .5rem;
+    padding: 0 .5rem;
 }
-
 .container {
     max-width: 50rem;
 }
-
 .container-sm {
-    max-width: 45rem;
-    font-size: 0;
+    max-width: 40rem;
 }
 
-.container-sm > * {
-    font-size: 1rem;
-}
 
-.container-sm > .left {
+.left {
     width: 30%;
     float: left;
+    padding-right: 1rem;
 }
-.container-sm > .right {
-    width: 70%;
+.right {
+    width: 70%; 
     float: left;
-}
-
-[hidden] {
-    display: none !important;
 }
