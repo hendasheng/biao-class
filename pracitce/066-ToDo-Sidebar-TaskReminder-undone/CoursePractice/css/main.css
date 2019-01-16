@@ -124,3 +124,18 @@
     background: rgb(50, 112, 247);
     color: #fff;
 }
+
+#todo-form {
+    position: relative;
+}
+#more-trigger {
+    font-size: .8rem;
+    padding: .1rem .3rem;
+    background: rgb(214, 214, 214);
+    position: absolute;
+    top: 9px;
+    right: 12px;
+    border-radius: .2rem;
+    cursor: pointer;
+    color: #666;
+}

@@ -5,6 +5,15 @@
     let todoInput = todoForm.querySelector('[name=title]');
     let todoList = document.getElementById('todo-list');
 
+    let notifyDate = todoForm.querySelector('[name=notifyDate]');
+    let notifyTime = todoForm.querySelector('[name=notifyTime]');
+    let todoDesc = todoForm.querySelector('[name=todoDesc]');
+
+
+    let moreTriggrt = document.getElementById('more-trigger');
+    let more = document.getElementById('more');
+
+
     let addCat = document.getElementById('add-cat');
     let catForm = document.getElementById('cat-form');
     let catInput = catForm.querySelector('[name=name]');
@@ -40,6 +49,7 @@
      */
     function bindEvents() {
         bindTodoSubmit();
+        bindClickTodoForm();
         bindToggleCatForm();
         bindClickCatForm();
         bindCatSubmit();
@@ -51,13 +61,21 @@
     function bindTodoSubmit() {
         todoForm.addEventListener('submit', e => {
             e.preventDefault();
-            let title = todoInput.value;
-            // 如果 currentId 存在，则执行 更新
+            let row = {
+                title: todoInput.value,
+                notified_at: notifyDate.value + ' ' + notifyTime.value + ':00',
+                desc: todoDesc.value,
+            };
+
+            if (!row.title)
+                return;
+
+            // 如果 $updateTodoId 存在，则执行 更新
             if ($updateTodoId)
-                updateTodo({ id: $updateTodoId, title });
+                updateTodo($updateTodoId, row);
             // 否则为执行 创建
             else
-                createTodo({ title });
+                createTodo(row);
         })
     }
 
@@ -163,6 +181,8 @@
                     todoInput.value = it.title;
                     // 设置 currrentId 为当前 Id，create 中则会判断此时为更新
                     $updateTodoId = it.id;
+                    // more.hidden = false;
+                    setMoreVisible(true);
                 }
 
                 // 如果点击的是 删除
@@ -190,8 +210,8 @@
      * todo - 更新 item
      * @param {Object} row 
      */
-    function updateTodo(row) {
-        api('todo/update', row, result => {
+    function updateTodo(id, row) {
+        api('todo/update', { id, ...row }, result => {
             $updateTodoId = null;
             if (result)
                 readTodo();
@@ -317,6 +337,31 @@
             else
                 it.classList.remove('active');
         }
+    }
+
+
+    /**
+     * 绑定输入框中 展开 的点击事件
+     */
+    function bindClickTodoForm() {
+        todoForm.addEventListener('click', e => {
+            let target = e.target;
+            if (target === moreTriggrt)
+                setMoreVisible(more.hidden);
+        })
+    }
+
+
+    /**
+     * 控制 more 的 显示/隐藏
+     * @param {Boolean} visible 
+     */
+    function setMoreVisible(visible) {
+        more.hidden = !visible;
+        if (more.hidden)
+            moreTriggrt.innerText = '展开';
+        else
+            moreTriggrt.innerText = '收起';
     }
 
 })()

@@ -16,12 +16,13 @@ input, button, textarea {
     color: inherit;
 }
 
-input, button, .todo-item {
+input, button, .todo-item, textarea {
     border-radius: .2rem;
 }
 
 form input,
-form button {
+form button,
+form textarea {
     width: 100%;
     outline: none;
     padding: .8rem;

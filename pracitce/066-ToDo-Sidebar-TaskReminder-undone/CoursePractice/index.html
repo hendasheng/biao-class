@@ -46,7 +46,23 @@
     <div class="right">
         <form id="todo-form">
             <input type="search" name="title" autofocus>
-            <button type="submit" hidden></button>
+            <div id="more-trigger">展开</div>
+            <div id="more" hidden>
+                <label>
+                    <span class="title">提醒时间</span>
+                    <span class="control">
+                        <input type="date" name="notifyDate">
+                        <input type="time" name="notifyTime">
+                    </span>
+                    <label>
+                        <span class="title">描述</span>
+                        <span class="control">
+                            <textarea name="todoDesc"></textarea>
+                        </span>
+                    </label>
+                </label>
+                <button type="submit" hidden></button>
+            </div>
         </form>
 
         <div id="todo-list">
