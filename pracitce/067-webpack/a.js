@@ -1,3 +1,3 @@
 import b from './b.js';
 
-console.log(b + 2);
+console.log(b + 10);
