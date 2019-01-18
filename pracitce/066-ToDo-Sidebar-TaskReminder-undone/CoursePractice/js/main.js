@@ -9,7 +9,6 @@
     let notifyTime = todoForm.querySelector('[name=notifyTime]');
     let todoDesc = todoForm.querySelector('[name=todoDesc]');
 
-
     let moreTriggrt = document.getElementById('more-trigger');
     let more = document.getElementById('more');
 
@@ -63,7 +62,7 @@
             e.preventDefault();
             let row = {
                 title: todoInput.value,
-                notified_at: notifyDate.value + ' ' + notifyTime.value + ':00',
+                notified_at: notifyDate.value + ' ' + normalizeTime(notifyTime.value),
                 desc: todoDesc.value,
             };
 
@@ -76,7 +75,17 @@
             // 否则为执行 创建
             else
                 createTodo(row);
-        })
+        });
+    }
+
+    /**
+     * 格式化 notifyTime
+     * @param {String} time 
+     */
+    function normalizeTime(time) {
+        if (time.length <= 5)
+            return time += ':00';
+        return time;
     }
 
     /**
@@ -131,6 +140,7 @@
             // 把取到的数据存到全文变量中
             $todoList = result.data || [];
             renderTodo();
+            notify();
             todoForm.reset();
         })
     }
@@ -143,6 +153,7 @@
         row.cat_id = $currentCatId;
         api('todo/create', row, result => {
             readTodo();
+            setMoreVisible(false);
         });
     }
 
@@ -179,6 +190,10 @@
                 if (target.classList.contains('fill')) {
                     // 把当前 title 传入到输入框内
                     todoInput.value = it.title;
+                    let dateArr = it.notified_at.split(' ');
+                    notifyDate.value = dateArr[0];
+                    notifyTime.value = dateArr[1];
+                    todoDesc.value = it.desc;
                     // 设置 currrentId 为当前 Id，create 中则会判断此时为更新
                     $updateTodoId = it.id;
                     // more.hidden = false;
@@ -213,8 +228,10 @@
     function updateTodo(id, row) {
         api('todo/update', { id, ...row }, result => {
             $updateTodoId = null;
-            if (result)
+            if (result) {
                 readTodo();
+                setMoreVisible(false);
+            }
         })
     }
 
@@ -362,6 +379,38 @@
             moreTriggrt.innerText = '展开';
         else
             moreTriggrt.innerText = '收起';
+    }
+
+    /**
+     * 查找哪条任务需要提醒
+     */
+    function notify() {
+        // 当前的时间
+        let now = Date.now();
+        $todoList.forEach(it => {
+            // list 总设置的时间（未来的时间）
+            let d = new Date(it.notified_at);
+
+            // 如果没有时间戳 则跳过
+            if (!d.getTime() || it.notified || it.completed)
+                return;
+
+            // 如果 未来时间 - 当前时间 > 10(提前 10 分钟提醒)，表示还没到 未来时间
+            //                        ↓ 10分钟
+            if (d.getTime() - now >= 10 * 60 * 1000)
+                return;
+
+            // 调用提醒
+            biaoAlert(it.title, {
+                desc: it.desc,
+                type: 'warn',
+                timeout: false,
+            });
+
+            // 用于记录 list 是否被提醒过
+            it.notified = true;
+            updateTodo(it.id, it);
+        });
     }
 
 })()

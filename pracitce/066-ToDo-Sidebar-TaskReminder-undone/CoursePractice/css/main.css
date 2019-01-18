@@ -120,9 +120,20 @@
     padding: .6rem;
 }
 
-.sidebar-section .active {
+.sidebar-section .active,
+#todo-form #more .primary {
     background: rgb(50, 112, 247);
     color: #fff;
+}
+
+#todo-form #more .primary {
+    font-size: 1rem;
+    margin-top: .4rem;
+    cursor: pointer;
+}
+#todo-form #more .primary:hover {
+    background: rgb(38, 95, 218);
+    color: #eee;
 }
 
 #todo-form {
