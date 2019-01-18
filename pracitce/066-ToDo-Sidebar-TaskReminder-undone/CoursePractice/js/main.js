@@ -19,6 +19,7 @@
     let catBtnGroup = catForm.querySelector('.btn-group');
     let catList = document.getElementById('cat-list');
 
+    let sound = document.getElementById('sound');
 
     // 在 readTodo 中，把取到的数据存到 $list 全文变量中，方便以后调用
     let $todoList;
@@ -62,9 +63,11 @@
             e.preventDefault();
             let row = {
                 title: todoInput.value,
-                notified_at: notifyDate.value + ' ' + normalizeTime(notifyTime.value),
                 desc: todoDesc.value,
             };
+
+            if (notifyDate.value && notifyTime.value)
+                row.notified_at = notifyDate.value + ' ' + normalizeTime(notifyTime.value);
 
             if (!row.title)
                 return;
@@ -83,6 +86,9 @@
      * @param {String} time 
      */
     function normalizeTime(time) {
+        if (!time)
+            return;
+
         if (time.length <= 5)
             return time += ':00';
         return time;
@@ -190,9 +196,11 @@
                 if (target.classList.contains('fill')) {
                     // 把当前 title 传入到输入框内
                     todoInput.value = it.title;
-                    let dateArr = it.notified_at.split(' ');
-                    notifyDate.value = dateArr[0];
-                    notifyTime.value = dateArr[1];
+                    if (it.notified_at) {
+                        let dateArr = it.notified_at.split(' ');
+                        notifyDate.value = dateArr[0];
+                        notifyTime.value = dateArr[1];
+                    }
                     todoDesc.value = it.desc;
                     // 设置 currrentId 为当前 Id，create 中则会判断此时为更新
                     $updateTodoId = it.id;
@@ -377,8 +385,10 @@
         more.hidden = !visible;
         if (more.hidden)
             moreTriggrt.innerText = '展开';
-        else
+        else {
+            fillCurrentDate();
             moreTriggrt.innerText = '收起';
+        }
     }
 
     /**
@@ -402,15 +412,35 @@
 
             // 调用提醒
             biaoAlert(it.title, {
-                desc: it.desc,
+                desc: it.desc || '',
                 type: 'warn',
                 timeout: false,
             });
+            // 提醒是播放提醒音效
+            playSound();
 
             // 用于记录 list 是否被提醒过
             it.notified = true;
             updateTodo(it.id, it);
         });
+    }
+
+    // 提醒时间.value 填充当前时间
+    function fillCurrentDate() {
+        let d = new Date;
+        let arr = d.toISOString().split('T');
+        let time = arr[1].split('.')[0];
+        let timeArr = time.split(':')
+
+        notifyDate.value = arr[0];
+        notifyTime.value = timeArr[0] + ':' + timeArr[1];
+    }
+
+    /**
+     * 提醒音效
+     */
+    function playSound() {
+        sound.play();
     }
 
 })()

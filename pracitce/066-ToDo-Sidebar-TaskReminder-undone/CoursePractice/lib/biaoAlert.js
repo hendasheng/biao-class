@@ -93,7 +93,10 @@
         // 如果用户配置中有 onClose 则执行
         config.onClose && config.onClose(config);
         // 设置 item 隐藏
-        config.item.style.opacity = 0;
+        // config.item.style.opacity = 0;
+
+        // 删除 item
+        config.item.remove();
     }
     
     /**

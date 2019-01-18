@@ -138,6 +138,7 @@
 
 #todo-form {
     position: relative;
+    margin-bottom: 2rem;
 }
 #more-trigger {
     font-size: .8rem;
@@ -149,4 +150,16 @@
     border-radius: .2rem;
     cursor: pointer;
     color: #666;
+}
+
+#todo-form #more .title {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: .4rem;
+}
+#todo-form #more .control {
+    font-size: 0;
+}
+#todo-form #more .control input {
+    width: 50%;
 }
