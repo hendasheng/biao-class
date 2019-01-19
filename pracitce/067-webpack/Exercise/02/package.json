@@ -1,8 +1,8 @@
 {
-  "name": "01",
+  "name": "02",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "a.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "node_modules/.bin/webpack"
