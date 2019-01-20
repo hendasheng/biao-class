@@ -1,0 +1,32 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        let arr = [1, 2, 3, 4, 5];
+
+        function each(arr, fn) {
+            for (let i = 0; i < arr.length; i++) {
+                fn(arr[i]);
+            };
+        };
+
+        each(arr, it => {
+            console.log(it);
+        })
+
+                    console.log('--');
+        
+        each(arr, function (it) {
+            console.log(it);
+        })
+
+                    console.log('--');
+
+
+        arr.forEach(it => {
+            console.log(it);
+        });
+
+
+    })();
+</script>
