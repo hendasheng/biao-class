@@ -1,0 +1,102 @@
+<script>
+
+    ; (function () {
+        'use strict';
+
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        function eachNumber(arr, fn) {
+            for (let i = 0; i < arr.length; i++) {
+                fn(arr[i]);
+            }
+        }
+
+
+        /**
+        * 找到数组中的 偶数
+        */
+        function evenNumber(arr) {
+            let result = [];
+            eachNumber(arr, it => {
+                if (it % 2)
+                    return;
+                result.push(it);
+            })
+            console.log(result);
+        }
+        evenNumber(arr);
+
+        /**
+         * 找到数组中的 奇数
+         */
+        function oddNumber(arr) {
+            let result = [];
+            eachNumber(arr, it => {
+                if (!(it % 2))
+                    return;
+                result.push(it);
+            });
+            console.log(result);
+        }
+        oddNumber(arr);
+
+        /**
+         *  求数组中所有值的 和
+         */
+        function sum(arr) {
+            let result = 0;
+            eachNumber(arr, it => {
+                result += it;
+            });
+            console.log(result);
+        }
+        sum(arr);
+
+        /**
+         * 找到数组中 最大值
+         */
+        function max(arr) {
+            // 声明 result，整个 max 函数内可见
+            let result;
+
+            // 调用基础函数
+            eachNumber(arr, it => {
+                // 如果是第一次，将第一个值储存为结果，用于后面的计算
+                // 例 arr[1, 2, 3, 4, 5]
+                // 第一次的第一个值为 arr[0] = 1
+                if (result === undefined) {
+                    result = it;
+                    return;
+                }
+
+                //如果最新的值（it）大于result，那么当前 it 就是最大值
+                if (it > result)
+                    result = it;
+            });
+            console.log(result);
+        }
+        max(arr);
+
+        /**
+         * 找到数组中 最小值
+         */
+        function min(arr) {
+            let result;
+            eachNumber(arr, it => {
+                // 如果是第一次，将第一个值储存为结果，用于后面的计算
+                if (result === undefined) {
+                    result = it;
+                    return;
+                }
+
+                // 如果新的值（it) 小于 result，那么当前 it 就是 最小值
+                if (it < result)
+                    resulr = it;
+            });
+            console.log(result);
+        }
+        min(arr);
+
+    })()
+
+</script>
