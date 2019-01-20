@@ -1,0 +1,93 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        let arr = ['a', 'yo', 'yoo', 'b', 'cc'];
+
+        function eachStr(arr, fn) {
+            for (let i = 0; i < arr.length; i++) {
+                let it = arr[i];
+                fn(it);
+            };
+        }
+
+        /**
+         * 检索数组中的 yo
+         */
+        function getYo(arr) {
+            let result = [];
+            eachStr(arr, it => {
+                if (it.includes('yo'))
+                    result.push(it);
+            });
+            console.log(result);
+        }
+        getYo(arr);
+
+
+        /**
+         * 检索数组中长度为 1 的字符串元素
+         */
+        function shortStr(arr) {
+            let result = [];
+            eachStr(arr, it => {
+                if (it.length == 1)
+                    result.push(it);
+            });
+            console.log(result);
+        }
+        shortStr(arr);
+
+
+        /**
+         * 连接数组中所有元素
+         */
+        function join(arr) {
+            let result = '';
+            eachStr(arr, it => {
+                result += it;
+            });
+            console.log(result);
+        }
+        join(arr);
+
+
+
+
+
+        let list = [
+            ['背背山', '六六坡', '背背路'],
+            '背背',
+            ['背背卡', '背背恰'],
+        ];
+
+        /**
+         * 根据关键字索引
+         */
+        function search(list, keyword) {
+            // 合并 list 中包含的数组
+            let mergeArr = list[0].concat(list[1],list[2]);
+            let result = [];
+            eachStr(mergeArr, it => {
+                if (it.includes(keyword))
+                    result.push(it);
+            });
+            console.log(result);
+        }
+        search(list, '背背');
+
+            
+        // let num = [[1, 2, 3], [4, 5, 6]];
+        // function addNumber(num) {
+        //     let arr = num[0].concat(num[1]);
+        //     let result = [];
+        //     eachStr(num, it => {
+        //         result.push(it);
+        //     });
+        //     console.log(arr);
+        // }
+
+        // addNumber(num);
+
+    })();
+</script>
