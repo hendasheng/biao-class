@@ -1,0 +1,65 @@
+<script>
+    ; (function () {
+        'use strict';
+
+        let list = [
+            ['1-背背山', '1-六六坡', '1-背背路'],
+            '2-背背',
+            ['3-背背卡', '3-背背恰'],
+            '123',
+            ['aaa', '背背撑', 'ccc', 'ddd'],
+        ];
+
+        let result = [];
+
+        /**
+         * 循环数组
+         */
+        function eachStr(arr, fn) {
+            for (let i = 0; i < arr.length; i++) {
+                let it = arr[i];
+                fn(it);
+            };
+        }
+
+        /**
+         * 解析数组
+         * 把多个数组内的元素整个到一个数组中
+         */
+        function parsingArray(arr) {
+            eachStr(arr, it => {
+                // 如果 it 依然是 数组 
+                if (typeof (it) == 'object') {
+                    // 就再循环
+                    eachStr(it, item => {
+                        // 再把每个元素插入到数组中
+                        result.push(item);
+                    })
+                }
+                // 如果不是数组就直接插入到 result 中
+                if (typeof (it) == 'string')
+                    result.push(it);
+            })
+            return result;
+        }
+
+        /**
+         * 根据关键字搜索
+         * @param {Array} arr 搜索范围
+         * @param {String} keyword 关键字
+         */
+        function search(arr, keyword) {
+            let list = [];
+            parsingArray(arr);
+            eachStr(result, it => {
+                if (it.includes(keyword))
+                    list.push(it);
+            })
+            console.log(list);
+        }
+
+        search(list, '背背');
+
+
+    })();
+</script>
