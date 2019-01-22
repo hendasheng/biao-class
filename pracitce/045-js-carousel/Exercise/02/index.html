@@ -1,0 +1,43 @@
+<style>
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
+
+    .slider {
+        position: relative;
+    }
+
+    .item {
+        position: absolute;
+        display: block;
+        transition: all .6s;
+        opacity: 0;
+    }
+</style>
+
+
+<div>
+    <div class="container">
+        <div class="slider">
+            <a class="item" href="#">
+                <img src="https://dummyimage.com/800x400/1c51ff/ffffff&text=A" alt="">
+            </a>
+            <a class="item" href="#">
+                <img src="https://dummyimage.com/800x400/ff821c/ffffff&text=B" alt="">
+            </a>
+            <a class="item" href="#">
+                <img src="https://dummyimage.com/800x400/fa3f55/ffffff&text=C" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="main.js"></script>
