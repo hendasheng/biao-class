@@ -37,7 +37,7 @@
         // 如果 current 到了最后一张，第一张就代表 下一张
         if (current >= items.length)
             current = 0;
-        
+
         let next = items[current];
 
         hide(prev);
