@@ -1,14 +1,12 @@
 ; (function () {
     'use strict';
 
+
     const box = document.getElementById('box');
     const items = box.querySelectorAll('.item');
 
     let currentIndex = 0;
     let lastIndex = items.length - 1;
-
-    let current;
-    let next;
 
     boot();
     function boot() {
@@ -19,28 +17,22 @@
     }
 
     function loop() {
-        current = getCurrent();
-        next = getNext();
-        // inerement();
+        let current = getCurrent();
+        let next = getNext();
 
-        // 索引值自增
-        currentIndex++;
-
-        // 如果索引值超过最大长度
-        // 则归零（重头开始）
-        if (currentIndex > lastIndex)
-            currentIndex = 0;
+        inerement();
 
         console.log(currentIndex);
 
         hide(current);
         show(next);
+
     }
 
     function inerement() {
-        if (currentIndex > lastIndex)
-            currentIndex = 0;
-        currentIndex++;
+        if (currentIndex < lastIndex)
+            return currentIndex++;
+        return currentIndex = 0;
     }
 
     function getCurrent() {
@@ -56,7 +48,7 @@
     function hide(el) {
         if (!el)
             return;
-        el.style.opacity = 0
+        el.style.opacity = 0;
     }
 
     function show(el) {
