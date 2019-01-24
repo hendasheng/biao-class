@@ -3,12 +3,15 @@
 
     const box = document.getElementById('box');
     const items = box.querySelectorAll('.item');
+
     // 当前索引
     let currentIndex = 0;
-    // items 长度
+    // 最后一张
     let lastIndex = items.length - 1;
 
-    let prev, current, next;
+    let prev;
+    let current;
+    let next;
 
     boot();
     function boot() {
@@ -18,15 +21,18 @@
             increment();
             slidesX();
             slidesZ();
-        }, 1000);
+        }, 1000)
     }
 
     /**
-     * 设置增量
+     * 增量
      */
     function increment() {
+        // 当前索引小于最大索引值时 + 1
         if (currentIndex < lastIndex)
             return currentIndex++;
+        // 如果超过最大值，就变成 0 
+        // 当索引值到最后一张时，下一张就是第一张
         return currentIndex = 0;
     }
 
@@ -39,7 +45,9 @@
         return items[lastIndex];
     }
 
-    // 当前项
+    /**
+     * 当前这张
+     */
     function getCurrent() {
         return items[currentIndex];
     }
@@ -54,7 +62,7 @@
     }
 
     /**
-     * 设置元素在 X 的位置
+     * 设置图片在 X 轴的位置
      */
     function slidesX() {
         prev = getPrev();
@@ -67,7 +75,7 @@
     }
 
     /**
-     * 设置元素在 Z 轴的位置
+     * 设置图片在 Z 轴的位置
      */
     function slidesZ() {
         prev = getPrev();
@@ -78,6 +86,5 @@
         current.style.zIndex = 2;
         next.style.zIndex = 0;
     }
-
 
 })();
