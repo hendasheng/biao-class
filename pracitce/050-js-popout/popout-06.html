@@ -1,0 +1,104 @@
+<style>
+    #trigger {}
+
+    .popout {
+        position: fixed;
+        width: 400px;
+        top: 30px;
+        left: 50%;
+        margin-left: -200px;
+        background: #fff;
+        color: #333;
+        border: solid blue;
+        padding: .4rem;
+        z-index: 1000;
+    }
+
+    .mask {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .8);
+        z-index: 999;
+    }
+
+    [hidden] {
+        display: none;
+    }
+</style>
+
+<button data-html=".popout" id="trigger">第一个</button>
+<div class="popout">11111</div>
+
+<button data-html=".popout" id="trigger">第二个</button>
+<div class="popout">22222</div>
+
+<script>
+
+    const triggers = document.querySelectorAll('#trigger');
+    const popouts = document.querySelectorAll('.popout');
+    let mast;
+
+    boot();
+
+    function boot() {
+        initMask();
+        initPopouts();
+        hidePopout();
+        showPopout();
+    }
+
+    /**
+     * 初始化所有 popout（隐藏） 
+     */
+    function initPopouts() {
+        popouts.forEach(it => {
+            it.hidden = true;
+        })
+    }
+
+    /**
+     * 初始化 Mask
+     * 在 HTML 中插入 mask 元素 
+     */
+    function initMask() {
+        mask = document.createElement('div');
+        mask.classList.add('mask');
+        mask.hidden = true;
+        document.body.appendChild(mask);
+    }
+
+    /**
+     * 显示 popout 
+     */
+    function showPopout() {
+        triggers.forEach(it => {
+            it.addEventListener('click', e => {
+                let el = e.target;
+                el.nextElementSibling.hidden = mask.hidden = false;
+            })
+        });
+    }
+
+    /**
+     * 关闭 popout
+     */
+    function hidePopout() {
+        popouts.forEach(it => {
+            mask.addEventListener('click', e => {
+                it.hidden = mask.hidden = true;
+            });
+
+            window.addEventListener('keyup', e => {
+                if (e.code === 'Escape')
+                    it.hidden = mask.hidden = true;
+            })
+        })
+    }
+
+
+
+
+</script>
