@@ -18,8 +18,8 @@
     function setup() {
         createCanvas(600, 400);
 
-        bubble1 = new Bubble(200, 200, 40, random(0, 255), random(0, 255), random(0, 255));
-        bubble2 = new Bubble(300, 300, 24, random(0, 255), random(0, 255), random(0, 255));
+        bubble1 = new Bubble(200, 200, random(10,20), random(0, 255), random(0, 255), random(0, 255));
+        bubble2 = new Bubble(300, 300, random(15,25), random(0, 255), random(0, 255), random(0, 255));
     }
 
     function draw() {
@@ -44,8 +44,8 @@
         };
 
         move() {
-            this.x = this.x + 1;
-            this.y = this.y + 1;
+            this.x = this.x + random(-5, 5);
+            this.y = this.y + random(-5, 5);
 
             if (this.x >= width) {
                 this.x *= -1;
