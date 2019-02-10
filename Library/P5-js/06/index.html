@@ -18,8 +18,8 @@
     function setup() {
         createCanvas(600, 400);
 
-        bubble1 = new Bubble(200, 200, random(10,20), random(0, 255), random(0, 255), random(0, 255));
-        bubble2 = new Bubble(300, 300, random(15,25), random(0, 255), random(0, 255), random(0, 255));
+        bubble1 = new Bubble(200, 200, random(10, 20), random(0, 255), random(0, 255), random(0, 255), random(-5, 5), random(-5, 5));
+        bubble2 = new Bubble(300, 300, random(15, 25), random(0, 255), random(0, 255), random(0, 255), random(-5, 5), random(-5, 5));
     }
 
     function draw() {
@@ -33,27 +33,28 @@
     }
 
     class Bubble {
-        constructor(x, y, r, colR, colG, colB) {
+        constructor(x, y, r, colR, colG, colB, speedX, speedY) {
             this.x = x;
             this.y = y;
             this.r = r;
             this.colR = colR;
             this.colG = colG;
             this.colB = colB;
-
+            this.speedX = speedX;
+            this.speedY = speedY;
         };
 
         move() {
-            this.x = this.x + random(-5, 5);
-            this.y = this.y + random(-5, 5);
+            this.x = this.x + this.speedX;
+            this.y = this.y + this.speedY;
 
-            if (this.x >= width) {
-                this.x *= -1;
+            if (this.x >= width || this.x <= 0) {
+                this.speedX *= -1;
                 console.log(width);
             }
-            if (this.y >= height) {
-                this.y *= -1;
-                console.log(height);
+
+            if(this.y >= height || this.y <= 0) {
+                this.speedY *= -1;
             }
         };
 
