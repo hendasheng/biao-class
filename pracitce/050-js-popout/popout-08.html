@@ -1,0 +1,107 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    #trigger {
+        padding: .4rem 1rem;
+        background: rgb(36, 128, 248);
+        color: #fff;
+        border-width: 0;
+        border-radius: .1rem;
+    }
+
+    .popout {
+        position: fixed;
+        width: 400px;
+        left: 50%;
+        top: 60px;
+        margin-left: -200px;
+        background: #fff;
+        text-align: center;
+        padding: 30px 0;
+        border-radius: 10px;
+        z-index: 999;
+    }
+
+    .mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .6);
+        z-index: 998;
+    }
+</style>
+
+<button data-html=“.popout” id="trigger">登录</button>
+<div class="popout">登录</div>
+
+
+<button data-html=".popout" id="trigger">注册</button>
+<div class="popout">注册</div>
+
+<script>
+
+    let triggers, mask, popouts;
+
+    triggers = document.querySelectorAll('#trigger');
+    popouts = document.querySelectorAll('.popout');
+
+    boot();
+    function boot() {
+        initPopout();
+        initMask();
+        openPopout();
+        bindPopout();
+    }
+
+    /**
+     * 初始化 popout
+     */
+    function initPopout() {
+        popouts.forEach(it => {
+            it.hidden = true;
+        });
+    }
+    /**
+     * 初始化 mask
+     */
+    function initMask() {
+        mask = document.createElement('div');
+        mask.classList.add('mask');
+        document.body.appendChild(mask);
+        mask.hidden = true;
+    }
+
+    /**
+     * 打开 popout
+     */
+    function openPopout() {
+        triggers.forEach(it => {
+            it.addEventListener('click', e => {
+                let el = e.target;
+                el.nextElementSibling.hidden = mask.hidden = false;
+            })
+        })
+    }
+
+    /**
+     * 关闭 popout
+     */
+    function bindPopout() {
+        popouts.forEach(it => {
+            mask.addEventListener('click', e => {
+                it.hidden = mask.hidden = true;
+            });
+            window.addEventListener('keyup', e => {
+                if (e.code === 'Escape')
+                    it.hidden = mask.hidden = true;
+            });
+        });
+    }
+
+</script>
