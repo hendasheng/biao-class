@@ -1,0 +1,74 @@
+<style>
+    .dropdown {
+        display: inline-block;
+        border: 1px solid rgb(38, 123, 221);
+    }
+
+    .dropdown a {
+        display: block;
+        padding: 6px 20px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .dropdown a:hover {
+        color: rgb(51, 116, 236);
+    }
+</style>
+
+<div class="dropdown">
+    <!-- <a href="#">A</a>
+    <a href="#">B</a>
+    <a href="#">C</a>
+    <a href="#">D</a>
+    <a href="#">E</a> -->
+</div>
+
+<script>
+    let dropdown = document.querySelector('.dropdown');
+    let list = [
+        {
+            text: 'a',
+            href: '#',
+        },
+        {
+            text: 'b',
+            href: '#',
+        },
+        {
+            text: 'c',
+            href: '#',
+        },
+        {
+            text: 'd',
+            href: '#',
+        }
+    ];
+
+    boot();
+    function boot() {
+        render();
+        setInterval(() => {
+            list.push({
+                text: 'e',
+                href: '#',
+            });
+            render();
+            console.log(list.length);
+            if (list.length > 10)
+                list.splice(0, 1);
+        }, 1000);
+
+    }
+
+    function render() {
+        dropdown.innerHTML = '';
+        list.forEach(it => {
+            let a = document.createElement('a');
+            a.innerText = it.text;
+            a.href = it.href;
+            dropdown.appendChild(a);
+        });
+    }
+
+</script>
