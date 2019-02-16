@@ -1,0 +1,96 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td,
+    th {
+        text-align: left;
+        border: 1px solid #999;
+        padding: .4rem;
+    }
+</style>
+
+<div class="container">
+    <h1>查查哈中学花名册</h1>
+    <table>
+        <thead>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>分数</th>
+            <th>操作</th>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</div>
+
+
+<script>
+
+    let users = [
+        {
+            name: '王花花',
+            gender: '女',
+            score: '82',
+        },
+        {
+            name: '李拴蛋',
+            gender: '男',
+            score: '24',
+        },
+        {
+            name: '赵可爽',
+            gender: '女',
+            score: '73',
+        },
+    ];
+
+    boot();
+    function boot() {
+        render();
+    }
+
+    /**
+     * 渲染数据
+     * 
+     */
+    function render() {
+        // 循环数据数组
+        users.forEach((el, i) => {
+            // 创建 tbody > tr 元素
+            let tbody = document.getElementById('tbody');
+            let tr = document.createElement('tr');
+            // 用数据中的内容填充 tr 元素
+            tr.innerHTML = `
+                            <td>${el.name}</td>
+                            <td>${el.gender}</td>
+                            <td>${el.score}</td>
+                            <td><button class="del">删除</button></td>
+                           `;
+            // 将拼装好的 tr 元素插入到 tbody 中
+            tbody.appendChild(tr);
+
+            // 找到 删除 按钮
+            let delBtn = tr.querySelector('.del');
+            // 绑定点击事件，当 delBtn 被点击时
+            delBtn.addEventListener('click', () => {
+                // 在数组中删除当前索引的 1 位元素
+                users.splice(i, 1);
+                // 在视图中删除目标 tr 元素
+                tr.remove();
+            });
+        });
+    }
+
+</script>
