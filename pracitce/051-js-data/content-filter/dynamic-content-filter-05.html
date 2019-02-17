@@ -1,0 +1,134 @@
+<style>
+    :root {
+        font-family: sans-serif;
+    }
+
+    table {
+        text-align: left;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .toolbar {
+        margin: .4rem .2rem;
+    }
+
+    td,
+    th {
+        border: 1px solid;
+        padding: .4rem 1rem;
+    }
+</style>
+
+<h1>背背山中学花名册</h1>
+
+<div class="toolbar">
+    <div id="score-filter">
+        <button data-max="100" data-min="0">查看全部</button>
+        <button data-max="100" data-min="80">查看学霸</button>
+        <button data-max="80" data-min="60">查看学酥</button>
+        <button data-max="60" data-min="0">只看学渣</button>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>分数</th>
+        <th>操作</th>
+    </thead>
+    <tbody id="tbody">
+        <!-- <tr>
+            <td>王花花</td>
+            <td>女</td>
+            <td>83</td>
+        </tr>
+        <tr>
+            <td>李拴蛋</td>
+            <td>男</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>赵可爽</td>
+            <td>女</td>
+            <td>62</td>
+        </tr> -->
+    </tbody>
+</table>
+
+<script>
+
+    let users = [
+        {
+            name: '王花花',
+            gender: '女',
+            score: 83,
+        },
+        {
+            name: '李拴蛋',
+            gender: '男',
+            score: 25,
+        },
+        {
+            name: '赵可爽',
+            gender: '女',
+            score: 62,
+        },
+    ];
+
+    let tbody = document.getElementById('tbody');
+    let scoreFilter = document.getElementById('score-filter');
+
+
+    boot();
+    function boot() {
+        render(); 
+        bindEvents();
+    }
+
+    function render(boundary) {
+
+        tbody.innerHTML = '';
+        users.forEach((it, i) => {
+            if (boundary) {
+                // let valid = it.score <= boundary.max && it.score >= boundary.min;
+
+                // 前面加 + 号，强制转换为数字类型
+                let valid = it.score <= +boundary.max && it.score >= +boundary.min;
+                if (!valid)
+                    return;
+            }
+
+            let tr = document.createElement('tr');
+            tr.innerHTML = `
+                            <td>${it.name}</td >
+                            <td>${it.gender}</td>
+                            <td>${it.score}</td>
+                            <td><button class="delBtn">删除</button></td>
+                        `;
+
+            let delBtn = tr.querySelector('.delBtn');
+            delBtn.addEventListener('click', () => {
+                users.splice(i, 1);
+                tr.remove();
+                render();
+            });
+
+            tbody.appendChild(tr);
+        });
+    }
+
+    function bindEvents() {
+        scoreFilter.addEventListener('click', e => {
+            let el = e.target;
+            if (el.nodeName != 'BUTTON')
+                return;
+            let range = el.dataset;
+            console.log(el.dataset);
+            render(range);
+        });
+    }
+    
+
+</script>
