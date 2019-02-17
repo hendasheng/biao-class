@@ -1,0 +1,100 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    main {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    form {
+        margin: 2rem 0;
+    }
+
+    input[type=text],
+    input[type=number] {
+        width: 100%;
+    }
+
+    input[type=radio] {
+        width: auto;
+    }
+
+    input {
+        width: 100%;
+        margin: .2rem 0;
+        padding: .4rem;
+    }
+
+    button {
+        width: 100%;
+        padding: .6rem;
+        background: rgb(29, 83, 233);
+        color: #fff;
+        border: 0;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+</style>
+
+<main>
+    <form id="a">
+        <h1>getData</h1>
+        <input type="text" name="name" placeholder="姓名" value="王花花">
+        <input type="number" name="age" placeholder="年龄" value="18">
+        <input type="email" name="email" placeholder="邮箱" value="email">
+        <input type="number" name="balance" placeholder="余额" value="10">
+        <input type="number" name="height" placeholder="身高" value="174">
+        <button type="submit">提交</button>
+    </form>
+
+
+    <form id="b">
+        <h1>setData</h1>
+        <input type="text" name="name" placeholder="姓名">
+        <input type="number" name="age" placeholder="年龄">
+        <input type="email" name="email" placeholder="邮箱">
+        <input type="number" name="balance" placeholder="余额">
+        <input type="number" name="height" placeholder="身高">
+        <button type="submit">提交</button>
+    </form>
+</main>
+
+<script>
+
+    let user = {
+        name: '王花花',
+        age: 18,
+        email: 'wanghuahua@gmail.com',
+        balance: 10,
+        height: 168,
+    };
+
+    let formA = document.getElementById('a');
+    let formB = document.getElementById('b');
+
+    boot();
+    function boot() {
+        getData(formA);
+        setData(user, formB);
+    }
+
+    function getData(form) {
+        let data = {};
+        let inputs = form.querySelectorAll('input');
+        inputs.forEach(it => {
+            data[it.placeholder] = it.value;
+        });
+        console.log(data);
+    }
+
+    function setData(data, form) {
+        for (let key in data) {
+            let input = form.querySelector(`[name=${key}]`);
+            input.value = data[key];
+        }
+    }
+
+</script>
