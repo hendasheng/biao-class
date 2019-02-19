@@ -1,0 +1,55 @@
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    canvas {
+        display: block;
+    }
+</style>
+
+<body>
+
+</body>
+
+<!-- <script src="https://cdn.bootcss.com/p5.js/0.7.3/p5.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+
+<script>
+
+
+    let p;
+
+    function setup() {
+        // createCanvas(400, 400);
+        noCanvas();
+
+        for (let i = 0; i < 5; i++) {
+            p = createP('This is a link');
+            p.style('background', '#ccc');
+            p.style('padding', '24px');
+
+            let a = createA('#', 'apples');
+            a.mousePressed(addPhoto);
+            a.parent(p);
+        }
+
+    }
+
+    function addPhoto() {
+        let img = createImg('https://cdn.dribbble.com/users/1315953/avatars/small/e8a5d7a2333a962b1e794be7a8eca8d4.jpg?1549246075');
+        img.size(100, 100);
+        // var paragraph = this.parent();
+        // img.parent(paragraph);
+        console.log(this);
+    }
+
+    function draw() {
+        background(220);
+    }
+
+</script>
