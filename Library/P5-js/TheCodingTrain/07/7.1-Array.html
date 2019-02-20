@@ -1,0 +1,47 @@
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+</style>
+
+<body>
+
+</body>
+
+<script src="https://cdn.bootcss.com/p5.js/0.7.3/p5.js"></script>
+
+<script>
+
+    let nums = [1, 2, 3, 4, 5];
+    let index = 0;
+
+    nums.forEach(it => {
+        console.log('HELLO!' + it);
+    });
+
+    function setup() {
+        createCanvas(800, 600);
+    }
+
+    function draw() {
+        background(0);
+        textSize(32);
+        text(nums[index], 100, 300);
+    }
+
+    // function mousePressed() {
+    //     index += 1;
+    //     fill(random(0, 255), random(0, 255), random(0, 255));
+    //     if (index >= nums.length)
+    //         index = 0;
+    // }
+
+    setInterval(() => {
+        fill(random(0, 255), random(0, 255), random(0, 255));
+        if (index >= nums.length)
+            index = 0;
+        index += 1;
+    }, 1000);
+
+</script>

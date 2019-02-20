@@ -1,0 +1,66 @@
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    canvas {
+        display: block;
+    }
+</style>
+
+<body>
+
+
+
+    <!-- <script src="https://cdn.bootcss.com/p5.js/0.7.3/p5.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+
+    <script>
+        // let pos = 25;
+
+
+        // function preload() {
+        //     // let imgA = loadImage('img/01.svg');
+        //     // let imgB = loadImage('img/02.svg');
+        //     // let imgC = loadImage('img/03.svg');
+
+        //     let imgPng = loadImage('https://cdn.dribbble.com/users/1315953/avatars/small/e8a5d7a2333a962b1e794be7a8eca8d4.jpg?1549246075');
+        // }
+
+        // function setup() {
+        //     createCanvas(800, 600);
+        //     image(imgPng, 200, 200);
+        // }
+
+        // function draw() {
+        //     background(237, 34, 93);
+        //     fill(0);
+        //     rect(25, pos, 50, 50);
+        // }
+
+        // function mouseWheel(event) {
+        //     print(event.delta);
+        //     //move the square according to the vertical scroll amount
+        //     pos += event.delta;
+        //     //uncomment to block page scrolling
+        //     //return false;
+        // }
+
+        let img;
+        function preload() {
+            img = loadImage("joel-filipe-196000-unsplash.jpg");
+
+        }
+        function setup() {
+            createCanvas(480, 300);
+            background(200)
+        }
+        function draw() {
+            image(img, 0, 0);
+        }
+    </script>
+</body>
