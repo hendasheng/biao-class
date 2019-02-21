@@ -22,7 +22,6 @@ function draw() {
 }
 
 function mouseWheel(event) {
-    // console.log(event);
     moveA();
     moveC();
     moveD();
@@ -52,7 +51,7 @@ function moveD() {
         yD = 410;
     if (yD > document.body.clientHeight + 300)
         yD = document.body.clientHeight + 300;
-}   
+}
 
 function logo() {
     imageMode(CENTER);
