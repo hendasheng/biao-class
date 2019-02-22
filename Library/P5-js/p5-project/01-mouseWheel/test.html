@@ -2,6 +2,7 @@
     .container {
         width: 30%;
         margin: 0 auto;
+        margin-top: 4rem;
     }
 </style>
 
@@ -71,24 +72,29 @@
 </body>
 
 <script>
+    let intElemScrollTop;
+    let container = document.querySelector('.container');
 
     boot();
     function boot() {
-        // scrollEvent();
-        backTop();
+        // var top = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
+        // console.log(top);
+        // top = 0;
+        // getAbsTop(container);
 
+        // window.addEventListener('scroll', e => {
+        //     let top = container.offsetTop = 64;
+        //     console.log(top);
+        // });
+        window.addEventListener('click', e => {
+            let top = container.offsetTop;
+            console.log(top);
+        })
     }
 
-    function backTop() {
-        window.scrollBy(0, -100)
-
-        scrolldelay = setTimeout('backTop()', 10)
-
-        var sTop = document.documentElement.scrollTop + document.body.scrollTop
-
-        if (sTop === 0) {
-            clearTimeout(scrolldelay)
-        }
+    function getAbsTop(e) {
+        let top = e.offsetTop;
+        console.log(top);
     }
 
 </script>
