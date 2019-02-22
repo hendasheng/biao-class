@@ -10,7 +10,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: 14px;
-    height: 120%;
+    /* height: 120%; */
 }
 
 canvas {

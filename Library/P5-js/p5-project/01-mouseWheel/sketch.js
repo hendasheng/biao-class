@@ -10,12 +10,25 @@
     frame = container.querySelector('.frame');
 
     title = document.querySelector('.title');
-
+    backTop();
     boot();
 
     function boot() {
+
         initPosition();
         scrollEvent();
+    }
+
+    function backTop() {
+        window.scrollBy(0, -100)
+
+        scrolldelay = setTimeout('backTop()', 10)
+
+        var sTop = document.documentElement.scrollTop + document.body.scrollTop
+
+        if (sTop === 0) {
+            clearTimeout(scrolldelay)
+        }
     }
 
     /**
@@ -28,6 +41,7 @@
         logo_font.style.top = document.body.offsetHeight + 120;
 
         star.style.opacity = tag.style.opacity = logo_font.style.opacity = frame.style.opacity = 0;
+        document.body.style.height = '120%';
     }
 
     /**
@@ -39,9 +53,9 @@
         let reduction_logo_font = document.body.offsetHeight + 120;
         window.addEventListener('scroll', e => {
             // 当鼠标滚动的时候发生变化
-            increment += 15;
+            increment += 25;
             reduction_tag -= 40;
-            reduction_logo_font -= 30;
+            reduction_logo_font -= 40;
 
             // 当满足条件的时候停止变化
             if (increment > 320)
@@ -55,9 +69,9 @@
 
             changeMain(increment, reduction_tag, reduction_logo_font);
             changeTitle();
-
         });
     }
+
 
     /**
      * 位置移动
