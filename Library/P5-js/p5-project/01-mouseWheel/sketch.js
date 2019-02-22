@@ -1,62 +1,88 @@
-let img;
-let title;
+; (function () {
 
-let yA = -100;
-let yC = document.body.clientHeight + 100;
-let yD = document.body.clientHeight + 100;
+    let container = document.getElementById('container');
+    let star, tag, logo_font, frame;
+    let title;
+
+    star = container.querySelector('.star');
+    tag = container.querySelector('.tag');
+    logo_font = container.querySelector('.logo-font');
+    frame = container.querySelector('.frame');
+
+    title = document.querySelector('.title');
+
+    boot();
+
+    function boot() {
+        initPosition();
+        scrollEvent();
+    }
+
+    /**
+     * 初始化元素位置及透明度
+     */
+    function initPosition() {
+
+        star.style.top = -70;
+        tag.style.top = document.body.offsetHeight;
+        logo_font.style.top = document.body.offsetHeight + 120;
+
+        star.style.opacity = tag.style.opacity = logo_font.style.opacity = frame.style.opacity = 0;
+    }
+
+    /**
+     * 监听鼠标滚动
+     */
+    function scrollEvent() {
+        let increment = 0;
+        let reduction_tag = document.body.offsetHeight;
+        let reduction_logo_font = document.body.offsetHeight + 120;
+        window.addEventListener('scroll', e => {
+            // 当鼠标滚动的时候发生变化
+            increment += 15;
+            reduction_tag -= 40;
+            reduction_logo_font -= 30;
+
+            // 当满足条件的时候停止变化
+            if (increment > 320)
+                increment = 320;
+
+            if (reduction_tag < 382)
+                reduction_tag = 382;
+
+            if (reduction_logo_font < 480)
+                reduction_logo_font = 480;
+
+            changeMain(increment, reduction_tag, reduction_logo_font);
+            changeTitle();
+
+        });
+    }
+
+    /**
+     * 位置移动
+     * 透明度变化
+     * @param {Object} increment 
+     * @param {Object} reduction_tag 
+     * @param {Object} reduction_logo_font 
+     */
+    function changeMain(increment, reduction_tag, reduction_logo_font) {
+        star.style.top = increment;
+        tag.style.top = reduction_tag;
+        logo_font.style.top = reduction_logo_font;
+        // logo_font.style.top = reduction;
+        star.style.opacity = tag.style.opacity = logo_font.style.opacity = frame.style.opacity = 1;
+    }
+
+    /**
+     * title 的变化
+     */
+    function changeTitle() {
+        title.style.opacity = 0;
+        title.style.marginTop = 0;
+    }
 
 
-function preload() {
-    imgA = loadImage("./img/01.png");
-    imgB = loadImage("./img/02.png");
-    imgC = loadImage("./img/03.png");
-    imgD = loadImage("./img/logo-font.png");
-}
-function setup() {
-    createCanvas(window.innerWidth, window.innerHeight);
-}
 
-function draw() {
-    background(255);
-    logo();
-}
+})();
 
-function mouseWheel(event) {
-    moveA();
-    moveC();
-    moveD();
-}
-
-function moveA() {
-    yA += event.delta;
-    // console.log(yA);
-    if (yA > 372)
-        yA = 372;
-    if (yA < -100)
-        yA = -100;
-}
-
-function moveC() {
-    yC -= event.delta;
-    // console.log(yC);
-    if (yC < 569)
-        yC = 569;
-    if (yC > document.body.clientHeight + 100)
-        yC = document.body.clientHeight + 100;
-}
-
-function moveD() {
-    yD -= event.delta;
-    if (yD < 410)
-        yD = 410;
-    if (yD > document.body.clientHeight + 300)
-        yD = document.body.clientHeight + 300;
-}
-
-function logo() {
-    imageMode(CENTER);
-    image(imgA, window.innerWidth / 2, yA);
-    image(imgB, window.innerWidth / 2, window.innerHeight / 2 - 200);
-    image(imgC, window.innerWidth / 2, yC);
-    image(imgD, window.innerWidth / 2, yD + 400);
-}
