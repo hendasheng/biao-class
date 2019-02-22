@@ -19,6 +19,9 @@
         scrollEvent();
     }
 
+    /**
+     * 打开时处于页面顶部
+     */
     function backTop() {
         window.scrollBy(0, -100)
 
