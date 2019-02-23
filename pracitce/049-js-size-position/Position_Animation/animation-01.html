@@ -25,8 +25,8 @@
     function boot() {
         window.addEventListener('click', e => {
             moveElement('message', 200, 200, 10);
-            moveElement('message2', 300, 200, 10);
-        })
+            // moveElement('message2', 300, 200, 10);
+        });
 
     }
 
@@ -36,9 +36,6 @@
         let ypos = parseInt(elem.offsetTop);
 
         elem.style.position = 'absolute';
-
-        if (xpos == final_x && ypos == final_y)
-            return true;
 
         if (xpos < final_x)
             xpos++;
@@ -54,6 +51,13 @@
 
         let repeat = "moveElement('" + elementId + "'," + final_x + "," + final_y + "," + interval + ")";
         movement = setTimeout(repeat, interval)
+
+        // 到达指定位置后停止计时器
+        if (xpos === final_x && ypos === final_y) {
+            // return true;
+            console.log('到达指定位置');
+            clearTimeout(movement);
+        }
 
         // console.log('xpos:', xpos);
         // console.log('ypos:', ypos);
