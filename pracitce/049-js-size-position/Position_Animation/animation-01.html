@@ -1,0 +1,63 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #message {
+        position: absolute;
+        background: #000;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <div id="message">Whee!</div>
+    <div id="message2">Yo</div>
+</body>
+
+<script>
+
+
+
+
+    boot();
+    function boot() {
+        window.addEventListener('click', e => {
+            moveElement('message', 200, 200, 10);
+            moveElement('message2', 300, 200, 10);
+        })
+
+    }
+
+    function moveElement(elementId, final_x, final_y, interval) {
+        let elem = document.getElementById(elementId);
+        let xpos = parseInt(elem.offsetLeft);
+        let ypos = parseInt(elem.offsetTop);
+
+        elem.style.position = 'absolute';
+
+        if (xpos == final_x && ypos == final_y)
+            return true;
+
+        if (xpos < final_x)
+            xpos++;
+        if (xpos > final_x)
+            xpos--;
+        if (ypos < final_y)
+            ypos++;
+        if (ypos > final_y)
+            ypos--;
+
+        elem.style.left = xpos + 'px';
+        elem.style.top = ypos + 'px';
+
+        let repeat = "moveElement('" + elementId + "'," + final_x + "," + final_y + "," + interval + ")";
+        movement = setTimeout(repeat, interval)
+
+        // console.log('xpos:', xpos);
+        // console.log('ypos:', ypos);
+    }
+
+
+</script>
