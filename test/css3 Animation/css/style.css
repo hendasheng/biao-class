@@ -1,0 +1,59 @@
+:root {
+    font-size: 14px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+svg {
+    width: 45%;
+    height: 45%;
+}
+
+path {
+    /* stroke: red; */
+}
+
+circle {
+    /* stroke: red; */
+    /*  */
+}
+
+.container {
+    /* width: 60%; */
+    margin: 0 auto;
+    /* background: rgba(0, 0, 0, .2); */
+    text-align: center;
+    position: relative;
+    margin-top: 15%;
+}
+
+.logo-wrap {
+    /* width: 120%; */
+}
+
+.logo-main {
+    animation: logo-main 3s infinite;
+}
+.logo-sub {
+    animation: logo-sub 3s infinite;
+}
+
+.rect {
+    animation: rect 3s infinite;
+}
+
+.circle-y {
+    animation: circle-y 3s infinite;
+}
+
+.circle-g {
+    animation: circle-g 2s infinite;
+
+}
+
+.triangle {
+    animation: triangle 2s infinite;
+}

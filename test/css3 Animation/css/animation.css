@@ -1,0 +1,35 @@
+@keyframes circle-y {
+    0% {r: 39;}
+    50% {r: 60;}
+    100% {r: 39;}
+}
+
+@keyframes circle-g {
+    0% {r: 9;}
+    50% {r: 6;}
+    100% {r: 9;}
+}
+
+@keyframes triangle {
+    0% {fill: #B469FF;}
+    50% {fill: #E22D9A;}
+    100% {fill: #B469FF;}
+}
+
+@keyframes rect {
+    0% {y: 153;}
+    50% {y: 183;}
+    100% {y: 153;}
+}
+
+@keyframes logo-main {
+    0% {stroke: #111;}
+    50% {stroke: #444;}
+    100% {stroke: #111;}
+}
+
+@keyframes logo-sub {
+    0% {fill: #111;}
+    50% {fill: #444;}
+    100% {fill: #111;}
+}
