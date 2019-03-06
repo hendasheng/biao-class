@@ -91,3 +91,54 @@ img {
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
+
+
+.footer {
+    background: #F6F6F6;
+    height: 500px;
+    margin-top: 10rem;
+    padding: 8rem 0;
+    font-weight: 300;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: center;
+}
+
+.footer-title {
+    font-size: 3.4rem;
+}
+.footer-desc {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+}
+.footer-content {
+    margin-top: 10rem;
+    font-weight: 400;
+}
+
+.footer .right > *  {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.footer .right {
+    position: relative;
+}
+
+
+.footer .social-item img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 8rem;
+    top: 0;
+    display: none;
+}
+
+.footer .social-item:hover img {
+    display: block;
+}
