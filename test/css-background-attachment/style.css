@@ -32,7 +32,7 @@ img {
     justify-content: space-between;
     flex-direction: row;
     align-content: center;
-    padding: .4rem 3rem;
+    padding: .8rem 4rem;
     background: #fff;
 }
 
@@ -45,8 +45,9 @@ img {
     color: rgb(33, 112, 230);
 }
 
-.header .logo svg {
-    width: 8rem;
+.header .logo .left {
+    width: 40px;
+    height: 40px;
 }
 
 .main {
