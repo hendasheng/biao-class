@@ -1,5 +1,5 @@
 ;(function() {
-    'use styicy';
+    'use strict';
 
     let a, b;
 
