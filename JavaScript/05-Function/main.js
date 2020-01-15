@@ -46,7 +46,7 @@
     // }
     // glue(list);
 
-     // glue(list) 将数组内所有元素相连, 并且可以指定用什么连接
+    // glue(list) 将数组内所有元素相连, 并且可以指定用什么连接
     // function glue(arr, symbol) {
     //     let g = '';
     //     for(let i = 0; i < arr.length; i++) {
@@ -87,7 +87,7 @@
     //     return console.log(s);
     // }
     // filterGlue([1, 2, 'Ha', 'Ji']);
-    
+
     // sumEven(arr) 求数组中偶数元素之和
     // function sumEven(arr) {
     //     let s = 0;
@@ -111,10 +111,43 @@
     // filterOdd([1, 1, 3, 4, 5]);
 
     // yoMaker() 生成新数组，可以指定需要生成多少个元素
-    function yoMaker(total) {
-        
-    }
+    // function yoMaker(total) {
+    //     let arr = []
+    //     for(let i = 0; i < total; i++) {
+    //         arr.push('Yo');
+    //     }
+    //     return console.log(arr);
+    // }
+    // yoMaker(2);
 
-    
-    
+    // arrayMaker() 生成新数组，数组中元素递增，步长为 1
+    // function arrayMaker(total) {
+    //     let arr = [];
+    //     for (let i = 0; i < total; i++) {
+    //         arr.push(i + 1);
+    //     }
+    //     return console.log(arr);
+    // }
+    // arrayMaker(10);
+
+    // evenMaker() 生成新数组，数字中的元素均为偶数
+    // function evenMaker(total) {
+    //     let arr = [];
+    //     for(let i = 0; i < total; i+= 2) {
+    //         arr.push(i);
+    //     }
+    //     return console.log(arr);
+    // }
+    // evenMaker(10);
+
+    // search() 输入查找范围和关键词，返回搜索结果
+    // let list = ['abb', 'bcc', 'cdd', 'dee'];
+    // function search(arr, key) {
+    //     let s = []
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (arr[i].includes(key)) s.push(arr[i]);
+    //     }
+    //     return console.log(s);
+    // }
+    // search(list, 'c');
 })();
