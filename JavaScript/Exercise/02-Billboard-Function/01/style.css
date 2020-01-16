@@ -1,0 +1,19 @@
+:root {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.board {
+    display: inline-block;
+    background: palevioletred;
+    color: bisque;
+    font-size: 2rem;
+    padding: 2rem;
+    opacity: 1;
+}
+
+.inner {
+    font-size: 1rem;
+    color: blue;
+    padding-left: .3rem;
+}
