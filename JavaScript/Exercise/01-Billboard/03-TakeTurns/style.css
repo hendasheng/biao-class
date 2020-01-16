@@ -1,0 +1,13 @@
+:root {
+    font-family: sans-serif;
+    font-size: 14px;
+
+}
+
+.board {
+    display: inline-block;
+    background: indianred;
+    font-size: 2rem;
+    color: ivory;
+    padding: 1rem;
+}
