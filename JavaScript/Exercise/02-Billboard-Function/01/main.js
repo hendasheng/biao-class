@@ -27,11 +27,11 @@
 
     function onDisplay(check) {
         // true ? board.style.opacity = 1: board.style.opacity = 0;
-        if(check) {
+        if (check) {
             board.style.opacity = 1;
         } else {
             board.style.opacity = 0;
         }
     }
-    
+
 })();
