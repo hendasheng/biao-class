@@ -15,5 +15,8 @@ img {
 
 .item {
     position: absolute;
+    display: block;
+    transition: all .5s;
 }
+
 
