@@ -1,0 +1,84 @@
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    .main {
+        background-color: rgb(233, 233, 233);
+        border: 1px solid #333;
+        margin: 1rem 0;
+        display: inline-block;
+        padding: 1rem 3rem;
+    }
+
+    .sub {
+        position: absolute;
+        padding: .4rem 3rem;
+        border: 1px solid #333;
+        background-color: #333;
+    }
+
+    .item {
+        margin: 1rem 0;
+        display: block;
+        color: #fff;
+    }
+
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<div class="nav">
+    <div class="main">MENU</div>
+    <div class="sub" hidden>
+        <a href="#" class="item">a</a>
+        <a href="#" class="item">b</a>
+        <a href="#" class="item">c</a>
+        <a href="#" class="item">d</a>
+    </div>
+
+</div>
+
+<script>
+
+    const btn = document.querySelector('.main');
+    const sub = document.querySelector('.sub');
+
+    boot();
+    function boot() {
+        // clickEvent();
+        // mouseEvent();
+        codeEvent();
+    }
+
+    function codeEvent() {
+        window.addEventListener('keyup', (it) => {
+            if (it.key === 'q')
+                sub.hidden = !sub.hidden;
+        });
+
+        // window.addEventListener('keyup', (it) => {
+        //     if (it.key === 'q' && it.ctrlKey)
+        //         sub.hidden = !sub.hidden;
+        // });
+    }
+
+    function mouseEvent() {
+        btn.addEventListener('mouseenter', () => {
+            sub.hidden = false;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            sub.hidden = true;
+        })
+    }
+
+    function clickEvent() {
+        btn.addEventListener('click', () => {
+            sub.hidden = !sub.hidden;
+        });
+    }
+
+</script>
