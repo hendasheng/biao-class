@@ -1,0 +1,28 @@
+<style>
+
+#a {
+    display: inline-block;
+    width: 10em;
+    height: 10em;
+    background:gray;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+</style>
+
+<div id="a"></div>
+<button class="btn">显示 / 隐藏</button>
+
+<script>
+
+    const a = document.getElementById('a');
+    const btn = document.querySelector('.btn');
+    
+    btn.addEventListener('click', () => {
+        a.hidden = !a.hidden;
+    });
+    
+</script>
