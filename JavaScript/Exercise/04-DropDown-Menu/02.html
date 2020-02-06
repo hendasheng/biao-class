@@ -1,0 +1,58 @@
+<style>
+    .target {
+        display: inline-block;
+        padding: .6rem 2rem;
+        background-color: #333;
+        color: #fff;
+    }
+
+    .nav {
+        display: inline-block;
+        background-color: rgb(230, 230, 230);
+        padding: .6rem 2rem;
+    }
+
+    .item {
+        display: block;
+        margin: .4rem;
+        text-decoration: none;
+        color: blue;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<body>
+    <div class="target">更多...</div>
+    <br>
+
+    <div class="nav" hidden>
+        <a class="item" href="#">a</a>
+        <a class="item" href="#">b</a>
+        <a class="item" href="#">c</a>
+        <a class="item" href="#">d</a>
+    </div>
+</body>
+
+<script>
+
+    const target = document.querySelector('.target');
+    const nav = document.querySelector('.nav');
+
+    document.body.addEventListener('click', (e) => {
+        if (e.target === target) {
+            nav.hidden = !nav.hidden;
+            return;
+        }
+
+        // if (!e.target.classList.contains('.nav'))
+        //     nav.hidden = true;
+        
+        if (!e.target.closest('.nav'))
+            nav.hidden = true;
+    });
+
+
+</script>
