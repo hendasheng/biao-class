@@ -1,0 +1,25 @@
+<body>
+    <!-- <p onclick="console.log('1')">yo</p> -->
+
+    <div class="a">Hai</div>
+
+</body>
+
+<script>
+
+    let a = document.querySelector('.a');
+
+    // a.onclick = function () {
+    //     console.log('a');
+    //     console.log('b');
+    // }
+
+    a.addEventListener('click', () => {
+        console.log('a');
+    });
+
+    a.addEventListener('mouseenter', () => {
+        console.log('b');
+    });
+
+</script>

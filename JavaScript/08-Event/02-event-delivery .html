@@ -1,0 +1,43 @@
+<style>
+    div {
+        background: rgba(0, 0, 0, .1);
+        padding: 1rem;
+    }
+</style>
+
+<body>
+    <div id="a"> a
+        <div id="b"> b
+            <div id="c">c</div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    const b = document.querySelector('#b');
+    const c = document.querySelector('#c');
+    const body = document.querySelector('body');
+
+    body.addEventListener('click', (e) => {
+        // let target = e.target;
+        console.log("target:", e.target);   // target -> 触发事件的源头 
+        console.log("currentTarget:", e.currentTarget); // currentTatget -> 事件绑定在谁身上
+    });
+
+    // a.addEventListener('click', (e) => {
+    //     // console.log('click-A');
+    //     console.log(e.currentTarget);
+    // }, true);
+
+    // b.addEventListener('click', (e) => {
+    //     console.log('click-B');
+    //     // console.log(e.currentTarget);
+    // }, true);
+
+    // c.addEventListener('click', (e) => {
+    //     console.log('click-C');
+    //     // console.log(e.currentTarget);
+    // }, true);
+
+</script>
