@@ -1,0 +1,35 @@
+<style>
+    .box {
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        background-color: sandybrown;
+    }
+</style>
+
+<body></body>
+
+<script>
+
+    let box;
+
+    boot();
+    function boot() {
+        initElement();
+        reSize();
+        window.addEventListener('resize', () => {
+            reSize();
+        })
+    }
+
+    function initElement() {
+        box = document.createElement('div');
+        box.classList.add('box');
+        document.body.appendChild(box);
+    }
+
+    function reSize() {
+        box.style.left = window.innerWidth / 2 - box.offsetWidth / 2 + 'px';
+    }
+
+</script>
