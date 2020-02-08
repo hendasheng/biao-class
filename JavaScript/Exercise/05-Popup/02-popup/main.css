@@ -1,0 +1,35 @@
+:root {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.trigger {
+    display: inline-block;
+    border: 1px solid;
+    padding: .4rem 1rem;
+    background-color: royalblue;
+    color: #fff;
+}
+
+.popup {
+    position: fixed;
+    width: 300px;
+    border: 1px solid;
+    padding: 2rem 1rem;
+    z-index: 999;
+    background-color: #fff;
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 998;
+}
+
+[hidden] {
+    display: none !important;
+}
