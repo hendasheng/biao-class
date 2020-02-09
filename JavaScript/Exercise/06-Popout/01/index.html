@@ -1,0 +1,66 @@
+<style>
+    #trigger {
+        position: relative;
+    }
+
+    .popout {
+        padding: .4rem 1rem;
+        display: inline-block;
+        position: absolute;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+        border-radius: .2rem;
+        margin: .4rem;
+        top: 24px;
+        left: 0;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+</style>
+
+<button data-popout="yo yo yo" id="trigger">Yo</button>
+<button data-popout="lue lue lue" id="trigger">Lue</button>
+<button data-popout="qier qier qier" id="trigger">Qier</button>
+<!-- <div class="popout">yo yo yo ...</div> -->
+
+<script>
+    let popout, popoutContent;
+
+    boot();
+    function boot() {
+        initPopout();
+        document.body.addEventListener('mouseover', (e) => {
+            popoutContent = e.target.dataset.popout;
+            if (popoutContent) {
+                popout.innerText = popoutContent;
+                setVisible(true);
+            } else {
+                setVisible(false);
+            }
+            setPopoutPosition(e);
+        });
+    }
+
+    function setPopoutPosition(el) {
+        // 获取当前 button 位置及尺寸信息
+        let buttonPosition = el.target.getBoundingClientRect()
+        if (el.target.id) {
+            // console.log(buttonPosition);
+            popout.style.left = buttonPosition.x + 'px';
+            popout.style.top = buttonPosition.top + buttonPosition.height + 'px';
+        }
+    }
+
+    function setVisible(show) {
+        popout.hidden = !show;
+    }
+
+    function initPopout() {
+        popout = document.createElement('div');
+        popout.classList.add('popout');
+        document.body.appendChild(popout);
+        setVisible(false);
+    }
+
+</script>
