@@ -1,0 +1,117 @@
+<style>
+    :root {
+        font-family: sans-serif;
+        font-size: 14px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    th,
+    td {
+        text-align: left;
+        border: 1px solid;
+        padding: .4rem 1rem;
+    }
+
+    .toolbar {
+        margin: 1rem 0;
+    }
+</style>
+
+<body>
+    <h1>背背山花名册</h1>
+    <div class="toolbar">
+        <div class="score-filter">
+            <button data-max="100" data-min="0">查看全部</button>
+            <button data-max="100" data-min="80">只看学霸</button>
+            <button data-max="79" data-min="60">只看学酥</button>
+            <button data-max="59" data-min="0">只看学渣</button>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>成绩</th>
+            <th>操作</th>
+        </thead>
+        <tbody class="tBody"></tbody>
+    </table>
+</body>
+
+<script>
+
+    const users = [
+        {
+            name: '王花花',
+            gender: '男',
+            score: 80,
+        },
+        {
+            name: '李栓蛋',
+            gender: '女',
+            score: 92,
+        },
+        {
+            name: '赵可爽',
+            gender: '女',
+            score: 78,
+        }
+    ];
+
+    const tBody = document.querySelector('.tBody');
+    let scoreFilter = document.querySelector('.score-filter');
+
+    boot();
+    function boot() {
+        render();
+        bingEvents();
+    }
+
+    function bingEvents() {
+        scoreFilter.addEventListener('click', (e) => {
+            let target = e.target;
+            if (target.nodeName != 'BUTTON')
+                return;
+            let range = target.dataset;
+            render(range);
+            console.log(range);
+        });
+    }
+
+    function render(range) {
+        tBody.innerHTML = '';
+        users.forEach((it, i) => {
+            if (range) {
+                // 通过 + 强制转换为数字类型
+                let inRange = it.score <= +range.max && it.score >= +range.min;
+                if (!inRange)
+                    return;
+            }
+
+            let tr = document.createElement('tr');
+            // 这个东西叫 模板字符串 (ES6)
+            tr.innerHTML = `
+                <td>${it.name}</td>
+                <td>${it.gender}</td>
+                <td>${it.score}</td>
+                <td><button class="delBtn">删除</button></td>
+            `;
+
+            let delBtn = tr.querySelector('.delBtn');
+            delBtn.addEventListener('click', () => {
+                // 删除对应数据
+                users.splice(i, 1);
+                // 删除对应 html-tr 元素
+                tr.remove();
+            });
+
+            tBody.appendChild(tr);
+        });
+    }
+
+</script>
