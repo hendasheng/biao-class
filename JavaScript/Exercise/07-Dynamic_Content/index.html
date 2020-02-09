@@ -1,0 +1,65 @@
+<style>
+    .dropdown {
+        display: inline-block;
+        border: 1px solid;
+    }
+
+    .dropdown a {
+        text-decoration: none;
+        display: block;
+        padding: 1rem 2rem;
+    }
+</style>
+
+<body>
+    <div class="dropdown"></div>
+</body>
+
+<script>
+
+    const dropdown = document.querySelector('.dropdown');
+
+    let list = [
+        {
+            text: 'a',
+            href: '#'
+        },
+        {
+            text: 'b',
+            href: '#'
+        },
+        {
+            text: 'c',
+            href: '#'
+        },
+        {
+            text: 'd',
+            href: '#'
+        }
+    ];
+
+    boot();
+    function boot() {
+        render();
+        setInterval(() => {
+            list.push(
+                {
+                    text: 'e',
+                    href: '#'
+                }
+            );
+            render();
+        }, 500);
+    }
+
+    function render() {
+        dropdown.innerHTML = '';
+        list.forEach(it => {
+            let a = document.createElement('a');
+            a.innerText = it.text;
+            a.href = it.href;
+            dropdown.appendChild(a);
+        });
+    }
+
+</script>
