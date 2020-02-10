@@ -1,0 +1,115 @@
+<style>
+    table {
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    th,
+    td {
+        border: 1px solid;
+        padding: .4rem 1rem;
+        text-align: left;
+    }
+</style>
+
+<body>
+
+    <h1>背背山花名册</h1>
+
+    <div class="toolbar">
+        <button data-max="100" data-min="0">显示全部</button>
+        <button data-max="100" data-min="80">只看学霸</button>
+        <button data-max="79" data-min="60">只看学酥</button>
+        <button data-max="59" data-min="0">只看学渣</button>
+    </div>
+
+    <table>
+        <thead>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>成绩</th>
+            <th>操作</th>
+        </thead>
+
+        <tbody class="tBody"></tbody>
+
+    </table>
+</body>
+
+<script>
+
+    let users = [
+        {
+            name: '王花花',
+            gender: '男',
+            score: 93,
+        },
+        {
+            name: '李栓蛋',
+            gender: '女',
+            score: 82,
+        },
+        {
+            name: '赵可爽',
+            gender: '男',
+            score: 72,
+        },
+        {
+            name: '张爱柱',
+            gender: '女',
+            score: 56,
+        },
+    ];
+
+    let tBody = document.querySelector('.tBody');
+    let toolbar = document.querySelector('.toolbar');
+
+    boot();
+    function boot() {
+        renderTbody();
+        bindToolbar();
+    }
+
+    function bindToolbar() {
+        toolbar.addEventListener('click', (e) => {
+            if (!e.target.nodeName == 'BUTTON')
+                return;
+
+            let range = e.target.dataset;
+            renderTbody(range);
+        });
+    }
+
+    function renderTbody(range) {
+        tBody.innerHTML = '';
+        users.forEach((it, i) => {
+            if (range) {
+                let inRange =
+                    it.score <= range.max &&
+                    it.score >= range.min;
+                if (!inRange)
+                    return;
+            }
+
+            let tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${it.name}</td>
+                <td>${it.gender}</td>
+                <td>${it.score}</td>
+                <td><button class="delBtn">删除</button></td>
+            `;
+            bindDelBtn(tr, '.delBtn', i);
+            tBody.appendChild(tr);
+        });
+    }
+
+
+    function bindDelBtn(element, btnClass, current) {
+        let delBtn = element.querySelector(btnClass);
+        delBtn.addEventListener('click', () => {
+            users.splice(current, 1);
+            element.remove();
+        });
+    }
+
+</script>
